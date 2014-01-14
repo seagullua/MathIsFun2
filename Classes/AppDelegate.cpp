@@ -143,7 +143,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     Distributor::Store store = Distributor::getCurrentStore();
     if(store == Distributor::GooglePlay)
     {
-        manager.stopAllAdsCurrentSeanse();
+        manager.disableAds();
     }
     else
     {
@@ -151,25 +151,31 @@ bool AppDelegate::applicationDidFinishLaunching() {
         AdsOffListener* listener = new AdsOffListener;
         listener->autorelease();
         listener->retain();
-        manager.addCloseButton("close-icon.png", listener, callfunc_selector(AdsOffListener::wasClickedDisableAllAds));
-        manager.addSupportedBannerSize(ads::BannerSize::BANNER_BIG);
-        manager.addSupportedBannerSize(ads::BannerSize::BANNER_SMALL);
+
+        //manager.addSupportedBannerSize(ads::BannerSize::BANNER_BIG);
+        //manager.addSupportedBannerSize(ads::BannerSize::BANNER_SMALL);
 
         //std::string pid = "ca-app-pub-1097233306002326/4129712095";
         CREATE_DECODED_STRING(pid, CODE(0x3797,0x7a70,0x4907,0xd5e,0x17a6,0x72cd,0x3442,0x70a5,0xd6b,0x264,0x4b5a,0x266a,0x20c8,0x3c4c,0x44,0x7fa,0x73fd,0x75ee,0x788d,0x2ae,0x645d,0x5bdc,0xd2d,0x272e,0x3253,0x1f33,0x1f73,0x379b,0x1f92,0x1d0c,0x68af,0x4c86,0x55b1,0x43ec,0x2674,0x6040,0x108f,0x1af2), CODE(0x37f4,0x7a11,0x492a,0xd3f,0x17d6,0x72bd,0x346f,0x70d5,0xd1e,0x206,0x4b77,0x265b,0x20f8,0x3c75,0x73,0x7c8,0x73ce,0x75dd,0x78be,0x29e,0x646b,0x5bec,0xd1d,0x271c,0x3260,0x1f01,0x1f45,0x37b4,0x1fa6,0x1d3d,0x689d,0x4cbf,0x5586,0x43dd,0x2646,0x6070,0x10b6,0x1ac7),38);
 
-        manager.setBannerZoneKey(pid);
+        //manager.setBannerZoneKey(pid);
+        manager.registerBannerType("BANNER", pid);
+        manager.registerBannerType("IAB_BANNER", pid);
+
+        std::string pid_inter = "ca-app-pub-1097233306002326/6366969291";
+        manager.registerInterstitialType(pid_inter);
+
         manager.addTestDevice("419CBB113860522A7AB95487DBB0CC2B"); //Andriy Tab
         manager.addTestDevice("9AC43D4250441F63E2E677C2C06F5D41"); //Diana Tab
         manager.addTestDevice("C31238A94F2B52E9F4B77E58270A3943"); //Tonya
 
 
-        manager.addOwnItem(ads::OwnAdItem(
-                               new ads::UrlClickAction(
-                                   Browser::createRedirectURL(
-                                       "mif-kids-"+Distributor::getStoreName(store))))
-                           .addImage(ads::BannerSize::BANNER_BIG, "banners/banner1_big.png")
-                           .addImage(ads::BannerSize::BANNER_SMALL, "banners/banner1_small.png"));
+//        manager.addOwnItem(ads::OwnAdItem(
+//                               new ads::UrlClickAction(
+//                                   Browser::createRedirectURL(
+//                                       "mif-kids-"+Distributor::getStoreName(store))))
+//                           .addImage(ads::BannerSize::BANNER_BIG, "banners/banner1_big.png")
+//                           .addImage(ads::BannerSize::BANNER_SMALL, "banners/banner1_small.png"));
     }
 
     //    std::string junior_in_market = "";

@@ -9,10 +9,14 @@ INCLUDEPATH += ../../../cocos2dx \
     ../Classes \
     ../../../CocosDenshion/include
 
+include(../libraries/ADLib/ADLib.pri)
+
+#LIBS += -lopengl32
 #DEFINES +=NDEBUG
 CONFIG(debug, debug|release) {
     LIBS += -lOpenGL32
     LIBS += -L../../../../Debug.win32/ -llibcocos2d
+    LIBS += -L../../../../Debug.win32/ -lglew32
     LIBS += -L../../../../Debug.win32/ -llibCocosDenshion
 } else {
     LIBS += -L../../../Release.win32/ -llibcocos2d

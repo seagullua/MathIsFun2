@@ -1,23 +1,23 @@
 #include "Screen.h"
 
-float Screen::getScaleFactor()
-{
-    return _design_scale * cocos2d::CCDirector::sharedDirector()->getContentScaleFactor();
-}
+//float Screen::getScaleFactor()
+//{
+//    return _design_scale * cocos2d::CCDirector::sharedDirector()->getContentScaleFactor();
+//}
 
-cocos2d::CCPoint Screen::getOrigin()
-{
-    return cocos2d::CCDirector::sharedDirector()->getVisibleOrigin();
-}
+//cocos2d::CCPoint Screen::getOrigin()
+//{
+//    return cocos2d::CCDirector::sharedDirector()->getVisibleOrigin();
+//}
 
-cocos2d::CCSize Screen::getVisibleSize()
-{
-    return cocos2d::CCDirector::sharedDirector()->getVisibleSize();
-}
+//cocos2d::CCSize Screen::getVisibleSize()
+//{
+//    return cocos2d::CCDirector::sharedDirector()->getVisibleSize();
+//}
 
-void Screen::setDesignScale(float scale)
-{
-    _design_scale = 1.0f / scale;
-}
+//void Screen::setDesignScale(float scale)
+//{
+//    _design_scale = 1.0f / scale;
+//}
 
-float Screen::_design_scale = 1;
+//float Screen::_design_scale = 1;

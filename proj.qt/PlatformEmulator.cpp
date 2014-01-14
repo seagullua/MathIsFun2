@@ -70,43 +70,6 @@ void Notification::notify(const Type t)
 
 }
 
-#include "Core/Ads.h"
-namespace ads
-{
-BannerID AdsManager::assignNewBannerId()
-{
-    return rand();
-}
-
-void AdsManager::createNativeBanner(const BannerID id, const BannerSize& size, const CCPoint& position)
-{
-    cocos2d::CCLog("Banner created %dx%d at position x=%d y=%d with id=%d", size.getWidth(),
-                   size.getHeight(), int(position.x), int(position.y), id);
-}
-
-void AdsManager::showNativeBanner(const BannerID id)
-{
-    cocos2d::CCLog("Banner shown id=%d", id);
-}
-
-void AdsManager::hideNativeBanner(const BannerID id)
-{
-    cocos2d::CCLog("Banner hide id=%d", id);
-}
-
-void AdsManager::destroyNativeBanner(const BannerID id)
-{
-    cocos2d::CCLog("Banner destroyed id=%d", id);
-}
-
-void AdsManager::isNativeBannerShown(const BannerID id)
-{
-    bannerShownResult(false, id);
-}
-
-
-}
-
 #include <stdio.h>
 
 void realLog(const char * pszFormat, ...)
@@ -119,7 +82,7 @@ void realLog(const char * pszFormat, ...)
     vsnprintf(buf, MAX_LENGTH, pszFormat, args);
     va_end(args);
 
-    CCLog(buf);
+    cocos2d::CCLog(buf);
 }
 
 static float _density = 1;
@@ -133,33 +96,34 @@ float getDensity()
 {
     return _density;
 }
-namespace ads
-{
-void AdsManager::nativeInit()
-{
 
-}
-
-float AdsManager::getDeviceDensity()
-{
-    return getDensity();
-}
-}
 
 void Browser::openWebURL(const std::string& url)
 {
-    CCLog("Open Web url: %s", url.c_str());
+    cocos2d::CCLog("Open Web url: %s", url.c_str());
 }
 void Browser::openMarketItem(const std::string& item_id)
 {
-    CCLog("Open market item: %s", item_id.c_str());
+    cocos2d::CCLog("Open market item: %s", item_id.c_str());
 }
 void Browser::sendMail(const std::string& email, const std::string& subject)
 {
-    CCLog("Send letter: %s (%s)", email.c_str(), subject.c_str());
+    cocos2d::CCLog("Send letter: %s (%s)", email.c_str(), subject.c_str());
 }
 
 Distributor::Store Distributor::getCurrentStore()
 {
-    return Distributor::GooglePlay;
+    return Distributor::SamsungStore;
 }
+
+#define AD_ADS_NOSIZE
+#include <ADLib/Device/ADAds_NoAds.cpp>
+cocos2d::CCSize ADAds::Platform::getBannerSize(const BannerType& type)
+{
+    cocos2d::CCSize base (468, 60);
+    if(type == "BANNER")
+        base = cocos2d::CCSize(320, 50);
+
+    return cocos2d::CCSize(base.width * getDensity(), base.height * getDensity());
+}
+

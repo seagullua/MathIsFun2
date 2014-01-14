@@ -3,7 +3,7 @@
 using namespace cocos2d;
 
 void PopUpWindow::closeWindow(CCObject* obj_callback,
-                 cocos2d::SEL_CallFunc callfunc_callback)
+                              cocos2d::SEL_CallFunc callfunc_callback)
 {
 
     CCSize visibleSize = Screen::getVisibleSize();
@@ -51,8 +51,8 @@ PopUpWindow::~PopUpWindow()
 
 
 PopUpWindow::PopUpWindow(Content* content,
-            CCObject* obj_close_callback,
-            cocos2d::SEL_CallFunc callfunc_close_callback)
+                         CCObject* obj_close_callback,
+                         cocos2d::SEL_CallFunc callfunc_close_callback)
     : _content(content), _close_callback_obj(obj_close_callback), _close_callback_fun(callfunc_close_callback)
 {
     _content->autorelease();
@@ -149,7 +149,7 @@ void PopUpWindow::Content::closeWindow(
 
 
 void PopUpWindow::Content::perform_init(cocos2d::CCNode* parent,
-                  PopUpWindow* window)
+                                        PopUpWindow* window)
 {
     _parent_window = window;
     onCreate(parent);
@@ -167,7 +167,7 @@ PopUpWindowManager::PopUpWindowManager(cocos2d::CCNode* parent)
 }
 
 void PopUpWindowManager::closeWindow(cocos2d::CCObject* obj_callback,
-                 cocos2d::SEL_CallFunc callfunc_callback)
+                                     cocos2d::SEL_CallFunc callfunc_callback)
 {
     if(_opened_window)
     {
@@ -193,7 +193,12 @@ void PopUpWindowManager::showBanners()
     for(unsigned int i=0; i<_banners.size(); ++i)
     {
         ads::Banner* b = _banners[i];
-        b->showAdsLater(0.3f);
+        _parent->runAction(
+                    CCSequence::createWithTwoActions(
+                        CCDelayTime::create(0.3f),
+                        CCCallFunc::create(b,
+                                           callfunc_selector(
+                                               ADAds::Banner::showAds))));
     }
 }
 
@@ -223,15 +228,15 @@ PopUpWindow* PopUpWindowManager::openWindow(PopUpWindow::Content* content)
     return window;
 }
 
- void PopUpWindowManager::do_openWindow(PopUpWindow* window)
- {
-     setMenusAvaliablitity(false);
-     hideBanners();
-     _opened_window = window;
-     window->showWindow();
-     _parent->addChild(window);
-     window->release();
- }
+void PopUpWindowManager::do_openWindow(PopUpWindow* window)
+{
+    setMenusAvaliablitity(false);
+    hideBanners();
+    _opened_window = window;
+    window->showWindow();
+    _parent->addChild(window);
+    window->release();
+}
 
 void PopUpWindowManager::onLastClosed()
 {

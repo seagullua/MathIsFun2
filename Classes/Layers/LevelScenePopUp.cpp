@@ -56,20 +56,20 @@ bool LevelScenePopUp::init()
     float move_up = 0;
     CCSize banner_size(visibleSize.width*0.9, max_space - banner_padding);
 
-    _pause_banner = ads::AdsManager::getInstance().getBanner(banner_size);
-    if(_pause_banner)
-    {
-        _parent->getParentScene()->addChild(_pause_banner);
-        _pause_banner->setAnchorPoint(ccp(0.5,0));
-        _pause_banner->setPosition(origin.x + visibleSize.width/2,
-                                   origin.y + banner_padding);
-        _pause_banner->showAds();
+//    _pause_banner = ads::AdsManager::getInstance().getBanner(banner_size);
+//    if(_pause_banner)
+//    {
+//        _parent->getParentScene()->addChild(_pause_banner);
+//        _pause_banner->setAnchorPoint(ccp(0.5,0));
+//        _pause_banner->setPosition(origin.x + visibleSize.width/2,
+//                                   origin.y + banner_padding);
+//        //_pause_banner->showAds();
 
-        float banner_height = _pause_banner->getContentSize().height + banner_padding;
-        if(banner_height > free_space)
-            move_up = banner_height - free_space;
-        zone_margin = move_up;
-    }
+//        float banner_height = _pause_banner->getContentSize().height + banner_padding;
+//        if(banner_height > free_space)
+//            move_up = banner_height - free_space;
+//        zone_margin = move_up;
+//    }
 
 
     _sheet_target_position = ccp(visibleSize.width/2+origin.x,
@@ -285,8 +285,8 @@ bool LevelScenePopUp::init()
 
 void LevelScenePopUp::hideMe(CCCallFunc* callback)
 {
-    if(_pause_banner)
-        _pause_banner->hideAds();
+//    if(_pause_banner)
+//        _pause_banner->hideAds();
 
     //Get the size of the screen we can see
     CCSize visibleSize = Screen::getVisibleSize();

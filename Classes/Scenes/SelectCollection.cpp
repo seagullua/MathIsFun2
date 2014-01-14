@@ -733,7 +733,7 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
     if(_bottom_banner)
     {
         _bottom_banner->setPosition(collections_target_position.x+scroll_view_size.width/2, origin.y+banner_padding);
-        _bottom_banner->showAds();
+        //_bottom_banner->showAds();
     }
 
     _collections_scroll_view->setPosition(2*visibleSize.width,
@@ -784,7 +784,7 @@ void SelectCollection::hideEverything(CCCallFunc *callback)
         _last_scroll_view_offset = _collections_scroll_view->getContentOffset();
 
     if(_bottom_banner)
-        _bottom_banner->hideAds();
+        _bottom_banner->removeFromParent();
 
     _pop_up_manager.closeWindow();
     _last_scene_ptr = 0;

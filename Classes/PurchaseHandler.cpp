@@ -79,7 +79,7 @@ void PurchaseHandler::marketPurchase(string& itemId)
     {
         if(!RW::isAdsDisabled())
         {
-            ads::AdsManager::getInstance().stopAllAdsCurrentSeanse();
+            ads::AdsManager::getInstance().disableAds();
             RW::disableAds();
 
             if (itemId == Store::ITEM_KILL_ADS)

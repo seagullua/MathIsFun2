@@ -134,7 +134,7 @@ bool SelectLevel::init()
 void SelectLevel::hideEverything(cocos2d::CCCallFunc *callback)
 {
     if(_bottom_banner)
-        _bottom_banner->hideAds();
+        _bottom_banner->removeFromParent();
     CCFadeTo* logo_fade = CCFadeTo::create(0.15f, 0);
     _menu_name->runAction(logo_fade);
 
@@ -214,7 +214,6 @@ void SelectLevel::buildLevelsTiles()
         _bottom_banner->setAnchorPoint(ccp(0.5, 0));
         _bottom_banner->setPosition(levels_menu->getPositionX() + zone_size.width/2,
                                     origin.y + banner_padding);
-        _bottom_banner->showAds();
     }
     levels_menu->setContentSize(zone_size);
     //Load images to get the size

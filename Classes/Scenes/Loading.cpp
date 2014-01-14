@@ -133,7 +133,7 @@ void Loading::initRW()
 #endif
 
     if(RW::isAdsDisabled())
-        ads::AdsManager::getInstance().stopAllAdsCurrentSeanse();
+        ads::AdsManager::getInstance().disableAds();
 
 
 }

@@ -281,7 +281,7 @@ bool LevelScene::init()
         _top_banner->setAnchorPoint(ccp(0.5, 0.5));
         _top_banner->setPositionX(top_zone_start + top_zone.width/2);
         _top_banner->setPositionY(origin.y + visibleSize.height - 98.5f/scaled);
-        _top_banner->showAds();
+        //_top_banner->showAds();
         _pop_up_manager.addBannerToAutoDisable(_top_banner);
     }
 
@@ -557,7 +557,11 @@ void LevelScene::showMe()
 {
     if(_top_banner)
     {
-        _top_banner->showAdsLater(0.3f);
+        this->runAction(CCSequence::createWithTwoActions(
+                            CCDelayTime::create(0.3f),
+                            CCCallFunc::create(_top_banner,
+                                               callfunc_selector(
+                                                   ADAds::Banner::showAds))));
     }
     _last_scene = this;
     //CCFadeTo* play_hide = CCFadeTo::create(0.3f, 0);
