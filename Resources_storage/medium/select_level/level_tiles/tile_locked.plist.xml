@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>tile_locked.png</texture>
+	<sheet>tile_locked.plist</sheet>
+	
+	<image>lt_locked.png</image>
+</spritesheet>

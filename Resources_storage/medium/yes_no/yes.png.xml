@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>yes.png</name>
+	<background>background.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Yes</value>
+				<x>25</x>
+				<y>20</y>
+				
+				<width>150</width>
+				<height>80</height>
+				
+				<font>mateur.ttf</font>
+				<color>#443b38</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Да</value>
+				<x>25</x>
+				<y>20</y>
+				
+				<width>150</width>
+				<height>80</height>
+				
+				<font>mateur.ttf</font>
+				<color>#443b38</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>core.yes</t></value>
+				<x>25</x>
+				<y>20</y>
+				
+				<width>150</width>
+				<height>80</height>
+				
+				<font><t>font</t></font>
+				<color>#443b38</color>
+			</text>
+		</uu>
+	</layer>
+</image>

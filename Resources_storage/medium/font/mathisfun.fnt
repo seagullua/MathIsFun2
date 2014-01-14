@@ -1,0 +1,23 @@
+info face="Arial" size=32 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=147 base=26 scaleW=614 scaleH=449 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="mathisfun.png"
+chars count=19
+char id=48	x=2	y=2	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=49	x=104	y=2	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=50	x=206	y=2	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=51	x=308	y=2	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=52	x=410	y=2	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=53	x=512	y=2	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=54	x=2	y=151	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=55	x=104	y=151	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=56	x=206	y=151	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=57	x=308	y=151	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=41	x=410	y=151	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=40	x=512	y=151	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=32	x=2	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=42	x=104	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=47	x=206	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=45	x=308	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=43	x=410	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=95	x=2	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15
+char id=61	x=512	y=300	width=100	height=147	xoffset=0	yoffset=0	xadvance=100	page=0	chnl=15

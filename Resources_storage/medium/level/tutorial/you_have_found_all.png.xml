@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>you_have_found_all.{lang}.png</name>
+	<background>you_have_found_all.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>You have found\nall solutions</value> 
+				<x>0</x>
+				<y>50</y>
+				<width>283</width>
+				<height>68</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#ff7e00</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Вы нашли\nвсе решения</value> 
+				<x>0</x>
+				<y>50</y>
+				<width>283</width>
+				<height>68</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#ff7e00</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>tutorial.all_solutions</t></value> 
+				<x>0</x>
+				<y>50</y>
+				<width>283</width>
+				<height>68</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#ff7e00</color>
+			</text>
+		</uu>
+	</layer>
+</image>

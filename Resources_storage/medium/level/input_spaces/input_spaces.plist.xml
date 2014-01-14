@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>input_space.png</texture>
+	<sheet>input_space.plist</sheet>
+	
+	<image>selected.png</image>
+	<image>operation.png</image>
+	<image>digit.png</image>
+	
+	<image>any.png</image>
+	<image>dig_op.png</image>
+	<image>dig_par.png</image>
+	
+	<image>op_par.png</image>
+	
+	<image>parenthesis.png</image>
+	
+</spritesheet>

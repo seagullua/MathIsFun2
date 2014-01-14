@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>buy_all_button.png</name>
+	<background>background2.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Buy All</value>
+				<x>25</x>
+				<y>20</y>
+				<width>250</width>
+				<height>46</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#f11f09</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Купить Все</value>
+				<x>25</x>
+				<y>20</y>
+				<width>250</width>
+				<height>46</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#f11f09</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>collections.buy.all</t></value>
+				<x>25</x>
+				<y>20</y>
+				<width>250</width>
+				<height>46</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#f11f09</color>
+			</text>
+		</uu>
+	</layer>
+	<layer>
+		<en>
+			<text>
+				<value>$1,99 Zebra Offer</value>
+				<x>25</x>
+				<y>65</y>
+				<width>250</width>
+				<height>25</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#d31400</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>$1,99 Спецпредложение</value>
+				<x>25</x>
+				<y>65</y>
+				<width>250</width>
+				<height>25</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#d31400</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value>$1,99</value>
+				<x>25</x>
+				<y>65</y>
+				<width>250</width>
+				<height>25</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#d31400</color>
+			</text>
+		</uu>
+	</layer>
+	
+</image>

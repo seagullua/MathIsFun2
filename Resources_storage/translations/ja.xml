@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+<pair>
+	<source>font</source>
+	<destination>XXXX</destination>
+</pair>
+<pair>
+	<source>menu.play</source>
+	<destination>再生する</destination>
+</pair>
+<pair>
+	<source>menu.settings</source>
+	<destination>設定</destination>
+</pair>
+<pair>
+	<source>menu.quite</source>
+	<destination>やめる？本当に宜しいですか？</destination>
+</pair>
+<pair>
+	<source>settings.title</source>
+	<destination>設定</destination>
+</pair>
+<pair>
+	<source>settings.expert_mode</source>
+	<destination>エキスパートモード</destination>
+</pair>
+<pair>
+	<source>settings.sound</source>
+	<destination>サウンドエフェクト</destination>
+</pair>
+<pair>
+	<source>settings.music</source>
+	<destination>音楽</destination>
+</pair>
+<pair>
+	<source>settings.developers</source>
+	<destination>開発者</destination>
+</pair>
+<pair>
+	<source>settings.reset_progress</source>
+	<destination>保存されたデータを削除する</destination>
+</pair>
+<pair>
+	<source>settings.restore_purchases</source>
+	<destination>購入は復元</destination>
+</pair>
+<pair>
+	<source>settings.delete_progress</source>
+	<destination>一掃？本当に宜しいですか？</destination>
+</pair>
+<pair>
+	<source>core.yes</source>
+	<destination>うん！</destination>
+</pair>
+<pair>
+	<source>core.no</source>
+	<destination>ない！</destination>
+</pair>
+<pair>
+	<source>developers.title</source>
+	<destination>開発者</destination>
+</pair>
+<pair>
+	<source>developers.send_email</source>
+	<destination>開発者への手紙</destination>
+</pair>
+<pair>
+	<source>collections.title</source>
+	<destination>コレクション</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps</source>
+	<destination>足りないスタンプ。</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.unlock_all</source>
+	<destination>開きます</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.play_more</source>
+	<destination>キャンセルする</destination>
+</pair>
+<pair>
+	<source>collections.more_levels.fix</source>
+	<destination>複数のタスク</destination>
+</pair>
+<pair>
+	<source>collections.locked</source>
+	<destination>閉店</destination>
+</pair>
+<pair>
+	<source>collections.easy</source>
+	<destination>容易</destination>
+</pair>
+<pair>
+	<source>collections.medium</source>
+	<destination>難しい</destination>
+</pair>
+<pair>
+	<source>collections.hard.fix</source>
+	<destination>一番難しい</destination>
+</pair>
+<pair>
+	<source>collections.very_hard</source>
+	<destination>さらに困難</destination>
+</pair>
+<pair>
+	<source>collections.buy.buy_one_or_all</source>
+	<destination>コレクションを購入</destination>
+</pair>
+<pair>
+	<source>collections.buy.offer</source>
+	<destination>特別オファー\n - すべてのコレクションを購入\n -  50％の割引\n - 無料アップデート</destination>
+</pair>
+<pair>
+	<source>collections.buy.one</source>
+	<destination>このコレクション</destination>
+</pair>
+<pair>
+	<source>collections.buy.all</source>
+	<destination>すべてのコレクション</destination>
+</pair>
+<pair>
+	<source>collections.col100</source>
+	<destination>空の桁</destination>
+</pair>
+<pair>
+	<source>collections.col200</source>
+	<destination>山の冒険</destination>
+</pair>
+<pair>
+	<source>collections.col300</source>
+	<destination>真夜中に計算</destination>
+</pair>
+<pair>
+	<source>collections.col400</source>
+	<destination>超高層ビルと数字</destination>
+</pair>
+<pair>
+	<source>collections.col500</source>
+	<destination>橋の上の数字</destination>
+</pair>
+<pair>
+	<source>collections.col600</source>
+	<destination>単純な数字</destination>
+</pair>
+<pair>
+	<source>collections.col1000</source>
+	<destination>大きな風船</destination>
+</pair>
+<pair>
+	<source>collections.col2000</source>
+	<destination>森の中の花</destination>
+</pair>
+<pair>
+	<source>collections.col3000.fix</source>
+	<destination>脳のための陸上競技</destination>
+</pair>
+<pair>
+	<source>collections.col4000</source>
+	<destination>新鮮な果物</destination>
+</pair>
+<pair>
+	<source>collections.junior.col100</source>
+	<destination>キャンディーの城</destination>
+</pair>
+<pair>
+	<source>collections.junior.col201</source>
+	<destination>チョコレート工場</destination>
+</pair>
+<pair>
+	<source>collections.junior.col301</source>
+	<destination>フィールド上の果物</destination>
+</pair>
+<pair>
+	<source>collections.junior.col401</source>
+	<destination>おいしいウェーハ</destination>
+</pair>
+<pair>
+	<source>collections.junior.col501</source>
+	<destination>夏の夢</destination>
+</pair>
+<pair>
+	<source>collections.junior.col601</source>
+	<destination>ミルクセーキ</destination>
+</pair>
+<pair>
+	<source>collections.store</source>
+	<destination>ゲームストア</destination>
+</pair>
+<pair>
+	<source>level.title</source>
+	<destination>タスク</destination>
+</pair>
+<pair>
+	<source>tutorial.touch_space</source>
+	<destination>ここをクリック</destination>
+</pair>
+<pair>
+	<source>tutorial.select_digit</source>
+	<destination>シンボルを選択</destination>
+</pair>
+<pair>
+	<source>tutorial.select_symbol</source>
+	<destination>シンボルを選択</destination>
+</pair>
+<pair>
+	<source>tutorial.all_solutions</source>
+	<destination>あなたは、すべてのソリューションを発見した</destination>
+</pair>
+<pair>
+	<source>tutorial.one_more_solution</source>
+	<destination>もう一つの解決策が存在する</destination>
+</pair>
+<pair>
+	<source>tutorial.find_it</source>
+	<destination>この解決策を見つけることを試みる</destination>
+</pair>
+<pair>
+	<source>tutorial.already_found</source>
+	<destination>この溶液は、既に判明している。別の解決策が存在する。</destination>
+</pair>
+<pair>
+	<source>tutorial.no_more_solutions</source>
+	<destination>これ以上のソリューション</destination>
+</pair>
+<pair>
+	<source>level.pop_up.levels</source>
+	<destination>タスク</destination>
+</pair>
+<pair>
+	<source>level.pop_up.next_level</source>
+	<destination>次のタスク</destination>
+</pair>
+<pair>
+	<source>level.pop_up.find_more</source>
+	<destination>ソリューションのより</destination>
+</pair>
+<pair>
+	<source>level.menu.resume</source>
+	<destination>キャンセルする</destination>
+</pair>
+<pair>
+	<source>level.menu.restart</source>
+	<destination>再びプレー</destination>
+</pair>
+<pair>
+	<source>level.menu.skip</source>
+	<destination>このタスクをスキップ</destination>
+</pair>
+<pair>
+	<source>level.menu.found_solutions</source>
+	<destination>既知の解決策</destination>
+</pair>
+<pair>
+	<source>level.menu.levels</source>
+	<destination>タスク</destination>
+</pair>
+<pair>
+	<source>level.hints.get_hints</source>
+	<destination>より多くのヒントを得る。</destination>
+</pair>
+<pair>
+	<source>level.hints.offer</source>
+	<destination>特別オファー\n -  1000から95までパーセント割引</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.no_hints</source>
+	<destination>これ以上のヒント</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.tomorrow</source>
+	<destination>もっとヒント明日。</destination>
+</pair>
+<pair>
+	<source>translation.poll</source>
+	<destination>あなたの翻訳が好きですか？\n\n</destination>
+</pair>
+</translations>

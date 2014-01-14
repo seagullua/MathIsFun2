@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>Restore_purchases.png</name>
+	<background>background.png</background>
+	<layer>
+		<!--<en>
+			<image>
+				<file>restore_purchases_en.png</file>
+				<x>0</x>
+				<y>0</y>
+			</image>
+		</en>-->
+		<ru>
+			<text>
+				<value>Восстановить покупки</value>
+				<x>0</x>
+				<y>10</y>
+				
+				<width>400</width>
+				<height>55</height>
+				
+				<font>mateur.ttf</font>
+				<color>#519fee</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>settings.restore_purchases</t></value>
+				<x>0</x>
+				<y>10</y>
+				
+				<width>400</width>
+				<height>55</height>
+				
+				<font><t>font</t></font>
+				<color>#519fee</color>
+			</text>
+		</uu>
+	</layer>
+</image>

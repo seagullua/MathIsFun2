@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>Found_Solutions.png</name>
+	<background>background.png</background>
+	<layer>
+		<!--<en>
+			<image>
+				<file>Found_Solutions_en.png</file>
+				<x>0</x>
+				<y>0</y>
+			</image>
+		</en>-->
+		<ru>
+			<text>
+				<value>Все решения</value>
+				<x>30</x>
+				<y>0</y>
+				
+				<width>340</width>
+				<height>100</height>
+				
+				<font>mateur.ttf</font>
+				<color>#2375ca</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>level.menu.found_solutions</t></value>
+				<x>30</x>
+				<y>20</y>
+				
+				<width>340</width>
+				<height>80</height>
+				
+				<font><t>font</t></font>
+				<color>#2375ca</color>
+			</text>
+		</uu>
+	</layer>
+</image>

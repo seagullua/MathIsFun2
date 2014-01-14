@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+<pair>
+	<source>font</source>
+	<destination>xxxx</destination>
+</pair>
+<pair>
+	<source>menu.play</source>
+	<destination>Spelen</destination>
+</pair>
+<pair>
+	<source>menu.settings</source>
+	<destination>Instellingen</destination>
+</pair>
+<pair>
+	<source>menu.quite</source>
+	<destination>Quit? weet je het zeker?</destination>
+</pair>
+<pair>
+	<source>settings.title</source>
+	<destination>Instellingen</destination>
+</pair>
+<pair>
+	<source>settings.expert_mode</source>
+	<destination>Expert-modus</destination>
+</pair>
+<pair>
+	<source>settings.sound</source>
+	<destination>Geluidseffecten</destination>
+</pair>
+<pair>
+	<source>settings.music</source>
+	<destination>Muziek</destination>
+</pair>
+<pair>
+	<source>settings.developers</source>
+	<destination>Ontwikkelaars</destination>
+</pair>
+<pair>
+	<source>settings.reset_progress</source>
+	<destination>Om de opgeslagen gegevens te verwijderen</destination>
+</pair>
+<pair>
+	<source>settings.restore_purchases</source>
+	<destination>Aankopen te herstellen</destination>
+</pair>
+<pair>
+	<source>settings.delete_progress</source>
+	<destination>Wegvagen? weet je het zeker?</destination>
+</pair>
+<pair>
+	<source>core.yes</source>
+	<destination>Yes!</destination>
+</pair>
+<pair>
+	<source>core.no</source>
+	<destination>Nee!</destination>
+</pair>
+<pair>
+	<source>developers.title</source>
+	<destination>Ontwikkelaars</destination>
+</pair>
+<pair>
+	<source>developers.send_email</source>
+	<destination>Brief aan ontwikkelaars</destination>
+</pair>
+<pair>
+	<source>collections.title</source>
+	<destination>Collecties</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps</source>
+	<destination>Niet genoeg stempels.</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.unlock_all</source>
+	<destination>Te openen</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.play_more</source>
+	<destination>Om te annuleren</destination>
+</pair>
+<pair>
+	<source>collections.more_levels.fix</source>
+	<destination>Meer taken</destination>
+</pair>
+<pair>
+	<source>collections.locked</source>
+	<destination>Gesloten</destination>
+</pair>
+<pair>
+	<source>collections.easy</source>
+	<destination>Gemakkelijk</destination>
+</pair>
+<pair>
+	<source>collections.medium</source>
+	<destination>Harder</destination>
+</pair>
+<pair>
+	<source>collections.hard.fix</source>
+	<destination>Het hardste</destination>
+</pair>
+<pair>
+	<source>collections.very_hard</source>
+	<destination>Nog moeilijker</destination>
+</pair>
+<pair>
+	<source>collections.buy.buy_one_or_all</source>
+	<destination>Koop een collectie</destination>
+</pair>
+<pair>
+	<source>collections.buy.offer</source>
+	<destination>Speciale aanbieding\n- Kopen alle collecties\n- 50% korting\n- Gratis updates</destination>
+</pair>
+<pair>
+	<source>collections.buy.one</source>
+	<destination>Deze collectie</destination>
+</pair>
+<pair>
+	<source>collections.buy.all</source>
+	<destination>Alle collecties</destination>
+</pair>
+<pair>
+	<source>collections.col100</source>
+	<destination>Cijfers in de lucht</destination>
+</pair>
+<pair>
+	<source>collections.col200</source>
+	<destination>Avonturen in de bergen</destination>
+</pair>
+<pair>
+	<source>collections.col300</source>
+	<destination>Berekeningen om middernacht</destination>
+</pair>
+<pair>
+	<source>collections.col400</source>
+	<destination>Wolkenkrabber en cijfers</destination>
+</pair>
+<pair>
+	<source>collections.col500</source>
+	<destination>Cijfers op de brug</destination>
+</pair>
+<pair>
+	<source>collections.col600</source>
+	<destination>Eenvoudige nummers</destination>
+</pair>
+<pair>
+	<source>collections.col1000</source>
+	<destination>Grote ballonnen</destination>
+</pair>
+<pair>
+	<source>collections.col2000</source>
+	<destination>Bloemen in het bos</destination>
+</pair>
+<pair>
+	<source>collections.col3000.fix</source>
+	<destination>Atletiek voor hersenen</destination>
+</pair>
+<pair>
+	<source>collections.col4000</source>
+	<destination>Verse vruchten</destination>
+</pair>
+<pair>
+	<source>collections.junior.col100</source>
+	<destination>Kasteel van snoepjes</destination>
+</pair>
+<pair>
+	<source>collections.junior.col201</source>
+	<destination>Chocoladefabriek</destination>
+</pair>
+<pair>
+	<source>collections.junior.col301</source>
+	<destination>Vruchten op het veld</destination>
+</pair>
+<pair>
+	<source>collections.junior.col401</source>
+	<destination>Lekkere wafels</destination>
+</pair>
+<pair>
+	<source>collections.junior.col501</source>
+	<destination>Zomer dromen</destination>
+</pair>
+<pair>
+	<source>collections.junior.col601</source>
+	<destination>Milkshake</destination>
+</pair>
+<pair>
+	<source>collections.store</source>
+	<destination>Spel op te slaan</destination>
+</pair>
+<pair>
+	<source>level.title</source>
+	<destination>Taken</destination>
+</pair>
+<pair>
+	<source>tutorial.touch_space</source>
+	<destination>Klik hier</destination>
+</pair>
+<pair>
+	<source>tutorial.select_digit</source>
+	<destination>Kiezen voor een symbool</destination>
+</pair>
+<pair>
+	<source>tutorial.select_symbol</source>
+	<destination>Kiezen voor een symbool</destination>
+</pair>
+<pair>
+	<source>tutorial.all_solutions</source>
+	<destination>U alle oplossingen hebt gevonden</destination>
+</pair>
+<pair>
+	<source>tutorial.one_more_solution</source>
+	<destination>Een meer oplossingen bestaat</destination>
+</pair>
+<pair>
+	<source>tutorial.find_it</source>
+	<destination>Probeer deze oplossing</destination>
+</pair>
+<pair>
+	<source>tutorial.already_found</source>
+	<destination>Deze oplossing is al gevonden. andere oplossing bestaat.</destination>
+</pair>
+<pair>
+	<source>tutorial.no_more_solutions</source>
+	<destination>Niet meer oplossingen</destination>
+</pair>
+<pair>
+	<source>level.pop_up.levels</source>
+	<destination>Taken</destination>
+</pair>
+<pair>
+	<source>level.pop_up.next_level</source>
+	<destination>Volgende taak</destination>
+</pair>
+<pair>
+	<source>level.pop_up.find_more</source>
+	<destination>Meer oplossingen</destination>
+</pair>
+<pair>
+	<source>level.menu.resume</source>
+	<destination>Om te annuleren</destination>
+</pair>
+<pair>
+	<source>level.menu.restart</source>
+	<destination>Opnieuw te spelen</destination>
+</pair>
+<pair>
+	<source>level.menu.skip</source>
+	<destination>Sla deze taak</destination>
+</pair>
+<pair>
+	<source>level.menu.found_solutions</source>
+	<destination>Bekende oplossingen</destination>
+</pair>
+<pair>
+	<source>level.menu.levels</source>
+	<destination>Taken</destination>
+</pair>
+<pair>
+	<source>level.hints.get_hints</source>
+	<destination>Krijgen meer tips.</destination>
+</pair>
+<pair>
+	<source>level.hints.offer</source>
+	<destination>Speciale aanbieding\n- 1000-95% korting</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.no_hints</source>
+	<destination>Niet meer tips</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.tomorrow</source>
+	<destination>Meer tips morgen.</destination>
+</pair>
+<pair>
+	<source>translation.poll</source>
+	<destination>Hou je van de vertaling?\n\n</destination>
+</pair>
+</translations>

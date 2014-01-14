@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>developers_menu_name.{lang}.png</name>
+	<background>background.png</background>
+	<layer>
+		<!--<en>
+			<image>
+				<file>label_en.png</file>
+				<x>0</x>
+				<y>0</y>
+			</image>
+		</en>-->
+		<ru>
+			<text>
+				<value>Разработчики</value>
+				<x>0</x>
+				<y>20</y>
+				
+				<width>621</width>
+				<height>80</height>
+				
+				<font>mateur.ttf</font>
+				<color>#103da4</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>settings.developers</t></value>
+				<x>0</x>
+				<y>20</y>
+				
+				<width>621</width>
+				<height>80</height>
+				
+				<font><t>font</t></font>
+				<color>#103da4</color>
+			</text>
+		</uu>
+	</layer>
+</image>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>new_collection.png</texture>
+	<sheet>new_collection.plist</sheet>
+	
+	<image>collection_background.png</image>
+	<image>collection_line.png</image>
+	<image>collection_crown.png</image>
+	<image>difstamp_easy.png</image>
+	<image>difstamp_hard.png</image>
+	<image>difstamp_medium.png</image>
+	<image>difstamp_ultrahard.png</image>
+	<image>collection_new.png</image>
+	<image>more_levels_subimage.png</image>
+</spritesheet>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>touch_empty_space.png</name>
+	<file>touch_empty_space.png</file>
+	<!--<layer>
+		<en>
+			<text>
+				<value>Touch the\nempty space</value> 
+				<x>8</x>
+				<y>100</y>
+				<width>406</width>
+				<height>140</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#ff7e00</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Нажмите на\nпропуск</value> 
+				<x>0</x>
+				<y>100</y>
+				<width>406</width>
+				<height>157</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#ff7e00</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>tutorial.touch_space</t></value> 
+				<x>0</x>
+				<y>100</y>
+				<width>406</width>
+				<height>157</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#ff7e00</color>
+			</text>
+		</uu>
+	</layer>-->
+</image>

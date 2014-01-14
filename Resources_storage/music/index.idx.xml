@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+	<file>
+		<name>choose.wav</name>
+	</file>
+	<file>
+		<name>math_is_fun.mp3</name>
+		<platform>win8</platform>
+		<platform>ios</platform>
+		
+	</file>
+	<file>
+		<name>math_is_fun.ogg</name>
+		<platform>android</platform>
+	</file>
+	<file>
+		<name>math_is_fun.wav</name>
+		<platform>winphone8</platform>
+		<platform>android_win</platform>
+	</file>
+
+	
+</directory>

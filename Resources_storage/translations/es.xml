@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+<pair>
+	<source>font</source>
+	<destination>xxxx</destination>
+</pair>
+<pair>
+	<source>menu.play</source>
+	<destination>Jugar</destination>
+</pair>
+<pair>
+	<source>menu.settings</source>
+	<destination>Ajustes</destination>
+</pair>
+<pair>
+	<source>menu.quite</source>
+	<destination>¿Dejar de fumar ¿estás seguro</destination>
+</pair>
+<pair>
+	<source>settings.title</source>
+	<destination>Ajustes</destination>
+</pair>
+<pair>
+	<source>settings.expert_mode</source>
+	<destination>Modo experto</destination>
+</pair>
+<pair>
+	<source>settings.sound</source>
+	<destination>Efectos sonoros</destination>
+</pair>
+<pair>
+	<source>settings.music</source>
+	<destination>Música</destination>
+</pair>
+<pair>
+	<source>settings.developers</source>
+	<destination>Desarrolladores</destination>
+</pair>
+<pair>
+	<source>settings.reset_progress</source>
+	<destination>Para borrar los datos almacenados</destination>
+</pair>
+<pair>
+	<source>settings.restore_purchases</source>
+	<destination>Compras restaurar</destination>
+</pair>
+<pair>
+	<source>settings.delete_progress</source>
+	<destination>¿Eliminar ¿estás seguro</destination>
+</pair>
+<pair>
+	<source>core.yes</source>
+	<destination>Sí</destination>
+</pair>
+<pair>
+	<source>core.no</source>
+	<destination>No</destination>
+</pair>
+<pair>
+	<source>developers.title</source>
+	<destination>Desarrolladores</destination>
+</pair>
+<pair>
+	<source>developers.send_email</source>
+	<destination>Carta a los desarrolladores</destination>
+</pair>
+<pair>
+	<source>collections.title</source>
+	<destination>Colecciones</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps</source>
+	<destination>No suficientes sellos.</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.unlock_all</source>
+	<destination>Para abrir</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.play_more</source>
+	<destination>Para cancelar</destination>
+</pair>
+<pair>
+	<source>collections.more_levels.fix</source>
+	<destination>Más tareas</destination>
+</pair>
+<pair>
+	<source>collections.locked</source>
+	<destination>Cerrado</destination>
+</pair>
+<pair>
+	<source>collections.easy</source>
+	<destination>Fácil</destination>
+</pair>
+<pair>
+	<source>collections.medium</source>
+	<destination>Más difícil</destination>
+</pair>
+<pair>
+	<source>collections.hard.fix</source>
+	<destination>El más difícil</destination>
+</pair>
+<pair>
+	<source>collections.very_hard</source>
+	<destination>Aún más difícil</destination>
+</pair>
+<pair>
+	<source>collections.buy.buy_one_or_all</source>
+	<destination>Comprar una colección</destination>
+</pair>
+<pair>
+	<source>collections.buy.offer</source>
+	<destination>Oferta especial\n- Comprar todas las colecciones\n- 50% de descuento\n- Actualizaciones gratuitas</destination>
+</pair>
+<pair>
+	<source>collections.buy.one</source>
+	<destination>Esta colección</destination>
+</pair>
+<pair>
+	<source>collections.buy.all</source>
+	<destination>Todas las colecciones</destination>
+</pair>
+<pair>
+	<source>collections.col100</source>
+	<destination>Dígitos en el cielo</destination>
+</pair>
+<pair>
+	<source>collections.col200</source>
+	<destination>Aventuras en las montañas</destination>
+</pair>
+<pair>
+	<source>collections.col300</source>
+	<destination>Cálculos a la medianoche</destination>
+</pair>
+<pair>
+	<source>collections.col400</source>
+	<destination>Rascacielos y cifras</destination>
+</pair>
+<pair>
+	<source>collections.col500</source>
+	<destination>Dígitos en el puente</destination>
+</pair>
+<pair>
+	<source>collections.col600</source>
+	<destination>Números simples</destination>
+</pair>
+<pair>
+	<source>collections.col1000</source>
+	<destination>Grandes globos</destination>
+</pair>
+<pair>
+	<source>collections.col2000</source>
+	<destination>Flores en el bosque</destination>
+</pair>
+<pair>
+	<source>collections.col3000.fix</source>
+	<destination>Atletismo para el cerebro</destination>
+</pair>
+<pair>
+	<source>collections.col4000</source>
+	<destination>Frutas frescas</destination>
+</pair>
+<pair>
+	<source>collections.junior.col100</source>
+	<destination>Castillo de dulces</destination>
+</pair>
+<pair>
+	<source>collections.junior.col201</source>
+	<destination>Fábrica de chocolate</destination>
+</pair>
+<pair>
+	<source>collections.junior.col301</source>
+	<destination>Frutas en el campo</destination>
+</pair>
+<pair>
+	<source>collections.junior.col401</source>
+	<destination>Sabrosas obleas</destination>
+</pair>
+<pair>
+	<source>collections.junior.col501</source>
+	<destination>Sueños de verano</destination>
+</pair>
+<pair>
+	<source>collections.junior.col601</source>
+	<destination>Batido de leche</destination>
+</pair>
+<pair>
+	<source>collections.store</source>
+	<destination>Tienda de juegos</destination>
+</pair>
+<pair>
+	<source>level.title</source>
+	<destination>Tareas</destination>
+</pair>
+<pair>
+	<source>tutorial.touch_space</source>
+	<destination>Haga clic aquí</destination>
+</pair>
+<pair>
+	<source>tutorial.select_digit</source>
+	<destination>Elegir un símbolo</destination>
+</pair>
+<pair>
+	<source>tutorial.select_symbol</source>
+	<destination>Elegir un símbolo</destination>
+</pair>
+<pair>
+	<source>tutorial.all_solutions</source>
+	<destination>Que haya encontrado todas las soluciones</destination>
+</pair>
+<pair>
+	<source>tutorial.one_more_solution</source>
+	<destination>Uno soluciones más existe</destination>
+</pair>
+<pair>
+	<source>tutorial.find_it</source>
+	<destination>Tratar de encontrar la solución</destination>
+</pair>
+<pair>
+	<source>tutorial.already_found</source>
+	<destination>Esta solución ha sido ya encontrado. existe otra solución.</destination>
+</pair>
+<pair>
+	<source>tutorial.no_more_solutions</source>
+	<destination>Hay más soluciones</destination>
+</pair>
+<pair>
+	<source>level.pop_up.levels</source>
+	<destination>Tareas</destination>
+</pair>
+<pair>
+	<source>level.pop_up.next_level</source>
+	<destination>Siguiente tarea</destination>
+</pair>
+<pair>
+	<source>level.pop_up.find_more</source>
+	<destination>Más de soluciones</destination>
+</pair>
+<pair>
+	<source>level.menu.resume</source>
+	<destination>Para cancelar</destination>
+</pair>
+<pair>
+	<source>level.menu.restart</source>
+	<destination>Jugar de nuevo</destination>
+</pair>
+<pair>
+	<source>level.menu.skip</source>
+	<destination>Omitir esta tarea</destination>
+</pair>
+<pair>
+	<source>level.menu.found_solutions</source>
+	<destination>Soluciones conocidas</destination>
+</pair>
+<pair>
+	<source>level.menu.levels</source>
+	<destination>Tareas</destination>
+</pair>
+<pair>
+	<source>level.hints.get_hints</source>
+	<destination>Obtener más consejos.</destination>
+</pair>
+<pair>
+	<source>level.hints.offer</source>
+	<destination>Oferta especial\n- 1000 - 95% de descuento</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.no_hints</source>
+	<destination>Hay más consejos</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.tomorrow</source>
+	<destination>Más sugerencias de mañana.</destination>
+</pair>
+<pair>
+	<source>translation.poll</source>
+	<destination>¿Qué le parece la traducción\n\n</destination>
+</pair>
+</translations>

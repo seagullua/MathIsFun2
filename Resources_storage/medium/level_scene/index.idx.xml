@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+	<file>
+		<name>ellements.plist.xml</name>
+	</file>
+	<file>
+		<name>hint_window/hint_buttons.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>hint_window/lamp.png</name>
+	</file>
+	<file>
+		<name>hint_window/hint_buttons_junior.plist.xml</name>
+		<lang>1</lang>
+		<project>junior</project>
+	</file>
+	<file>
+		<name>hint_window/hint_title.png.xml</name>
+		<lang>1</lang>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>hint_window/hint_title_junior.png.xml</name>
+		<lang>1</lang>
+		<project>junior</project>
+	</file>
+</directory>

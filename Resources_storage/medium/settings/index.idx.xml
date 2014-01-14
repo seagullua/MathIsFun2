@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+	<file>
+		<name>developers/settings_developers_ad.plist.xml</name>
+	</file>
+	<file>
+		<name>developers/developers_menu_name.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>developers/contact_developers_menu.plist.xml</name>
+	</file>
+	<file>
+		<name>menu/settings_menu.plist.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>menu/settings_menu_new.plist.xml</name>
+	</file>
+	<file>
+		<name>menu_name/Settings.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>developers/game_version.png.xml</name>
+	</file>
+</directory>

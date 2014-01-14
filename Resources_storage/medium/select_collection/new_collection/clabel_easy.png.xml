@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>clabel_easy.{lang}.png</name>
+	<background>background2.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Easy</value>
+				<x>11</x>
+				<y>14</y>
+				<width>119</width>
+				<height>32</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#3d3f40</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Легко</value>
+				<x>11</x>
+				<y>14</y>
+				<width>119</width>
+				<height>32</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#3d3f40</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>collections.easy</t></value>
+				<x>11</x>
+				<y>14</y>
+				<width>129</width>
+				<height>39</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#3d3f40</color>
+			</text>
+		</uu>
+	</layer>
+</image>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>buy_one_button.png</name>
+	<background>background1.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Buy One</value>
+				<x>25</x>
+				<y>20</y>
+				<width>250</width>
+				<height>46</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#048504</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Купить Одну</value>
+				<x>25</x>
+				<y>17</y>
+				<width>250</width>
+				<height>55</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#048504</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>collections.buy.one</t></value>
+				<x>25</x>
+				<y>17</y>
+				<width>250</width>
+				<height>55</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#048504</color>
+			</text>
+		</uu>
+	</layer>
+	<layer>
+		<en>
+			<text>
+				<value>$0,99</value>
+				<x>25</x>
+				<y>65</y>
+				<width>250</width>
+				<height>25</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#014c01</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>$0,99</value>
+				<x>25</x>
+				<y>65</y>
+				<width>250</width>
+				<height>25</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#014c01</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value>$0,99</value>
+				<x>25</x>
+				<y>65</y>
+				<width>250</width>
+				<height>25</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#014c01</color>
+			</text>
+		</uu>
+	</layer>
+	
+</image>

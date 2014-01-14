@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>stop_level_menu.{lang}.png</texture>
+	<sheet>stop_level_menu.{lang}.plist</sheet>
+	
+	<image>Found_Solutions.png.xml</image>
+	<image>Levels.png.xml</image>
+	<image>Restart.png.xml</image>
+	<image>Resume.png.xml</image>
+	<image>Skip_level.png.xml</image>
+</spritesheet>

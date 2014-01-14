@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>developers_menu_name.{lang}.png</texture>
+	<sheet>developers_menu_name.{lang}.plist</sheet>
+	
+	<image>developers_menu_name.png.xml</image>
+</spritesheet>

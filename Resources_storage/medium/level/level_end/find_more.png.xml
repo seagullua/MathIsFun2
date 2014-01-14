@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>find_more.png</name>
+	<file>find_more_background.png</file>
+	<!--<layer>
+		<en>
+			<image>
+				<file>find_more_en.png</file>
+				<x>84</x>
+				<y>23</y> 
+			</image>
+		</en>
+		<ru>
+			<text>
+				<value>Найти ещё\nрешение</value> 
+				<x>84</x>
+				<y>20</y>
+				<width>183</width>
+				<height>70</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#12a012</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>level.pop_up.find_more</t></value> 
+				<x>84</x>
+				<y>20</y>
+				<width>183</width>
+				<height>70</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#12a012</color>
+			</text>
+		</uu>
+	</layer>-->
+</image>

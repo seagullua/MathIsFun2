@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>unlock_buttons.{lang}.png</texture>
+	<sheet>unlock_buttons.{lang}.plist</sheet>
+	
+	<image>unlock_button.png.xml</image>
+	<image>play_button.png.xml</image>
+</spritesheet>

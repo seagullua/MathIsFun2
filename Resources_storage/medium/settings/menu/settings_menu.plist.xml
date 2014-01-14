@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>settings_menu.{lang}.png</texture>
+	<sheet>settings_menu.{lang}.plist</sheet>
+	
+	<image>Developers.png.xml</image>
+	<image>Reset_progress.png.xml</image>
+	<image>Restore_purchases.png.xml</image>
+	
+</spritesheet>

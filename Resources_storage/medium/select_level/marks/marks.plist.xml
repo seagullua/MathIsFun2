@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>marks.png</texture>
+	<sheet>marks.plist</sheet>
+	
+	<image>m_blue.png</image>
+	<image>m_crown.png</image>
+	<image>m_green.png</image>
+	<image>m_none.png</image>
+	<image>m_red.png</image>
+
+</spritesheet>

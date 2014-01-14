@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>collection_logos.png</texture>
+	<sheet>collection_logos.plist</sheet>
+	
+	<image>col1.png</image>
+	<image>col2.png</image>
+	<image>col3.png</image>
+	<image>col4.png</image>
+	<image>col5.png</image>
+	<image>col6.png</image>
+	
+ 
+	<image>col2_locked.png</image>
+	<image>col3_locked.png</image>
+	<image>col4_locked.png</image>
+	<image>col5_locked.png</image>
+	<image>col6_locked.png</image>
+</spritesheet>

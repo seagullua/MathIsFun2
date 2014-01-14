@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>version.png</name>
+	<background>ver.png</background>
+	<layer>
+		<text>
+			<value>v1.50</value>
+			<x>0</x>
+			<y>0</y>
+			<width>60</width>
+			<height>30</height>
+			
+			<font>IndieFlower.ttf</font>
+			
+			<color>#103da4</color>
+		</text>
+	</layer>
+	
+	
+</image>

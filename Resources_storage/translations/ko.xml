@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+<pair>
+	<source>font</source>
+	<destination>XXXX</destination>
+</pair>
+<pair>
+	<source>menu.play</source>
+	<destination>재생</destination>
+</pair>
+<pair>
+	<source>menu.settings</source>
+	<destination>설정</destination>
+</pair>
+<pair>
+	<source>menu.quite</source>
+	<destination>종료? 당신은 확실 해요?</destination>
+</pair>
+<pair>
+	<source>settings.title</source>
+	<destination>설정</destination>
+</pair>
+<pair>
+	<source>settings.expert_mode</source>
+	<destination>전문가 모드</destination>
+</pair>
+<pair>
+	<source>settings.sound</source>
+	<destination>음향 효과</destination>
+</pair>
+<pair>
+	<source>settings.music</source>
+	<destination>음악</destination>
+</pair>
+<pair>
+	<source>settings.developers</source>
+	<destination>개발자</destination>
+</pair>
+<pair>
+	<source>settings.reset_progress</source>
+	<destination>저장된 데이터를 삭제하는 방법</destination>
+</pair>
+<pair>
+	<source>settings.restore_purchases</source>
+	<destination>구매 복원</destination>
+</pair>
+<pair>
+	<source>settings.delete_progress</source>
+	<destination>닦아? 당신은 확실 해요?</destination>
+</pair>
+<pair>
+	<source>core.yes</source>
+	<destination>그래!</destination>
+</pair>
+<pair>
+	<source>core.no</source>
+	<destination>안돼!</destination>
+</pair>
+<pair>
+	<source>developers.title</source>
+	<destination>개발자</destination>
+</pair>
+<pair>
+	<source>developers.send_email</source>
+	<destination>개발자에게 편지</destination>
+</pair>
+<pair>
+	<source>collections.title</source>
+	<destination>컬렉션</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps</source>
+	<destination>충분하지 우표입니다.</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.unlock_all</source>
+	<destination>열 수</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.play_more</source>
+	<destination>취소</destination>
+</pair>
+<pair>
+	<source>collections.more_levels.fix</source>
+	<destination>더 많은 작업</destination>
+</pair>
+<pair>
+	<source>collections.locked</source>
+	<destination>닫은</destination>
+</pair>
+<pair>
+	<source>collections.easy</source>
+	<destination>쉽게</destination>
+</pair>
+<pair>
+	<source>collections.medium</source>
+	<destination>더</destination>
+</pair>
+<pair>
+	<source>collections.hard.fix</source>
+	<destination>어려운</destination>
+</pair>
+<pair>
+	<source>collections.very_hard</source>
+	<destination>훨씬 더 힘들어</destination>
+</pair>
+<pair>
+	<source>collections.buy.buy_one_or_all</source>
+	<destination>컬렉션을 구입</destination>
+</pair>
+<pair>
+	<source>collections.buy.offer</source>
+	<destination>특별 제공\n- 모든 컬렉션을 구입\n- 50 % 할인\n- 무료 업데이트</destination>
+</pair>
+<pair>
+	<source>collections.buy.one</source>
+	<destination>이 컬렉션</destination>
+</pair>
+<pair>
+	<source>collections.buy.all</source>
+	<destination>모든 컬렉션</destination>
+</pair>
+<pair>
+	<source>collections.col100</source>
+	<destination>하늘의 자리</destination>
+</pair>
+<pair>
+	<source>collections.col200</source>
+	<destination>산 모험</destination>
+</pair>
+<pair>
+	<source>collections.col300</source>
+	<destination>자정 계산</destination>
+</pair>
+<pair>
+	<source>collections.col400</source>
+	<destination>마천루와 숫자</destination>
+</pair>
+<pair>
+	<source>collections.col500</source>
+	<destination>다리에 자리</destination>
+</pair>
+<pair>
+	<source>collections.col600</source>
+	<destination>간단한 숫자</destination>
+</pair>
+<pair>
+	<source>collections.col1000</source>
+	<destination>큰 풍선</destination>
+</pair>
+<pair>
+	<source>collections.col2000</source>
+	<destination>포리스트의 꽃</destination>
+</pair>
+<pair>
+	<source>collections.col3000.fix</source>
+	<destination>뇌 운동</destination>
+</pair>
+<pair>
+	<source>collections.col4000</source>
+	<destination>신선한 과일</destination>
+</pair>
+<pair>
+	<source>collections.junior.col100</source>
+	<destination>사탕의 성</destination>
+</pair>
+<pair>
+	<source>collections.junior.col201</source>
+	<destination>초콜릿 공장</destination>
+</pair>
+<pair>
+	<source>collections.junior.col301</source>
+	<destination>필드에 과일</destination>
+</pair>
+<pair>
+	<source>collections.junior.col401</source>
+	<destination>맛있는 웨이퍼</destination>
+</pair>
+<pair>
+	<source>collections.junior.col501</source>
+	<destination>여름의 꿈</destination>
+</pair>
+<pair>
+	<source>collections.junior.col601</source>
+	<destination>밀크 셰이크</destination>
+</pair>
+<pair>
+	<source>collections.store</source>
+	<destination>게임 가게</destination>
+</pair>
+<pair>
+	<source>level.title</source>
+	<destination>작업</destination>
+</pair>
+<pair>
+	<source>tutorial.touch_space</source>
+	<destination>여기를 클릭하십시오</destination>
+</pair>
+<pair>
+	<source>tutorial.select_digit</source>
+	<destination>기호를 선택</destination>
+</pair>
+<pair>
+	<source>tutorial.select_symbol</source>
+	<destination>기호를 선택</destination>
+</pair>
+<pair>
+	<source>tutorial.all_solutions</source>
+	<destination>당신은 모든 솔루션을 발견했습니다</destination>
+</pair>
+<pair>
+	<source>tutorial.one_more_solution</source>
+	<destination>하나 이상의 솔루션이 존재</destination>
+</pair>
+<pair>
+	<source>tutorial.find_it</source>
+	<destination>이 솔루션을 찾아보십시오</destination>
+</pair>
+<pair>
+	<source>tutorial.already_found</source>
+	<destination>이 솔루션은 이미 발견되었습니다. 또 다른 해결책은 존재한다.</destination>
+</pair>
+<pair>
+	<source>tutorial.no_more_solutions</source>
+	<destination>더 이상 해결책</destination>
+</pair>
+<pair>
+	<source>level.pop_up.levels</source>
+	<destination>작업</destination>
+</pair>
+<pair>
+	<source>level.pop_up.next_level</source>
+	<destination>다음 작업</destination>
+</pair>
+<pair>
+	<source>level.pop_up.find_more</source>
+	<destination>솔루션보다</destination>
+</pair>
+<pair>
+	<source>level.menu.resume</source>
+	<destination>취소</destination>
+</pair>
+<pair>
+	<source>level.menu.restart</source>
+	<destination>다시 재생</destination>
+</pair>
+<pair>
+	<source>level.menu.skip</source>
+	<destination>이 작업을 건너</destination>
+</pair>
+<pair>
+	<source>level.menu.found_solutions</source>
+	<destination>알려진 솔루션</destination>
+</pair>
+<pair>
+	<source>level.menu.levels</source>
+	<destination>작업</destination>
+</pair>
+<pair>
+	<source>level.hints.get_hints</source>
+	<destination>자세한 도움말을 얻을.</destination>
+</pair>
+<pair>
+	<source>level.hints.offer</source>
+	<destination>특별 제공\n- 900 - 95 % 할인</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.no_hints</source>
+	<destination>더 팁</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.tomorrow</source>
+	<destination>자세한 도움말 내일.</destination>
+</pair>
+<pair>
+	<source>translation.poll</source>
+	<destination>당신이 번역을 좋아합니까?\n\n</destination>
+</pair>
+</translations>

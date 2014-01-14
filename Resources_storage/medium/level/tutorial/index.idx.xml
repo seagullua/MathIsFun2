@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+	<file>
+		<name>no_more_solutions.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>select_digit.png.xml</name>
+		<!--<lang>1</lang>-->
+	</file>
+	<file>
+		<name>select_digit2.png.xml</name>
+		<!--<lang>1</lang>-->
+	</file>
+	<file>
+		<name>already_found.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>touch_empty_space.png.xml</name>
+		<!--<lang>1</lang>-->
+	</file>
+	<file>
+		<name>touch_empty_space2.png.xml</name>
+		<!--<lang>1</lang>-->
+	</file>
+	<file>
+		<name>you_have_found_all.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>final_step.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>buttons_tut.plist.xml</name>
+		<lang>1</lang>
+	</file>
+	
+</directory>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>select_collection.{lang}.png</name>
+	<background>background.png</background>
+	<layer>
+		<!--<en>
+			<image>
+				<file>en_label.png</file>
+				<x>33</x>
+				<y>22</y> 
+			</image>
+		</en>-->
+		<ru>
+			<text>
+				<value>Выбор  Коллекции</value>
+				<x>33</x>
+				<y>22</y>
+				<width>564</width>
+				<height>82</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#fb6319</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>collections.title</t></value>
+				<x>33</x>
+				<y>22</y>
+				<width>564</width>
+				<height>82</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#fb6319</color>
+			</text>
+		</uu>
+	</layer>
+</image>

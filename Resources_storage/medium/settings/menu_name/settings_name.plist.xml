@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>settings_name.{lang}.png</texture>
+	<sheet>settings_name.{lang}.plist</sheet>
+	
+	<image>Settings.png.xml</image>
+</spritesheet>

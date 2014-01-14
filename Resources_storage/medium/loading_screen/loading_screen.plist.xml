@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>loading_screen.png</texture>
+	<sheet>loading_screen.plist</sheet>
+	
+	<image>loading_logo.png</image>
+</spritesheet>

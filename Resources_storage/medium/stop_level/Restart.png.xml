@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>Restart.png</name>
+	<background>background.png</background>
+	<layer>
+		<!--<en>
+			<image>
+				<file>Restart_en.png</file>
+				<x>0</x>
+				<y>0</y>
+			</image>
+		</en>-->
+		<ru>
+			<text>
+				<value>Заново</value>
+				<x>30</x>
+				<y>16</y>
+				
+				<width>340</width>
+				<height>65</height>
+				
+				<font>mateur.ttf</font>
+				<color>#2375ca</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>level.menu.restart</t></value>
+				<x>30</x>
+				<y>16</y>
+				
+				<width>340</width>
+				<height>65</height>
+				
+				<font><t>font</t></font>
+				<color>#2375ca</color>
+			</text>
+		</uu>
+	</layer>
+</image>

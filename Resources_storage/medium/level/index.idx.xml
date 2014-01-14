@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+	<file>
+		<name>input_spaces/input_spaces.plist.xml</name>
+	</file>
+	<file>
+		<name>keyboard/keyboard.plist.xml</name>
+	</file>
+	<file>
+		<name>level_end/level_end.plist.xml</name>
+	</file>
+	<file>
+		<name>level_end_menu/level_end_menu.plist.xml</name>
+	</file>
+	<file>
+		<name>stamps/stamps.plist.xml</name>
+	</file>
+</directory>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+<pair>
+	<source>font</source>
+	<destination>xxxx</destination>
+</pair>
+<pair>
+	<source>menu.play</source>
+	<destination>Oynamak</destination>
+</pair>
+<pair>
+	<source>menu.settings</source>
+	<destination>Ayarları</destination>
+</pair>
+<pair>
+	<source>menu.quite</source>
+	<destination>Çıkmak? emin misin?</destination>
+</pair>
+<pair>
+	<source>settings.title</source>
+	<destination>Ayarları</destination>
+</pair>
+<pair>
+	<source>settings.expert_mode</source>
+	<destination>Uzman modu</destination>
+</pair>
+<pair>
+	<source>settings.sound</source>
+	<destination>Ses efektleri</destination>
+</pair>
+<pair>
+	<source>settings.music</source>
+	<destination>Müzik</destination>
+</pair>
+<pair>
+	<source>settings.developers</source>
+	<destination>Geliştiriciler</destination>
+</pair>
+<pair>
+	<source>settings.reset_progress</source>
+	<destination>Saklanan verileri silmeyi</destination>
+</pair>
+<pair>
+	<source>settings.restore_purchases</source>
+	<destination>Alımları geri</destination>
+</pair>
+<pair>
+	<source>settings.delete_progress</source>
+	<destination>Temizlemek? emin misin?</destination>
+</pair>
+<pair>
+	<source>core.yes</source>
+	<destination>Evet!</destination>
+</pair>
+<pair>
+	<source>core.no</source>
+	<destination>Hayır!</destination>
+</pair>
+<pair>
+	<source>developers.title</source>
+	<destination>Geliştiriciler</destination>
+</pair>
+<pair>
+	<source>developers.send_email</source>
+	<destination>Geliştiriciler için mektup</destination>
+</pair>
+<pair>
+	<source>collections.title</source>
+	<destination>Koleksiyon</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps</source>
+	<destination>Yeterli pul.</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.unlock_all</source>
+	<destination>Açmak</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.play_more</source>
+	<destination>Iptal etmek için</destination>
+</pair>
+<pair>
+	<source>collections.more_levels.fix</source>
+	<destination>Daha fazla görev</destination>
+</pair>
+<pair>
+	<source>collections.locked</source>
+	<destination>Kapalı</destination>
+</pair>
+<pair>
+	<source>collections.easy</source>
+	<destination>Kolay</destination>
+</pair>
+<pair>
+	<source>collections.medium</source>
+	<destination>Zor</destination>
+</pair>
+<pair>
+	<source>collections.hard.fix</source>
+	<destination>Zor</destination>
+</pair>
+<pair>
+	<source>collections.very_hard</source>
+	<destination>Bile zor</destination>
+</pair>
+<pair>
+	<source>collections.buy.buy_one_or_all</source>
+	<destination>Bir koleksiyon satın</destination>
+</pair>
+<pair>
+	<source>collections.buy.offer</source>
+	<destination>Özel teklif\n- Tüm koleksiyonları satın\n-% 50 indirim\n- Ücretsiz güncellemeler</destination>
+</pair>
+<pair>
+	<source>collections.buy.one</source>
+	<destination>Bu koleksiyon</destination>
+</pair>
+<pair>
+	<source>collections.buy.all</source>
+	<destination>Tüm koleksiyonları</destination>
+</pair>
+<pair>
+	<source>collections.col100</source>
+	<destination>Gökyüzünde rakam</destination>
+</pair>
+<pair>
+	<source>collections.col200</source>
+	<destination>Dağlarda macera</destination>
+</pair>
+<pair>
+	<source>collections.col300</source>
+	<destination>Gece yarısı hesapları</destination>
+</pair>
+<pair>
+	<source>collections.col400</source>
+	<destination>Gökdelen ve basamak</destination>
+</pair>
+<pair>
+	<source>collections.col500</source>
+	<destination>Köprüde rakam</destination>
+</pair>
+<pair>
+	<source>collections.col600</source>
+	<destination>Basit numaraları</destination>
+</pair>
+<pair>
+	<source>collections.col1000</source>
+	<destination>Büyük balonlar</destination>
+</pair>
+<pair>
+	<source>collections.col2000</source>
+	<destination>Ormanda çiçek</destination>
+</pair>
+<pair>
+	<source>collections.col3000.fix</source>
+	<destination>Beyin için atletizm</destination>
+</pair>
+<pair>
+	<source>collections.col4000</source>
+	<destination>Taze meyve</destination>
+</pair>
+<pair>
+	<source>collections.junior.col100</source>
+	<destination>Şekerler kale</destination>
+</pair>
+<pair>
+	<source>collections.junior.col201</source>
+	<destination>Çikolata fabrikası</destination>
+</pair>
+<pair>
+	<source>collections.junior.col301</source>
+	<destination>Alanda meyve</destination>
+</pair>
+<pair>
+	<source>collections.junior.col401</source>
+	<destination>Lezzetli gofret</destination>
+</pair>
+<pair>
+	<source>collections.junior.col501</source>
+	<destination>Yaz hayalleri</destination>
+</pair>
+<pair>
+	<source>collections.junior.col601</source>
+	<destination>Milk shake</destination>
+</pair>
+<pair>
+	<source>collections.store</source>
+	<destination>Oyun deposu</destination>
+</pair>
+<pair>
+	<source>level.title</source>
+	<destination>Görevleri</destination>
+</pair>
+<pair>
+	<source>tutorial.touch_space</source>
+	<destination>Tıklayınız</destination>
+</pair>
+<pair>
+	<source>tutorial.select_digit</source>
+	<destination>Bir sembol seçin</destination>
+</pair>
+<pair>
+	<source>tutorial.select_symbol</source>
+	<destination>Bir sembol seçin</destination>
+</pair>
+<pair>
+	<source>tutorial.all_solutions</source>
+	<destination>Tüm çözümler bulduk</destination>
+</pair>
+<pair>
+	<source>tutorial.one_more_solution</source>
+	<destination>Bir fazla çözüm mevcut</destination>
+</pair>
+<pair>
+	<source>tutorial.find_it</source>
+	<destination>Bu çözüm bulmak için deneyebilirsiniz</destination>
+</pair>
+<pair>
+	<source>tutorial.already_found</source>
+	<destination>Bu çözüm zaten bulunmuştur. başka bir çözüm var.</destination>
+</pair>
+<pair>
+	<source>tutorial.no_more_solutions</source>
+	<destination>Daha fazla çözüm</destination>
+</pair>
+<pair>
+	<source>level.pop_up.levels</source>
+	<destination>Görevleri</destination>
+</pair>
+<pair>
+	<source>level.pop_up.next_level</source>
+	<destination>Sonraki görev</destination>
+</pair>
+<pair>
+	<source>level.pop_up.find_more</source>
+	<destination>Çözümlerden daha</destination>
+</pair>
+<pair>
+	<source>level.menu.resume</source>
+	<destination>Iptal etmek için</destination>
+</pair>
+<pair>
+	<source>level.menu.restart</source>
+	<destination>Tekrar oynamak</destination>
+</pair>
+<pair>
+	<source>level.menu.skip</source>
+	<destination>Bu görevi atlamak</destination>
+</pair>
+<pair>
+	<source>level.menu.found_solutions</source>
+	<destination>Bilinen çözüm yollarının</destination>
+</pair>
+<pair>
+	<source>level.menu.levels</source>
+	<destination>Görevleri</destination>
+</pair>
+<pair>
+	<source>level.hints.get_hints</source>
+	<destination>Daha fazla ipucu olsun.</destination>
+</pair>
+<pair>
+	<source>level.hints.offer</source>
+	<destination>Özel teklif\n- 1000-1095% indirim</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.no_hints</source>
+	<destination>Daha fazla ipucu</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.tomorrow</source>
+	<destination>Daha fazla ipucu yarın.</destination>
+</pair>
+<pair>
+	<source>translation.poll</source>
+	<destination>Eğer çeviri seviyorsunuz?\n\n</destination>
+</pair>
+</translations>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>restart_tut.png</name>
+	<background>action_button.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Restart</value>
+				<x>19</x>
+				<y>26</y>
+				<width>262</width>
+				<height>63</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#2375ca</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Заново</value>
+				<x>19</x>
+				<y>26</y>
+				<width>262</width>
+				<height>63</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#2375ca</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>level.menu.restart</t></value>
+				<x>19</x>
+				<y>26</y>
+				<width>262</width>
+				<height>63</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#2375ca</color>
+			</text>
+		</uu>
+	</layer>
+	
+	
+</image>

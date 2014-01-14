@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>button_send_email.png</name>
+	<background>send_mail_background.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Send email</value>
+				<x>19</x>
+				<y>26</y>
+				<width>262</width>
+				<height>63</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#2b7fe0</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Отправить Письмо</value>
+				<x>19</x>
+				<y>26</y>
+				<width>262</width>
+				<height>63</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#2b7fe0</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>developers.send_email</t></value>
+				<x>19</x>
+				<y>26</y>
+				<width>262</width>
+				<height>63</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#2b7fe0</color>
+			</text>
+		</uu>
+	</layer>
+	
+	
+</image>

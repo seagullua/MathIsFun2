@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet>
+	<texture>stamps.png</texture>
+	<sheet>stamps.plist</sheet>
+	
+	<image>crown_st.png</image>
+	<image>empty_stamp.png</image>
+	<image>stamp_b0.png</image>
+	<image>stamp_b1.png</image>
+	<image>stamp_b2.png</image>
+	<image>stamp_b3.png</image>
+	<image>stamp_b4.png</image>
+	<image>stamp_b5.png</image>
+	
+	<image>stamp_g0.png</image>
+	<image>stamp_g1.png</image>
+	<image>stamp_g2.png</image>
+	<image>stamp_g3.png</image>
+	<image>stamp_g4.png</image>
+	
+	<image>stamp_r0.png</image>
+	<image>stamp_r1.png</image>
+	<image>stamp_r2.png</image>
+</spritesheet>

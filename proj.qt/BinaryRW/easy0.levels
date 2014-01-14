@@ -1,0 +1,18 @@
+LEVEL
+        EQUATION(5-_=3+_)
+        ADD_SOLUTION(02)
+        ADD_SOLUTION(11)
+        ADD_SOLUTION(20)
+END_LEVEL
+
+LEVEL
+        EQUATION(4*_=5-_)
+        ADD_SOLUTION(05)
+        ADD_SOLUTION(11)
+END_LEVEL
+
+LEVEL
+        EQUATION(10-_=5+4+_)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
+END_LEVEL

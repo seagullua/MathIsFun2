@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>clabel_100.{lang}.png</name>
+	<background>background.png</background>
+	<layer>
+		<en>
+			<text>
+				<value>Airy Digits</value>
+				<x>11</x>
+				<y>19</y>
+				<width>246</width>
+				<height>49</height>
+				
+				<font>IndieFlower.ttf</font>
+				
+				<color>#3d3f40</color>
+			</text>
+		</en>
+		<ru>
+			<text>
+				<value>Облачные\nВычисления</value>
+				<x>11</x>
+				<y>12</y>
+				<width>246</width>
+				<height>63</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#3d3f40</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>collections.col100</t></value>
+				<x>11</x>
+				<y>12</y>
+				<width>246</width>
+				<height>63</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#3d3f40</color>
+			</text>
+		</uu>
+	</layer>
+</image>

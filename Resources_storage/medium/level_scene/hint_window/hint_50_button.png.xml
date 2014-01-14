@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>hint_50_button.png</name>
+	<background>background1.png</background>
+	<layer>
+		<image>
+				<file>hint.png</file>
+				<x>30</x>
+				<y>10</y> 
+			</image>
+	</layer>
+	<layer>
+		<text>
+			<value>x 50</value>
+			<x>40</x>
+			<y>20</y>
+			<width>170</width>
+			<height>46</height>
+			
+			<font>IndieFlower.ttf</font>
+			
+			<color>#313131</color>
+		</text>
+	</layer>
+	<layer>
+		<text>
+			<value>$1,99</value>
+			<x>0</x>
+			<y>70</y>
+			<width>213</width>
+			<height>35</height>
+			
+			<font>IndieFlower.ttf</font>
+			
+			<color>#098709</color>
+		</text>
+	</layer>
+	
+</image>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>translation_poll.{lang}.png</name>
+	<background>poll_background.png</background>
+	<layer>
+		<text>
+			<value><t>translation.poll</t></value>
+			<x>0</x>
+			<y>0</y>
+			
+			<width>360</width>
+			<height>200</height>
+			
+			<font><t>font</t></font>
+			<color>#ff7e00</color>
+		</text>
+	</layer>
+</image>

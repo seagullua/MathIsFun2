@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>Reset_progress.png</name>
+	<background>background.png</background>
+	<layer>
+		<!--<en>
+			<image>
+				<file>reset_progress_en.png</file>
+				<x>0</x>
+				<y>0</y>
+			</image>
+		</en>-->
+		<ru>
+			<text>
+				<value>Сброс прогресса</value>
+				<x>6</x>
+				<y>10</y>
+				
+				<width>400</width>
+				<height>43</height>
+				
+				<font>mateur.ttf</font>
+				<color>#519fee</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>settings.reset_progress</t></value>
+				<x>6</x>
+				<y>10</y>
+				
+				<width>400</width>
+				<height>43</height>
+				
+				<font><t>font</t></font>
+				<color>#519fee</color>
+			</text>
+		</uu>
+	</layer>
+</image>

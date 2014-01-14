@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+	<name>fs_logo.png</name>
+	<background>background.png</background>
+	<layer>
+		<en>
+			<image>
+				<file>en_label.png</file>
+				<x>0</x>
+				<y>0</y> 
+			</image>
+		</en>
+		<ru>
+			<text>
+				<value>Найденные  Решения</value>
+				<x>0</x>
+				<y>0</y>
+				<width>498</width>
+				<height>86</height>
+				
+				<font>mateur.ttf</font>
+				
+				<color>#fb6319</color>
+			</text>
+		</ru>
+		<uu>
+			<text>
+				<value><t>level.menu.found_solutions</t></value>
+				<x>0</x>
+				<y>0</y>
+				<width>498</width>
+				<height>86</height>
+				
+				<font><t>font</t></font>
+				
+				<color>#fb6319</color>
+			</text>
+		</uu>
+	</layer>
+</image>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+<pair>
+	<source>font</source>
+	<destination>XXXX</destination>
+</pair>
+<pair>
+	<source>menu.play</source>
+	<destination>Грати</destination>
+</pair>
+<pair>
+	<source>menu.settings</source>
+	<destination>Налаштування</destination>
+</pair>
+<pair>
+	<source>menu.quite</source>
+	<destination>Вийти? Ви впевнені?</destination>
+</pair>
+<pair>
+	<source>settings.title</source>
+	<destination>Налаштування</destination>
+</pair>
+<pair>
+	<source>settings.expert_mode</source>
+	<destination>Експертний режим</destination>
+</pair>
+<pair>
+	<source>settings.sound</source>
+	<destination>Звукові ефекти</destination>
+</pair>
+<pair>
+	<source>settings.music</source>
+	<destination>Музика</destination>
+</pair>
+<pair>
+	<source>settings.developers</source>
+	<destination>Розробники</destination>
+</pair>
+<pair>
+	<source>settings.reset_progress</source>
+	<destination>Видалити збережені дані</destination>
+</pair>
+<pair>
+	<source>settings.restore_purchases</source>
+	<destination>Відновити покупки</destination>
+</pair>
+<pair>
+	<source>settings.delete_progress</source>
+	<destination>Знищити? Ви впевнені?</destination>
+</pair>
+<pair>
+	<source>core.yes</source>
+	<destination>Так!</destination>
+</pair>
+<pair>
+	<source>core.no</source>
+	<destination>Ні!</destination>
+</pair>
+<pair>
+	<source>developers.title</source>
+	<destination>Розробники</destination>
+</pair>
+<pair>
+	<source>developers.send_email</source>
+	<destination>Лист до розробників</destination>
+</pair>
+<pair>
+	<source>collections.title</source>
+	<destination>Колекції</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps</source>
+	<destination>Не вистачає штампів.</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.unlock_all</source>
+	<destination>Відкрити Всі</destination>
+</pair>
+<pair>
+	<source>collections.more_stamps.play_more</source>
+	<destination>Відмінити</destination>
+</pair>
+<pair>
+	<source>collections.more_levels.fix</source>
+	<destination>Більше завдань</destination>
+</pair>
+<pair>
+	<source>collections.locked</source>
+	<destination>Зачинено</destination>
+</pair>
+<pair>
+	<source>collections.easy</source>
+	<destination>Легко</destination>
+</pair>
+<pair>
+	<source>collections.medium</source>
+	<destination>Важче</destination>
+</pair>
+<pair>
+	<source>collections.hard.fix</source>
+	<destination>Найважче</destination>
+</pair>
+<pair>
+	<source>collections.very_hard</source>
+	<destination>Ще важче</destination>
+</pair>
+<pair>
+	<source>collections.buy.buy_one_or_all</source>
+	<destination>Купити колекцію</destination>
+</pair>
+<pair>
+	<source>collections.buy.offer</source>
+	<destination>Спеціальна пропозиція\n- Купіть всі колекції\n- Знижка 50%\n- Безкоштовні оновлення</destination>
+</pair>
+<pair>
+	<source>collections.buy.one</source>
+	<destination>Ця колекція</destination>
+</pair>
+<pair>
+	<source>collections.buy.all</source>
+	<destination>Всі колекції</destination>
+</pair>
+<pair>
+	<source>collections.col100</source>
+	<destination>Цифри в небі</destination>
+</pair>
+<pair>
+	<source>collections.col200</source>
+	<destination>Пригоди в горах</destination>
+</pair>
+<pair>
+	<source>collections.col300</source>
+	<destination>Розрахунки опівночі</destination>
+</pair>
+<pair>
+	<source>collections.col400</source>
+	<destination>Хмарочос і цифри</destination>
+</pair>
+<pair>
+	<source>collections.col500</source>
+	<destination>Цифри на мосту</destination>
+</pair>
+<pair>
+	<source>collections.col600</source>
+	<destination>Прості числа</destination>
+</pair>
+<pair>
+	<source>collections.col1000</source>
+	<destination>Великі повітряні кулі</destination>
+</pair>
+<pair>
+	<source>collections.col2000</source>
+	<destination>Квіти в лісі</destination>
+</pair>
+<pair>
+	<source>collections.col3000.fix</source>
+	<destination>Легка атлетика для мозку</destination>
+</pair>
+<pair>
+	<source>collections.col4000</source>
+	<destination>Свіжі фрукти</destination>
+</pair>
+<pair>
+	<source>collections.junior.col100</source>
+	<destination>Замок цукерок</destination>
+</pair>
+<pair>
+	<source>collections.junior.col201</source>
+	<destination>Шоколадна фабрика</destination>
+</pair>
+<pair>
+	<source>collections.junior.col301</source>
+	<destination>Фрукти на полі</destination>
+</pair>
+<pair>
+	<source>collections.junior.col401</source>
+	<destination>Смачні вафлі</destination>
+</pair>
+<pair>
+	<source>collections.junior.col501</source>
+	<destination>Літні сни</destination>
+</pair>
+<pair>
+	<source>collections.junior.col601</source>
+	<destination>Молочний коктейль</destination>
+</pair>
+<pair>
+	<source>collections.store</source>
+	<destination>Ігровий магазин</destination>
+</pair>
+<pair>
+	<source>level.title</source>
+	<destination>Завдання</destination>
+</pair>
+<pair>
+	<source>tutorial.touch_space</source>
+	<destination>Натисніть тут</destination>
+</pair>
+<pair>
+	<source>tutorial.select_digit</source>
+	<destination>Виберіть символ</destination>
+</pair>
+<pair>
+	<source>tutorial.select_symbol</source>
+	<destination>Виберіть символ</destination>
+</pair>
+<pair>
+	<source>tutorial.all_solutions</source>
+	<destination>Ви знайшли всі розв’язки</destination>
+</pair>
+<pair>
+	<source>tutorial.one_more_solution</source>
+	<destination>Існує ще один розв’язок</destination>
+</pair>
+<pair>
+	<source>tutorial.find_it</source>
+	<destination>Спробувати знайти його</destination>
+</pair>
+<pair>
+	<source>tutorial.already_found</source>
+	<destination>Цей розв’язок вже було знайдено. Пошукайте інший.</destination>
+</pair>
+<pair>
+	<source>tutorial.no_more_solutions</source>
+	<destination>Немає більше розв’язків</destination>
+</pair>
+<pair>
+	<source>level.pop_up.levels</source>
+	<destination>Завдання</destination>
+</pair>
+<pair>
+	<source>level.pop_up.next_level</source>
+	<destination>Наступне завдання</destination>
+</pair>
+<pair>
+	<source>level.pop_up.find_more</source>
+	<destination>Більше розв’язків</destination>
+</pair>
+<pair>
+	<source>level.menu.resume</source>
+	<destination>Скасувати</destination>
+</pair>
+<pair>
+	<source>level.menu.restart</source>
+	<destination>Грати знову</destination>
+</pair>
+<pair>
+	<source>level.menu.skip</source>
+	<destination>Пропустити цю задачу</destination>
+</pair>
+<pair>
+	<source>level.menu.found_solutions</source>
+	<destination>Відомі розв’язки</destination>
+</pair>
+<pair>
+	<source>level.menu.levels</source>
+	<destination>Завдання</destination>
+</pair>
+<pair>
+	<source>level.hints.get_hints</source>
+	<destination>Отримати додаткові поради.</destination>
+</pair>
+<pair>
+	<source>level.hints.offer</source>
+	<destination>Спеціальна пропозиція\n- 1000 - 95% знижка</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.no_hints</source>
+	<destination>Немає більше порад</destination>
+</pair>
+<pair>
+	<source>level.hints.junior.tomorrow</source>
+	<destination>Додаткові поради будуть завтра.</destination>
+</pair>
+<pair>
+	<source>translation.poll</source>
+	<destination>Вам подобається переклад?\n\n</destination>
+</pair>
+</translations>
