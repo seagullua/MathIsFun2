@@ -65,6 +65,16 @@ if [ -f "$file" ]; then
 fi
 done
 chmod 0777 -R "$APP_ANDROID_ROOT"/assets
+
+#copy ADLib
+for file in "$APP_ROOT"/libraries/ADLib/platform/Android/java/com/x4enjoy/ADLib/*
+do
+echo "$APP_ANDROID_ROOT"/src/com/x4enjoy/ADLib
+#if [ -d "$file" ]; then
+cp -rf "$file" "$APP_ANDROID_ROOT"/src/com/x4enjoy/ADLib
+#fi
+done
+
 for file in "$APP_ROOT"/Resources_android/*
 do
 if [ -d "$file" ]; then

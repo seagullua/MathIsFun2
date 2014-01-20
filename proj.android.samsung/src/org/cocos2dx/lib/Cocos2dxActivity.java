@@ -32,6 +32,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.content.Context;
 
 public abstract class Cocos2dxActivity extends Activity implements Cocos2dxHelperListener {
 	// ===========================================================
@@ -50,11 +51,17 @@ public abstract class Cocos2dxActivity extends Activity implements Cocos2dxHelpe
 	// ===========================================================
 	// Constructors
 	// ===========================================================
-
+	private static Context sContext = null;
+	
+	public static Context getContext() {
+		return sContext;
+	}
+	
+	
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		sContext = this;
     	this.mHandler = new Cocos2dxHandler(this);
 
     	this.init();

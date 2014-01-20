@@ -19,7 +19,7 @@
     <application android:label="@string/app_name"
         android:icon="@drawable/icon" android:allowBackup="true"
         android:name="com.x4enjoy.mathisfun.App"
-		
+		android:debuggable="true"
         >
 
         
