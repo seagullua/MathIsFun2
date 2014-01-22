@@ -299,14 +299,28 @@ void LevelScenePopUp::hideMe(CCCallFunc* callback)
                     callback,
                     NULL));
 }
+void LevelScenePopUp::showInterstitial()
+{
+    if(ADAds::getInstance().getInterstialTimesShowed() < 5)
+    {
+        if(rand() % 3 == 0)
+        {
+            ADAds::getInstance().showInterstitial();
+        }
+        ADAds::getInstance().prepareInterstitial();
+    }
+}
+
 void LevelScenePopUp::onLevels(CCObject*)
 {
+    showInterstitial();
     this->hideMe(CCCallFunc::create(
                      this,
                      callfunc_selector(LevelScenePopUp::do_onLevels)));
 }
 void LevelScenePopUp::onNextLevel(CCObject*)
 {
+    showInterstitial();
     this->hideMe(CCCallFunc::create(
                      this,
                      callfunc_selector(LevelScenePopUp::do_onNextLevel)));

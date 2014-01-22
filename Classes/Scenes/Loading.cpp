@@ -134,6 +134,8 @@ void Loading::initRW()
 
     if(RW::isAdsDisabled())
         ads::AdsManager::getInstance().disableAds();
+    else
+        ads::AdsManager::getInstance().prepareInterstitial();
 
 
 }

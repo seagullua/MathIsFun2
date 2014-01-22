@@ -21,7 +21,7 @@ private:
     void do_onLevels();
     void do_onNextLevel();
 
-
+    void showInterstitial();
 public:
     void hideMe(CCCallFunc* callback);
     virtual bool init();
