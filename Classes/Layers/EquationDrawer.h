@@ -22,7 +22,7 @@ public:
     void sleep();
     void wakeup();
     LevelScene* getParentScene();
-    void setOpacity(GLubyte);
+    //void setOpacity(GLubyte);
     void showUI();
     void onFoundSolutionClose();
 

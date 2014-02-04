@@ -141,8 +141,12 @@ bool AppDelegate::applicationDidFinishLaunching()
         resourse_directory = "little";
         resourse_scale = 0.375;
     }
+    std::vector<std::string> searchPath;
+    searchPath.push_back(resourse_directory);
+
     Screen::setDesignScale(resourse_scale);
-    CCFileUtils::sharedFileUtils()->setResourceDirectory(resourse_directory.c_str());
+    CCFileUtils::sharedFileUtils()->setSearchPaths(searchPath);
+
     pDirector->setContentScaleFactor(MIN(mediumResource.size.height*resourse_scale/designResolutionSize.height/width_change, mediumResource.size.width*resourse_scale/designResolutionSize.width/width_change));
 
 

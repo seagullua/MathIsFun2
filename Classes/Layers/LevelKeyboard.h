@@ -3,7 +3,7 @@
 #include "cocos2d-A.h"
 #include "Layers/PopUpWindow.h"
 
-class LevelKeyboard : public CCNodeWithOpacity
+class LevelKeyboard : public CCNodeRGBA
 {
     LevelKeyboard(const CCSize& zone, PopUpWindowManager& pop_up_m);
 public:
@@ -71,7 +71,7 @@ public:
             _listener->retain();
     }
 
-    void setOpacity(GLubyte a);
+    //void setOpacity(GLubyte a);
 private:
     enum LayoutMode
     {

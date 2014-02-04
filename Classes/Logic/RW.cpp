@@ -41,7 +41,7 @@ void RW::init()
 
 #ifndef RW_DEBUG
 #ifndef CC_WIN8_METRO
-    std::string s = CCFileUtils::sharedFileUtils()->getWriteablePath();
+    std::string s = CCFileUtils::sharedFileUtils()->getWritablePath();
     //CCLog(s.c_str());
     _save_file_path = s + _save_file_name;
     _settings_file_path = s + _settings_file_name;

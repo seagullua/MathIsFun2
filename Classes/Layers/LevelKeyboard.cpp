@@ -4,7 +4,7 @@ LevelKeyboard::LevelKeyboard(const CCSize &zone, PopUpWindowManager &pop_up_m) :
     _listener(0), _zone(zone), _layout_mode(Horizontal), _pop_up_window_manager(pop_up_m)
 {
     this->setContentSize(zone);
-
+    this->setCascadeOpacityEnabled(true);
     //Detect widescreen and change the layout of keyboards
     if(_zone.width/_zone.height < 1.2)
     {
@@ -50,11 +50,11 @@ LevelKeyboard::LevelKeyboard(const CCSize &zone, PopUpWindowManager &pop_up_m) :
     this->addChild(_collections_menu);
     _collections_menu->setPosition(0,zone.height);
 }
-void LevelKeyboard::setOpacity(GLubyte a)
-{
-    CCNodeWithOpacity::setOpacity(a);
-    _collections_menu->menu()->setOpacity(a);
-}
+//void LevelKeyboard::setOpacity(GLubyte a)
+//{
+//    CCNodeWithOpacity::setOpacity(a);
+//    _collections_menu->menu()->setOpacity(a);
+//}
 
 void LevelKeyboard::sleep()
 {

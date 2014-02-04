@@ -3,6 +3,7 @@ using namespace cocos2d;
 MenuSpriteBatch::MenuSpriteBatch(cocos2d::CCMenu* menu, const SpritesLoader& spl)
     :_menu(menu)
 {
+    this->setCascadeOpacityEnabled(true);
     if(spl.get() != 0)
     {
         spl->setParent(this);
@@ -12,6 +13,7 @@ MenuSpriteBatch::MenuSpriteBatch(cocos2d::CCMenu* menu, const SpritesLoader& spl
     this->addChild(_menu);
     _menu->setAnchorPoint(ccp(0,0));
     _menu->setPosition(ccp(0,0));
+    _menu->setCascadeOpacityEnabled(true);
 
     //spl->setSpriteSheetPosition(ccp(0,0));
 }

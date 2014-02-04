@@ -52,16 +52,16 @@ void EquationDrawer::sleep()
 
     hideMessageNode();
 }
-void EquationDrawer::setOpacity(GLubyte op)
-{
-    CCNodeWithOpacity::setOpacity(op);
-    _substitutions->menu()->setOpacity(op);
-    _eq_lab->setOpacity(op);
-    _keyboard->setOpacity(op);
-    _inserted_label->setOpacity(op);
-    if(!RW::isExpertMode())
-        _draft_label->setOpacity(op);
-}
+//void EquationDrawer::setOpacity(GLubyte op)
+//{
+//    CCNodeWithOpacity::setOpacity(op);
+//    _substitutions->menu()->setOpacity(op);
+//    _eq_lab->setOpacity(op);
+//    _keyboard->setOpacity(op);
+//    _inserted_label->setOpacity(op);
+//    if(!RW::isExpertMode())
+//        _draft_label->setOpacity(op);
+//}
 
 void EquationDrawer::finishHide()
 {
@@ -154,7 +154,6 @@ void EquationDrawer::initKeyboard()
     _keyboard_reactor = new KeyboardReactor(this);
     _keyboard->setListener(_keyboard_reactor);
     _keyboard->setAnchorPoint(ccp(0,1));
-
     _keyboard->setPosition(0, -from_top);
 }
 void EquationDrawer::onFoundSolutionClose()
@@ -328,6 +327,7 @@ EquationDrawer::EquationDrawer(Level *level, const CCSize& z, LevelScene *parent
       _backup_sprite(0), _parent(parent), _no_more_solutions_shown(false), _duplicate_solution_shown(false),
       _message_node(0), _pop_up_manager(pop_up_m)
 {
+    this->setCascadeOpacityEnabled(true);
     this->setContentSize(_zone);
     //
 

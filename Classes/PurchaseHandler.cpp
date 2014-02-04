@@ -1,7 +1,6 @@
 #ifndef JUNIOR
 #include "cocos2d.h"
 #include "PurchaseHandler.h"
-#include "StoreBridge/Includes.h"
 #include "Layers/BackgroundHolder.h"
 #include "Store.h"
 #include "Logic/RW.h"

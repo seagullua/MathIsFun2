@@ -44,7 +44,7 @@ void Tutorial::onLevelStart(EquationDrawer* eqd)
                 switchLabel1To(label);
                 switchLabel2To(0);
 
-                label->setOpacityModifyRGB(true);
+                //label->setOpacityModifyRGB(true);
                 label->setOpacity(0);
                 label->runAction(CCFadeTo::create(0.3f, 255));
             }
@@ -104,7 +104,7 @@ void Tutorial::onEmptySpaceTouch(EquationDrawer* eqd)
                 label->setPositionY(button_pos.y + keyboard->getPositionY() - keyboard->getContentSize().height);
                 label->setAnchorPoint(ccp(0.0f, 0.5f));
                 eqd->addChild(label);
-                label->setOpacityModifyRGB(true);
+                //label->setOpacityModifyRGB(true);
                 label->setOpacity(0);
                 label->runAction(CCFadeTo::create(0.3f, 255));
                 switchLabel2To(label);

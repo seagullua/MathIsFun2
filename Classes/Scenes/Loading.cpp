@@ -5,8 +5,6 @@
 #include "Logic/Language.h"
 #include "../Core/MusicSettings.h"
 #include "Core/Ads.h"
-#include "StoreBridge/cocos2dx_StoreController.h"
-#include "StoreBridge/cocos2dx_EventHandlers.h"
 
 Loading::Loading() : _sprites_to_load(0), _loaded_sprites(0)
 {
@@ -110,7 +108,7 @@ void Loading::initRW()
 {
 	//TODO: write cleanup
     RW::init();
-    std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath("levels.ad");
+    std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels.ad");
     unsigned long size = 0;
     unsigned char* file_cont = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "r", &size);
 
