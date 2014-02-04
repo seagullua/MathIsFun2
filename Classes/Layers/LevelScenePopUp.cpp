@@ -301,13 +301,13 @@ void LevelScenePopUp::hideMe(CCCallFunc* callback)
 }
 void LevelScenePopUp::showInterstitial()
 {
-    if(ADAds::getInstance().getInterstialTimesShowed() < 5)
+    if(ADAds::getInterstialTimesShowed() < 5)
     {
         if(rand() % 3 == 0)
         {
-            ADAds::getInstance().showInterstitial();
+            ADAds::showInterstitial();
         }
-        ADAds::getInstance().prepareInterstitial();
+        ADAds::prepareInterstitial();
     }
 }
 

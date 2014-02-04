@@ -1,0 +1,1 @@
+EquationSolverConsole.exe _#_#_#_=10

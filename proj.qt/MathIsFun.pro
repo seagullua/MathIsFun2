@@ -72,16 +72,12 @@ SOURCES += main.cpp \
     ../Classes/Logic/Tutorial.cpp \
     ../Classes/Layers/DisplaySolution.cpp \
     ../Classes/Layers/FoundSolutionsLayer.cpp \
-    ../Classes/Logic/Language.cpp \
     ../Classes/PurchaseHandler.cpp \
     ../Classes/Layers/PopUpWindow.cpp \
     ../Classes/Store.cpp \
     ../Classes/Layers/YesNoDialog.cpp \
     ../Classes/Core/Ads.cpp \
-    PlatformEmulator.cpp \
-    ../Classes/Core/Browser.cpp \
-    ../Classes/Core/Screen.cpp \
-    ../Classes/Core/Distributor.cpp
+    PlatformEmulator.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -95,7 +91,6 @@ HEADERS += \
     ../Classes/Scenes/SelectCollection.h \
     ../Classes/Layers/BackgroundHolder.h \
     ../Classes/Core/CCScrollView.h \
-    ../Classes/Core/ExtensionMacros.h \
     ../Classes/Layers/LevelKeyboard.h \
     ../Classes/Math/Term.h \
     ../Classes/Math/Symbol.h \

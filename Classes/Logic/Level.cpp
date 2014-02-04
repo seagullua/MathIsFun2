@@ -139,11 +139,11 @@ Level::~Level()
 {}
 
 
-Statistics::Params levelToStatisticsParams(Level* level)
+ADStatistics::Params levelToStatisticsParams(Level* level)
 {
     std::stringstream ss;
     ss << level->getLevelCollection()->getCollectionID() << "-" << (level->getLevelID()+1);
-    return Statistics::Params()
+    return ADStatistics::Params()
             .add("Collection ID", level->getLevelCollection()->getCollectionID())
             .add("Level ID", level->getLevelID()+1)
             .add("Level number", ss.str())

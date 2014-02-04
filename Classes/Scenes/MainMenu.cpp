@@ -215,7 +215,7 @@ void MainMenu::keyBackClicked()
 
 void MainMenu::onShareFacebookPressed(CCObject*)
 {
-    Browser::open(Browser::createRedirectURL("100"));
+    ADBrowser::openWebURL(createRedirectURL("100"));
     //Browser::openURL(Browser::FacebookGroup);
 }
 
@@ -251,16 +251,16 @@ void MainMenu::doSettingsPressed()
 #include "Core/Statistics.h"
 void MainMenu::pollYes(CCObject* pSender)
 {
-    Statistics::logEvent("Like translation", Statistics::Params().add("Language", Language::getLangCode()));
-    pollHide();
-    RW::pollIsShown();
+//    ADStatistics::logEvent("Like translation", ADStatistics::Params().add("Language", Language::getLangCode()));
+//    pollHide();
+//    RW::pollIsShown();
 }
 
 void MainMenu::pollNo(CCObject* pSender)
 {
-    Statistics::logEvent("Dislike translation", Statistics::Params().add("Language", Language::getLangCode()));
-    pollHide();
-    RW::pollIsShown();
+//    Statistics::logEvent("Dislike translation", Statistics::Params().add("Language", Language::getLangCode()));
+//    pollHide();
+//    RW::pollIsShown();
 }
 
 void MainMenu::pollHide()

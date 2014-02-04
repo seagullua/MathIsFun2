@@ -127,15 +127,12 @@ void Loading::initRW()
     /**
          * The initialization of StoreController. This is the first and ONLY time it's initialized.
          **/
-#ifndef JUNIOR
-    cocos2dx_StoreController::initialize("DIb8Vy95lnJH4PtgUQro");
-    cocos2dx_EventHandlers::getInstance()->addHandler(AppDelegate::getPurchaseHandler());
-#endif
+
 
     if(RW::isAdsDisabled())
-        ads::AdsManager::getInstance().disableAds();
+        ADAds::disableAds();
     else
-        ads::AdsManager::getInstance().prepareInterstitial();
+        ADAds::prepareInterstitial();
 
 
 }

@@ -274,7 +274,7 @@ bool LevelScene::init()
     float top_zone_height = _play->getContentSize().height * 1.3f;
 
     CCSize top_zone(top_zone_end - top_zone_start, top_zone_height);
-    _top_banner = ads::AdsManager::getInstance().getBanner(top_zone);
+    _top_banner = ADAds::getBanner(top_zone);
     if(_top_banner != 0)
     {
         this->addChild(_top_banner);
@@ -406,8 +406,8 @@ void LevelScene::onKeyPauseClicked()
 void LevelScene::keyHintClicked(CCObject*)
 {
 
-    Statistics::logEvent("Hint used",
-                         Statistics::Params()
+    ADStatistics::logEvent("Hint used",
+                         ADStatistics::Params()
                          .add("Hints left", RW::getHintCount()));
 
     bool found = false;

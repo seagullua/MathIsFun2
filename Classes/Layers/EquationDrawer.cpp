@@ -619,10 +619,10 @@ void EquationDrawer::recalculateEquation()
             if(RW::registerSolution(_level, current_solution))
             {
 
-                Statistics::logEvent("Finished level", levelToStatisticsParams(_level));
+                ADStatistics::logEvent("Finished level", levelToStatisticsParams(_level));
                 if(_level->getFoundSolutions().size() == _level->getSolutions().size())
                 {
-                    Statistics::logEvent("Found all solutions", levelToStatisticsParams(_level));
+                    ADStatistics::logEvent("Found all solutions", levelToStatisticsParams(_level));
                 }
 
                 //This is new solution

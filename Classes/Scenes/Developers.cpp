@@ -163,14 +163,14 @@ void Developers::hideEverything(cocos2d::CCCallFunc *callback)
 }
 void Developers::onSendLetter(CCObject*)
 {
-    Browser::sendMail("feedback@4enjoy.com", "Math Is Fun Feedback");
+    ADBrowser::sendMail("feedback@4enjoy.com", "Math Is Fun Feedback");
     //Browser::openURL(Browser::sendEmail);
 }
 
 void Developers::onSite(CCObject*)
 {
 #ifndef JUNIOR
-    Browser::open(Browser::createRedirectURL("200"));
+    ADBrowser::openWebURL(createRedirectURL("200"));
     //Browser::openURL(Browser::Site4Enjoy);
 #endif
 }

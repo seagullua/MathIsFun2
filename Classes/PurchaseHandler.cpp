@@ -12,11 +12,7 @@
 
 using namespace cocos2d;
 
-void PurchaseHandler::marketPurchaseCancelled(string& itemId)
-{
-    CCLog(("PurchaseHandler::marketPurchaseCancelled:"+itemId).c_str());
-    //returnToTheGame(itemId);
-}
+
 bool isPrefixItem(const std::string& item_id, const std::string& prefix)
 {
     if(item_id.length() < prefix.length())
@@ -46,7 +42,7 @@ unsigned int itemIdToId(const std::string& item_id, const std::string& prefix)
     return res;
 }
 
-void PurchaseHandler::marketPurchase(string& itemId)
+void InAppDelegate::purchaseSuccessful(const ADInApp::ProductID& itemId)
 {
     bool kill_ads = false;
     if(itemId == Store::ITEM_UNLOCK_ALL)
@@ -79,7 +75,6 @@ void PurchaseHandler::marketPurchase(string& itemId)
     {
         if(!RW::isAdsDisabled())
         {
-            ads::AdsManager::getInstance().disableAds();
             RW::disableAds();
 
             if (itemId == Store::ITEM_KILL_ADS)
@@ -87,83 +82,22 @@ void PurchaseHandler::marketPurchase(string& itemId)
                 RW::addHints(10);
                 LevelScene::purchaseUpdateHints();
             }
+
+            ADAds::disableAds();
         }
     }
+}
+void InAppDelegate::purchaseFailed(const ADInApp::ProductID&, const ADInApp::ErrorType)
+{}
 
-
-    CCLog(("PurchaseHandler::marketPurchase:"+itemId).c_str());
+void InAppDelegate::restorePurchasesSuccessfully()
+{
+    ADNotification::showNotification("Purchases were restored successfully");
 }
 
-void PurchaseHandler::restoreTransactions(bool success) {
-    if(success)
-        Notification::notify(Notification::RestorePurchasesOk);
-    else
-        Notification::notify(Notification::RestorePurchasesFail);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void PurchaseHandler::billingSupported() {
-    CCLog("PurchaseHandler::billingSupported()");
-}
-void PurchaseHandler::billingNotSupported() {
-    CCLog("PurchaseHandler::billingNotSupported()");
-}
-void PurchaseHandler::closingStore() {
-    CCLog("PurchaseHandler::closingStore()");
-}
-void PurchaseHandler::currencyBalanceChanged(string &/*itemId*/, int /*balance*/, int /*amountAdded*/) {
-    CCLog("PurchaseHandler::currencyBalanceChanged");
-}
-void PurchaseHandler::goodBalanceChanged(string &itemId, int balance, int amountAdded) {
-    CCLog(("PurchaseHandler::currencyBalanceChanged: %d %d "+itemId).c_str(), balance, amountAdded);
-}
-void PurchaseHandler::goodEquipped(string& itemId) {
-    CCLog(("PurchaseHandler::goodEquipped:"+itemId).c_str());
-}
-void PurchaseHandler::goodUnequipped(string& itemId) {
-    CCLog(("PurchaseHandler::goodUnequipped:"+itemId).c_str());
-}
-void PurchaseHandler::goodUpgrade(string& /*itemId*/, string& /*upgradeItemId*/) {
-	
-}
-void PurchaseHandler::itemPurchased(string& itemId) {
-    CCLog(("PurchaseHandler::itemPurchased:"+itemId).c_str());
-}
-void PurchaseHandler::itemPurchaseStarted() {
-    CCLog("PurchaseHandler::itemPurchaseStarted()");
-}
-void PurchaseHandler::openingStore() {
-    CCLog("PurchaseHandler::openingStore()");
-}
-
-void PurchaseHandler::marketPurchaseStarted(string& itemId) {
-    CCLog(("PurchaseHandler::marketPurchaseStarted:"+itemId).c_str());
-}
-void PurchaseHandler::marketRefund(string& itemId) {
-    CCLog(("PurchaseHandler::marketRefund:"+itemId).c_str());
-}
-
-void PurchaseHandler::restoreTransactionsStarted() {
-    CCLog("PurchaseHandler::restoreTransactionsStarted");
-}
-void PurchaseHandler::unexpectedErrorInStore() {
-    CCLog("PurchaseHandler::unexpectedErrorInStore");
-    //BackgroundHolder::storeClose();
+void InAppDelegate::restorePurchasesFailed()
+{
+    ADNotification::showNotification("Error has occurred");
 }
 
 #endif

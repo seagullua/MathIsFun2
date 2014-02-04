@@ -277,7 +277,7 @@ void Settings::onMusicSelect(CCObject* sender)
 }
 void Settings::onDevelopersSelect(CCObject* /*sender*/)
 {
-    Statistics::logEvent("Developers Click");
+    ADStatistics::logEvent("Developers Click");
     CCDirector::sharedDirector()->replaceScene(Developers::scene());
 }
 

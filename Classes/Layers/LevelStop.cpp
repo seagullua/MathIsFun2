@@ -127,7 +127,7 @@ void LevelStop::doRestart()
 
 void LevelStop::onSkipLevel(CCObject*)
 {
-    Statistics::logEvent("Skip Level", levelToStatisticsParams(_level));
+    ADStatistics::logEvent("Skip Level", levelToStatisticsParams(_level));
 
     _level_scene->hidePauseAndPlay();
     CCCallFunc* after_hide = CCCallFunc::create(this,

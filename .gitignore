@@ -2,8 +2,6 @@
 *.slo
 *.lo
 *.o
-*.obj
-*.pdb
 
 # Compiled Dynamic libraries
 *.so
@@ -14,37 +12,31 @@
 *.la
 *.a
 
+JoinyGenerator/*.ad
+JoinyGenerator/release
 Resources
 build
+assets
+bin
+gen
+obj
 *.local.bat
 *.user
-proj.qt/*.user.*
-proj.qt/Makefile
+Makefile
 Makefile.*
-proj.qt/debug/
-proj.qt/release/
-Classes/BuildConfig.h
-check.cppcheck
-proj.qt/.Hp*
-proj.emscripten/bin
-
-proj.androi*/bin
-proj.androi*/obj
-proj.androi*/gen
-proj.androi*/assets
-proj.androi*/libs/armeabi/*
-proj.androi*/build_android.local.bat
-proj.androi*/local.properties
-proj.androi*/src/com/x4enjoy/ADLib/*
-
-EquationSolverConsole/*.user.*
-EquationSolverConsole/Makefile
-EquationSolverConsole/debug/
-EquationSolverConsole/release/
 
 Thumbs.db
+*.keystore
+*.psd
+*.__mk
 
-MiFSolver/*.user.*
-MiFSolver/Makefile
-MiFSolver/debug/
-MiFSolver/release/
+local.properties
+*.user
+*.user.*
+debug
+*.pdb
+*.apk
+
+proj.androi*/*
+__pycache__
+environment.py

@@ -123,6 +123,6 @@ public:
 
 
 #include "Core/Statistics.h"
-Statistics::Params levelToStatisticsParams(Level* level);
+ADStatistics::Params levelToStatisticsParams(Level* level);
 
 #endif // LEVEL_H

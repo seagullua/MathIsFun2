@@ -1,6 +1,6 @@
 #include "Store.h"
 
-#include "StoreBridge/cocos2dx_StoreController.h"
+#include <ADLib/Device/ADInApp.h>
 #include "Layers/BackgroundHolder.h"
 std::string Store::ITEM_UNLOCK_ALL="unlock_all";
 std::string Store::ITEM_BUY_ALL="buy_all";
@@ -11,22 +11,13 @@ std::string Store::ITEM_KILL_ADS="kill_ads";
 bool Store::buyItem(const std::string& item)
 {
 #ifndef JUNIOR
-    BackgroundHolder::storeOpen();
-    try
-    {
-        cocos2dx_StoreController::buyMarketItem(item);
-    }
-    catch(cocos2dx_VirtualItemNotFoundException&)
-    {
-        return false;
-    }
+    ADInApp::buyProduct(item);
 #endif
     return true;
 }
 void Store::restorePurchases()
 {
 #ifndef JUNIOR
-    BackgroundHolder::storeOpen();
-    cocos2dx_StoreController::restoreTransactions();
+    ADInApp::restorePurchases();
 #endif
 }

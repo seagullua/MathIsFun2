@@ -1,1 +1,0 @@
-build_resources.local.bat junior ios

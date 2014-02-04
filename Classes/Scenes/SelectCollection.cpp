@@ -552,7 +552,7 @@ bool SelectCollection::init()
     else
     {
 
-        Statistics::logEvent("OnMoreLevelsClick");
+        ADStatistics::logEvent("OnMoreLevelsClick");
 //        spl = GraphicsManager::getLoaderFor(
 //                    this,
 //                    Language::localizeFileName("select_collection/images2.plist").c_str(),
@@ -695,7 +695,7 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
 
     float fit_zone = (scroll_view_height - collection_paper_height*1.2f)/2;
     CCSize banner_zone(scroll_view_width, fit_zone*1.8 - banner_padding);
-    _bottom_banner = ads::AdsManager::getInstance().getBanner(banner_zone);
+    _bottom_banner = ADAds::getBanner(banner_zone);
     float banner_height = 0;
 
     if(_bottom_banner)
