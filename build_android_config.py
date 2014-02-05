@@ -31,7 +31,7 @@ project.resources_compile_task = createResourceCompilerTask(
     ['en','ru','es','ja','pt','de','fr','ko','tr','it','uk','nl','pl','hu']
 )
 
-project.signature = createAndroidSignature('build.android/math-is-fun.keystore',
+project.signature = createAndroidSignature('build.android/math-is-fun.jks',
 											'math-is-fun',
                                            '9aTFpP7DMBKRmiHc3RDT', '9aTFpP7DMBKRmiHc3RDT')
 project.res_dir = 'build.android/res'
