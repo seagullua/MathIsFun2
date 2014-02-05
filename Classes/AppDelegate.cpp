@@ -85,7 +85,7 @@ void initInAppPurchases()
 
     ADInApp::setDelegate(std::make_shared<InAppDelegate>());
 
-    ADInApp::loadStore(ADInApp::Mode::Production);
+
 
 
 }

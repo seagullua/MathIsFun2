@@ -104,6 +104,7 @@ void Loading::loadingCallBack(CCObject *)
 #include "Logic/RW.h"
 #include "Logic/Tutorial.h"
 #include "AppDelegate.h"
+#include <ADLib/Device/ADInApp.h>
 void Loading::initRW()
 {
 	//TODO: write cleanup
@@ -131,6 +132,8 @@ void Loading::initRW()
         ADAds::disableAds();
     else
         ADAds::prepareInterstitial();
+
+    ADInApp::loadStore(ADInApp::Mode::Production);
 
 
 }
