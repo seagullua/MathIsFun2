@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../libraries/ADLib/platform/iOS/ADAds_AdMob/ADAds_AdMob.mm"
-            timestampString = "413563808.952804"
+            timestampString = "413579439.669471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "createBanner(const ADAds::BannerID id, const ADAds::BannerType&amp; type, const ADAds::UnitID &amp;unit_id)"
             landmarkType = "5">
             <Locations>
@@ -82,16 +82,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../libraries/ADLib/platform/iOS/ADAds_AdMob/ADAds_AdMob.mm"
-            timestampString = "413572438.963612"
+            timestampString = "413579439.669471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "moveBanner(const ADAds::BannerID id, const cocos2d::CCPoint&amp; position)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADAds_AdMob/ADAds_AdMob.mm"
+            timestampString = "413579439.669471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "markBannerAsLoaded(GADBannerView* banner)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

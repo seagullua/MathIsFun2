@@ -219,10 +219,6 @@ bool AppDelegate::applicationDidFinishLaunching()
         ADAds::addTestDevice("9AC43D4250441F63E2E677C2C06F5D41"); //Diana Tab
         ADAds::addTestDevice("C31238A94F2B52E9F4B77E58270A3943"); //Tonya
     }
-    else if(platform == ADPlatform::iOS)
-    {
-        
-    }
 
 #else
     manager.disableAds();
