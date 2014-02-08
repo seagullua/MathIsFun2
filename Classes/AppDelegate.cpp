@@ -170,6 +170,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 #ifndef JUNIOR
     ADStore store = ADInfo::getStore();
+    ADPlatform platform = ADInfo::getPlatform();
 
     std::stringstream pid_banner;
     std::stringstream pid_interstitial;
@@ -177,23 +178,34 @@ bool AppDelegate::applicationDidFinishLaunching()
     pid_banner << "ca-app-pub-" << 109723330 << 6002326 << "/";
     pid_interstitial << "ca-app-pub-" << 109723330 << 6002326 << "/";
 
-    if(store == ADStore::SamsungStore)
+    if(platform == ADPlatform::Android)
     {
-        //ca-app-pub-1097233306002326/4129712095
-        pid_banner  << 4129712095;
-        //ca-app-pub-1097233306002326/6366969291
-        pid_interstitial << 6366969291;
+        if(store == ADStore::SamsungStore)
+        {
+            //ca-app-pub-1097233306002326/4129712095
+            pid_banner  << 4129712095;
+            //ca-app-pub-1097233306002326/6366969291
+            pid_interstitial << 6366969291;
+        }
+        else if(store == ADStore::GooglePlay)
+        {
+            //ca-app-pub-1097233306002326/2906008494
+            pid_banner << 2906008494;
+            //ca-app-pub-1097233306002326/4382741697
+            pid_interstitial << 4382741697;
+        }
+        else
+        {
+            //AMAZON coming soon
+        }
     }
-    else if(store == ADStore::GooglePlay)
+    else if(platform == ADPlatform::iOS)
     {
-        //ca-app-pub-1097233306002326/2906008494
-        pid_banner << 2906008494;
-        //ca-app-pub-1097233306002326/4382741697
-        pid_interstitial << 4382741697;
-    }
-    else
-    {
-        //AMAZON coming soon
+        //ca-app-pub-1097233306002326/5693181292
+        pid_banner << 5693181292;
+        
+        //ca-app-pub-1097233306002326/7169914499
+        pid_interstitial << 7169914499;
     }
 
     ADAds::registerBannerType("BANNER", pid_banner.str());
@@ -201,9 +213,16 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     ADAds::registerInterstitialType(pid_interstitial.str());
 
-    ADAds::addTestDevice("419CBB113860522A7AB95487DBB0CC2B"); //Andriy Tab
-    ADAds::addTestDevice("9AC43D4250441F63E2E677C2C06F5D41"); //Diana Tab
-    ADAds::addTestDevice("C31238A94F2B52E9F4B77E58270A3943"); //Tonya
+    if(platform == ADPlatform::Android)
+    {
+        ADAds::addTestDevice("419CBB113860522A7AB95487DBB0CC2B"); //Andriy Tab
+        ADAds::addTestDevice("9AC43D4250441F63E2E677C2C06F5D41"); //Diana Tab
+        ADAds::addTestDevice("C31238A94F2B52E9F4B77E58270A3943"); //Tonya
+    }
+    else if(platform == ADPlatform::iOS)
+    {
+        
+    }
 
 #else
     manager.disableAds();
