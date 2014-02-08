@@ -40,3 +40,5 @@ debug
 proj.androi*/*
 __pycache__
 environment.py
+
+proj.ios/Resources/
