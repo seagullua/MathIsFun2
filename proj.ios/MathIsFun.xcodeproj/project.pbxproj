@@ -72,6 +72,8 @@
 		84A06F9918A6766400C7BCD6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06F9818A6766400C7BCD6 /* CoreTelephony.framework */; };
 		84A06F9B18A6767000C7BCD6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06F9A18A6767000C7BCD6 /* MessageUI.framework */; };
 		84A06F9D18A6767C00C7BCD6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06F9C18A6767C00C7BCD6 /* StoreKit.framework */; };
+		84A06F9F18A6845900C7BCD6 /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06F9E18A6845800C7BCD6 /* libAdapterIAd.a */; };
+		84A06FA118A684CD00C7BCD6 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06FA018A684CD00C7BCD6 /* iAd.framework */; };
 		84E6532118A2C04600708286 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781C33B11547F06B00633F88 /* OpenAL.framework */; };
 		84E6532418A2C05200708286 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781C33B31547F06B00633F88 /* AudioToolbox.framework */; };
 		84E6532518A2C05B00708286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781C33B51547F06B00633F88 /* AVFoundation.framework */; };
@@ -256,6 +258,8 @@
 		84A06F9818A6766400C7BCD6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84A06F9A18A6767000C7BCD6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84A06F9C18A6767C00C7BCD6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		84A06F9E18A6845800C7BCD6 /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterIAd.a; sourceTree = "<group>"; };
+		84A06FA018A684CD00C7BCD6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		84E6532718A2C0FE00708286 /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
 		84E6532818A2C0FE00708286 /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
 		84E6532918A2C0FE00708286 /* ADString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADString.h; sourceTree = "<group>"; };
@@ -317,7 +321,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A06FA118A684CD00C7BCD6 /* iAd.framework in Frameworks */,
 				84A06F9D18A6767C00C7BCD6 /* StoreKit.framework in Frameworks */,
+				84A06F9F18A6845900C7BCD6 /* libAdapterIAd.a in Frameworks */,
 				84A06F9B18A6767000C7BCD6 /* MessageUI.framework in Frameworks */,
 				84A06F9918A6766400C7BCD6 /* CoreTelephony.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -370,6 +376,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84A06FA018A684CD00C7BCD6 /* iAd.framework */,
 				84A06F9C18A6767C00C7BCD6 /* StoreKit.framework */,
 				84A06F9A18A6767000C7BCD6 /* MessageUI.framework */,
 				84A06F9818A6766400C7BCD6 /* CoreTelephony.framework */,
@@ -629,6 +636,7 @@
 		84A06F8918A658EA00C7BCD6 /* AdMobSDK */ = {
 			isa = PBXGroup;
 			children = (
+				84A06F9E18A6845800C7BCD6 /* libAdapterIAd.a */,
 				84A06F8A18A658EA00C7BCD6 /* GADAdMobExtras.h */,
 				84A06F8B18A658EB00C7BCD6 /* GADAdNetworkExtras.h */,
 				84A06F8C18A658EB00C7BCD6 /* GADAdSize.h */,
