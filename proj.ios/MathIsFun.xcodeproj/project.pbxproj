@@ -74,6 +74,7 @@
 		84A06F9F18A6845900C7BCD6 /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06F9E18A6845800C7BCD6 /* libAdapterIAd.a */; };
 		84A06FA118A684CD00C7BCD6 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A06FA018A684CD00C7BCD6 /* iAd.framework */; };
 		84E4AB7618A783200099F3B7 /* ADInApp_iTunes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84E4AB7518A783200099F3B7 /* ADInApp_iTunes.mm */; };
+		84E4AB7E18A7C6DD0099F3B7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E4AB7D18A7C6DD0099F3B7 /* Default-Landscape~ipad.png */; };
 		84E6532118A2C04600708286 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781C33B11547F06B00633F88 /* OpenAL.framework */; };
 		84E6532418A2C05200708286 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781C33B31547F06B00633F88 /* AudioToolbox.framework */; };
 		84E6532518A2C05B00708286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781C33B51547F06B00633F88 /* AVFoundation.framework */; };
@@ -259,6 +260,7 @@
 		84A06F9E18A6845800C7BCD6 /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterIAd.a; sourceTree = "<group>"; };
 		84A06FA018A684CD00C7BCD6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		84E4AB7518A783200099F3B7 /* ADInApp_iTunes.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADInApp_iTunes.mm; sourceTree = "<group>"; };
+		84E4AB7D18A7C6DD0099F3B7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = SOURCE_ROOT; };
 		84E6532718A2C0FE00708286 /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
 		84E6532818A2C0FE00708286 /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
 		84E6532918A2C0FE00708286 /* ADString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADString.h; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				D446FD7C161028F4000ADA7B /* Default-568h@2x.png */,
 				D446FD7A161028ED000ADA7B /* Default@2x.png */,
 				D446FD78161028E9000ADA7B /* Default.png */,
+				84E4AB7D18A7C6DD0099F3B7 /* Default-Landscape~ipad.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -863,6 +866,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E4AB7E18A7C6DD0099F3B7 /* Default-Landscape~ipad.png in Resources */,
 				84A06EDF18A64F8600C7BCD6 /* little in Resources */,
 				84A06EDD18A64F8600C7BCD6 /* banners in Resources */,
 				D4EF94E815BD319200D803EB /* Icon-57.png in Resources */,
