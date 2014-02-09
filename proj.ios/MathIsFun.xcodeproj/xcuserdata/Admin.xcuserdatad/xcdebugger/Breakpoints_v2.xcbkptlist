@@ -111,5 +111,437 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413635234.860463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ADInApp::Platform::loadStore(const std::string&amp;, const Mode)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ADInApp::Platform::loadStore(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;, ADInApp::Mode)::$_0::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413635243.220929"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ADInApp::Platform::loadStore(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;, ADInApp::Mode)::$_0::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413635243.222255"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "123">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413635236.830277"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ADInApp::Platform::loadStore(const std::string&amp;, const Mode)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413635913.683857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-productsRequest:didReceiveResponse:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636955.796907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "227">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636955.798516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "2743">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413635913.683857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "ADInApp::Platform::loadStore(const std::string&amp;, const Mode)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413637107.894175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-request:didFailWithError:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413636977.456599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-productsRequest:didReceiveResponse:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.359925"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "2549">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.361522"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "2877">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::~$_1()"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.362938"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.364437"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::$_1(-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1 const&amp;)"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.365912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::$_1(-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1 const&amp;)"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.367386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::$_1(-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1&amp;&amp;)"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.368955"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::$_1(-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1&amp;&amp;)"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.370232"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::$_1(-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1&amp;&amp;)"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.371631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::~$_1()"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413636981.373031"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+            timestampString = "413637016.611654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-productsRequest:didReceiveResponse:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413637016.623747"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413637016.62518"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413637016.626738"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "161">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413637016.628378"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "231">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413637016.629901"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "271">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProductRequestDelegate productsRequest:didReceiveResponse:]::$_1::operator()() const"
+                  moduleName = "MathIsFun"
+                  urlString = "file://localhost/Users/Admin/cocos2d-x/projects/math-is-fun/libraries/ADLib/platform/iOS/ADInApp_iTunes/ADInApp_iTunes.mm"
+                  timestampString = "413637016.631347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "337">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADUIThread/ADUIThread.mm"
+            timestampString = "413637063.221607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "ADUIThread::onCocos2dThread(const Action&amp; task)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../libraries/ADLib/platform/iOS/ADUIThread/ADUIThread.mm"
+            timestampString = "413637066.273505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ADUIThread::performNextCocosTask(float)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
