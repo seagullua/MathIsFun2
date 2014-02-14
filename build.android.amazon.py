@@ -19,6 +19,7 @@ from build_android_config import *
 project.addModule('android_ADInfo_Store_AmazonStore')
 project.addModule('android_ADInApp_Amazon')
 project.output_name = 'proj.android.amazon'
+project.version_name = "1.53"
 
 if ard_mode == 'debug':
     project.debuggable = True

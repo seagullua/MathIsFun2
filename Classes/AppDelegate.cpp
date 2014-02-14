@@ -198,7 +198,10 @@ bool AppDelegate::applicationDidFinishLaunching()
         }
         else
         {
-            //AMAZON coming soon
+            //ca-app-pub-1097233306002326/2669859291
+            pid_banner << 2669859291;
+            //ca-app-pub-1097233306002326/4146592499
+            pid_interstitial << 4146592499;
         }
     }
     else if(platform == ADPlatform::iOS)
