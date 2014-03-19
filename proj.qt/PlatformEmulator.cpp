@@ -4,39 +4,33 @@
 #include "Logic/Language.h"
 #include "Core/Notification.h"
 #include "Core/Distributor.h"
-
+#include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
+#include <ADLib/Device/ADAds.h>
 #include "cocos2d.h"
-
-
-static float _density = 1;
-
-void setDensity(float v)
-{
-    _density = v;
-}
-
-float getDensity()
-{
-    return _density;
-}
-
 
 #define AD_ADS_NOSIZE
 #include <ADLib/PlatformImpl/ADAds_NoAds.hpp>
+#include <Testing/ADDeviceEmulator.h>
+
 cocos2d::CCSize ADAds::Platform::getBannerSize(const BannerType& type)
 {
     cocos2d::CCSize base (468, 60);
     if(type == "BANNER")
         base = cocos2d::CCSize(320, 50);
 
-    return cocos2d::CCSize(base.width * getDensity(), base.height * getDensity());
+    static float density = ADDeviceEmulator::getInstance()->getScreenDencity();
+    return cocos2d::CCSize(base.width*density, base.height*density);
 }
 
-#define AD_LANGUAGE_CURRENT "en"
+#include <ADLib/Device/ADLanguage.h>
+std::string ADLanguage::platformGetDeviceLanguage()
+{
+    return ADDeviceEmulator::getInstance()->getDeviceLanguage();
+}
+
 
 #include <ADLib/PlatformImpl/ADBrowser_None.hpp>
 #include <ADLib/PlatformImpl/ADStatistics_None.hpp>
-#include <ADLib/PlatformImpl/ADLanguage_Default.hpp>
 #include <ADLib/PlatformImpl/ADNotification_None.hpp>
 #include <ADLib/PlatformImpl/ADInfo_Default.hpp>
 #include <ADLib/PlatformImpl/ADInApp_Emulator.hpp>

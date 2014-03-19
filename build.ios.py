@@ -8,7 +8,7 @@ project.resource_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'mif',
     'ios',
-    ['en','ru','es','ja','pt','de','fr','ko','tr','it','uk','nl','pl','hu']
+    ['en','ru','es','pt','de','fr','it','uk','pl','hu']
 )
 
 project.buildProject()
