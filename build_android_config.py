@@ -23,7 +23,7 @@ project.addModule('android_ADBrowser')
 project.project_name = 'Math Is Fun'
 project.package_name = 'com.x4enjoy.mathisfun'
 project.version_name = "1.52"
-project.version_code = "11"
+project.version_code = "12"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'mif',

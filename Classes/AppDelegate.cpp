@@ -248,6 +248,7 @@ void AppDelegate::applicationDidEnterBackground() {
 
 
 }
+#include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
 #include "Core/MusicSettings.h"
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {

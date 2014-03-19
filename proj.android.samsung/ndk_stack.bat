@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\Android\android-sdk\platform-tools\adb" logcat | "C:/android-ndk-r8c/ndk-stack" -sym "E:\cocos2dx\samples\MathIsFun\proj.android.samsung\libs\armeabi"
+"C:/Program Files (x86)/Android/android-sdk\platform-tools\adb" logcat | "C:/android-ndk-r9c/ndk-stack" -sym "G:\cocos2d-x-new\projects\MathIsFun\proj.android.samsung\obj\local\armeabi"
