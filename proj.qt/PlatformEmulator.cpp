@@ -4,7 +4,7 @@
 #include "Logic/Language.h"
 #include "Core/Notification.h"
 #include "Core/Distributor.h"
-#include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
+//#include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
 #include <ADLib/Device/ADAds.h>
 #include "cocos2d.h"
 
@@ -34,5 +34,8 @@ std::string ADLanguage::platformGetDeviceLanguage()
 #include <ADLib/PlatformImpl/ADNotification_None.hpp>
 #include <ADLib/PlatformImpl/ADInfo_Default.hpp>
 #include <ADLib/PlatformImpl/ADInApp_Emulator.hpp>
+//#include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
+#include <ADLib/PlatformImpl/ADFacebook_None.hpp>
+#include <ADLib/PlatformImpl/ADHttp_NotSupported.hpp>
 
 
