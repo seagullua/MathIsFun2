@@ -103,18 +103,18 @@ bool AppDelegate::applicationDidFinishLaunching()
     //Language init
     ADLanguage::addSupportedLanguage("en");
     ADLanguage::addSupportedLanguage("ru");
-    ADLanguage::addSupportedLanguage("es");
+    //ADLanguage::addSupportedLanguage("es");
     //ADLanguage::addSupportedLanguage("ja");
-    ADLanguage::addSupportedLanguage("pt");
-    ADLanguage::addSupportedLanguage("de");
-    ADLanguage::addSupportedLanguage("fr");
+    //ADLanguage::addSupportedLanguage("pt");
+    //ADLanguage::addSupportedLanguage("de");
+    //ADLanguage::addSupportedLanguage("fr");
     //ADLanguage::addSupportedLanguage("ko");
     //ADLanguage::addSupportedLanguage("tr");
-    ADLanguage::addSupportedLanguage("it");
+    //ADLanguage::addSupportedLanguage("it");
     ADLanguage::addSupportedLanguage("uk");
     //ADLanguage::addSupportedLanguage("nl");
-    ADLanguage::addSupportedLanguage("pl");
-    ADLanguage::addSupportedLanguage("hu");
+    //ADLanguage::addSupportedLanguage("pl");
+    //ADLanguage::addSupportedLanguage("hu");
 
     ADLanguage::setDefaultLanguage("en");
     ADLanguage::getLanguage();

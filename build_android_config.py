@@ -28,7 +28,7 @@ project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'mif',
     'android',
-    ['en','ru','es','pt','de','fr','it','uk','pl','hu']
+    ['en','ru','uk']
 )
 
 project.signature = createAndroidSignature('build.android/math-is-fun.jks',
