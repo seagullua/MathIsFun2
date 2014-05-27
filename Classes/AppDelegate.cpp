@@ -138,11 +138,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     std::string resourse_directory = mediumResource.directory;
     float resourse_scale = 1;
 
-    if(frameSize.width < 500)
-    {
-        resourse_directory = "little";
-        resourse_scale = 0.375;
-    }
+//    if(frameSize.width < 500)
+//    {
+//        resourse_directory = "little";
+//        resourse_scale = 0.375;
+//    }
     std::vector<std::string> searchPath;
     searchPath.push_back(resourse_directory);
 
@@ -207,11 +207,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     }
     else if(platform == ADPlatform::iOS)
     {
-            //ca-app-pub-1612697960946304/7748593879
-            pid_banner << 7748593879;
+        //ca-app-pub-1612697960946304/7748593879
+        pid_banner << 7748593879;
 
-            //ca-app-pub-1612697960946304/9225327070
-            pid_interstitial << 9225327070;
+        //ca-app-pub-1612697960946304/9225327070
+        pid_interstitial << 9225327070;
     }
 
     ADAds::registerBannerType("BANNER", pid_banner.str());
