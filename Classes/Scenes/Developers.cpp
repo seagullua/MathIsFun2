@@ -16,11 +16,11 @@ bool Developers::init()
     //To trigger back button
     this->setKeypadEnabled(true);
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
     float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
 
     _menu_name = CCSprite::create(Language::localizeFileName("settings/developers_menu_name.png").c_str());

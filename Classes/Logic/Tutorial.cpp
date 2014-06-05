@@ -164,7 +164,7 @@ void Tutorial::onSolutionFound(LevelScenePopUp* pop_up)
         }
         else if(col_id == 100 && level_id == 1 && found_solutions == 1)
         {
-            float scaled = Screen::getScaleFactor();
+            float scaled = ADScreen::getScaleFactor();
             CCSprite* label = CCSprite::create(Language::localizeFileName("level/tutorial/final_step.png").c_str());
             label->setAnchorPoint(ccp(0,0));
             label->setPosition(ccp(85/scaled, 208/scaled));

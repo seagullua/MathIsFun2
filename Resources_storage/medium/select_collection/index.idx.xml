@@ -20,6 +20,9 @@
 	<file>
 		<name>new_collection/new_collection.plist.xml</name>
 	</file>
+	<file>
+		<name>new_collection/new_collection2.plist.xml</name>
+	</file>
 	
 	<file>
 		<name>new_collection/clabel_100.png.xml</name>

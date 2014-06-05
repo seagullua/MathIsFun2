@@ -80,7 +80,9 @@ SOURCES += main.cpp \
     ../Classes/Layers/YesNoDialog.cpp \
     PlatformEmulator.cpp \
     ../Classes/Scenes/SceneStyle.cpp \
-    ../Classes/GameInfo.cpp
+    ../Classes/GameInfo.cpp \
+    ../Classes/PopUp/UnlockWindow.cpp \
+    ../Classes/PopUp/PurchaseWindow.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -124,5 +126,7 @@ HEADERS += \
     ../Classes/Layers/YesNoDialog.h \
     ../Classes/Core/Native.h \
     ../Classes/Scenes/SceneStyle.h \
-    ../Classes/GameInfo.h
+    ../Classes/GameInfo.h \
+    ../Classes/PopUp/UnlockWindow.h \
+    ../Classes/PopUp/PurchaseWindow.h
 

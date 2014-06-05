@@ -26,7 +26,7 @@ public:
     static SelectCollection* create(const Mode mode = Collections);
 
 
-    void onCollectionSelect(CCObject* pSender);
+
     static void purchaseReload();
     static void purchaseOpenCollections();
 private:
@@ -59,17 +59,12 @@ private:
         Collection* _collection;
         bool _is_shop_tile;
     };
+    void onCollectionSelect(const CollectionTile &pSender);
     class CollectionUnlockAnimator;
 
     void onBackClick();
 
-    void doGoBack();
-    void doOpenCollection();
-    void doOpenCollections();
-    void doOpenShop();
-    void doReload();
-
-    void hideEverything(cocos2d::CCCallFunc *callback);
+    void hideEverything(const Action &callback);
     void buildCollectionTiles();
     void newScrolling(MenuSpriteBatch* menu, float width);
 
@@ -91,15 +86,12 @@ private:
     TileMap _tiles;
     MenuSpriteBatch* _collections_menu;
     SpritesLoader _col_spl;
-    Collection* _last_selected_collection;
     SpritesLoader _papers_spl;
 
     static cocos2d::CCPoint _last_scroll_view_offset;
     ADScrollView* _collections_scroll_view;
     Mode _mode;
 
-    class UnlockWindow;
-    class PurchaseWindow;
 
     ADAds::Banner* _bottom_banner;
 public:

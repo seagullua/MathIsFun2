@@ -286,7 +286,7 @@ void EquationDrawer::initDraft()
     if(!RW::isExpertMode())
     {
         //Draft
-        float scaled = Screen::getScaleFactor();
+        float scaled = ADScreen::getScaleFactor();
         _draft.reserve(500);
         _draft_label = CCLabelBMFont::create(_draft.c_str(),
                                              "font/mathisfun.fnt");
@@ -366,7 +366,7 @@ void EquationDrawer::updateDraft()
 {
     if(!RW::isExpertMode())
     {
-        float scaled = Screen::getScaleFactor();
+        float scaled = ADScreen::getScaleFactor();
         float x1_scale = _paper_cell_size/scaled/_font_symbol_height;
         float x2_scale = x1_scale*2;
         _draft_label->setCString(_draft.c_str());
@@ -766,7 +766,7 @@ void EquationDrawer::putMessageNodeInPlace()
 
 
     }
-    float scaled = Screen::getScaleFactor();
+    float scaled = ADScreen::getScaleFactor();
     _message_node->setAnchorPoint(ccp(0,1));
     _message_node->setPosition(_keyboard->getContentSize().width +
                                _paper_cell_size/scaled,

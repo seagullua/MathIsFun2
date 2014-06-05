@@ -99,11 +99,11 @@ bool SelectLevel::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
 
 
@@ -178,9 +178,9 @@ void SelectLevel::buildLevelsTiles()
         test_button->setPosition(ccp(visibleSize.width/2 + origin.x,
                                  visibleSize.height + origin.y - 60/scaled));
     }*/
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Create levels menu
     MenuSpriteBatch* levels_menu = MenuSpriteBatch::create(level_tiles);

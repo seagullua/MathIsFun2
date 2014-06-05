@@ -100,9 +100,9 @@ void BackgroundHolder::storeOpen()
 void BackgroundHolder::BackgroundLayer::triggerAnimations()
 {
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCSize visibleSize = ADScreen::getVisibleSize();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
     SpritesLoader spl = GraphicsManager::getLoaderFor(
                 this,
@@ -141,10 +141,10 @@ bool BackgroundHolder::BackgroundLayer::init()
     }
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
     //Place background
     CCSprite* pSprite = CCSprite::create("background/sheet-background.jpg");
@@ -207,7 +207,7 @@ void BackgroundHolder::BackgroundLayer::setBackButtonCallback(cocos2d::CCCallFun
         _back_button_callback->retain();
 
     //Get the size of the screen we can see
-    //CCSize visibleSize = Screen::getVisibleSize();
+    //CCSize visibleSize = ADScreen::getVisibleSize();
     if(should_show)
     {
         CCFadeTo* move = CCFadeTo::create(0.3f, 255);

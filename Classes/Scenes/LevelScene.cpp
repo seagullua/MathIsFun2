@@ -49,7 +49,7 @@ private:
 
     void onCreate(CCNode *parent)
     {
-        float scaled = Screen::getScaleFactor();
+        float scaled = ADScreen::getScaleFactor();
 
         CCSize size = parent->getContentSize();
         float x_middle = size.width / 2;
@@ -206,11 +206,11 @@ bool LevelScene::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
     //Calculate the position and the size of the eqution zone
     CCPoint eq_pos = ccp(origin.x+84/scaled,

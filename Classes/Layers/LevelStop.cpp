@@ -9,10 +9,10 @@
 bool LevelStop::init()
 {
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
     _sheet_target_position = ccp(visibleSize.width/2+origin.x,
                                  visibleSize.height/2+origin.y);
@@ -95,7 +95,7 @@ bool LevelStop::init()
     this->setPosition(ccp(this->getPosition().x,
                           this->getPositionY()+visibleSize.height));
 
-    //CCSize visibleSize = Screen::getVisibleSize();
+    //CCSize visibleSize = ADScreen::getVisibleSize();
     this->runAction(
                 CCMoveTo::create(
                     0.15f,
@@ -169,7 +169,7 @@ void LevelStop::doLevelsPressed()
 void LevelStop::hideMe(CCCallFunc* callback)
 {
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     this->runAction(
                 CCSequence::create(
                     CCMoveTo::create(

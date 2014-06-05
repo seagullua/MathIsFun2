@@ -5,10 +5,10 @@ FoundSolutionsLayer::FoundSolutionsLayer(Level* level)
 {
 
 
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
     CCNode* sheet_menu = this;
     SpritesLoader spl = GraphicsManager::getLoaderFor(sheet_menu,
@@ -59,7 +59,7 @@ FoundSolutionsLayer* FoundSolutionsLayer::create(Level* level)
 
 void FoundSolutionsLayer::hideAndRemove()
 {
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     this->runAction(CCSequence::createWithTwoActions(
                         CCMoveTo::create(0.3f, ccp(_sheet_target_position.x,
                                                    _sheet_target_position.y+visibleSize.height)),

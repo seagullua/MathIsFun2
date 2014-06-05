@@ -14,6 +14,7 @@ public:
 
     void unlockItem()
     {
+        using namespace cocos2d;
         if(_item.getCollection()->isReadyToBeUnlocked())
         {
 

@@ -4,207 +4,20 @@
 #include "SelectLevel.h"
 #include "Logic/Language.h"
 #include "SelectCollection_UnlockAnimator.h"
+#include "PopUp/UnlockWindow.h"
+#include "PopUp/PurchaseWindow.h"
 #include "Store.h"
-#include "Core/Statistics.h"
-#include "Core/Ads.h"
-
-class SelectCollection::UnlockWindow : public PopUpWindow::Content
-{
-
-public:
-    UnlockWindow(const unsigned int stamp_to_unlock)
-        : _stamp_to_unlock(stamp_to_unlock)
-    {}
-private:
-    void onPlayMoreClick(CCObject*)
-    {
-        closeWindow();
-    }
-    void onUnlockClick(CCObject*)
-    {
-        Store::buyItem(Store::ITEM_UNLOCK_ALL);
-    }
+using namespace cocos2d;
 
 
 
-    void onCreate(CCNode *parent)
-    {
-        float scaled = Screen::getScaleFactor();
-
-        CCSize size = parent->getContentSize();
-        float x_middle = size.width / 2;
-        CCSprite* text = CCSprite::create(Language::localizeFileName("select_collection/unlock_title.png").c_str());
-        text->setPosition(ccp(x_middle, size.height * 0.76f));
-        parent->addChild(text);
-
-        CCSprite* stamp = CCSprite::create("select_collection/unlock_stamp.png");
-        stamp->setPosition(ccp(0,size.height*0.48));
-        stamp->setAnchorPoint(ccp(1, 0.5));
-
-        CCNode* stamps_number = 0;
 
 
-        std::stringstream ss;
-        ss << "" << _stamp_to_unlock;
-        ccColor3B label_color(ccc3(61,63,64));
-        stamps_number = createLabel(ss.str(),  "font/mathisfun_digits.plist",
-                                    "font/mathisfun_digits.png",
-                                    label_color);
-
-        stamps_number->setAnchorPoint(ccp(0,0.5));
-        stamps_number->setPositionY(stamp->getPositionY());
-
-        float stamp_width = stamp->getContentSize().width;
-        float stamp_number_width = stamps_number->getContentSize().width;
-
-        float max_width = size.width*0.8;
-        float label_width = max_width - stamp_width;
-
-        if(stamp_number_width > label_width)
-        {
-            float scale = label_width/stamp_number_width;
-            stamps_number->setScale(scale);
-            stamp_number_width *= scale;
-        }
-
-        float center = x_middle;
-        float full_label_half = (stamp_width + stamp_number_width) / 2;
-        float stamp_position = center - full_label_half + stamp_width;
-
-
-        stamps_number->setPositionX(stamp_position);
-        stamp->setPositionX(stamp_position);
-
-        parent->addChild(stamp);
-        parent->addChild(stamps_number);
-
-        SpritesLoader menu_spl = GraphicsManager::getLoaderFor(0,
-                                                               Language::localizeFileName("select_collection/unlock_buttons.plist").c_str(),
-                                                               Language::localizeFileName("select_collection/unlock_buttons.png").c_str());
-        MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
-        menu->setPosition(ccp(0,0));
-        menu->setAnchorPoint(ccp(0,0));
-        menu->setContentSize(size);
-        parent->addChild(menu);
-
-#ifndef JUNIOR
-        CCSprite* unlock_image = menu_spl->loadSprite("unlock_button.png");
-        CCSize image_size = unlock_image->getContentSize();
-#endif
-
-
-        CCSprite* play_more_image = menu_spl->loadSprite("play_more_button.png");
-        ADMenuItem *play_more_item = ADMenuItem::create(
-                    play_more_image,
-                    this, menu_selector(UnlockWindow::onPlayMoreClick));
-
-
-#ifndef JUNIOR
-        float design_scale = 1;
-        play_more_item->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
-                                        53*design_scale/scaled+image_size.height/2));
-#endif
-
-
-#ifdef JUNIOR
-        play_more_item->setPosition(ccp(400/scaled,
-                                        120/scaled));
-#endif
-
-#ifndef JUNIOR
-        ADMenuItem *next_level = ADMenuItem::create(
-                    unlock_image,
-                    this, menu_selector(UnlockWindow::onUnlockClick));
-        next_level->setPosition(ccp(600*design_scale/scaled,
-                                    53*design_scale/scaled+image_size.height/2));
-        menu->menu()->addChild(next_level);
-#endif
-        menu->menu()->addChild(play_more_item);
-
-    }
-    unsigned int _stamp_to_unlock;
-};
-
-
-class SelectCollection::PurchaseWindow : public PopUpWindow::Content
-{
-
-public:
-    PurchaseWindow(Collection* collection)
-        : _collection(collection)
-    {}
-private:
-    void onBuyOneClick(CCObject*)
-    {
-        std::stringstream ss;
-        ss << Store::PREFIX_BUY_COLLECTION << _collection->getCollectionID();
-        bool res = Store::buyItem(ss.str());
-        if(!res)
-        {
-            CCLog(("Buy collection failed: "+ss.str()).c_str());
-        }
-    }
-    void onBuyAllClick(CCObject*)
-    {
-        Store::buyItem(Store::ITEM_BUY_ALL);
-    }
-
-
-
-    void onCreate(CCNode *parent)
-    {
-        float scaled = Screen::getScaleFactor();
-
-        CCSize size = parent->getContentSize();
-        float x_middle = size.width / 2;
-        CCSprite* text = CCSprite::create(Language::localizeFileName("select_collection/buy_title.png").c_str());
-        text->setPosition(ccp(x_middle, size.height * 0.65f));
-        parent->addChild(text);
-
-
-        SpritesLoader menu_spl = GraphicsManager::getLoaderFor(0,
-                                                               Language::localizeFileName("select_collection/buy_buttons.plist").c_str(),
-                                                               Language::localizeFileName("select_collection/buy_buttons.png").c_str());
-        MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
-        menu->setPosition(ccp(0,0));
-        menu->setAnchorPoint(ccp(0,0));
-        menu->setContentSize(size);
-        parent->addChild(menu);
-
-        CCSprite* lamp = CCSprite::create("select_collection/zebra.png");
-        parent->addChild(lamp);
-        lamp->setScale(0.9f);
-        lamp->setPosition(ccp(200/scaled, 280/scaled));
-
-
-        CCSprite* unlock_image = menu_spl->loadSprite("buy_all_button.png");
-
-        CCSize image_size = unlock_image->getContentSize();
-        float design_scale = 1;
-
-
-        CCSprite* buy_one_image = menu_spl->loadSprite("buy_one_button.png");
-        ADMenuItem *buy_one_item = ADMenuItem::create(
-                    buy_one_image,
-                    this, menu_selector(PurchaseWindow::onBuyOneClick));
-
-        buy_one_item->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
-                                        53*design_scale/scaled+image_size.height/2));
-
-        ADMenuItem *buy_all_item = ADMenuItem::create(
-                    unlock_image,
-                    this, menu_selector(PurchaseWindow::onBuyAllClick));
-        buy_all_item->setPosition(ccp(600*design_scale/scaled,
-                                    53*design_scale/scaled+image_size.height/2));
-        menu->menu()->addChild(buy_all_item);
-        menu->menu()->addChild(buy_one_item);
-
-    }
-    Collection* _collection;
-};
 
 SelectCollection::SelectCollection(const Mode mode)
-    : _title_select_collection(0), _last_selected_collection(0), _mode(mode), _pop_up_manager(this), _bottom_banner(0)
+    : _title_select_collection(0),
+      _mode(mode),
+      _bottom_banner(0)
 {
 }
 
@@ -218,7 +31,7 @@ CCScene* SelectCollection::scene(const Mode mode)
 
     // add layer as a child to scene
     CCCallFunc* back = CCCallFunc::create(layer,
-                                          callfunc_selector(SelectCollection::onKeyBackClicked));
+                                          callfunc_selector(SceneStyle::simulateBackClick));
     BackgroundHolder::backgroundSwitchTo(scene,back);
     scene->addChild(layer);
 
@@ -244,122 +57,86 @@ SelectCollection* SelectCollection::create(const SelectCollection::Mode mode)
 
 
 SelectCollection* SelectCollection::_last_scene_ptr = 0;
-void SelectCollection::keyBackClicked()
+void SelectCollection::onBackClick()
 {
-    if(!_pop_up_manager.backAction())
+
+    hideEverything([this](){
+        if(_mode == Shop)
+            CCDirector::sharedDirector()->replaceScene(
+                        SelectCollection::scene(Collections));
+        else
+            CCDirector::sharedDirector()->replaceScene(
+                        MainMenu::scene());
+    });
+
+}
+
+void SelectCollection::onCollectionSelect(const CollectionTile& selected)
+{
+
+    if(!selected.isShopTile())
     {
-        hideEverything(
-                    CCCallFunc::create(
-                        this,
-                        callfunc_selector(SelectCollection::doGoBack)));
-    }
-}
-void SelectCollection::doGoBack()
-{
-    if(_mode == Shop)
-        CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Collections));
-    else
-        CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
-}
-void SelectCollection::doOpenShop()
-{
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Shop));
-}
-void SelectCollection::doReload()
-{
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(_mode));
-}
+        //We selected this collection
+        Collection* current = selected.getCollection();
 
-void SelectCollection::doOpenCollection()
-{
-    if(_last_selected_collection)
-    {
-        CCDirector::sharedDirector()->replaceScene(
-                    SelectLevel::scene(_last_selected_collection));
-    }
-}
-
-void SelectCollection::doOpenCollections()
-{
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Collections));
-}
-
-void SelectCollection::onCollectionSelect(CCObject* sender)
-{
-    ADMenuItem* tile = dynamic_cast<ADMenuItem*>(sender);
-
-    TileMap::iterator it = _tiles.find(tile);
-    if(it != _tiles.end())
-    {
-        CollectionTile selected = it->second;
-
-        if(!selected.isShopTile())
+        if(current->getCollectionState()==Collection::Locked)
         {
-            //We selected this collection
-            Collection* current = selected.getCollection();
-
-            if(current->getCollectionState()==Collection::Locked)
+            //                //The collection locked;
+            unsigned int more_stamps_needed = current->stampsToUnlock() -
+                    RW::allStampsObtained();
+            //                more_stamps_needed;
+            //                CCLOG("More stamps needed");
+            //                //TODO: show the window with number of stamps needed
+            _pop_up_manager.openWindow(new UnlockWindow(more_stamps_needed));
+        }
+        else if(current->getCollectionState() == Collection::InShop)
+        {
+            if(_mode == Shop)
             {
-                //                //The collection locked;
-                unsigned int more_stamps_needed = current->stampsToUnlock() -
-                        RW::allStampsObtained();
-                //                more_stamps_needed;
-                //                CCLOG("More stamps needed");
-                //                //TODO: show the window with number of stamps needed
-                _pop_up_manager.openWindow(new UnlockWindow(more_stamps_needed));
-            }
-            else if(current->getCollectionState() == Collection::InShop)
-            {
-                if(_mode == Shop)
-                {
-                    _pop_up_manager.openWindow(new PurchaseWindow(current));
-                }
-                else
-                {
-                    CCLOG("Something wrong with collection");
-                }
+                _pop_up_manager.openWindow(new PurchaseWindow(current));
             }
             else
             {
-                _last_selected_collection = current;
-                hideEverything(
-                            CCCallFunc::create(
-                                this,
-                                callfunc_selector(SelectCollection::doOpenCollection)));
+                CCLOG("Something wrong with collection");
             }
         }
         else
         {
-            hideEverything(
-                        CCCallFunc::create(
-                            this,
-                            callfunc_selector(SelectCollection::doOpenShop)));
+            hideEverything([current](){
+                CCDirector::sharedDirector()->replaceScene(
+                            SelectLevel::scene(current));
+            });
+
         }
     }
+    else
+    {
+        hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Shop));
+        });
+    }
+
 
 }
 
 ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name,
-                                                         const std::string& label_name,
-                                                         const std::string& stamps_label_text,
-                                                         const ccColor3B& color,
-                                                         const SpritesLoader& papers_spl, const std::string &stamp_file_name, bool show_crown, bool show_new, bool more_level_tile)
+                                                   const std::string& label_name,
+                                                   const std::string& stamps_label_text,
+                                                   const ccColor3B& color,
+                                                   const SpritesLoader& papers_spl, const std::string &stamp_file_name, bool show_crown, bool show_new, bool more_level_tile)
 {
-    ADMenuItem* paper_item = ADMenuItem::create(
-                papers_spl->loadSprite("collection_background.png"),
-                this,
-                menu_selector(SelectCollection::onCollectionSelect));
+    CCSprite* background = papers_spl->loadSprite("collection_background.png");
+    ADMenuItem* paper_item = ADMenuItem::createWithSpriteSheetSprite(background);
 
 
     //create new collection
     SpritesLoader new_col_spl = GraphicsManager::getLoaderFor(
                 paper_item,
-                "select_collection/new_collection.plist",
-                "select_collection/new_collection.png");
+                "select_collection/new_collection2.plist",
+                "select_collection/new_collection2.png");
     new_col_spl->inject();
-    CCSprite* paper = new_col_spl->loadSprite("collection_background.png");
-    CCSize paper_size = paper->getContentSize();
-    paper->removeFromParent();
+
+    CCSize paper_size = background->getContentSize();
 
     CCSprite* image = CCSprite::create(image_name.c_str());
     image->setAnchorPoint(ccp(0.5f,0.5f));
@@ -367,7 +144,7 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
     image->setPosition(ccp(middle_width, paper_size.height*0.75));
     paper_item->addChild(image);
 
-    float scaled = Screen::getScaleFactor();
+    float scaled = ADScreen::getScaleFactor();
     if(show_crown)
     {
         CCSprite* crown = new_col_spl->loadSprite("collection_crown.png");
@@ -534,29 +311,17 @@ bool SelectCollection::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
     //Get the sprites loader
     SpritesLoader spl;
 
-    if(_mode == Collections)
+    if(_mode != Collections)
     {
-//        spl = GraphicsManager::getLoaderFor(
-//                    this,
-//                    Language::localizeFileName("select_collection/images.plist").c_str(),
-//                    Language::localizeFileName("select_collection/images.png").c_str());
-    }
-    else
-    {
-
         ADStatistics::logEvent("OnMoreLevelsClick");
-//        spl = GraphicsManager::getLoaderFor(
-//                    this,
-//                    Language::localizeFileName("select_collection/images2.plist").c_str(),
-//                    Language::localizeFileName("select_collection/images2.png").c_str());
     }
     //Get the Select collection label
 
@@ -614,7 +379,11 @@ bool SelectCollection::init()
             paper_item->setPositionX(i * padding_left);
             i++;
 
-            _tiles[paper_item] = CollectionTile(paper_item, a);
+            CollectionTile tile(paper_item, a);
+            _tiles[paper_item] = tile;
+            paper_item->setClickAction([tile, this](){
+                onCollectionSelect(tile);
+            });
 
             if(a->isReadyToBeUnlocked())
             {
@@ -654,7 +423,12 @@ bool SelectCollection::init()
         paper_item->setPositionX(i * padding_left);
         i++;
 
-        _tiles[paper_item] = CollectionTile(paper_item, 0, true);
+
+        CollectionTile tile(paper_item, 0, true);
+        _tiles[paper_item] = tile;
+        paper_item->setClickAction([tile, this](){
+            onCollectionSelect(tile);
+        });
     }
 
     _pop_up_manager.addMenuToAutoDisable(_collections_menu->menu());
@@ -667,11 +441,11 @@ bool SelectCollection::init()
 void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
 {
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
-    float scaled = Screen::getScaleFactor();
+    CCSize visibleSize = ADScreen::getVisibleSize();
+    float scaled = ADScreen::getScaleFactor();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
+    CCPoint origin = ADScreen::getOrigin();
 
     float menu_left_padding = 0;
     float min_width = 1000/scaled;
@@ -741,19 +515,19 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
     CCRect eat_zone(origin.x,origin.y+banner_height, visibleSize.width, scroll_view_height);
     _collections_scroll_view->setTouchEatZone(eat_zone);
     _collections_scroll_view->updateInset();
-    _collections_scroll_view->setDirection(kADScrollViewDirectionHorizontal);
+    _collections_scroll_view->setDirection(ADScrollView::Direction::Horizontal);
     this->addChild(_collections_scroll_view);
 
     //Add our tiles to scroll area
     _collections_scroll_view->addChild(menu);
-    _collections_scroll_view->setMenu(menu->menu());
+    _collections_scroll_view->addHighPriorityTouchListener(menu->menu());
     if(_mode == Collections)
         _collections_scroll_view->setContentOffset(_last_scroll_view_offset, false);
     //_collections_menu->menu()->setTouchPriority(10);
     //collections->setTouchPriority(-500);
     //Place menu just in place
-    _pop_up_manager.addScrollViewToAutoDisable(_collections_scroll_view);
-    _pop_up_manager.addBannerToAutoDisable(_bottom_banner);
+    _pop_up_manager.addTouchZoneToAutoDisable(_collections_scroll_view);
+    //_pop_up_manager.addBannerToAutoDisable(_bottom_banner);
     menu->setPosition(ccp(160/scaled + menu_left_padding,
                           scroll_view_size.height*0.52f-overfit));
 
@@ -775,7 +549,7 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
                     NULL));
 }
 
-void SelectCollection::hideEverything(CCCallFunc *callback)
+void SelectCollection::hideEverything(const Action& callback)
 {
     CCFadeTo* logo_fade = CCFadeTo::create(0.15f, 0);
     _title_select_collection->runAction(logo_fade);
@@ -805,7 +579,7 @@ void SelectCollection::hideEverything(CCCallFunc *callback)
     this->runAction(
                 CCSequence::create(
                     CCDelayTime::create(delay),
-                    callback,
+                    ADCallFunc::create(callback),
                     NULL));
 
 }
@@ -815,10 +589,9 @@ void SelectCollection::purchaseReload()
     if(_last_scene_ptr)
     {
         SelectCollection* col = _last_scene_ptr;
-        col->hideEverything(
-                    CCCallFunc::create(
-                        col,
-                        callfunc_selector(SelectCollection::doReload)));
+        col->hideEverything([col](){
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(col->_mode));
+        });
     }
 }
 
@@ -827,10 +600,9 @@ void SelectCollection::purchaseOpenCollections()
     if(_last_scene_ptr)
     {
         SelectCollection* col = _last_scene_ptr;
-        col->hideEverything(
-                    CCCallFunc::create(
-                        col,
-                        callfunc_selector(SelectCollection::doOpenCollections)));
+        col->hideEverything([](){
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Collections));
+        });
     }
 }
 

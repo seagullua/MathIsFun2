@@ -29,10 +29,10 @@ bool LevelScenePopUp::init()
     }*/
     Level* current_level = _parent->getLevel();
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
     //Create the sheet
     //_sheet_menu = CCNode::create();
@@ -289,7 +289,7 @@ void LevelScenePopUp::hideMe(CCCallFunc* callback)
 //        _pause_banner->hideAds();
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
     this->runAction(
                 CCSequence::create(
                     CCMoveTo::create(

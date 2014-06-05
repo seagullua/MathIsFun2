@@ -15,7 +15,7 @@ YesNoDialog::YesNoDialog(CCNode* content,
 void YesNoDialog::onCreate(CCNode *parent)
 {
     CCSize size = parent->getContentSize();
-    float scaled = Screen::getScaleFactor();
+    float scaled = ADScreen::getScaleFactor();
 
     parent->addChild(_content);
     _content->release();
