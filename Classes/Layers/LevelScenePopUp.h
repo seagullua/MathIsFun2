@@ -14,7 +14,7 @@ private:
     CCNode* _sheet_menu;
     CCPoint _sheet_target_position;
     CCSprite* _crown;
-    ads::Banner* _pause_banner;
+    ADAds::Banner* _pause_banner;
     void onFindMoreSolutions(CCObject*);
     void onLevels(CCObject*);
 

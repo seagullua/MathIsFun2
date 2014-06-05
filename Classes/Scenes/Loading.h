@@ -4,7 +4,7 @@
 #include <queue>
 #include <string>
 //#include "../Core/CCMutex.h"
-class Loading : public CCLayer
+class Loading : public cocos2d::CCLayer
 {
 private:
 	static const unsigned int SPLASH_SCREEN_TIME = 2;
@@ -12,7 +12,7 @@ private:
     unsigned int _loaded_sprites;
     int _started_in;
     //CCMutex _mutex;
-    CCSprite* _logo;
+    cocos2d::CCSprite* _logo;
     void loadSprite(const char*);
     void loadingCallBack(CCObject *obj);
     void hideLogo();

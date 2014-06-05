@@ -4,8 +4,11 @@
 #include "Logic/Collection.h"
 #include <vector>
 #include "Layers/PopUpWindow.h"
-#include "Core/Ads.h"
-class SelectCollection : public cocos2d::CCLayer
+#include <ADLib/Device/ADAds.h>
+#include "SceneStyle.h"
+#include <ADLib/Rendering/ADScrollView.h>
+
+class SelectCollection : public SceneStyle
 {
 public:
     enum Mode
@@ -33,13 +36,13 @@ private:
     {
     public:
 
-        CollectionTile(AnimatedMenuItem* item=0,
+        CollectionTile(ADMenuItem* item=0,
                        Collection* collection = 0,
                        bool is_shop_tile=false)
             : _item(item), _collection(collection), _is_shop_tile(is_shop_tile)
         {}
 
-        AnimatedMenuItem* getItem() const
+        ADMenuItem* getItem() const
         {
             return _item;
         }
@@ -52,18 +55,14 @@ private:
             return _is_shop_tile;
         }
     private:
-        AnimatedMenuItem* _item;
+        ADMenuItem* _item;
         Collection* _collection;
         bool _is_shop_tile;
     };
     class CollectionUnlockAnimator;
 
-    void keyBackClicked();
+    void onBackClick();
 
-    void onKeyBackClicked()
-    {
-        keyBackClicked();
-    }
     void doGoBack();
     void doOpenCollection();
     void doOpenCollections();
@@ -74,12 +73,12 @@ private:
     void buildCollectionTiles();
     void newScrolling(MenuSpriteBatch* menu, float width);
 
-    AnimatedMenuItem* createCollectionItem(Collection* collection,
+    ADMenuItem* createCollectionItem(Collection* collection,
                                            const SpritesLoader& spl);
-    AnimatedMenuItem* createCollectionItem(const std::string& image,
+    ADMenuItem* createCollectionItem(const std::string& image,
                                            const std::string& label,
                                            const std::string& stamps_label,
-                                           const ccColor3B& color,
+                                           const cocos2d::ccColor3B& color,
                                            const SpritesLoader& spl,
                                            const std::string& stamp_file_name,
                                            bool show_crown,
@@ -87,23 +86,22 @@ private:
                                            bool shop_mode);
 
 
-    CCSprite* _title_select_collection;
-    typedef std::map<AnimatedMenuItem*, CollectionTile> TileMap;
+    cocos2d::CCSprite* _title_select_collection;
+    typedef std::map<ADMenuItem*, CollectionTile> TileMap;
     TileMap _tiles;
     MenuSpriteBatch* _collections_menu;
     SpritesLoader _col_spl;
     Collection* _last_selected_collection;
     SpritesLoader _papers_spl;
 
-    static CCPoint _last_scroll_view_offset;
-    CCScrollView* _collections_scroll_view;
+    static cocos2d::CCPoint _last_scroll_view_offset;
+    ADScrollView* _collections_scroll_view;
     Mode _mode;
 
     class UnlockWindow;
     class PurchaseWindow;
-    PopUpWindowManager _pop_up_manager;
 
-    ads::Banner* _bottom_banner;
+    ADAds::Banner* _bottom_banner;
 public:
     CREATE_FUNC(SelectCollection)
 };

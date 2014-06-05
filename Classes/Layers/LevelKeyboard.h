@@ -79,13 +79,13 @@ private:
         Vertical
     };
 
-    typedef std::vector<AnimatedMenuItem*> ItemsArr;
+    typedef std::vector<ADMenuItem*> ItemsArr;
     void rearangeButtons(const Mode& mask);
     void arrangeButtons(const ItemsArr&, const unsigned int& in_row);
-    AnimatedMenuItem* createButton(const char* name);
+    ADMenuItem* createButton(const char* name);
     Mode _mode;
     KeyboardDelegate* _listener;
-    std::vector<AnimatedMenuItem*> _buttons;
+    std::vector<ADMenuItem*> _buttons;
     MenuSpriteBatch* _collections_menu;
     MenuSpriteBatch* _menu;
     SpritesLoader _col_spl;

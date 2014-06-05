@@ -68,13 +68,13 @@ bool Settings::init()
 
     if(_expert_mode_on)
     {
-        _menu_item.push_back(AnimatedMenuItem::create(
+        _menu_item.push_back(ADMenuItem::create(
                                  _settings_menu_new->loadSprite("Expert_mode_on.png"),
                                  this, menu_selector(Settings::onExpertModeSelect)));
     }
     else
     {
-        _menu_item.push_back(AnimatedMenuItem::create(
+        _menu_item.push_back(ADMenuItem::create(
                                  _settings_menu_new->loadSprite("Expert_mode_off.png"),
                                  this, menu_selector(Settings::onExpertModeSelect)));
     }
@@ -82,14 +82,14 @@ bool Settings::init()
     if (MusicSettings::isSoundEffectOn() == true)
     {
         //sound =
-        _menu_item.push_back(AnimatedMenuItem::create(
+        _menu_item.push_back(ADMenuItem::create(
                                  _settings_menu_new->loadSprite("Sound_on.png"),
                                  this, menu_selector(Settings::onSoundSelect)));
     }
     else if(MusicSettings::isSoundEffectOn() == false)
     {
         //sound =
-        _menu_item.push_back(AnimatedMenuItem::create(
+        _menu_item.push_back(ADMenuItem::create(
                                  _settings_menu_new->loadSprite("Sound_off.png"),
                                  this, menu_selector(Settings::onSoundSelect)));
     }
@@ -98,14 +98,14 @@ bool Settings::init()
     if (MusicSettings::isMusicOn() == true )
     {
         //music =
-        _menu_item.push_back(AnimatedMenuItem::create(
+        _menu_item.push_back(ADMenuItem::create(
                                  _settings_menu_new->loadSprite("Music_on.png"),
                                  this, menu_selector(Settings::onMusicSelect)));
     }
     else if (MusicSettings::isMusicOn() == false)
     {
         //music =
-        _menu_item.push_back(AnimatedMenuItem::create(
+        _menu_item.push_back(ADMenuItem::create(
                                  _settings_menu_new->loadSprite("Music_off.png"),
                                  this, menu_selector(Settings::onMusicSelect)));
     }
@@ -116,16 +116,16 @@ bool Settings::init()
     //menu->menu()->alignItemsVerticallyWithPadding(30/scaled);
     //menu->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
-    //AnimatedMenuItem* developers =
-    _menu_item.push_back(AnimatedMenuItem::create(
+    //ADMenuItem* developers =
+    _menu_item.push_back(ADMenuItem::create(
                              _settings_menu->loadSprite("Developers.png"),
                              this, menu_selector(Settings::onDevelopersSelect)));
 
-    _menu_item.push_back(AnimatedMenuItem::create(
+    _menu_item.push_back(ADMenuItem::create(
                              _settings_menu->loadSprite("Reset_progress.png"),
                              this, menu_selector(Settings::onResetProgressSelect)));
 #ifndef JUNIOR
-    AnimatedMenuItem* restore = AnimatedMenuItem::create(
+    ADMenuItem* restore = ADMenuItem::create(
                 _settings_menu->loadSprite("Restore_purchases.png"),
                 this, menu_selector(Settings::onRestorePurchasesSelect));
     _menu_item.push_back(restore);
@@ -182,7 +182,7 @@ cocos2d::CCScene* Settings::scene()
 }
 void Settings::onExpertModeSelect(CCObject* sender)
 {
-    AnimatedMenuItem* item = dynamic_cast<AnimatedMenuItem*>(sender);
+    ADMenuItem* item = dynamic_cast<ADMenuItem*>(sender);
     CCAssert(item, "");
     if(item)
     {
@@ -227,7 +227,7 @@ void Settings::onRestorePurchasesSelect(CCObject*)
 
 void Settings::onSoundSelect(CCObject* sender)
 {
-    AnimatedMenuItem* item = dynamic_cast<AnimatedMenuItem*>(sender);
+    ADMenuItem* item = dynamic_cast<ADMenuItem*>(sender);
     CCAssert(item, "");
     if(item)
     {
@@ -252,7 +252,7 @@ void Settings::onSoundSelect(CCObject* sender)
 
 void Settings::onMusicSelect(CCObject* sender)
 {
-    AnimatedMenuItem* item = dynamic_cast<AnimatedMenuItem*>(sender);
+    ADMenuItem* item = dynamic_cast<ADMenuItem*>(sender);
     CCAssert(item, "");
     if(item)
     {

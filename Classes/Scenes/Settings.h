@@ -2,7 +2,8 @@
 #define SETTINGS_H
 #include "cocos2d-A.h"
 #include "Layers/YesNoDialog.h"
-class Settings: public cocos2d::CCLayer
+#include "SceneStyle.h"
+class Settings: public SceneStyle
 {
 public:
     Settings();
@@ -11,20 +12,16 @@ public:
 private:
     SpritesLoader _settings_menu;
     SpritesLoader _settings_menu_new;
-    std::vector<AnimatedMenuItem*> _menu_item;
-    CCSprite* _menu_name;
+    std::vector<ADMenuItem*> _menu_item;
+    cocos2d::CCSprite* _menu_name;
     bool _sound_on;
     bool _music_on;
     bool _expert_mode_on;
 
-    PopUpWindowManager _pop_up_manager;
 
     void doDeleteProgress();
-    void keyBackClicked();
-    void onKeyBackClicked()
-    {
-        keyBackClicked();
-    }
+    void onBackClick();
+
     void doGoBack();
     void hideEverything(cocos2d::CCCallFunc *callback);
     void onExpertModeSelect(CCObject* sender);

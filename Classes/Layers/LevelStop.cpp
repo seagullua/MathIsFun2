@@ -46,29 +46,29 @@ bool LevelStop::init()
                                                            Language::localizeFileName("stop_level/stop_level_menu.png").c_str());
     //CCSprite* level = menu_spl->loadSprite("Resume.png");
     _menu.push_back(menu_spl->loadSprite("Resume.png"));
-    AnimatedMenuItem* resume_button = AnimatedMenuItem::create(
+    ADMenuItem* resume_button = ADMenuItem::create(
                 _menu[_menu.size()-1],
             this, menu_selector(LevelStop::onResume));
 
     _menu.push_back(menu_spl->loadSprite("Restart.png"));
-    AnimatedMenuItem* restart_button = AnimatedMenuItem::create(
+    ADMenuItem* restart_button = ADMenuItem::create(
                 _menu[_menu.size()-1],
             this, menu_selector(LevelStop::onRestart));
 
     _menu.push_back(menu_spl->loadSprite("Skip_level.png"));
-    AnimatedMenuItem* skip_button = AnimatedMenuItem::create(
+    ADMenuItem* skip_button = ADMenuItem::create(
                 _menu[_menu.size()-1],
             this, menu_selector(LevelStop::onSkipLevel));
 
 
     _menu.push_back(menu_spl->loadSprite("Found_Solutions.png"));
-    AnimatedMenuItem* found_solutions_button = AnimatedMenuItem::create(
+    ADMenuItem* found_solutions_button = ADMenuItem::create(
                 _menu[_menu.size()-1],
             this, menu_selector(LevelStop::onFoundSolutions));
 
 
     _menu.push_back(menu_spl->loadSprite("Levels.png"));
-    AnimatedMenuItem* levels_button = AnimatedMenuItem::create(
+    ADMenuItem* levels_button = ADMenuItem::create(
                 _menu[_menu.size()-1],
             this, menu_selector(LevelStop::onLevels));
 

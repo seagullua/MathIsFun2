@@ -77,20 +77,20 @@ private:
         lamp->setPosition(ccp(200/scaled, 310/scaled));
 
 
-        AnimatedMenuItem *hint_10_item = AnimatedMenuItem::create(
+        ADMenuItem *hint_10_item = ADMenuItem::create(
                     menu_spl->loadSprite("hint_10_button.png"),
                     this, menu_selector(BuyHints::onBuy10));
 
         hint_10_item->setPosition(ccp(200/scaled,
                                         vertical_pos));
 
-        AnimatedMenuItem *hint_50_item = AnimatedMenuItem::create(
+        ADMenuItem *hint_50_item = ADMenuItem::create(
                     menu_spl->loadSprite("hint_50_button.png"),
                     this, menu_selector(BuyHints::onBuy50));
         hint_50_item->setPosition(ccp(425/scaled,
                                    vertical_pos));
 
-        AnimatedMenuItem *hint_1000_item = AnimatedMenuItem::create(
+        ADMenuItem *hint_1000_item = ADMenuItem::create(
                     menu_spl->loadSprite("hint_1000_button.png"),
                     this, menu_selector(BuyHints::onBuy1000));
         hint_1000_item->setPosition(ccp(650/scaled,
@@ -104,7 +104,7 @@ private:
         menu->menu()->addChild(hint_50_item);
         menu->menu()->addChild(hint_10_item);
 #else
-        AnimatedMenuItem *ok_button = AnimatedMenuItem::create(
+        ADMenuItem *ok_button = ADMenuItem::create(
                     menu_spl->loadSprite("ok_button.png"),
                     this, menu_selector(BuyHints::onOk));
         ok_button->setPosition(ccp(425/scaled,
@@ -234,17 +234,17 @@ bool LevelScene::init()
     SpritesLoader ellements_spl = GraphicsManager::getLoaderFor(0,
                                                                 "level_scene/ellements.plist",
                                                                 "level_scene/ellements.png");
-    _play = AnimatedMenuItem::create(
+    _play = ADMenuItem::create(
                 ellements_spl->loadSprite("play_button.png"),
                 this, menu_selector(LevelScene::keyPauseClicked));
-    _pause = AnimatedMenuItem::create(
+    _pause = ADMenuItem::create(
                 ellements_spl->loadSprite("stop_button.png"),
                 this, menu_selector(LevelScene::keyPauseClicked));
-    _restart= AnimatedMenuItem::create(
+    _restart= ADMenuItem::create(
                 ellements_spl->loadSprite("restart_button.png"),
                 this, menu_selector(LevelScene::keyRestartClicked));
 //#ifndef TEMPORARY_HIDE
-    _hint= AnimatedMenuItem::create(
+    _hint= ADMenuItem::create(
                 ellements_spl->loadSprite("lamp_hint.png"),
                 this,menu_selector(LevelScene::keyHintClicked));
 //#endif
@@ -561,7 +561,7 @@ void LevelScene::showMe()
                             CCDelayTime::create(0.3f),
                             CCCallFunc::create(_top_banner,
                                                callfunc_selector(
-                                                   ADAds::Banner::showAds))));
+                                                   ADADAds::Banner::showAds))));
     }
     _last_scene = this;
     //CCFadeTo* play_hide = CCFadeTo::create(0.3f, 0);

@@ -29,13 +29,13 @@ void YesNoDialog::onCreate(CCNode *parent)
                                                            "yes_no_menu.png");
     //Create menu items
     //Yes button
-    AnimatedMenuItem *yes_button = AnimatedMenuItem::create(
+    ADMenuItem *yes_button = ADMenuItem::create(
                 menu_spl->loadSprite("yes.png"),
                 this, menu_selector(YesNoDialog::yes));
 
 
     //Settings button
-    AnimatedMenuItem *no_button = AnimatedMenuItem::create(
+    ADMenuItem *no_button = ADMenuItem::create(
                 menu_spl->loadSprite("no.png"),
                 this, menu_selector(YesNoDialog::no));
 

@@ -156,7 +156,7 @@ bool BackgroundHolder::BackgroundLayer::init()
     SpritesLoader spl = GraphicsManager::getLoaderFor(0,
                                                       "common.plist",
                                                       "common.png");
-    _back_button = AnimatedMenuItem::create(spl->loadSprite("back_button.png"),
+    _back_button = ADMenuItem::create(spl->loadSprite("back_button.png"),
                                             this, menu_selector(BackgroundLayer::onBackClicked));
 
     _back_button_menu = MenuSpriteBatch::create(spl);

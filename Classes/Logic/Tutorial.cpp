@@ -28,7 +28,7 @@ void Tutorial::onLevelStart(EquationDrawer* eqd)
                 else
                     label = CCSprite::create("level/tutorial/touch_empty_space2.png");
                 eqd->addChild(label);
-                AnimatedMenuItem* empty_space = eqd->getSubstituteItems()[0];
+                ADMenuItem* empty_space = eqd->getSubstituteItems()[0];
                 float empty_space_position = empty_space->getPositionX();
                 float empty_space_width = empty_space->getContentSize().width;
                 float empty_space_scale = eqd->getEquaionLabelScale();

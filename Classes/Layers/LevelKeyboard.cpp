@@ -75,17 +75,17 @@ CCPoint LevelKeyboard::getButtonPosition(const ButtonsCodes code)
 }
 CCSize LevelKeyboard::getButtonSizeScaled(const ButtonsCodes code)
 {
-    AnimatedMenuItem* item = _buttons[code];
+    ADMenuItem* item = _buttons[code];
     float scale = item->getBaseScale();
     CCSize content_size = item->getContentSize();
     return CCSize(content_size.width * scale,
                   content_size.height * scale);
 }
 
-AnimatedMenuItem* LevelKeyboard::createButton(const char* name)
+ADMenuItem* LevelKeyboard::createButton(const char* name)
 {
     //Create menu item
-    return AnimatedMenuItem::create(
+    return ADMenuItem::create(
                 _col_spl->loadSprite(name),
                 this, menu_selector(LevelKeyboard::onKeyPressed));
 }
@@ -154,7 +154,7 @@ void LevelKeyboard::arrangeButtons(const ItemsArr& items,
             unsigned int index = y*columns+x;
             if(index < items_number)
             {
-                AnimatedMenuItem* item = items[y*columns+x];
+                ADMenuItem* item = items[y*columns+x];
                 if(item)
                 {
                     item->setVisible(true);

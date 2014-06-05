@@ -27,7 +27,7 @@ public:
     void onFoundSolutionClose();
 
     LevelKeyboard* getLevelKeyboard();
-    const std::vector<AnimatedMenuItem*>& getSubstituteItems();
+    const std::vector<ADMenuItem*>& getSubstituteItems();
     float getEquaionLabelScale();
     Equation& getEquation()
     {
@@ -72,7 +72,7 @@ private:
     CCNode* _message_node;
     CCSprite* _message_node_text;
     MenuSpriteBatch* _message_node_menu;
-    AnimatedMenuItem* _message_node_button;
+    ADMenuItem* _message_node_button;
 
     PopUpWindowManager& _pop_up_manager;
 
@@ -82,7 +82,7 @@ private:
     CCSize _zone;
     float _font_symbol_height;
     CCSize _max_draft_size;
-    std::vector<AnimatedMenuItem*> _substitutors;
+    std::vector<ADMenuItem*> _substitutors;
     std::vector<unsigned int> _substitutors_index;
     unsigned int _substituting_now_id;
 

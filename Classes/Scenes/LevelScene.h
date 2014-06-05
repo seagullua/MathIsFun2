@@ -3,12 +3,14 @@
 #include "cocos2d-A.h"
 #include "Logic/Level.h"
 #include "Layers/PopUpWindow.h"
-#include "Core/Ads.h"
+#include <ADLib/Device/ADAds.h>
+#include "SceneStyle.h"
+
 class EquationDrawer;
 class LevelStop;
 class LevelScenePopUp;
 class FoundSolutionsLayer;
-class LevelScene : public cocos2d::CCLayer
+class LevelScene : public SceneStyle
 {
 public:
     LevelScene(Level* level);
@@ -38,23 +40,22 @@ private:
     CCLabelBMFont* _hint_quantity;
     bool _found_solution_is_opened;
 
-    AnimatedMenuItem* _play;
-    AnimatedMenuItem* _pause;
-    AnimatedMenuItem* _restart;
-    AnimatedMenuItem* _hint;
+    ADMenuItem* _play;
+    ADMenuItem* _pause;
+    ADMenuItem* _restart;
+    ADMenuItem* _hint;
     MenuSpriteBatch* _screenEllements;
     LevelScenePopUp* _last_pop_up;
     Solution _hint_solution;
-    ads::Banner* _top_banner;
+    ADAds::Banner* _top_banner;
 
     class BuyHints;
-    PopUpWindowManager _pop_up_manager;
     void onKeyPauseClicked();
     void keyPauseClicked(CCObject *);
     void keyRestartClicked(CCObject*);
     void keyHintClicked(CCObject *);
     void onkeyRestartClicked();
-    void keyBackClicked();
+    void onBackClick();
 
     void do_goToLevelSelect();
     void renewOneHint();

@@ -280,7 +280,7 @@ void SelectLevel::buildLevelsTiles()
                 tile_image = locked_tile->loadSprite("lt_locked.png");
             else
                 tile_image =  level_tiles->loadSprite(sprite_name.c_str());
-            AnimatedMenuItem* item=AnimatedMenuItem::create(
+            ADMenuItem* item=ADMenuItem::create(
                         tile_image,
                         this,
                         menu_selector(SelectLevel::onLevelSelect));

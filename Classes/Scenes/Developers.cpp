@@ -63,12 +63,12 @@ bool Developers::init()
 
     MenuSpriteBatch* menu = MenuSpriteBatch::create(contact_menu_spl);
     float posY = origin.y + 150/scaled;
-    _x4enjoy_item = (AnimatedMenuItem::create(
+    _x4enjoy_item = (ADMenuItem::create(
                              contact_menu_spl->loadSprite("4enjoy.png"),
                              this, menu_selector(Developers::onSite)));
 
 #ifndef JUNIOR
-    _send_item = (AnimatedMenuItem::create(
+    _send_item = (ADMenuItem::create(
                              contact_menu_spl->loadSprite("button_send_email.png"),
                              this, menu_selector(Developers::onSendLetter)));
 

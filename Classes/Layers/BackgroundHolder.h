@@ -1,7 +1,8 @@
 #ifndef BACKGROUNDLAYER_H
 #define BACKGROUNDLAYER_H
-#include "cocos2d-A.h"
-
+#include <cocos2d.h>
+#include <ADLib/Rendering/ADMenuItem.h>
+#include "Core/MenuSpriteBatch.h"
 
 
 
@@ -34,9 +35,9 @@ private:
         void onBackClicked(CCObject*);
         void triggerAnimations();
         cocos2d::CCCallFunc* _back_button_callback;
-        AnimatedMenuItem* _back_button;
-        CCPoint _back_button_position;
-        CCSprite* _animated_sprite;
+        ADMenuItem* _back_button;
+        cocos2d::CCPoint _back_button_position;
+        cocos2d::CCSprite* _animated_sprite;
 		MenuSpriteBatch* _back_button_menu;
         friend class BackgroundHolder;
     };

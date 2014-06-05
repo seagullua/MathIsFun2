@@ -17,20 +17,20 @@ public:
         if(_item.getCollection()->isReadyToBeUnlocked())
         {
 
-            AnimatedMenuItem* current_image = _item.getItem();
+            ADMenuItem* current_image = _item.getItem();
 
-            CCScaleTo* logo_scale = CCScaleTo::create(0.5, 1.25f);
-            CCFadeTo* logo_fade = CCFadeTo::create(0.25f, 0);
-            CCDelayTime* start_delay = CCDelayTime::create(1.5f);
-            CCDelayTime* delay = CCDelayTime::create(1.75f);
-            CCCallFunc* helper = CCCallFunc::create(
+            cocos2d::CCScaleTo* logo_scale = cocos2d::CCScaleTo::create(0.5, 1.25f);
+            cocos2d::CCFadeTo* logo_fade = cocos2d::CCFadeTo::create(0.25f, 0);
+            cocos2d::CCDelayTime* start_delay = cocos2d::CCDelayTime::create(1.5f);
+            cocos2d::CCDelayTime* delay = cocos2d::CCDelayTime::create(1.75f);
+            cocos2d::CCCallFunc* helper = cocos2d::CCCallFunc::create(
                         this,
                         callfunc_selector(SelectCollection::CollectionUnlockAnimator::unlockHelper));
-            CCCallFunc* cleanup = CCCallFunc::create(
+            cocos2d::CCCallFunc* cleanup = cocos2d::CCCallFunc::create(
                         this,
                         callfunc_selector(SelectCollection::CollectionUnlockAnimator::cleanup));
-            current_image->runAction(CCSequence::create(start_delay, logo_scale, NULL));
-            current_image->runAction(CCSequence::create(
+            current_image->runAction(cocos2d::CCSequence::create(start_delay, logo_scale, NULL));
+            current_image->runAction(cocos2d::CCSequence::create(
                                          delay, helper, logo_fade, cleanup, NULL));
 
         }
@@ -47,7 +47,7 @@ private:
         CCNode* current_image = _item.getItem();
 
 
-        AnimatedMenuItem* item = _parent->createCollectionItem(_item.getCollection(), _parent->_papers_spl);
+        ADMenuItem* item = _parent->createCollectionItem(_item.getCollection(), _parent->_papers_spl);
         _parent->_tiles[item] = SelectCollection::CollectionTile(item, _item.getCollection());
         item->setPosition(current_image->getPosition());
         //item->setBaseScale(0.7f);
@@ -71,7 +71,7 @@ private:
     }
     SelectCollection::CollectionTile _item;
     SelectCollection* _parent;
-    AnimatedMenuItem* _to_clean_up;
+    ADMenuItem* _to_clean_up;
 };
 
 #endif // SELECTCOLLECTIO_UNLOCKANIMATOR_H

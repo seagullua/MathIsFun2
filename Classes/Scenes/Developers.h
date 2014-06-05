@@ -11,8 +11,8 @@ private:
     CCSprite* _menu_name;
     CCSprite* _developers;
     CCSprite* _version;
-    AnimatedMenuItem* _x4enjoy_item;
-    AnimatedMenuItem* _send_item;
+    ADMenuItem* _x4enjoy_item;
+    ADMenuItem* _send_item;
     void keyBackClicked();
     void onKeyBackClicked()
     {

@@ -7,10 +7,7 @@
 #include <sstream>
 #include <string>
 #include "Logic/Language.h"
-#include "Core/Ads.h"
-#include "Core/RealLog.h"
-#include "Core/Distributor.h"
-#include "Core/Browser.h"
+
 #include "Store.h"
 #include <ADLib/Device/ADInApp.h>
 #include "PurchaseHandler.h"
@@ -146,7 +143,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     std::vector<std::string> searchPath;
     searchPath.push_back(resourse_directory);
 
-    Screen::setDesignScale(resourse_scale);
+    ADScreen::setDesignScale(resourse_scale);
     CCFileUtils::sharedFileUtils()->setSearchPaths(searchPath);
 
     pDirector->setContentScaleFactor(MIN(mediumResource.size.height*resourse_scale/designResolutionSize.height/width_change, mediumResource.size.width*resourse_scale/designResolutionSize.width/width_change));
@@ -240,30 +237,14 @@ void AppDelegate::AdsOffListener::wasClickedDisableAllAds()
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
     CCDirector::sharedDirector()->stopAnimation();
-    ADStatistics::stopSession();
-
-    // if you use SimpleAudioEngine, it must be pause
-    CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-    RW::saveGame();
+    ADDeviceEvents::onPause();
 
 
 }
 #include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
-#include "Core/MusicSettings.h"
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
     CCDirector::sharedDirector()->startAnimation();
-    ADStatistics::startSession();
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    if(MusicSettings::isBackgrHolderMusic() && MusicSettings::isMusicOn())
-    {
-        CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-    }
-#else
-
-    // if you use SimpleAudioEngine, it must resume here
-    CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-#endif
-
+    ADDeviceEvents::onResume();
 }

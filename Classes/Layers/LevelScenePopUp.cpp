@@ -99,18 +99,18 @@ bool LevelScenePopUp::init()
     CCSize image_size = next_level_image->getContentSize();
     float design_scale = 1;
 
-    AnimatedMenuItem *first_button = 0;
+    ADMenuItem *first_button = 0;
     if(current_level->getLevelState() == Level::Crown)
     {
         CCSprite* levels = menu_spl->loadSprite("levels.png");
-        first_button = AnimatedMenuItem::create(
+        first_button = ADMenuItem::create(
                     levels,
                     this, menu_selector(LevelScenePopUp::onLevels));
     }
     else
     {
         CCSprite* find_more_image = menu_spl->loadSprite("find_more.png");
-        first_button = AnimatedMenuItem::create(
+        first_button = ADMenuItem::create(
                     find_more_image,
                     this, menu_selector(LevelScenePopUp::onFindMoreSolutions));
     }
@@ -118,7 +118,7 @@ bool LevelScenePopUp::init()
     first_button->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
                                   53*design_scale/scaled+image_size.height/2));
 
-    AnimatedMenuItem *next_level = AnimatedMenuItem::create(
+    ADMenuItem *next_level = ADMenuItem::create(
                 next_level_image,
                 this, menu_selector(LevelScenePopUp::onNextLevel));
     next_level->setPosition(ccp(600*design_scale/scaled,

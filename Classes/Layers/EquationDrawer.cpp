@@ -161,7 +161,7 @@ void EquationDrawer::onFoundSolutionClose()
     _parent->onFoundSolutionClose();
 }
 
-const std::vector<AnimatedMenuItem*>& EquationDrawer::getSubstituteItems()
+const std::vector<ADMenuItem*>& EquationDrawer::getSubstituteItems()
 {
     return _substitutors;
 }
@@ -244,7 +244,7 @@ void EquationDrawer::initEquationLabel()
                 sp = col_spl->loadSprite("op_par.png");
             else
                 sp = col_spl->loadSprite("any.png");
-            AnimatedMenuItem* item = AnimatedMenuItem::create(
+            ADMenuItem* item = ADMenuItem::create(
                         sp,
                         this, menu_selector(EquationDrawer::onFreeSpacePressed));
             item->setPosition(ccp(symbol_length*i,0));
@@ -696,7 +696,7 @@ void EquationDrawer::recalculateEquation()
                             Language::localizeFileName("level/tutorial/buttons_tut.plist").c_str(),
                             Language::localizeFileName("level/tutorial/buttons_tut.png").c_str());
 
-                _message_node_button = AnimatedMenuItem::create(
+                _message_node_button = ADMenuItem::create(
                             menu_spl->loadSprite("restart_tut.png"),
                             _parent, menu_selector(LevelScene::restart));
 
@@ -794,7 +794,7 @@ void EquationDrawer::initNoMoreSolutions()
                     Language::localizeFileName("level/tutorial/buttons_tut.plist").c_str(),
                     Language::localizeFileName("level/tutorial/buttons_tut.png").c_str());
 
-        _message_node_button = AnimatedMenuItem::create(
+        _message_node_button = ADMenuItem::create(
                     menu_spl->loadSprite("levels_tut.png"),
                     _parent, menu_selector(LevelScene::levels));
 

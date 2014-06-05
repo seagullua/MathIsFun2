@@ -94,7 +94,7 @@ private:
 
 
         CCSprite* play_more_image = menu_spl->loadSprite("play_more_button.png");
-        AnimatedMenuItem *play_more_item = AnimatedMenuItem::create(
+        ADMenuItem *play_more_item = ADMenuItem::create(
                     play_more_image,
                     this, menu_selector(UnlockWindow::onPlayMoreClick));
 
@@ -112,7 +112,7 @@ private:
 #endif
 
 #ifndef JUNIOR
-        AnimatedMenuItem *next_level = AnimatedMenuItem::create(
+        ADMenuItem *next_level = ADMenuItem::create(
                     unlock_image,
                     this, menu_selector(UnlockWindow::onUnlockClick));
         next_level->setPosition(ccp(600*design_scale/scaled,
@@ -184,14 +184,14 @@ private:
 
 
         CCSprite* buy_one_image = menu_spl->loadSprite("buy_one_button.png");
-        AnimatedMenuItem *buy_one_item = AnimatedMenuItem::create(
+        ADMenuItem *buy_one_item = ADMenuItem::create(
                     buy_one_image,
                     this, menu_selector(PurchaseWindow::onBuyOneClick));
 
         buy_one_item->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
                                         53*design_scale/scaled+image_size.height/2));
 
-        AnimatedMenuItem *buy_all_item = AnimatedMenuItem::create(
+        ADMenuItem *buy_all_item = ADMenuItem::create(
                     unlock_image,
                     this, menu_selector(PurchaseWindow::onBuyAllClick));
         buy_all_item->setPosition(ccp(600*design_scale/scaled,
@@ -286,7 +286,7 @@ void SelectCollection::doOpenCollections()
 
 void SelectCollection::onCollectionSelect(CCObject* sender)
 {
-    AnimatedMenuItem* tile = dynamic_cast<AnimatedMenuItem*>(sender);
+    ADMenuItem* tile = dynamic_cast<ADMenuItem*>(sender);
 
     TileMap::iterator it = _tiles.find(tile);
     if(it != _tiles.end())
@@ -339,13 +339,13 @@ void SelectCollection::onCollectionSelect(CCObject* sender)
 
 }
 
-AnimatedMenuItem* SelectCollection::createCollectionItem(const std::string& image_name,
+ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name,
                                                          const std::string& label_name,
                                                          const std::string& stamps_label_text,
                                                          const ccColor3B& color,
                                                          const SpritesLoader& papers_spl, const std::string &stamp_file_name, bool show_crown, bool show_new, bool more_level_tile)
 {
-    AnimatedMenuItem* paper_item = AnimatedMenuItem::create(
+    ADMenuItem* paper_item = ADMenuItem::create(
                 papers_spl->loadSprite("collection_background.png"),
                 this,
                 menu_selector(SelectCollection::onCollectionSelect));
@@ -449,7 +449,7 @@ AnimatedMenuItem* SelectCollection::createCollectionItem(const std::string& imag
     return paper_item;
 }
 
-AnimatedMenuItem* SelectCollection::createCollectionItem(Collection* collection, const SpritesLoader& spl)
+ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const SpritesLoader& spl)
 {
     std::stringstream stamps_label;
     std::stringstream image_name;
@@ -608,7 +608,7 @@ bool SelectCollection::init()
         if((a->getCollectionState() != Collection::InShop && _mode == Collections )
                 || (a->getCollectionState() == Collection::InShop && _mode == Shop))
         {
-            AnimatedMenuItem* paper_item = createCollectionItem(a, _papers_spl);
+            ADMenuItem* paper_item = createCollectionItem(a, _papers_spl);
             _collections_menu->menu()->addChild(paper_item, 100);
             //paper_item->setBaseScale(0.7f);
             paper_item->setPositionX(i * padding_left);
@@ -638,7 +638,7 @@ bool SelectCollection::init()
     }
     if(in_shop && _mode == Collections)
     {
-        AnimatedMenuItem* paper_item = createCollectionItem(
+        ADMenuItem* paper_item = createCollectionItem(
                     "select_collection/more_levels_image.png",
                     Language::localizeFileName("select_collection/clabel_shop.png"),
                     "",
@@ -718,7 +718,7 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
     layer->setContentSize(CCSize(collection_width, scroll_view_size.height));
 
     //Create scroll view for this layer
-    _collections_scroll_view = CCScrollView::create(scroll_view_size,layer);
+    _collections_scroll_view = ADScrollView::create(scroll_view_size,layer);
 
 
     float logo_height = _title_select_collection->boundingBox().size.height;
@@ -741,7 +741,7 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
     CCRect eat_zone(origin.x,origin.y+banner_height, visibleSize.width, scroll_view_height);
     _collections_scroll_view->setTouchEatZone(eat_zone);
     _collections_scroll_view->updateInset();
-    _collections_scroll_view->setDirection(kCCScrollViewDirectionHorizontal);
+    _collections_scroll_view->setDirection(kADScrollViewDirectionHorizontal);
     this->addChild(_collections_scroll_view);
 
     //Add our tiles to scroll area
@@ -795,7 +795,7 @@ void SelectCollection::hideEverything(CCCallFunc *callback)
         it != _tiles.end(); ++it)
     {
         CCFadeTo* item_fade = CCFadeTo::create(fade_out_duration, 0);
-        AnimatedMenuItem* item = it->second.getItem();
+        ADMenuItem* item = it->second.getItem();
         item->stopAllActions();
         item->runAction(item_fade);
         //delay += fade_out_duration/2;
