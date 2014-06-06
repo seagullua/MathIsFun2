@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cassert>
 #include <iomanip>
-#include "Binary.h"
+//#include "Binary.h"
 #include "Math/Solution.h"
 #include "Logic/RW.h"
 using namespace std;
