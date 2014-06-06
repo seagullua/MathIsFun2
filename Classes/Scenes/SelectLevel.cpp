@@ -4,11 +4,8 @@
 #include "Scenes/LevelScene.h"
 #include "Logic/Language.h"
 
+using namespace cocos2d;
 
-//#define DEBUG_LAYER
-#ifdef DEBUG_LAYER
-#include "Layers/DebugLayer.h"
-#endif
 SelectLevel::SelectLevel(Collection *colection): _menu_name(0),
     _collection(colection), _level_to_open(0), _bottom_banner(0)
 {

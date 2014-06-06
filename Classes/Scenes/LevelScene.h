@@ -18,7 +18,7 @@ public:
     virtual bool init();
 
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static CCScene* scene(Level* level);
+    static cocos2d::CCScene* scene(Level* level);
     virtual void removeChild(CCNode* child, bool cleanup);
 
     void skipLevel(CCObject*);
@@ -36,8 +36,8 @@ private:
     FoundSolutionsLayer* _found_solutions;
     Level* _level;
     LevelStop* _levelStop;
-    CCLabelBMFont* _level_from;
-    CCLabelBMFont* _hint_quantity;
+    cocos2d::CCLabelBMFont* _level_from;
+    cocos2d::CCLabelBMFont* _hint_quantity;
     bool _found_solution_is_opened;
 
     ADMenuItem* _play;

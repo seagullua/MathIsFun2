@@ -3,9 +3,9 @@
 #include "cocos2d-A.h"
 #include "Layers/PopUpWindow.h"
 
-class LevelKeyboard : public CCNodeRGBA
+class LevelKeyboard : public cocos2d::CCNodeRGBA
 {
-    LevelKeyboard(const CCSize& zone, PopUpWindowManager& pop_up_m);
+    LevelKeyboard(const cocos2d::CCSize& zone, ADPopUpWindowManager& pop_up_m);
 public:
 
 
@@ -44,8 +44,8 @@ public:
         BUTTONS_COUNT
     };
 
-    CCPoint getButtonPosition(const ButtonsCodes code);
-    CCSize getButtonSizeScaled(const ButtonsCodes code);
+    cocos2d::CCPoint getButtonPosition(const ButtonsCodes code);
+    cocos2d::CCSize getButtonSizeScaled(const ButtonsCodes code);
 
     void setMode(const Mode& mask)
     {
@@ -55,7 +55,7 @@ public:
 
     void sleep();
     void wakeup();
-    static LevelKeyboard* create(const CCSize& zone, PopUpWindowManager& pop_up_m);
+    static LevelKeyboard* create(const cocos2d::CCSize& zone, ADPopUpWindowManager& pop_up_m);
 
     class KeyboardDelegate : public CCObject
     {
@@ -89,20 +89,13 @@ private:
     MenuSpriteBatch* _collections_menu;
     MenuSpriteBatch* _menu;
     SpritesLoader _col_spl;
-    CCSize _zone;
-    CCSize _base_button_size;
+    cocos2d::CCSize _zone;
+    cocos2d::CCSize _base_button_size;
     LayoutMode _layout_mode;
-    PopUpWindowManager& _pop_up_window_manager;
-    void onKeyPressed(CCObject* pSender);
+    ADPopUpWindowManager& _pop_up_window_manager;
+    void onKeyPressed(ButtonsCodes);
 
-    /*void hideZero();
-    void showZero();
-    void hideDigits();
-    void showDigits();
-    void hideOperations();
-    void showOperations();
-    void hideParenthesises();
-    void showParenthesises();*/
+
 };
 
 #endif // LEVELKEYBOARD_H

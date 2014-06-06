@@ -6,8 +6,6 @@
 #include "Logic/RW.h"
 #include "Scenes/SelectCollection.h"
 #include "Scenes/LevelScene.h"
-#include "Core/Notification.h"
-#include "Core/Ads.h"
 
 using namespace cocos2d;
 
