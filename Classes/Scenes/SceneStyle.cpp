@@ -9,7 +9,7 @@ SceneStyle::SceneStyle()
 
 bool SceneStyle::init()
 {
-    bool res = init();
+    bool res = CCLayer::init();
     this->setKeypadEnabled(true);
 
     return res;

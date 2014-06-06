@@ -39,7 +39,7 @@ bool MainMenu::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }
@@ -61,6 +61,7 @@ bool MainMenu::init()
                                        visibleSize.height + origin.y - 80/scaled);
     _logo->setPosition(ccp(x_middle_of_sheet,
                            2*visibleSize.height));
+    this->addChild(_logo);
 
     CCMoveTo* logo_move = CCMoveTo::create(0.3f, logo_target_position);
     _logo->runAction(logo_move);
@@ -82,7 +83,7 @@ bool MainMenu::init()
 
     _share_menu = CCMenu::create();
 
-    _facebook_button = ADMenuItem::create(CCSprite::create("main_menu/sfacebook_logo.png"));
+    _facebook_button = ADMenuItem::create(CCSprite::create("main_menu/facebook_logo.png"));
     CONNECT(_facebook_button->signalOnClick,
             this,&MainMenu::onShareFacebookPressed);
 

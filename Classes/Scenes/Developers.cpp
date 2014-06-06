@@ -8,7 +8,7 @@ Developers::Developers():_menu_name(0),_developers(0), _version(0)
 }
 bool Developers::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }

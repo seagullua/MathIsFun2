@@ -167,7 +167,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->runWithScene(pScene);
     _loaded = true;
 
-#ifndef JUNIOR
+
     ADStore store = ADInfo::getStore();
     ADPlatform platform = ADInfo::getPlatform();
 
@@ -204,11 +204,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     }
     else if(platform == ADPlatform::iOS)
     {
-            //ca-app-pub-1612697960946304/7748593879
-            pid_banner << 7748593879;
+        //ca-app-pub-1612697960946304/7748593879
+        pid_banner << 7748593879;
 
-            //ca-app-pub-1612697960946304/9225327070
-            pid_interstitial << 9225327070;
+        //ca-app-pub-1612697960946304/9225327070
+        pid_interstitial << 9225327070;
     }
 
     ADAds::registerBannerType("BANNER", pid_banner.str());
@@ -223,9 +223,11 @@ bool AppDelegate::applicationDidFinishLaunching()
         ADAds::addTestDevice("C31238A94F2B52E9F4B77E58270A3943"); //Tonya
     }
 
-#else
-    manager.disableAds();
-#endif
+    //Init ADMenuItem
+    ADMenuItem::setAllClicksAction([](){
+        ADSoundManager::playSoundEffect("music/choose.wav");
+    });
+
     return true;
 }
 void AppDelegate::AdsOffListener::wasClickedDisableAllAds()

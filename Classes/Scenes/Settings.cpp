@@ -30,6 +30,7 @@ ADMenuItem* createToggleButton(const std::string& normal_sprite,
     CCSprite* expert_mode_off = CCSprite::create(selected_sprite.c_str());
     expert_mode_off->setTag(SELECTED_SPRITE);
     expert_mode_off->setVisible(false);
+    expert_mode_off->setPosition(expert_mode_off->getContentSize()*0.5f);
 
     ADMenuItem* expert_mode = ADMenuItem::create(expert_mode_on);
     expert_mode->addChild(expert_mode_off);
@@ -41,7 +42,7 @@ ADMenuItem* createToggleButton(const std::string& normal_sprite,
 
 bool Settings::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }
@@ -119,7 +120,7 @@ bool Settings::init()
     music->setClickAction([music, this](){
         this->onMusicSelect(music);
     });
-    _menu_item.push_back(sound);
+    _menu_item.push_back(music);
 
 
     menu_new->addChild(_menu_item[0]);

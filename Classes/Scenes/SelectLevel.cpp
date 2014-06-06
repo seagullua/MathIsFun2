@@ -55,7 +55,7 @@ void SelectLevel::onLevelSelect(Level* level_to_open)
 
 bool SelectLevel::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }

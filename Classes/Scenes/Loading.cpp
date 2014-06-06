@@ -130,97 +130,97 @@ void Loading::addAll()
 {
 
 
-    addSpriteToLoad("common.png");
-    addPlistToLoad("common.plist");
+//    addSpriteToLoad("common.png");
+//    addPlistToLoad("common.plist");
 
-    addSpriteToLoad("loading_screen.png");
-    addPlistToLoad("loading_screen.plist");
-
-
+//    addSpriteToLoad("loading_screen.png");
+//    addPlistToLoad("loading_screen.plist");
 
 
-    addSpriteToLoad("font/mathisfun.png");
-    addSpriteToLoad("font/mathisfun_digits.png");
-    addPlistToLoad("font/mathisfun_digits.plist");
 
-    addSpriteToLoad("level/input_space.png");
-    addPlistToLoad("level/input_space.plist");
 
-    addSpriteToLoad("level/keyboard.png");
-    addPlistToLoad("level/keyboard.plist");
+//    addSpriteToLoad("font/mathisfun.png");
+//    addSpriteToLoad("font/mathisfun_digits.png");
+//    addPlistToLoad("font/mathisfun_digits.plist");
 
-    addSpriteToLoad("level/level_end.png");
-    addPlistToLoad("level/level_end.plist");
+//    addSpriteToLoad("level/input_space.png");
+//    addPlistToLoad("level/input_space.plist");
 
-    addSpriteToLoad("level/level_end_menu.png");
-    addPlistToLoad("level/level_end_menu.plist");
+//    addSpriteToLoad("level/keyboard.png");
+//    addPlistToLoad("level/keyboard.plist");
 
-    /*addSpriteToLoad(Language::localizeFileName("level/found_solutions.png").c_str());
-    addPlistToLoad(Language::localizeFileName("level/found_solutions.plist").c_str());
-    */
+//    addSpriteToLoad("level/level_end.png");
+//    addPlistToLoad("level/level_end.plist");
+
+//    addSpriteToLoad("level/level_end_menu.png");
+//    addPlistToLoad("level/level_end_menu.plist");
+
+//    /*addSpriteToLoad(Language::localizeFileName("level/found_solutions.png").c_str());
+//    addPlistToLoad(Language::localizeFileName("level/found_solutions.plist").c_str());
+//    */
     addSpriteToLoad("level/stamps.png");
     addPlistToLoad("level/stamps.plist");
 
-    addSpriteToLoad("level_scene/ellements.png");
-    addPlistToLoad("level_scene/ellements.plist");
+//    addSpriteToLoad("level_scene/ellements.png");
+//    addPlistToLoad("level_scene/ellements.plist");
 
-    addSpriteToLoad("main_menu/images.png");
-    addPlistToLoad("main_menu/images.plist");
+//    addSpriteToLoad("main_menu/images.png");
+//    addPlistToLoad("main_menu/images.plist");
 
-    addSpriteToLoad("main_menu/menu.png");
-    addPlistToLoad("main_menu/menu.plist");
+//    addSpriteToLoad("main_menu/menu.png");
+//    addPlistToLoad("main_menu/menu.plist");
 
-    addSpriteToLoad("sheet_menu.png");
-    addPlistToLoad("sheet_menu.plist");
-
-
-    addSpriteToLoad("select_collection/new_collection.png");
-    addPlistToLoad("select_collection/new_collection.plist");
-
-    //addSpriteToLoad(Language::localizeFileName("select_collection/images.png").c_str());
-    //addPlistToLoad(Language::localizeFileName("select_collection/images.plist").c_str());
-
-    addSpriteToLoad("select_level/marks.png");
-    addPlistToLoad("select_level/marks.plist");
-
-    addSpriteToLoad(Language::localizeFileName("select_level/menu_name.png").c_str());
-    addPlistToLoad(Language::localizeFileName("select_level/menu_name.plist").c_str());
-
-    //    addSpriteToLoad(Language::localizeFileName("settings/developers_menu_name.png").c_str());
-    //    addPlistToLoad(Language::localizeFileName("settings/developers_menu_name.plist").c_str());
-
-    addSpriteToLoad("settings/settings_developers_ad.png");
-    addPlistToLoad("settings/settings_developers_ad.plist");
-
-    addSpriteToLoad(Language::localizeFileName("settings/settings_menu.png").c_str());
-    addPlistToLoad(Language::localizeFileName("settings/settings_menu.plist").c_str());
-
-    //addSpriteToLoad(Language::localizeFileName("settings/settings_name.png").c_str());
-    //addPlistToLoad(Language::localizeFileName("settings/settings_name.plist").c_str());
-
-    //	addSpriteToLoad("stop_level/sheet.png");
-    //	addPlistToLoad("stop_level/sheet.plist");
-
-    addSpriteToLoad(Language::localizeFileName("stop_level/stop_level_menu.png").c_str());
-    addPlistToLoad(Language::localizeFileName("stop_level/stop_level_menu.plist").c_str());
+//    addSpriteToLoad("sheet_menu.png");
+//    addPlistToLoad("sheet_menu.plist");
 
 
-    addSoundToLoad("music/choose.wav");
-    addMusicToLoad(GameInfo::BACKGROUND_MUSIC.c_str());
+//    addSpriteToLoad("select_collection/new_collection.png");
+//    addPlistToLoad("select_collection/new_collection.plist");
 
-    const CollectionsArr& arr = RW::getCollections();
-    for(CollectionsArr::const_iterator it = arr.begin(); it != arr.end(); ++it)
-    {
-        Collection* a = it->second;
-        std::stringstream ss;
-        std::stringstream ss_f;
-        ss << "medium/select_collection/coll_" << a->getCollectionID() << ".png";
-        ss_f << "medium/select_collection/clabel_" << a->getCollectionID() << ".png";
-        addSpriteToLoad(ss.str().c_str());
-        addSpriteToLoad(Language::localizeFileName(ss_f.str()).c_str());
-    }
-    addSpriteToLoad("medium/select_collection/coll_lock.png");
-    addSpriteToLoad(Language::localizeFileName("medium/select_collection/clabel_locked.png").c_str());
+//    //addSpriteToLoad(Language::localizeFileName("select_collection/images.png").c_str());
+//    //addPlistToLoad(Language::localizeFileName("select_collection/images.plist").c_str());
+
+//    addSpriteToLoad("select_level/marks.png");
+//    addPlistToLoad("select_level/marks.plist");
+
+//    addSpriteToLoad(Language::localizeFileName("select_level/menu_name.png").c_str());
+//    addPlistToLoad(Language::localizeFileName("select_level/menu_name.plist").c_str());
+
+//    //    addSpriteToLoad(Language::localizeFileName("settings/developers_menu_name.png").c_str());
+//    //    addPlistToLoad(Language::localizeFileName("settings/developers_menu_name.plist").c_str());
+
+//    addSpriteToLoad("settings/settings_developers_ad.png");
+//    addPlistToLoad("settings/settings_developers_ad.plist");
+
+//    addSpriteToLoad(Language::localizeFileName("settings/settings_menu.png").c_str());
+//    addPlistToLoad(Language::localizeFileName("settings/settings_menu.plist").c_str());
+
+//    //addSpriteToLoad(Language::localizeFileName("settings/settings_name.png").c_str());
+//    //addPlistToLoad(Language::localizeFileName("settings/settings_name.plist").c_str());
+
+//    //	addSpriteToLoad("stop_level/sheet.png");
+//    //	addPlistToLoad("stop_level/sheet.plist");
+
+//    addSpriteToLoad(Language::localizeFileName("stop_level/stop_level_menu.png").c_str());
+//    addPlistToLoad(Language::localizeFileName("stop_level/stop_level_menu.plist").c_str());
+
+
+//    addSoundToLoad("music/choose.wav");
+//    addMusicToLoad(GameInfo::BACKGROUND_MUSIC.c_str());
+
+//    const CollectionsArr& arr = RW::getCollections();
+//    for(CollectionsArr::const_iterator it = arr.begin(); it != arr.end(); ++it)
+//    {
+//        Collection* a = it->second;
+//        std::stringstream ss;
+//        std::stringstream ss_f;
+//        ss << "medium/select_collection/coll_" << a->getCollectionID() << ".png";
+//        ss_f << "medium/select_collection/clabel_" << a->getCollectionID() << ".png";
+//        addSpriteToLoad(ss.str().c_str());
+//        addSpriteToLoad(Language::localizeFileName(ss_f.str()).c_str());
+//    }
+//    addSpriteToLoad("medium/select_collection/coll_lock.png");
+//    addSpriteToLoad(Language::localizeFileName("medium/select_collection/clabel_locked.png").c_str());
 }
 void Loading::addSpriteToLoad(const char* sp)
 {

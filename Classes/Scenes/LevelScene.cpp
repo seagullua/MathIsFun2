@@ -191,7 +191,7 @@ void LevelScene::do_goToLevelSelect()
 
 bool LevelScene::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }

@@ -300,7 +300,7 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
 
 bool SelectCollection::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }

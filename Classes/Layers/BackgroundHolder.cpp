@@ -154,6 +154,7 @@ bool BackgroundHolder::BackgroundLayer::init()
 
     _back_button_position = _back_button->getPosition();
     //_back_button->setPosition(ccp(0, visibleSize.height));
+    //_back_button->setCascadeOpacityEnabled(true);
     _back_button->setOpacity(0);
 
     this->addChild(_back_button_menu);
@@ -200,6 +201,7 @@ void BackgroundHolder::BackgroundLayer::setBackButtonCallback(cocos2d::CCCallFun
     if(should_show)
     {
         CCFadeTo* move = CCFadeTo::create(0.3f, 255);
+        //_back_button->setOpacity(0);
         _back_button->stopAllActions();
         _back_button->runAction(move);
         _back_button_menu->setTouchEnabled(true);
