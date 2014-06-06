@@ -8,7 +8,7 @@
 #include "Logic/Tutorial.h"
 #include "DisplaySolution.h"
 #include "Logic/Language.h"
-
+using namespace cocos2d;
 CCAction* getNewStampAction(float stamps_scale)
 {
     return CCSequence::create(
@@ -85,16 +85,13 @@ bool LevelScenePopUp::init()
     //sheet->removeFromParent();
 
     //Place buttons
-    SpritesLoader menu_spl = GraphicsManager::getLoaderFor(0,
-                                                           "level/level_end.plist",
-                                                           "level/level_end.png");
-    MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
+    CCMenu* menu = CCMenu::create();
     menu->setPosition(sheet->getPosition());
     menu->setAnchorPoint(ccp(0,0));
     menu->setContentSize(menu_zone_size);
     _sheet_menu->addChild(menu);
 
-    CCSprite* next_level_image = menu_spl->loadSprite("next_level.png");
+    CCSprite* next_level_image = CCSprite::create("level/next_level.png");
 
     CCSize image_size = next_level_image->getContentSize();
     float design_scale = 1;
@@ -102,29 +99,30 @@ bool LevelScenePopUp::init()
     ADMenuItem *first_button = 0;
     if(current_level->getLevelState() == Level::Crown)
     {
-        CCSprite* levels = menu_spl->loadSprite("levels.png");
-        first_button = ADMenuItem::create(
-                    levels,
-                    this, menu_selector(LevelScenePopUp::onLevels));
+        CCSprite* levels = CCSprite::create("level/levels.png");
+        first_button = ADMenuItem::create(levels);
+        CONNECT(first_button->signalOnClick,
+                this, &LevelScenePopUp::onLevels);
     }
     else
     {
-        CCSprite* find_more_image = menu_spl->loadSprite("find_more.png");
-        first_button = ADMenuItem::create(
-                    find_more_image,
-                    this, menu_selector(LevelScenePopUp::onFindMoreSolutions));
+        CCSprite* find_more_image = CCSprite::create("level/find_more.png");
+        first_button = ADMenuItem::create(find_more_image);
+        CONNECT(first_button->signalOnClick,
+                this, &LevelScenePopUp::onFindMoreSolutions);
     }
     //TODO: change if it is necessary x coordinate to 102
     first_button->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
                                   53*design_scale/scaled+image_size.height/2));
 
-    ADMenuItem *next_level = ADMenuItem::create(
-                next_level_image,
-                this, menu_selector(LevelScenePopUp::onNextLevel));
+    ADMenuItem *next_level = ADMenuItem::create(next_level_image);
+    CONNECT(next_level->signalOnClick,
+            this, &LevelScenePopUp::onNextLevel);
+
     next_level->setPosition(ccp(600*design_scale/scaled,
                                 53*design_scale/scaled+image_size.height/2));
-    menu->menu()->addChild(next_level);
-    menu->menu()->addChild(first_button);
+    menu->addChild(next_level);
+    menu->addChild(first_button);
 
     //Add label
     //    CCSprite* title = 0;
@@ -259,31 +257,11 @@ bool LevelScenePopUp::init()
     _parent->sleep();
 
     Tutorial::getInstance()->onSolutionFound(this);
-#ifdef DEBUG_LAYER
-    DebugLayer* debug = DebugLayer::create();
-    this->addChild(debug,300);
-    debug->addChild(_sheet_menu);
-    DebugLayer* debug2 = DebugLayer::create();
-    _sheet_menu->addChild(debug2,300);
-    //debug2->addChild(sheet);
-    // debug2->addChild(menu);
-    // debug2->addChild(next_level);
-    if(stamps_zone)
-    {
-        debug2->addChild(stamps_zone);
-        DebugLayer* debug3 = DebugLayer::create();
-        stamps_zone->addChild(debug3);
-        for(unsigned int i=0; i<stamps_number; ++i)
-        {
-            CCSprite* sp = stamps[i];
-            debug3->addChild(sp);
-        }
-    }
-#endif
+
     return true;
 }
 
-void LevelScenePopUp::hideMe(CCCallFunc* callback)
+void LevelScenePopUp::hideMe(const ADCallFunc::Action &callback)
 {
 //    if(_pause_banner)
 //        _pause_banner->hideAds();
@@ -296,7 +274,7 @@ void LevelScenePopUp::hideMe(CCCallFunc* callback)
                         0.3f,
                         ccp(_sheet_target_position.x,
                             _sheet_target_position.y + visibleSize.height)),
-                    callback,
+                    ADCallFunc::create(callback),
                     NULL));
 }
 void LevelScenePopUp::showInterstitial()
@@ -311,46 +289,36 @@ void LevelScenePopUp::showInterstitial()
     }
 }
 
-void LevelScenePopUp::onLevels(CCObject*)
+void LevelScenePopUp::onLevels()
 {
     showInterstitial();
-    this->hideMe(CCCallFunc::create(
-                     this,
-                     callfunc_selector(LevelScenePopUp::do_onLevels)));
+    this->hideMe([this](){
+        CCDirector::sharedDirector()->replaceScene(
+                    SelectLevel::scene(_parent->getLevel()->getLevelCollection()));
+    });
 }
-void LevelScenePopUp::onNextLevel(CCObject*)
+void LevelScenePopUp::onNextLevel()
 {
     showInterstitial();
-    this->hideMe(CCCallFunc::create(
-                     this,
-                     callfunc_selector(LevelScenePopUp::do_onNextLevel)));
+    this->hideMe([this](){
+        Level* next = RW::getNextLevel(_parent->getLevel());
+        if(next)
+            CCDirector::sharedDirector()->replaceScene(LevelScene::scene(next));
+        else
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+
+    });
 }
 
-void LevelScenePopUp::do_onLevels()
-{
-    CCDirector::sharedDirector()->replaceScene(
-                SelectLevel::scene(_parent->getLevel()->getLevelCollection()));
 
-}
-
-void LevelScenePopUp::do_onNextLevel()
-{
-    Level* next = RW::getNextLevel(_parent->getLevel());
-    if(next)
-        CCDirector::sharedDirector()->replaceScene(LevelScene::scene(next));
-    else
-        CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
-
-}
-
-void LevelScenePopUp::onFindMoreSolutions(CCObject*)
+void LevelScenePopUp::onFindMoreSolutions()
 {
     _parent->wakeup();
     _parent->showUI();
     _parent->onFoundSolutionClose();
-    this->hideMe(CCCallFunc::create(
-                     this,
-                     callfunc_selector(LevelScenePopUp::selfDestroy)));
+    this->hideMe([this](){
+        this->selfDestroy();
+    });
 }
 void LevelScenePopUp::selfDestroy()
 {

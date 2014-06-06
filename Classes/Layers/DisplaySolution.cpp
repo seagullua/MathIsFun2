@@ -1,4 +1,5 @@
 #include "DisplaySolution.h"
+using namespace cocos2d;
 
 DisplaySolution::DisplaySolution(CCSize zone_size,
                                  Level *current_level,

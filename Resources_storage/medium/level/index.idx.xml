@@ -6,9 +6,17 @@
 	<file>
 		<name>keyboard/keyboard.plist.xml</name>
 	</file>
+	
 	<file>
-		<name>level_end/level_end.plist.xml</name>
+		<name>level_end/find_more.png.xml</name>
 	</file>
+	<file>
+		<name>level_end/levels.png.xml</name>
+	</file>
+	<file>
+		<name>level_end/next_level.png.xml</name>
+	</file>
+
 	<file>
 		<name>level_end_menu/level_end_menu.plist.xml</name>
 	</file>

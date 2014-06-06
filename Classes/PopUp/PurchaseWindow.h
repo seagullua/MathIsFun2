@@ -3,7 +3,7 @@
 #include "cocos2d.h"
 #include "Layers/PopUpWindow.h"
 #include "Store.h"
-
+#include "Logic/Collection.h"
 class PurchaseWindow : public PopUpWindowStyle
 {
 
@@ -12,7 +12,7 @@ public:
         : _collection(collection)
     {}
 private:
-    void onBuyOneClick(CCObject*)
+    void onBuyOneClick()
     {
         std::stringstream ss;
         ss << Store::PREFIX_BUY_COLLECTION << _collection->getCollectionID();
@@ -22,7 +22,7 @@ private:
             cocos2d::CCLog(("Buy collection failed: "+ss.str()).c_str());
         }
     }
-    void onBuyAllClick(CCObject*)
+    void onBuyAllClick()
     {
         Store::buyItem(Store::ITEM_BUY_ALL);
     }

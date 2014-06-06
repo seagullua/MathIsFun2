@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
 	<file>
-		<name>stop_level_menu.plist.xml</name>
-		<lang>1</lang>
+		<name>Found_Solutions.png.xml</name>
 	</file>
-	
+	<file>
+		<name>Levels.png.xml</name>
+	</file>
+	<file>
+		<name>Restart.png.xml</name>
+	</file>
+	<file>
+		<name>Resume.png.xml</name>
+	</file>
+	<file>
+		<name>Skip_level.png.xml</name>
+	</file>
 </directory>

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
 	<file>
-		<name>ellements.plist.xml</name>
+		<name>lamp_hint.png</name>
 	</file>
+	<file>
+		<name>play_button.png</name>
+	</file>
+	<file>
+		<name>restart_button.png</name>
+	</file>
+	<file>
+		<name>stop_button.png</name>
+	</file>
+	
 	<file>
 		<name>hint_window/hint_buttons.plist.xml</name>
 		<project>mif</project>

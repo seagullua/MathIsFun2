@@ -1,6 +1,7 @@
 #include "FoundSolutionsLayer.h"
 #include "DisplaySolution.h"
 #include "Logic/Language.h"
+using namespace cocos2d;
 FoundSolutionsLayer::FoundSolutionsLayer(Level* level)
 {
 

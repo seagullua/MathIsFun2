@@ -1,4 +1,6 @@
 #include "UnlockWindow.h"
+#include "cocos2d-A.h"
+#include "Logic/Language.h"
 using namespace cocos2d;
 
 void UnlockWindow::onCreate(cocos2d::CCNode *parent)
@@ -52,47 +54,40 @@ void UnlockWindow::onCreate(cocos2d::CCNode *parent)
     parent->addChild(stamp);
     parent->addChild(stamps_number);
 
-    SpritesLoader menu_spl = GraphicsManager::getLoaderFor(0,
-                                                           Language::localizeFileName("select_collection/unlock_buttons.plist").c_str(),
-                                                           Language::localizeFileName("select_collection/unlock_buttons.png").c_str());
-    MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
+    CCMenu* menu = CCMenu::create();
     menu->setPosition(ccp(0,0));
     menu->setAnchorPoint(ccp(0,0));
     menu->setContentSize(size);
     parent->addChild(menu);
 
-#ifndef JUNIOR
-    CCSprite* unlock_image = menu_spl->loadSprite("unlock_button.png");
+
+    CCSprite* unlock_image = CCSprite::create("select_collection/unlock_button.png");
     CCSize image_size = unlock_image->getContentSize();
-#endif
 
 
-    CCSprite* play_more_image = menu_spl->loadSprite("play_more_button.png");
-    ADMenuItem *play_more_item = ADMenuItem::create(
-                play_more_image,
-                this, menu_selector(UnlockWindow::onPlayMoreClick));
+    CCSprite* play_more_image = CCSprite::create("select_collection/play_more_button.png");
+    ADMenuItem *play_more_item = ADMenuItem::create(play_more_image);
+    CONNECT(play_more_item->signalOnClick,
+            this, &UnlockWindow::onPlayMoreClick);
 
 
-#ifndef JUNIOR
     float design_scale = 1;
     play_more_item->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
                                     53*design_scale/scaled+image_size.height/2));
-#endif
 
 
-#ifdef JUNIOR
-    play_more_item->setPosition(ccp(400/scaled,
-                                    120/scaled));
-#endif
 
-#ifndef JUNIOR
-    ADMenuItem *next_level = ADMenuItem::create(
-                unlock_image,
-                this, menu_selector(UnlockWindow::onUnlockClick));
+
+
+
+    ADMenuItem *next_level = ADMenuItem::create(unlock_image);
+    CONNECT(play_more_item->signalOnClick,
+            this, &UnlockWindow::onUnlockClick);
+
     next_level->setPosition(ccp(600*design_scale/scaled,
                                 53*design_scale/scaled+image_size.height/2));
-    menu->menu()->addChild(next_level);
-#endif
-    menu->menu()->addChild(play_more_item);
+    menu->addChild(next_level);
+
+    menu->addChild(play_more_item);
 
 }

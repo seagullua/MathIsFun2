@@ -3,7 +3,7 @@
 #include "cocos2d-A.h"
 
 class EquationDrawer;
-class LevelScenePopUp : public cocos2d::CCNode
+class LevelScenePopUp : public cocos2d::CCNode, public HasSlots
 {
 private:
     LevelScenePopUp(EquationDrawer* parent) : _parent(parent), _crown(0), _pause_banner(0)
@@ -15,17 +15,16 @@ private:
     cocos2d::CCPoint _sheet_target_position;
     cocos2d::CCSprite* _crown;
     ADAds::Banner* _pause_banner;
-    void onFindMoreSolutions(CCObject*);
-    void onLevels(CCObject*);
+    void onFindMoreSolutions();
+    void onLevels();
 
-    void do_onLevels();
-    void do_onNextLevel();
+
 
     void showInterstitial();
 public:
-    void hideMe(cocos2d::CCCallFunc* callback);
+    void hideMe(const ADCallFunc::Action& callback);
     virtual bool init();
-    void onNextLevel(CCObject*);
+    void onNextLevel();
     //void onCloseClicked(CCObject* pSender);
     //void onResumeClicked(CCObject* pSender);
     void selfDestroy();

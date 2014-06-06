@@ -9,12 +9,10 @@
 #include "Logic/RW.h"
 #include "Store.h"
 #include "Logic/Language.h"
-#include "Core/Statistics.h"
-#include "Core/Statistics.h"
 
-#define TEMPORARY_HIDE
+using namespace cocos2d;
 
-class LevelScene::BuyHints : public PopUpWindow::Content
+class LevelScene::BuyHints : public PopUpWindowStyle
 {
 
 public:
@@ -29,15 +27,15 @@ private:
         Store::buyItem(ss.str());
     }
 
-    void onBuy10(CCObject*)
+    void onBuy10()
     {
         buyHints(10);
     }
-    void onBuy50(CCObject*)
+    void onBuy50()
     {
         buyHints(50);
     }
-    void onBuy1000(CCObject*)
+    void onBuy1000()
     {
         buyHints(1000);
     }
@@ -73,53 +71,50 @@ private:
         parent->addChild(lamp);
         lamp->setScale(0.8f);
 
-#ifndef JUNIOR
         lamp->setPosition(ccp(200/scaled, 310/scaled));
 
 
-        ADMenuItem *hint_10_item = ADMenuItem::create(
-                    menu_spl->loadSprite("hint_10_button.png"),
-                    this, menu_selector(BuyHints::onBuy10));
+        ADMenuItem *hint_10_item = ADMenuItem::createWithSpriteSheetSprite(
+                    menu_spl->loadSprite("hint_10_button.png"));
+        CONNECT(hint_10_item->signalOnClick, this, &BuyHints::onBuy10);
 
         hint_10_item->setPosition(ccp(200/scaled,
                                         vertical_pos));
 
-        ADMenuItem *hint_50_item = ADMenuItem::create(
-                    menu_spl->loadSprite("hint_50_button.png"),
-                    this, menu_selector(BuyHints::onBuy50));
+        ADMenuItem *hint_50_item = ADMenuItem::createWithSpriteSheetSprite(
+                    menu_spl->loadSprite("hint_50_button.png"));
+        CONNECT(hint_50_item->signalOnClick, this, &BuyHints::onBuy50);
+
         hint_50_item->setPosition(ccp(425/scaled,
                                    vertical_pos));
 
-        ADMenuItem *hint_1000_item = ADMenuItem::create(
-                    menu_spl->loadSprite("hint_1000_button.png"),
-                    this, menu_selector(BuyHints::onBuy1000));
+        ADMenuItem *hint_1000_item = ADMenuItem::createWithSpriteSheetSprite(
+                    menu_spl->loadSprite("hint_1000_button.png"));
+        CONNECT(hint_1000_item->signalOnClick, this, &BuyHints::onBuy1000);
+
         hint_1000_item->setPosition(ccp(650/scaled,
                                     vertical_pos));
 
         float scale = 0.95f;
-        hint_1000_item->setBaseScale(scale);
-        hint_50_item->setBaseScale(scale);
-        hint_10_item->setBaseScale(scale);
+        hint_1000_item->setScaleBase(scale);
+        hint_50_item->setScaleBase(scale);
+        hint_10_item->setScaleBase(scale);
         menu->menu()->addChild(hint_1000_item);
         menu->menu()->addChild(hint_50_item);
         menu->menu()->addChild(hint_10_item);
-#else
-        ADMenuItem *ok_button = ADMenuItem::create(
-                    menu_spl->loadSprite("ok_button.png"),
-                    this, menu_selector(BuyHints::onOk));
-        ok_button->setPosition(ccp(425/scaled,
-                                   vertical_pos));
-        menu->menu()->addChild(ok_button);
-        lamp->setPosition(ccp(200/scaled, 310/scaled));
-#endif
+
 
     }
 };
 
 //TODO: implement starting and the ending animation of the level
 LevelScene::LevelScene(Level *level)
-    : _level(level), _levelStop(0),_screenEllements(0), _last_pop_up(0),
-      _found_solution_is_opened(false), _found_solutions(0), _pop_up_manager(this),
+    : _level(level),
+      _levelStop(0),
+      _screenEllements(0),
+      _last_pop_up(0),
+      _found_solution_is_opened(false),
+      _found_solutions(0),
       _top_banner(0)
 {
     _last_scene = this;
@@ -139,7 +134,7 @@ CCScene* LevelScene::scene(Level *level)
     return scene;
 }
 #include "Layers/LevelScenePopUp.h"
-void LevelScene::keyBackClicked()
+void LevelScene::onBackClick()
 {
     if(_found_solutions)
     {
@@ -154,7 +149,7 @@ void LevelScene::keyBackClicked()
 
         //Just go back to level
         this->showMe();
-        _levelStop->onResume(0);
+        _levelStop->onResume();
     }
     else
     {
@@ -231,32 +226,29 @@ bool LevelScene::init()
 
 
 
-    SpritesLoader ellements_spl = GraphicsManager::getLoaderFor(0,
-                                                                "level_scene/ellements.plist",
-                                                                "level_scene/ellements.png");
     _play = ADMenuItem::create(
-                ellements_spl->loadSprite("play_button.png"),
-                this, menu_selector(LevelScene::keyPauseClicked));
-    _pause = ADMenuItem::create(
-                ellements_spl->loadSprite("stop_button.png"),
-                this, menu_selector(LevelScene::keyPauseClicked));
-    _restart= ADMenuItem::create(
-                ellements_spl->loadSprite("restart_button.png"),
-                this, menu_selector(LevelScene::keyRestartClicked));
-//#ifndef TEMPORARY_HIDE
-    _hint= ADMenuItem::create(
-                ellements_spl->loadSprite("lamp_hint.png"),
-                this,menu_selector(LevelScene::keyHintClicked));
-//#endif
+                CCSprite::create("level_scene/play_button.png"));
+    CONNECT(_play->signalOnClick, this, &LevelScene::keyPauseClicked);
 
-    _screenEllements = MenuSpriteBatch::create(ellements_spl);
-    _screenEllements->menu()->addChild(_play);
-    _screenEllements->menu()->addChild(_pause);
-    _screenEllements->menu()->addChild(_restart);
-//#ifndef TEMPORARY_HIDE
-    _screenEllements->menu()->addChild(_hint);
-//#endif
-    _pop_up_manager.addMenuToAutoDisable(_screenEllements->menu());
+    _pause = ADMenuItem::create(
+                CCSprite::create("level_scene/stop_button.png"));
+    CONNECT(_pause->signalOnClick, this, &LevelScene::keyPauseClicked);
+
+    _restart= ADMenuItem::create(
+                CCSprite::create("level_scene/restart_button.png"));
+    CONNECT(_restart->signalOnClick, this, &LevelScene::keyRestartClicked);
+
+    _hint= ADMenuItem::create(
+                CCSprite::create("level_scene/lamp_hint.png"));
+    CONNECT(_hint->signalOnClick, this, &LevelScene::keyHintClicked);
+
+
+    _screenEllements = CCMenu::create();
+    _screenEllements->addChild(_play);
+    _screenEllements->addChild(_pause);
+    _screenEllements->addChild(_restart);
+    _screenEllements->addChild(_hint);
+    _pop_up_manager.addMenuToAutoDisable(_screenEllements);
     this->addChild(_screenEllements);
 
     _screenEllements->setPosition(ccp(visibleSize.width/2,
@@ -282,7 +274,7 @@ bool LevelScene::init()
         _top_banner->setPositionX(top_zone_start + top_zone.width/2);
         _top_banner->setPositionY(origin.y + visibleSize.height - 98.5f/scaled);
         //_top_banner->showAds();
-        _pop_up_manager.addBannerToAutoDisable(_top_banner);
+        //_pop_up_manager.addBannerToAutoDisable(_top_banner);
     }
 
 //Ads end
@@ -376,7 +368,7 @@ void LevelScene::removeChild(CCNode* child, bool cleanup)
         _levelStop=0;
     }
 }
-void LevelScene::keyPauseClicked(CCObject*)
+void LevelScene::keyPauseClicked()
 {
     onKeyPauseClicked();
 }
@@ -399,11 +391,11 @@ void LevelScene::onKeyPauseClicked()
     else
     {
         this->showMe();
-        _levelStop->onResume(0);
+        _levelStop->onResume();
 
     }
 }
-void LevelScene::keyHintClicked(CCObject*)
+void LevelScene::keyHintClicked()
 {
 
     ADStatistics::logEvent("Hint used",
@@ -471,7 +463,7 @@ void LevelScene::renewOneHint()
     _hint_quantity->setString(cur_hint_num.c_str());
 }
 
-void LevelScene::keyRestartClicked(CCObject*)
+void LevelScene::keyRestartClicked()
 {
     hideMe(true);
     this->runAction(
@@ -561,7 +553,7 @@ void LevelScene::showMe()
                             CCDelayTime::create(0.3f),
                             CCCallFunc::create(_top_banner,
                                                callfunc_selector(
-                                                   ADADAds::Banner::showAds))));
+                                                   ADAds::Banner::showAds))));
     }
     _last_scene = this;
     //CCFadeTo* play_hide = CCFadeTo::create(0.3f, 0);

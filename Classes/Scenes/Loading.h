@@ -3,8 +3,8 @@
 #include "cocos2d-A.h"
 #include <queue>
 #include <string>
-//#include "../Core/CCMutex.h"
-class Loading : public cocos2d::CCLayer
+#include "SceneStyle.h"
+class Loading : public SceneStyle
 {
 private:
 	static const unsigned int SPLASH_SCREEN_TIME = 2;
@@ -31,6 +31,8 @@ private:
     void loadAllAsync(float);
 	void loadAll();
 	void onLoadFinished();
+    void onBackClick()
+    {}
 
 	std::queue<std::string> _q_sprites_to_load;
 	std::queue<std::string> _q_music_to_load;

@@ -6,6 +6,7 @@
 #include "Layers/LevelScenePopUp.h"
 #include "cocos2d-A.h"
 #include "Logic/Language.h"
+using namespace cocos2d;
 void Tutorial::onLevelStart(EquationDrawer* eqd)
 {
     Level* level = eqd->getLevel();

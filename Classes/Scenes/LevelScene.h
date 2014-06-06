@@ -44,16 +44,16 @@ private:
     ADMenuItem* _pause;
     ADMenuItem* _restart;
     ADMenuItem* _hint;
-    MenuSpriteBatch* _screenEllements;
+    cocos2d::CCMenu* _screenEllements;
     LevelScenePopUp* _last_pop_up;
     Solution _hint_solution;
     ADAds::Banner* _top_banner;
 
     class BuyHints;
     void onKeyPauseClicked();
-    void keyPauseClicked(CCObject *);
-    void keyRestartClicked(CCObject*);
-    void keyHintClicked(CCObject *);
+    void keyPauseClicked();
+    void keyRestartClicked();
+    void keyHintClicked();
     void onkeyRestartClicked();
     void onBackClick();
 

@@ -4,7 +4,7 @@
 #include "Layers/EquationDrawer.h"
 #include "DebugLayer.h"
 
-class LevelStop: public cocos2d::CCLayer
+class LevelStop: public cocos2d::CCLayer, public HasSlots
 {
 private:
     LevelStop(EquationDrawer* parent, Level* level, LevelScene* scene ) :
@@ -12,30 +12,28 @@ private:
     {}
     EquationDrawer* _parent;
     Level* _level;
-    CCPoint _sheet_target_position;
+    cocos2d::CCPoint _sheet_target_position;
     CCNode* _sheet_menu;
     LevelScene* _level_scene;
-    std::vector<CCSprite*> _menu;
+    std::vector<cocos2d::CCSprite*> _menu;
 
 
-    void onSkipLevel(CCObject*);
-    void doSkipPressed();
+    void onSkipLevel();
 
-    void onFoundSolutions(CCObject*);
+    void onFoundSolutions();
 
-    void onLevels(CCObject*);
-    void doLevelsPressed();
-    void do_onFindMoreSolutions();
+    void onLevels();
 public:
     virtual bool init();
     void selfDestroy();
-    void hideMe(CCCallFunc* callback);
+    void hideMe(const ADCallFunc::Action&);
 
-    void onResume(CCObject*);
-    void onRestart(CCObject*);
-    void doRestart();
+    void onResume();
+    void onRestart();
 
-    static LevelStop* create(EquationDrawer* obj,Level* lev, LevelScene* lev_scen)
+    static LevelStop* create(EquationDrawer* obj,
+                             Level* lev,
+                             LevelScene* lev_scen)
     {
         LevelStop *pRet = new LevelStop(obj,lev,lev_scen);
         if (pRet && pRet->init())
@@ -65,8 +63,8 @@ private:
 public:
     virtual bool init();
     void selfDestroy();
-    void hideMe(CCCallFunc* callback);
-    static CCScene* scene(const Solutions sol);
+    void hideMe(const ADCallFunc::Action&);
+    static cocos2d::CCScene* scene(const Solutions sol);
 
     FoundSolutions* create(const Solutions sol)
     {

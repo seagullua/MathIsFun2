@@ -50,7 +50,7 @@ public:
 
     static void readSettings();
 
-    static void writeLevelsInformation(OutputBinaryStream&);
+    static void writeLevelsInformation(ADStreamOut&);
     static RW* _rw;
     RW();
     bool _expert_mode;
@@ -64,7 +64,7 @@ public:
     unsigned int _hints_count;
     static const uint16_t _levels_mark = 0xAABD;
 
-    static void readLevelsInformation(InputBinaryStream&);
+    static void readLevelsInformation(ADStreamIn&);
     static void fillCollectionWithLevels(Collection*);
     static void parseSolutions(Level* l, const std::string& solutions);
 #ifdef RW_BUILD_LEVELS
@@ -79,11 +79,11 @@ private:
     static void updateStampsAndCrownsCount();
     static void saveLevelSolutions(Level* l);
     static void unlockNextLevel(Level* l, bool flush=true);
-    static void saveGame(OutputBinaryStream &os);
+    static void saveGame(ADStreamOut &os);
 
-    static void flushCollectionInfo(Collection *a, OutputBinaryStream& os);
-    static void readCollectionInfo(Collection* a, InputBinaryStream& is);
-    static void loadGame(InputBinaryStream& is);
+    static void flushCollectionInfo(Collection *a, ADStreamOut& os);
+    static void readCollectionInfo(Collection* a, ADStreamIn& is);
+    static void loadGame(ADStreamIn& is);
     static const std::string _save_file_name;
     static const std::string _settings_file_name;
 #ifndef CC_WIN8_METRO

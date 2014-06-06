@@ -1,6 +1,10 @@
 #include "PopUpWindow.h"
 #include "cocos2d-A.h"
 using namespace cocos2d;
+
+PopUpWindowStyle::PopUpWindowStyle()
+{}
+
 void PopUpWindowStyle::initDesing(cocos2d::CCNode* sheet_menu)
 {
     //Get the size of the screen we can see
@@ -36,13 +40,16 @@ float PopUpWindowStyle::moveInAnimation(cocos2d::CCNode* sheet_menu)
 {
     sheet_menu->stopAllActions();
     sheet_menu->runAction(CCMoveTo::create(0.2f, _sheet_target_position));
+    return 0.2f;
 }
 
 float PopUpWindowStyle::moveOutAnimation(cocos2d::CCNode* sheet_menu)
 {
+    CCSize visibleSize = ADScreen::getVisibleSize();
     sheet_menu->stopAllActions();
     sheet_menu->runAction(CCMoveTo::create(
                               0.3f,
                               ccp(_sheet_target_position.x,
                                   _sheet_target_position.y + visibleSize.height)));
+    return 0.3f;
 }

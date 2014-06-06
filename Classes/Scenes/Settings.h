@@ -10,8 +10,8 @@ public:
     virtual bool init();
     static cocos2d::CCScene* scene();
 private:
-    SpritesLoader _settings_menu;
-    SpritesLoader _settings_menu_new;
+//    SpritesLoader _settings_menu;
+//    SpritesLoader _settings_menu_new;
     std::vector<ADMenuItem*> _menu_item;
     cocos2d::CCSprite* _menu_name;
     bool _sound_on;
@@ -22,15 +22,14 @@ private:
     void doDeleteProgress();
     void onBackClick();
 
-    void doGoBack();
-    void hideEverything(cocos2d::CCCallFunc *callback);
-    void onExpertModeSelect(CCObject* sender);
-    void onSoundSelect(CCObject* sender);
-    void onMusicSelect(CCObject* sender);
-    void onDevelopersSelect(CCObject* sender);
+    void hideEverything(const Action &callback);
+    void onExpertModeSelect(ADMenuItem* sender);
+    void onSoundSelect(ADMenuItem* sender);
+    void onMusicSelect(ADMenuItem* sender);
+    void onDevelopersSelect();
 
-    void onResetProgressSelect(CCObject*);
-    void onRestorePurchasesSelect(CCObject*);
+    void onResetProgressSelect();
+    void onRestorePurchasesSelect();
 
 public:
     CREATE_FUNC(Settings)

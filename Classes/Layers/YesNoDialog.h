@@ -12,8 +12,8 @@ public:
                 cocos2d::SEL_CallFunc no_fun=0);
 private:
     void onCreate(cocos2d::CCNode *parent);
-    void yes(CCObject*);
-    void no(CCObject*);
+    void yes();
+    void no();
     cocos2d::CCNode* _content;
 
     CCObject* _yes_obj;

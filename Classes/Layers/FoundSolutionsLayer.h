@@ -10,7 +10,7 @@ public:
     void hideAndRemove();
 private:
     void selfDestroy();
-    CCPoint _sheet_target_position;
+    cocos2d::CCPoint _sheet_target_position;
 };
 
 #endif // FOUNDSOLUTIONSLAYER_H
