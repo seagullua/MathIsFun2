@@ -5,13 +5,21 @@
 #include "Logic/Tutorial.h"
 #include "Scenes/LevelScene.h"
 #include "Logic/Language.h"
-#include "Core/Statistics.h"
+
+using namespace cocos2d;
+static const int NORMAL_SPRITE = 10;
+static const int SELECTED_SPRITE = 20;
+
 const float EquationDrawer::_paper_cell_size = 35.5f;
 const ccColor3B EquationDrawer::EquationColor_NewSolution = ccc3(79,213,6);
 const ccColor3B EquationDrawer::EquationColor_OldSolution = ccc3(255,255,6);
 const ccColor3B EquationDrawer::EquationColor_HintSolution = ccc3(213,6,26);
 
-EquationDrawer* EquationDrawer::create(Level* level, const CCSize &zone, LevelScene *parent, PopUpWindowManager& pop_up_m)
+EquationDrawer* EquationDrawer::create(
+        Level* level,
+        const CCSize &zone,
+        LevelScene *parent,
+        ADPopUpWindowManager& pop_up_m)
 {
     EquationDrawer *pRet = new EquationDrawer(level,zone,parent,pop_up_m);
     if (pRet)
@@ -208,8 +216,8 @@ void EquationDrawer::initEquationLabel()
                 "level/input_space.plist",
                 "level/input_space.png");
 
-    _selected_sprite = col_spl->loadSprite("selected.png");
-    _selected_sprite->setVisible(false);
+    //_selected_sprite = col_spl->loadSprite("selected.png");
+    //_selected_sprite->setVisible(false);
     //_selected_sprite->setScale(symbol_scale);
 
     _substitutions = MenuSpriteBatch::create(col_spl);
@@ -244,11 +252,22 @@ void EquationDrawer::initEquationLabel()
                 sp = col_spl->loadSprite("op_par.png");
             else
                 sp = col_spl->loadSprite("any.png");
-            ADMenuItem* item = ADMenuItem::create(
-                        sp,
-                        this, menu_selector(EquationDrawer::onFreeSpacePressed));
+
+            auto click_action = [this, i](){
+                this->onFreeSpacePressed(i);
+            };
+
+            sp->setTag(NORMAL_SPRITE);
+            CCSprite* selected = col_spl->loadSprite("selected.png");
+            selected->setTag(SELECTED_SPRITE);
+            selected->setVisible(false);
+
+            ADMenuItem* item = ADMenuItem::createWithSpriteSheetSprite(
+                        sp,click_action);
+
+            item->addNephew(selected);
             item->setPosition(ccp(symbol_length*i,0));
-            item->setBaseScale(_eq_lab->getScale());
+            item->setScaleBase(_eq_lab->getScale());
 
             _substitutions->menu()->addChild(item);
             _substitutors.push_back(item);
@@ -274,12 +293,12 @@ void EquationDrawer::initEquationLabel()
 
     _hint_inserted_label = CCLabelBMFont::create(_hint_inserted_label_str.c_str(),
                                                  "font/mathisfun.fnt");
-         this->addChild(_hint_inserted_label);
-         _hint_inserted_label->setColor(ccc3(255,1,1));
-         //_inserted_label->setColor(_eq_lab->getColor());
-         _hint_inserted_label->setPosition(_eq_lab->getPosition());
-         _hint_inserted_label->setAnchorPoint(_eq_lab->getAnchorPoint());
-         _hint_inserted_label->setScale(_eq_lab->getScale());
+    this->addChild(_hint_inserted_label);
+    _hint_inserted_label->setColor(ccc3(255,1,1));
+    //_inserted_label->setColor(_eq_lab->getColor());
+    _hint_inserted_label->setPosition(_eq_lab->getPosition());
+    _hint_inserted_label->setAnchorPoint(_eq_lab->getAnchorPoint());
+    _hint_inserted_label->setScale(_eq_lab->getScale());
 }
 void EquationDrawer::initDraft()
 {
@@ -321,11 +340,22 @@ LevelScene* EquationDrawer::getParentScene()
     return _parent;
 }
 
-EquationDrawer::EquationDrawer(Level *level, const CCSize& z, LevelScene *parent, PopUpWindowManager &pop_up_m)
-    : _equation(level->getEquation()), _level(level), _keyboard(0), _keyboard_reactor(0),
-      _substituting_now_id(level->getEquation().substitutionsNumber()), _zone(z),
-      _backup_sprite(0), _parent(parent), _no_more_solutions_shown(false), _duplicate_solution_shown(false),
-      _message_node(0), _pop_up_manager(pop_up_m)
+EquationDrawer::EquationDrawer(
+        Level *level,
+        const CCSize& z,
+        LevelScene *parent,
+        ADPopUpWindowManager &pop_up_m)
+    : _equation(level->getEquation()),
+      _level(level),
+      _keyboard(0),
+      _keyboard_reactor(0),
+      _substituting_now_id(level->getEquation().substitutionsNumber()),
+      _zone(z),
+      _parent(parent),
+      _no_more_solutions_shown(false),
+      _duplicate_solution_shown(false),
+      _message_node(0),
+      _pop_up_manager(pop_up_m)
 {
     this->setCascadeOpacityEnabled(true);
     this->setContentSize(_zone);
@@ -377,8 +407,8 @@ void EquationDrawer::updateDraft()
 
         float scale = MIN(x2_scale, x2_scale*_max_draft_size.width / draft_size.width);
 
-            if(_draft_label->getScale() != scale)
-                _draft_label->setScale(scale);
+        if(_draft_label->getScale() != scale)
+            _draft_label->setScale(scale);
 
     }
 }
@@ -388,49 +418,57 @@ void EquationDrawer::showUI()
     _parent->showPause();
 }
 
-void EquationDrawer::onFreeSpacePressed(CCObject* pSender)
+void switchImages(ADMenuItem* item)
+{
+    CCNode* normal = item->getChildByTag(NORMAL_SPRITE);
+    CCNode* selected = item->getChildByTag(SELECTED_SPRITE);
+
+    if(normal && selected)
+    {
+        if(normal->isVisible())
+        {
+            normal->setVisible(false);
+            selected->setVisible(true);
+        }
+        else
+        {
+            normal->setVisible(true);
+            selected->setVisible(false);
+        }
+    }
+}
+
+void EquationDrawer::onFreeSpacePressed(unsigned int found_i)
 {
 
-    unsigned int found_i = _substitutors.size();
-    for(unsigned int i=0; i<found_i; ++i)
+
+    const Symbol& symb = _equation.getSubstitutedSymbol(found_i);
+    unsigned int mode=0;
+
+    if(symb.canSubstitute(Symbol::Digit))
     {
-        if(_substitutors[i] == pSender)
-        {
-            found_i = i;
-        }
+        if(_equation.isZeroSupportedForSubstitutedSymbol(found_i))
+            mode = mode | LevelKeyboard::Digits | LevelKeyboard::Zero;
+        else
+            mode = mode | LevelKeyboard::Digits;
     }
-    if(found_i < _substitutors.size())
+    if(symb.canSubstitute(Symbol::Operation))
+        mode = mode | LevelKeyboard::Operations;
+    if(symb.canSubstitute(Symbol::Parenthesis))
+        mode = mode | LevelKeyboard::Parenthesises;
+
+
+    _keyboard->setMode(LevelKeyboard::Mode(mode));
+
+
+    if(_substituting_now_id < _substitutors.size())
     {
-        const Symbol& symb = _equation.getSubstitutedSymbol(found_i);
-        unsigned int mode=0;
-
-        if(symb.canSubstitute(Symbol::Digit))
-        {
-            if(_equation.isZeroSupportedForSubstitutedSymbol(found_i))
-                mode = mode | LevelKeyboard::Digits | LevelKeyboard::Zero;
-            else
-                mode = mode | LevelKeyboard::Digits;
-        }
-        if(symb.canSubstitute(Symbol::Operation))
-            mode = mode | LevelKeyboard::Operations;
-        if(symb.canSubstitute(Symbol::Parenthesis))
-            mode = mode | LevelKeyboard::Parenthesises;
-
-
-        _keyboard->setMode(LevelKeyboard::Mode(mode));
-
-
-        if(_backup_sprite && _substituting_now_id < _substitutors.size())
-        {
-            _substitutors[_substituting_now_id]->setNormalImage(_backup_sprite);
-            _backup_sprite->setVisible(true);
-        }
-        _substituting_now_id = found_i;
-        _backup_sprite = _substitutors[_substituting_now_id]->getNormalImage();
-        _backup_sprite->setVisible(false);
-        _substitutors[_substituting_now_id]->setNormalImage(_selected_sprite);
-        _selected_sprite->setVisible(true);
+        switchImages(_substitutors[_substituting_now_id]);
     }
+    _substituting_now_id = found_i;
+
+    switchImages(_substitutors[_substituting_now_id]);
+
     Tutorial::getInstance()->onEmptySpaceTouch(this);
 }
 void EquationDrawer::substituteAnything(const char& cur,
@@ -469,7 +507,7 @@ void EquationDrawer::substituteDigit(const unsigned int& digit,
         }
         else
         {
-             _inserted_label_str[_substitutors_index[substituting_now_id]] = '0' + digit;;
+            _inserted_label_str[_substitutors_index[substituting_now_id]] = '0' + digit;;
             _hint_inserted_label_str[_substitutors_index[substituting_now_id]]=' ';
 
             _inserted_label->setCString(_inserted_label_str.c_str());
@@ -681,7 +719,7 @@ void EquationDrawer::recalculateEquation()
             }
             else
             {
-                _message_node = CCNodeWithOpacity::create();
+                _message_node = CCNodeRGBA::create();
 
                 _message_node_text = CCSprite::create(Language::localizeFileName("level/tutorial/already_found.png").c_str());
                 CCSize text_size = _message_node_text->getContentSize();
@@ -691,17 +729,16 @@ void EquationDrawer::recalculateEquation()
                 _message_node->addChild(_message_node_text);
                 _message_node_text->setPosition(ccp(0, text_size.height*0.75f));
 
-                SpritesLoader menu_spl = GraphicsManager::getLoaderFor(
-                            0,
-                            Language::localizeFileName("level/tutorial/buttons_tut.plist").c_str(),
-                            Language::localizeFileName("level/tutorial/buttons_tut.png").c_str());
+                auto click_action = [this](){
+                    _parent->restart();
+                };
 
                 _message_node_button = ADMenuItem::create(
-                            menu_spl->loadSprite("restart_tut.png"),
-                            _parent, menu_selector(LevelScene::restart));
+                            CCSprite::create("level/tutorial/restart_tut.png"),
+                            click_action);
 
-                MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
-                menu->menu()->addChild(_message_node_button);
+                CCMenu* menu = CCMenu::create();
+                menu->addChild(_message_node_button);
                 //skip_button->setAnchorPoint(ccp(0.5, 0.5));
                 CCSize skip_size = _message_node_button->getContentSize();
                 float target_height = text_size.height*0.75f;
@@ -779,7 +816,7 @@ void EquationDrawer::initNoMoreSolutions()
     if(_level->getFoundSolutions().size() == _level->getSolutions().size())
     {
         _no_more_solutions_shown = true;
-        _message_node = CCNodeWithOpacity::create();
+        _message_node = CCNodeRGBA::create();
 
         _message_node_text = CCSprite::create(Language::localizeFileName("level/tutorial/no_more_solutions.png").c_str());
         CCSize text_size = _message_node_text->getContentSize();
@@ -789,18 +826,17 @@ void EquationDrawer::initNoMoreSolutions()
         _message_node->addChild(_message_node_text);
         _message_node_text->setPosition(ccp(0, text_size.height*0.75f));
 
-        SpritesLoader menu_spl = GraphicsManager::getLoaderFor(
-                    0,
-                    Language::localizeFileName("level/tutorial/buttons_tut.plist").c_str(),
-                    Language::localizeFileName("level/tutorial/buttons_tut.png").c_str());
+        auto click_action = [this](){
+            _parent->levels();
+        };
 
         _message_node_button = ADMenuItem::create(
-                    menu_spl->loadSprite("levels_tut.png"),
-                    _parent, menu_selector(LevelScene::levels));
+                    CCSprite::create("level/tutorial/levels_tut.png"),
+                    click_action);
 
-        MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
+        CCMenu* menu = CCMenu::create();
 
-        menu->menu()->addChild(_message_node_button);
+        menu->addChild(_message_node_button);
         //skip_button->setAnchorPoint(ccp(0.5, 0.5));
         CCSize skip_size = _message_node_button->getContentSize();
         float target_height = text_size.height*0.75f;

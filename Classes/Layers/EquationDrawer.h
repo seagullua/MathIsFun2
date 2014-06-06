@@ -6,13 +6,15 @@
 #include "LevelKeyboard.h"
 #include "Layers/PopUpWindow.h"
 class LevelScene;
-class EquationDrawer : public CCNodeWithOpacity
+class EquationDrawer : public cocos2d::CCNodeRGBA
 {
-    EquationDrawer(Level* level, const CCSize& _zone,
-                   LevelScene* parent, PopUpWindowManager& pop_up_m);
+    EquationDrawer(Level* level, const cocos2d::CCSize& _zone,
+                   LevelScene* parent, ADPopUpWindowManager& pop_up_m);
 public:
-    static EquationDrawer* create(Level *level, const CCSize& _zone,
-                                  LevelScene* parent, PopUpWindowManager& pop_up_m);
+    static EquationDrawer* create(Level *level,
+                                  const cocos2d::CCSize& _zone,
+                                  LevelScene* parent,
+                                  ADPopUpWindowManager& pop_up_m);
 
     void useHint();
     Level* getLevel() const
@@ -50,38 +52,38 @@ private:
     };
     void finishHide();
     void finishShow();
-    static const ccColor3B EquationColor_NewSolution;
-    static const ccColor3B EquationColor_OldSolution;
-    static const ccColor3B EquationColor_HintSolution;
+    static const cocos2d::ccColor3B EquationColor_NewSolution;
+    static const cocos2d::ccColor3B EquationColor_OldSolution;
+    static const cocos2d::ccColor3B EquationColor_HintSolution;
     LevelScene* _parent;
     Equation _equation;
     Level* _level;
     LevelKeyboard* _keyboard;
     MenuSpriteBatch* _substitutions;
     KeyboardReactor* _keyboard_reactor;
-    CCLabelBMFont* _inserted_label;
-    CCLabelBMFont* _hint_inserted_label;
+    cocos2d::CCLabelBMFont* _inserted_label;
+    cocos2d::CCLabelBMFont* _hint_inserted_label;
     std::string _inserted_label_str;
     std::string _hint_inserted_label_str;
     std::string _raw_equation;
     std::string _draft;
-    CCLabelBMFont* _eq_lab;
-    CCLabelBMFont* _draft_label;
-    CCSprite* _selected_sprite;
-    CCNode* _backup_sprite;
+    cocos2d::CCLabelBMFont* _eq_lab;
+    cocos2d::CCLabelBMFont* _draft_label;
+    //cocos2d::CCSprite* _selected_sprite;
+    //CCNode* _backup_sprite;
     CCNode* _message_node;
-    CCSprite* _message_node_text;
+    cocos2d::CCSprite* _message_node_text;
     MenuSpriteBatch* _message_node_menu;
     ADMenuItem* _message_node_button;
 
-    PopUpWindowManager& _pop_up_manager;
+    ADPopUpWindowManager& _pop_up_manager;
 
     bool _no_more_solutions_shown;
     bool _duplicate_solution_shown;
 
-    CCSize _zone;
+    cocos2d::CCSize _zone;
     float _font_symbol_height;
-    CCSize _max_draft_size;
+    cocos2d::CCSize _max_draft_size;
     std::vector<ADMenuItem*> _substitutors;
     std::vector<unsigned int> _substitutors_index;
     unsigned int _substituting_now_id;
@@ -98,7 +100,7 @@ private:
     void substituteParenthesis(const Symbol::ParenthesisType& op,
                                const unsigned int substituting_now_id,
                                const bool is_hint_mode=false);
-    void onFreeSpacePressed(CCObject* pSender);
+    void onFreeSpacePressed(unsigned int found_i);
     void recalculateEquation();
     void showMessageNode();
     void hideMessageNode();

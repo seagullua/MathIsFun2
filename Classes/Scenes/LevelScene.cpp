@@ -606,7 +606,7 @@ void LevelScene::skipLevel(CCObject*)
                         ));
 }
 
-void LevelScene::levels(CCObject*)
+void LevelScene::levels()
 {
     hideMe(true);
     this->runAction(CCSequence::createWithTwoActions(
@@ -614,7 +614,7 @@ void LevelScene::levels(CCObject*)
                         CCCallFunc::create(this, callfunc_selector(LevelScene::do_levels))
                         ));
 }
-void LevelScene::restart(CCObject*)
+void LevelScene::restart()
 {
     hideMe(true);
     this->runAction(CCSequence::createWithTwoActions(

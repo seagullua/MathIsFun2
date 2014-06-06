@@ -5,7 +5,7 @@ class Level;
 class Loading;
 class LevelScenePopUp;
 #include "cocos2d-A.h"
-class Tutorial : public CCObject
+class Tutorial : public cocos2d::CCObject
 {
 public:
     static Tutorial* getInstance()
@@ -26,14 +26,14 @@ private:
     friend class Loading;
     static Tutorial _tutorial;
     bool _initialized;
-    void switchLabel1To(CCSprite*);
-    void switchLabel2To(CCSprite*);
+    void switchLabel1To(cocos2d::CCSprite*);
+    void switchLabel2To(cocos2d::CCSprite*);
     void disposeLabel2();
     void disposeLabel1();
-    void disposeLabel(CCSprite *& what);
-    void switchLabel(CCSprite *& what, CCSprite* to);
-    CCSprite* _help_label1;
-    CCSprite* _help_label2;
+    void disposeLabel(cocos2d::CCSprite *& what);
+    void switchLabel(cocos2d::CCSprite *& what, cocos2d::CCSprite* to);
+    cocos2d::CCSprite* _help_label1;
+    cocos2d::CCSprite* _help_label2;
 };
 
 #endif // TUTORIAL_H

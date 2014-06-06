@@ -22,8 +22,8 @@ public:
     virtual void removeChild(CCNode* child, bool cleanup);
 
     void skipLevel(CCObject*);
-    void levels(CCObject*);
-    void restart(CCObject*);
+    void levels();
+    void restart();
     void showFoundSolutions();
     static void purchaseUpdateHints();
 private:

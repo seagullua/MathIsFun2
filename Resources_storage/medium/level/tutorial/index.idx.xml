@@ -33,7 +33,11 @@
 		<lang>1</lang>
 	</file>
 	<file>
-		<name>buttons_tut.plist.xml</name>
+		<name>restart_tut.png.xml</name>
+		<lang>1</lang>
+	</file>
+	<file>
+		<name>levels_tut.png.xml</name>
 		<lang>1</lang>
 	</file>
 	

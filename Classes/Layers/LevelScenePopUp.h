@@ -1,7 +1,7 @@
 #ifndef LEVELSCENEPOPUP_H
 #define LEVELSCENEPOPUP_H
 #include "cocos2d-A.h"
-#include "Core/Ads.h"
+
 class EquationDrawer;
 class LevelScenePopUp : public cocos2d::CCNode
 {
@@ -12,8 +12,8 @@ private:
 
     EquationDrawer* _parent;
     CCNode* _sheet_menu;
-    CCPoint _sheet_target_position;
-    CCSprite* _crown;
+    cocos2d::CCPoint _sheet_target_position;
+    cocos2d::CCSprite* _crown;
     ADAds::Banner* _pause_banner;
     void onFindMoreSolutions(CCObject*);
     void onLevels(CCObject*);
@@ -23,7 +23,7 @@ private:
 
     void showInterstitial();
 public:
-    void hideMe(CCCallFunc* callback);
+    void hideMe(cocos2d::CCCallFunc* callback);
     virtual bool init();
     void onNextLevel(CCObject*);
     //void onCloseClicked(CCObject* pSender);
@@ -34,7 +34,7 @@ public:
         return _parent;
     }
 
-    CCSprite* getCrown();
+    cocos2d::CCSprite* getCrown();
     static LevelScenePopUp* create(EquationDrawer* obj)
     {
         LevelScenePopUp *pRet = new LevelScenePopUp(obj);
