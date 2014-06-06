@@ -15,20 +15,17 @@ public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::CCScene* scene(Collection *colection);
 
-    void onLevelSelect(CCObject* pSender);
+    void onLevelSelect(Level *level);
 private:
    std:: vector<ADMenuItem*> _levels_arr;
    void onBackClick();
 
-   void doGoBack();
-   void doOpenLevel();
-   void hideEverything(cocos2d::CCCallFunc *callback);
+   void hideEverything(const Action& callback);
    void buildLevelsTiles();
    cocos2d::CCSprite* _menu_name;
    MenuSpriteBatch* _levels_menu;
    SpritesLoader _lev_spl;
    Collection* _collection;
-   Level* _level_to_open;
    ADAds::Banner* _bottom_banner;
 public:
    static SelectLevel* create(Collection* colection)
