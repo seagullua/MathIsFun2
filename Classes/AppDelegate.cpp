@@ -135,11 +135,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     std::string resourse_directory = mediumResource.directory;
     float resourse_scale = 1;
 
-    if(frameSize.width < 500)
-    {
-        resourse_directory = "little";
-        resourse_scale = 0.375;
-    }
+//    if(frameSize.width < 500)
+//    {
+//        resourse_directory = "little";
+//        resourse_scale = 0.375;
+//    }
     std::vector<std::string> searchPath;
     searchPath.push_back(resourse_directory);
 
