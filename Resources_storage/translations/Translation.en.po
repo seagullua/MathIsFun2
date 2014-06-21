@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-06-21 20:49+0200\n"
+"POT-Creation-Date: 2014-06-21 22:05+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,16 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
 
-#: ../../Classes/Scenes/Developers.cpp:30
+#: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
+msgstr "Developers"
+
+#: ../../Classes/Scenes/Settings.cpp:67
+msgid "settings_menu.scene.title"
+msgstr "Settings"
+
+#: ../../Classes/Scenes/Settings.cpp:126
+msgid "settings_menu.developers.title"
 msgstr "Developers"
 
 #~ msgid "iap.error.billing_unavaliable"

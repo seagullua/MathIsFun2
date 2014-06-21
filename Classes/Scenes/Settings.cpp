@@ -17,7 +17,6 @@ void switchImages(ADMenuItem* item);
 
 
 Settings::Settings():
-    //_menu_name(0),
     _sound_on(ADSoundManager::isSoundTurnedOn()),
     _music_on(ADSoundManager::isMusicTurnedOn()),
     _expert_mode_on(RW::isExpertMode())
@@ -54,22 +53,24 @@ bool Settings::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = ADScreen::getVisibleSize();
+    CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = ADScreen::getOrigin();
-    float scaled = ADScreen::getScaleFactor();
-    float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
+    CCPoint ORIGIN = ADScreen::getOrigin();
+    float SCALE = ADScreen::getScaleFactor();
+    float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
 
 
-    //Get the Select level label
+    /////////////////////////////////////////////////////
+
+    //set scene title
     _settings_scene_title = CCLabelTTF::create(_("settings_menu.scene.title"),
                                            ADLanguage::getFontName(),
                                            45);
     _settings_scene_title->setColor(GameInfo::COLOR_DARK_BLUE);
     _settings_scene_title->setAnchorPoint(ccp(0.5,1));
     CCPoint settings_scene_title_target_position = ccp(x_middle_of_sheet,
-                                       visibleSize.height + origin.y - 50/scaled);
+                                       VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE);
     _settings_scene_title->setPosition(settings_scene_title_target_position);
 
     //make slowly come to the screen
@@ -78,24 +79,11 @@ bool Settings::init()
     _settings_scene_title->runAction(settings_scene_title_fade_in);
     this->addChild(_settings_scene_title);
 
-    //_menu_name = CCSprite::create(Language::localizeFileName("settings/Settings.png").c_str());
-    //this->addChild(_menu_name);
-    //Put this label at the top of the screen
-//    _menu_name->setAnchorPoint(ccp(0.5, 1));
-//    CCPoint logo_target_position = ccp(x_middle_of_sheet,
-//                                       visibleSize.height + origin.y - 50/scaled);
-//    _menu_name->setPosition(logo_target_position);
+    ////////////////////////////////////////////////////////
 
-//    //make slowly come to the screen
-//    _menu_name->setOpacity(0);
-//    CCFadeTo* developers_fade_in = CCFadeTo::create(0.2f, 255);
-//    _menu_name->runAction(developers_fade_in);
-
+    //create function list
     CCMenu* menu = CCMenu::create();
     CCMenu* menu_new = CCMenu::create();
-
-    //TODO: calculate is Expert mode off or on and show the correct logo
-    //expert_mode
     _menu_item.reserve(6);
 
 
@@ -131,10 +119,10 @@ bool Settings::init()
     menu_new->addChild(_menu_item[0]);
     menu_new->addChild(_menu_item[1]);
     menu_new->addChild(_menu_item[2]);
-    //menu->menu()->alignItemsVerticallyWithPadding(30/scaled);
-    //menu->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
-    //ADMenuItem* developers =
+    //////////////////////////////////////////////////////
+
+    //set Developers title, Restore, Reset
     CCLabelTTF* developers_title = CCLabelTTF::create(_("settings_menu.developers.title"),
                                            ADLanguage::getFontName(),
                                            45);
@@ -145,6 +133,8 @@ bool Settings::init()
 
     _menu_item.push_back(developers);
 
+    /////////////////////////////////////////////////////
+
     ADMenuItem* reset_progress = ADMenuItem::create(
                 CCSprite::create("settings/Reset_progress.png"));
     CONNECT(reset_progress->signalOnClick,
@@ -152,6 +142,7 @@ bool Settings::init()
 
     _menu_item.push_back(reset_progress);
 
+    //////////////////////////////////////////
 
     ADMenuItem* restore = ADMenuItem::create(
                 CCSprite::create("settings/Restore_purchases.png"));
@@ -165,21 +156,16 @@ bool Settings::init()
     menu->addChild(_menu_item[5]);
 
     //_menu_item[3]->setPosition(ccp(0, -visibleSize.height/3 + origin.y ));
-    menu->alignItemsVerticallyWithPadding(20/scaled);
-    menu_new->alignItemsHorizontallyWithPadding(70/scaled);
-    menu->setPosition(ccp(x_middle_of_sheet,130/scaled + origin.y));
-    menu_new->setPosition(ccp(x_middle_of_sheet, visibleSize.height/2 + 30/scaled + origin.y));
-    restore->setPositionY(restore->getPositionY()+30/scaled);
+    menu->alignItemsVerticallyWithPadding(20/SCALE);
+    menu_new->alignItemsHorizontallyWithPadding(70/SCALE);
+    menu->setPosition(ccp(x_middle_of_sheet,130/SCALE + ORIGIN.y));
+    menu_new->setPosition(ccp(x_middle_of_sheet, VISIBLE_SIZE.height/2 + 30/SCALE + ORIGIN.y));
+    restore->setPositionY(restore->getPositionY()+30/SCALE);
 
     this->addChild(menu);
     this->addChild(menu_new);
     _pop_up_manager.addMenuToAutoDisable(menu);
     _pop_up_manager.addMenuToAutoDisable(menu_new);
-    //slowly came to the screen
-    //for (unsigned int i=0; i<_menu_item.size(); ++i)
-    //{
-    // _menu_item[i]->setOpacity(0);
-    // }
 
     for (unsigned int i=0; i<_menu_item.size(); ++i)
     {
