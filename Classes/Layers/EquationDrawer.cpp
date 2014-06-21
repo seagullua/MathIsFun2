@@ -231,6 +231,7 @@ void EquationDrawer::initEquationLabel()
 
     _substitutors.reserve(_equation.substitutionsNumber());
     _substitutors_index.reserve(_equation.substitutionsNumber());
+    unsigned int sub_id = 0;
     for(unsigned int i=0; i<_raw_equation.size(); ++i)
     {
         if(_raw_equation[i]=='_')
@@ -253,8 +254,8 @@ void EquationDrawer::initEquationLabel()
             else
                 sp = col_spl->loadSprite("any.png");
 
-            auto click_action = [this, i](){
-                this->onFreeSpacePressed(i);
+            auto click_action = [this, sub_id](){
+                this->onFreeSpacePressed(sub_id);
             };
 
             sp->setTag(NORMAL_SPRITE);
@@ -272,6 +273,7 @@ void EquationDrawer::initEquationLabel()
             _substitutions->menu()->addChild(item);
             _substitutors.push_back(item);
             _substitutors_index.push_back(i);
+            sub_id++;
         }
     }
 

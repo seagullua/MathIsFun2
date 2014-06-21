@@ -100,7 +100,7 @@ void Loading::initRW()
     RW::init();
     std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels.ad");
     unsigned long size = 0;
-    unsigned char* file_cont = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "r", &size);
+    unsigned char* file_cont = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "rb", &size);
 
     assert(size > 0); //TODO: put message that file can't be readed
     std::stringstream ss(std::ios::in | std::ios::out | std::ios::binary);
