@@ -45,13 +45,11 @@ DEFINES += WIN32 \
 
 SOURCES += main.cpp \
     ../Classes/AppDelegate.cpp \
-    ../Classes/Core/AnimatedMenuItem.cpp \
     ../Classes/Core/GraphicsManager.cpp \
     ../Classes/Scenes/MainMenu.cpp \
     ../Classes/Core/MenuSpriteBatch.cpp \
     ../Classes/Scenes/SelectCollection.cpp \
     ../Classes/Layers/BackgroundHolder.cpp \
-    ../Classes/Core/CCScrollView.cpp \
     ../Classes/Layers/LevelKeyboard.cpp \
     ../Classes/Math/Term.cpp \
     ../Classes/Math/Symbol.cpp \
@@ -69,12 +67,9 @@ SOURCES += main.cpp \
     ../Classes/Layers/LevelScenePopUp.cpp \
     ../Classes/Logic/Stamp.cpp \
     ../Classes/Scenes/Loading.cpp \
-    ../Classes/Core/CCTime.cpp \
     ../Classes/Core/CCManualFont.cpp \
-    ../Classes/Core/CCTime.cpp \
     ../Classes/Scenes/Settings.cpp \
     ../Classes/Scenes/Developers.cpp \
-    ../Classes/Core/MusicSettings.cpp \
     ../Classes/Layers/LevelStop.cpp \
     ../Classes/Logic/Tutorial.cpp \
     ../Classes/Layers/DisplaySolution.cpp \
@@ -83,21 +78,22 @@ SOURCES += main.cpp \
     ../Classes/Layers/PopUpWindow.cpp \
     ../Classes/Store.cpp \
     ../Classes/Layers/YesNoDialog.cpp \
-    ../Classes/Core/Ads.cpp \
-    PlatformEmulator.cpp
+    PlatformEmulator.cpp \
+    ../Classes/Scenes/SceneStyle.cpp \
+    ../Classes/GameInfo.cpp \
+    ../Classes/PopUp/UnlockWindow.cpp \
+    ../Classes/PopUp/PurchaseWindow.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
     ../Classes/AppDelegate.h \
     main.h \
-    ../Classes/Core/AnimatedMenuItem.h \
     ../Classes/Core/GraphicsManager.h \
     ../Classes/cocos2d-A.h \
     ../Classes/Scenes/MainMenu.h \
     ../Classes/Core/MenuSpriteBatch.h \
     ../Classes/Scenes/SelectCollection.h \
     ../Classes/Layers/BackgroundHolder.h \
-    ../Classes/Core/CCScrollView.h \
     ../Classes/Layers/LevelKeyboard.h \
     ../Classes/Math/Term.h \
     ../Classes/Math/Symbol.h \
@@ -115,12 +111,9 @@ HEADERS += \
     ../Classes/Layers/LevelScenePopUp.h \
     ../Classes/Logic/Stamp.h \
     ../Classes/Scenes/Loading.h \
-    ../Classes/Core/CCTime.h \
-    ../Classes/Core/CCNodeWithOpacity.h \
     ../Classes/Core/CCManualFont.h \
     ../Classes/Scenes/Settings.h \
     ../Classes/Scenes/Developers.h \
-    ../Classes/Core/MusicSettings.h \
     ../Classes/Layers/LevelStop.h \
     ../Classes/Logic/Tutorial.h \
     ../Classes/Layers/DisplaySolution.h \
@@ -130,13 +123,10 @@ HEADERS += \
     ../Classes/Scenes/SelectCollection_UnlockAnimator.h \
     ../Classes/Layers/PopUpWindow.h \
     ../Classes/Store.h \
-    ../Classes/Core/Browser.h \
-    ../Classes/Core/Statistics.h \
     ../Classes/Layers/YesNoDialog.h \
-    ../Classes/Core/Notification.h \
-    ../Classes/Core/Ads.h \
-    ../Classes/Core/RealLog.h \
     ../Classes/Core/Native.h \
-    ../Classes/Core/Distributor.h \
-    ../Classes/Core/Screen.h
+    ../Classes/Scenes/SceneStyle.h \
+    ../Classes/GameInfo.h \
+    ../Classes/PopUp/UnlockWindow.h \
+    ../Classes/PopUp/PurchaseWindow.h
 

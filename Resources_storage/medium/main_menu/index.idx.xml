@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
 	<file>
-		<name>menu/menu.plist.xml</name>
-		<project>mif</project>
+		<name>menu/play.png.xml</name>
 	</file>
 	<file>
-		<name>menu/menu_junior.plist.xml</name>
-		<project>junior</project>
+		<name>menu/settings.png.xml</name>
 	</file>
 	
 	<file>
-		<name>images/images.plist.xml</name>
-		<project>mif</project>
+		<name>images/logo.png.xml</name>
 	</file>
 	
-	<file>
-		<name>images/images_junior.plist.xml</name>
-		<project>junior</project>
-	</file>
 	
 	<file>
-		<name>images/share.plist.xml</name>
-		<project>mif</project>
+		<name>images/facebook_logo.png</name>
 	</file>
 </directory>

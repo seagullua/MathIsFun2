@@ -17,6 +17,12 @@ SOURCES += main.cpp \
 INCLUDEPATH += ../BinaryRW/
 INCLUDEPATH += ../../Classes/Binary/
 INCLUDEPATH += ../../Classes/
+INCLUDEPATH += ../../libraries/ADLib/src
+
+DESTDIR = $$PWD/bin/
+
+
+
 
 DEFINES += RW_DEBUG RW_BUILD_LEVELS
 #DEFINES += RW_DEBUG RW_TEST_INPUT

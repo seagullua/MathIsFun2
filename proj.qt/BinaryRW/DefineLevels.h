@@ -5,7 +5,6 @@
 #include "Math/Solution.h"
 #include <fstream>
 #include <string>
-#include "Binary/Binary.h"
 #include "Math/Equation.h"
 #include <algorithm>
 #include <set>
@@ -18,7 +17,7 @@ class RWNotationReader
 {
 public:
     RWNotationReader(const std::string& save_file, unsigned int collections) :
-        _error(false), COLLECTIONS(collections), _save_file(save_file)
+        _error(false), COLLECTIONS(collections), _save_file("../../../"+save_file)
     {
         RW::prepareForLevelBuild();
     }
@@ -51,7 +50,7 @@ public:
         std::ofstream output(_save_file.c_str(), std::ios::out | std::ios::binary);
         if(!_error)
         {
-            OutputBinaryStream os(output, 1);
+            ADStreamOut os(output);
             RW::writeLevelsInformation(os);
             output.close();
         }

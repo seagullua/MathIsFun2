@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
 	<file>
-		<name>developers/settings_developers_ad.plist.xml</name>
+		<name>developers/Diana_Andriy_Developers.png</name>
 	</file>
 	<file>
 		<name>developers/developers_menu_name.png.xml</name>
 		<lang>1</lang>
 	</file>
+	
 	<file>
-		<name>developers/contact_developers_menu.plist.xml</name>
+		<name>developers/button_send_email.png</name>
 	</file>
 	<file>
-		<name>menu/settings_menu.plist.xml</name>
-		<lang>1</lang>
+		<name>developers/4enjoy.png</name>
+	</file>
+	
+	
+	<file>
+		<name>menu/Developers.png.xml</name>
 	</file>
 	<file>
-		<name>menu/settings_menu_new.plist.xml</name>
+		<name>menu/Reset_progress.png.xml</name>
 	</file>
+	<file>
+		<name>menu/Restore_purchases.png.xml</name>
+	</file>
+	
+	<file>
+		<name>menu/Music_off.png</name>
+	</file>
+	<file>
+		<name>menu/Music_on.png</name>
+	</file>
+	<file>
+		<name>menu/Sound_off.png</name>
+	</file>
+	<file>
+		<name>menu/Sound_on.png</name>
+	</file>
+	<file>
+		<name>menu/Expert_mode_off.png</name>
+	</file>
+	<file>
+		<name>menu/Expert_mode_on.png</name>
+	</file>
+	
 	<file>
 		<name>menu_name/Settings.png.xml</name>
 		<lang>1</lang>

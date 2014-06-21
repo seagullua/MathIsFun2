@@ -20,11 +20,11 @@ bool operator==(const Solution& a, const Solution& b)
     return true;
 }
 
-void Solution::write(OutputBinaryStream& os) const
+void Solution::write(ADStreamOut& os) const
 {
     os << _substitutions_arr;
 }
-void Solution::read(InputBinaryStream &is)
+void Solution::read(ADStreamIn &is)
 {
     is >> _substitutions_arr;
 }

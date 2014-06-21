@@ -3,12 +3,14 @@
 #include "cocos2d-A.h"
 #include "Logic/Level.h"
 #include "Layers/PopUpWindow.h"
-#include "Core/Ads.h"
+#include <ADLib/Device/ADAds.h>
+#include "SceneStyle.h"
+
 class EquationDrawer;
 class LevelStop;
 class LevelScenePopUp;
 class FoundSolutionsLayer;
-class LevelScene : public cocos2d::CCLayer
+class LevelScene : public SceneStyle
 {
 public:
     LevelScene(Level* level);
@@ -16,12 +18,12 @@ public:
     virtual bool init();
 
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static CCScene* scene(Level* level);
+    static cocos2d::CCScene* scene(Level* level);
     virtual void removeChild(CCNode* child, bool cleanup);
 
     void skipLevel(CCObject*);
-    void levels(CCObject*);
-    void restart(CCObject*);
+    void levels();
+    void restart();
     void showFoundSolutions();
     static void purchaseUpdateHints();
 private:
@@ -34,27 +36,26 @@ private:
     FoundSolutionsLayer* _found_solutions;
     Level* _level;
     LevelStop* _levelStop;
-    CCLabelBMFont* _level_from;
-    CCLabelBMFont* _hint_quantity;
+    cocos2d::CCLabelBMFont* _level_from;
+    cocos2d::CCLabelBMFont* _hint_quantity;
     bool _found_solution_is_opened;
 
-    AnimatedMenuItem* _play;
-    AnimatedMenuItem* _pause;
-    AnimatedMenuItem* _restart;
-    AnimatedMenuItem* _hint;
-    MenuSpriteBatch* _screenEllements;
+    ADMenuItem* _play;
+    ADMenuItem* _pause;
+    ADMenuItem* _restart;
+    ADMenuItem* _hint;
+    cocos2d::CCMenu* _screenEllements;
     LevelScenePopUp* _last_pop_up;
     Solution _hint_solution;
-    ads::Banner* _top_banner;
+    ADAds::Banner* _top_banner;
 
     class BuyHints;
-    PopUpWindowManager _pop_up_manager;
     void onKeyPauseClicked();
-    void keyPauseClicked(CCObject *);
-    void keyRestartClicked(CCObject*);
-    void keyHintClicked(CCObject *);
+    void keyPauseClicked();
+    void keyRestartClicked();
+    void keyHintClicked();
     void onkeyRestartClicked();
-    void keyBackClicked();
+    void onBackClick();
 
     void do_goToLevelSelect();
     void renewOneHint();

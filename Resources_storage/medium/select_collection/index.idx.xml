@@ -20,6 +20,9 @@
 	<file>
 		<name>new_collection/new_collection.plist.xml</name>
 	</file>
+	<file>
+		<name>new_collection/new_collection2.plist.xml</name>
+	</file>
 	
 	<file>
 		<name>new_collection/clabel_100.png.xml</name>
@@ -151,9 +154,12 @@
 	</file>
 	
 	<file>
-		<name>unlock_window/unlock_buttons.plist.xml</name>
+		<name>unlock_window/unlock_button.png.xml</name>
 		<lang>1</lang>
-		<project>mif</project>
+	</file>
+	<file>
+		<name>unlock_window/play_button.png.xml</name>
+		<lang>1</lang>
 	</file>
 	
 	<file>
@@ -167,9 +173,14 @@
 	</file>
 	
 	<file>
-		<name>buy_window/buy_buttons.plist.xml</name>
+		<name>buy_window/buy_all_button.png.xml</name>
 		<lang>1</lang>
-		<project>mif</project>
+		
+	</file>
+	<file>
+		<name>buy_window/buy_one_button.png.xml</name>
+		<lang>1</lang>
+		
 	</file>
 	
 	<file>

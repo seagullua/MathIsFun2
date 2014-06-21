@@ -2,8 +2,10 @@
 #define SELECTLEVEL_H
 #include "cocos2d-A.h"
 #include "Logic/Collection.h"
-#include "Core/Ads.h"
-class SelectLevel: public cocos2d::CCLayer
+#include <ADLib/Device/ADAds.h>
+#include "SceneStyle.h"
+
+class SelectLevel: public SceneStyle
 {
 public:
     SelectLevel(Collection* colection);
@@ -13,24 +15,18 @@ public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::CCScene* scene(Collection *colection);
 
-    void onLevelSelect(CCObject* pSender);
+    void onLevelSelect(Level *level);
 private:
-   std:: vector<AnimatedMenuItem*> _levels_arr;
-   void keyBackClicked();
-   void onKeyBackClicked()
-   {
-       keyBackClicked();
-   }
-   void doGoBack();
-   void doOpenLevel();
-   void hideEverything(cocos2d::CCCallFunc *callback);
+   std:: vector<ADMenuItem*> _levels_arr;
+   void onBackClick();
+
+   void hideEverything(const Action& callback);
    void buildLevelsTiles();
-   CCSprite* _menu_name;
+   cocos2d::CCSprite* _menu_name;
    MenuSpriteBatch* _levels_menu;
    SpritesLoader _lev_spl;
    Collection* _collection;
-   Level* _level_to_open;
-   ads::Banner* _bottom_banner;
+   ADAds::Banner* _bottom_banner;
 public:
    static SelectLevel* create(Collection* colection)
    {

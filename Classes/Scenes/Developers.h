@@ -1,27 +1,24 @@
 #ifndef DEVELOPERS_H
 #define DEVELOPERS_H
 #include "cocos2d-A.h"
-class Developers: public cocos2d::CCLayer
+#include "SceneStyle.h"
+class Developers: public SceneStyle
 {
 public:
     Developers();
     virtual bool init();
     static cocos2d::CCScene* scene();
 private:
-    CCSprite* _menu_name;
-    CCSprite* _developers;
-    CCSprite* _version;
-    AnimatedMenuItem* _x4enjoy_item;
-    AnimatedMenuItem* _send_item;
-    void keyBackClicked();
-    void onKeyBackClicked()
-    {
-        keyBackClicked();
-    }
-    void doGoBack();
-    void hideEverything(cocos2d::CCCallFunc *callback);
-    void onSendLetter(CCObject*);
-    void onSite(CCObject*);
+    cocos2d::CCSprite* _menu_name;
+    cocos2d::CCSprite* _developers;
+    cocos2d::CCSprite* _version;
+    ADMenuItem* _x4enjoy_item;
+    ADMenuItem* _send_item;
+    void onBackClick();
+
+    void hideEverything(const Action& callback);
+    void onSendLetter();
+    void onSite();
 public:
     CREATE_FUNC(Developers)
 };

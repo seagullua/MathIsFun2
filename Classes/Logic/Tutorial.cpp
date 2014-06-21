@@ -6,6 +6,7 @@
 #include "Layers/LevelScenePopUp.h"
 #include "cocos2d-A.h"
 #include "Logic/Language.h"
+using namespace cocos2d;
 void Tutorial::onLevelStart(EquationDrawer* eqd)
 {
     Level* level = eqd->getLevel();
@@ -28,7 +29,7 @@ void Tutorial::onLevelStart(EquationDrawer* eqd)
                 else
                     label = CCSprite::create("level/tutorial/touch_empty_space2.png");
                 eqd->addChild(label);
-                AnimatedMenuItem* empty_space = eqd->getSubstituteItems()[0];
+                ADMenuItem* empty_space = eqd->getSubstituteItems()[0];
                 float empty_space_position = empty_space->getPositionX();
                 float empty_space_width = empty_space->getContentSize().width;
                 float empty_space_scale = eqd->getEquaionLabelScale();
@@ -164,7 +165,7 @@ void Tutorial::onSolutionFound(LevelScenePopUp* pop_up)
         }
         else if(col_id == 100 && level_id == 1 && found_solutions == 1)
         {
-            float scaled = Screen::getScaleFactor();
+            float scaled = ADScreen::getScaleFactor();
             CCSprite* label = CCSprite::create(Language::localizeFileName("level/tutorial/final_step.png").c_str());
             label->setAnchorPoint(ccp(0,0));
             label->setPosition(ccp(85/scaled, 208/scaled));

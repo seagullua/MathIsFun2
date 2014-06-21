@@ -4,13 +4,12 @@
 #include "Scenes/LevelScene.h"
 #include "Logic/Language.h"
 
+using namespace cocos2d;
 
-//#define DEBUG_LAYER
-#ifdef DEBUG_LAYER
-#include "Layers/DebugLayer.h"
-#endif
-SelectLevel::SelectLevel(Collection *colection): _menu_name(0),
-    _collection(colection), _level_to_open(0), _bottom_banner(0)
+SelectLevel::SelectLevel(Collection *colection):
+    _menu_name(0),
+    _collection(colection),
+    _bottom_banner(0)
 {
 }
 cocos2d::CCScene* SelectLevel::scene(Collection *colection)
@@ -23,74 +22,40 @@ cocos2d::CCScene* SelectLevel::scene(Collection *colection)
 
     // add layer as a child to scene
     CCCallFunc* back = CCCallFunc::create(layer,
-                                          callfunc_selector(SelectLevel::onKeyBackClicked));
+                                          callfunc_selector(SceneStyle::simulateBackClick));
     BackgroundHolder::backgroundSwitchTo(scene,back);
     scene->addChild(layer);
 
     // return the scene
     return scene;
 }
-void SelectLevel::keyBackClicked()
+void SelectLevel::onBackClick()
 {
-    hideEverything(
-                CCCallFunc::create(
-                    this,
-                    callfunc_selector(SelectLevel::doGoBack)));
+    hideEverything([](){
+        CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+    });
 }
-void SelectLevel::doGoBack()
-{
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
-}
-void SelectLevel::doOpenLevel()
-{
-    assert(_level_to_open);
 
-    CCDirector::sharedDirector()->replaceScene(LevelScene::scene(_level_to_open));
-}
-void SelectLevel::onLevelSelect(CCObject* sender)
+void SelectLevel::onLevelSelect(Level* level_to_open)
 {
-    //Run through all tiles
-    unsigned int levels_number = _levels_arr.size();
-    unsigned int selected_i = levels_number;
-    for(unsigned int i=0; i<levels_number; ++i)
+    if(level_to_open->getLevelState()==Level::Locked)
     {
-        //And compare adress
-        if(sender == _levels_arr[i])
-        {
-            selected_i = i;
-            break;
-        }
-    }
-    //We should have found one collection
-    CCAssert(selected_i < levels_number, "");
-    if(selected_i < levels_number)
-    {
-        //We selected this collection
-        _level_to_open = _collection->getLevels()[selected_i];
-
-        if(_level_to_open->getLevelState()==Level::Locked)
-        {
-            _level_to_open = 0;
-            //TODO: play sound of closed level
-        }
-        else
-        {
-            hideEverything(
-                        CCCallFunc::create(
-                            this,
-                            callfunc_selector(SelectLevel::doOpenLevel)));
-        }
-
+        level_to_open = 0;
+        //TODO: play sound of closed level
     }
     else
     {
-        CCLOG("collection not-found");
+        hideEverything([level_to_open](){
+            CCDirector::sharedDirector()->replaceScene(LevelScene::scene(level_to_open));
+        });
     }
+
+
 }
 
 bool SelectLevel::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }
@@ -99,11 +64,11 @@ bool SelectLevel::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
 
 
 
@@ -120,7 +85,7 @@ bool SelectLevel::init()
     CCPoint logo_target_position = ccp(x_middle_of_sheet,
                                        visibleSize.height + origin.y - 50/scaled);
     _menu_name->setPosition(logo_target_position);
-   // _menu_name->setColor(ccc3(71,218,196));
+    // _menu_name->setColor(ccc3(71,218,196));
 
     //Make it fade in slowly
     _menu_name->setOpacity(0);
@@ -131,7 +96,7 @@ bool SelectLevel::init()
     return true;
 }
 
-void SelectLevel::hideEverything(cocos2d::CCCallFunc *callback)
+void SelectLevel::hideEverything(const SceneStyle::Action &callback)
 {
     if(_bottom_banner)
         _bottom_banner->removeFromParent();
@@ -151,7 +116,7 @@ void SelectLevel::hideEverything(cocos2d::CCCallFunc *callback)
     this->runAction(
                 CCSequence::create(
                     CCDelayTime::create(delay),
-                    callback,
+                    ADCallFunc::create(callback),
                     NULL));
 }
 
@@ -178,9 +143,9 @@ void SelectLevel::buildLevelsTiles()
         test_button->setPosition(ccp(visibleSize.width/2 + origin.x,
                                  visibleSize.height + origin.y - 60/scaled));
     }*/
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Create levels menu
     MenuSpriteBatch* levels_menu = MenuSpriteBatch::create(level_tiles);
@@ -267,7 +232,7 @@ void SelectLevel::buildLevelsTiles()
 
     CCManualFont* font = CCManualFont::create(levels_menu,
                                               "font/mathisfun_digits.plist",
-                                            "font/mathisfun_digits.png");
+                                              "font/mathisfun_digits.png");
 
     for (int y=num_ell_in_col-1; y>=0; y--)
     {
@@ -280,10 +245,14 @@ void SelectLevel::buildLevelsTiles()
                 tile_image = locked_tile->loadSprite("lt_locked.png");
             else
                 tile_image =  level_tiles->loadSprite(sprite_name.c_str());
-            AnimatedMenuItem* item=AnimatedMenuItem::create(
+
+            auto click_action = [level, this](){
+                onLevelSelect(level);
+            };
+
+            ADMenuItem* item=ADMenuItem::createWithSpriteSheetSprite(
                         tile_image,
-                        this,
-                        menu_selector(SelectLevel::onLevelSelect));
+                        click_action);
 
             _levels_arr.push_back(item);
             levels_menu->menu()->addChild(item);
@@ -329,7 +298,7 @@ void SelectLevel::buildLevelsTiles()
                     char1->setAnchorPoint(ccp(0,anchor_y));
                 }
             }
-            item->setBaseScale(scale_factor);
+            item->setScaleBase(scale_factor);
             //show on the level button blue, green , red stamps
             //CCSprite* level_status_image = 0;
 
@@ -395,9 +364,5 @@ void SelectLevel::buildLevelsTiles()
 
     levels_menu->menu()->setOpacity(0);
     levels_menu->menu()->runAction(CCFadeTo::create(0.3f, 255));
-#ifdef DEBUG_LAYER
-    DebugLayer* debug = DebugLayer::create();
-    this->addChild(debug);
-    debug->addChild(levels_menu);
-#endif
+
 }

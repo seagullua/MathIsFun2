@@ -2,38 +2,34 @@
 #define SETTINGS_H
 #include "cocos2d-A.h"
 #include "Layers/YesNoDialog.h"
-class Settings: public cocos2d::CCLayer
+#include "SceneStyle.h"
+class Settings: public SceneStyle
 {
 public:
     Settings();
     virtual bool init();
     static cocos2d::CCScene* scene();
 private:
-    SpritesLoader _settings_menu;
-    SpritesLoader _settings_menu_new;
-    std::vector<AnimatedMenuItem*> _menu_item;
-    CCSprite* _menu_name;
+//    SpritesLoader _settings_menu;
+//    SpritesLoader _settings_menu_new;
+    std::vector<ADMenuItem*> _menu_item;
+    cocos2d::CCSprite* _menu_name;
     bool _sound_on;
     bool _music_on;
     bool _expert_mode_on;
 
-    PopUpWindowManager _pop_up_manager;
 
     void doDeleteProgress();
-    void keyBackClicked();
-    void onKeyBackClicked()
-    {
-        keyBackClicked();
-    }
-    void doGoBack();
-    void hideEverything(cocos2d::CCCallFunc *callback);
-    void onExpertModeSelect(CCObject* sender);
-    void onSoundSelect(CCObject* sender);
-    void onMusicSelect(CCObject* sender);
-    void onDevelopersSelect(CCObject* sender);
+    void onBackClick();
 
-    void onResetProgressSelect(CCObject*);
-    void onRestorePurchasesSelect(CCObject*);
+    void hideEverything(const Action &callback);
+    void onExpertModeSelect(ADMenuItem* sender);
+    void onSoundSelect(ADMenuItem* sender);
+    void onMusicSelect(ADMenuItem* sender);
+    void onDevelopersSelect();
+
+    void onResetProgressSelect();
+    void onRestorePurchasesSelect();
 
 public:
     CREATE_FUNC(Settings)

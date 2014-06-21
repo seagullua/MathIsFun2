@@ -2,24 +2,24 @@
 #define YESNODIALOG_H
 #include "PopUpWindow.h"
 #include "cocos2d-A.h"
-class YesNoDialog : public PopUpWindow::Content
+class YesNoDialog : public PopUpWindowStyle
 {
 public:
-    YesNoDialog(CCNode* content,
+    YesNoDialog(cocos2d::CCNode* content,
                 CCObject* yes_callback,
-                SEL_CallFunc yes_fun,
+                cocos2d::SEL_CallFunc yes_fun,
                 CCObject* no_callback=0,
-                SEL_CallFunc no_fun=0);
+                cocos2d::SEL_CallFunc no_fun=0);
 private:
-    void onCreate(CCNode *parent);
-    void yes(CCObject*);
-    void no(CCObject*);
-    CCNode* _content;
+    void onCreate(cocos2d::CCNode *parent);
+    void yes();
+    void no();
+    cocos2d::CCNode* _content;
 
     CCObject* _yes_obj;
-    SEL_CallFunc _yes_fun;
+    cocos2d::SEL_CallFunc _yes_fun;
     CCObject* _no_obj;
-    SEL_CallFunc _no_fun;
+    cocos2d::SEL_CallFunc _no_fun;
 };
 
 #endif // YESNODIALOG_H

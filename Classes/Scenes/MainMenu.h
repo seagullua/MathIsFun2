@@ -3,47 +3,31 @@
 
 #include "cocos2d-A.h"
 #include "Layers/YesNoDialog.h"
-class MainMenu : public cocos2d::CCLayer
+#include "SceneStyle.h"
+class MainMenu : public SceneStyle
 {
 private:
-    MenuSpriteBatch* _main_menu;
+    cocos2d::CCMenu* _main_menu;
 
-    MenuSpriteBatch* _share_menu;
+    cocos2d::CCMenu* _share_menu;
 
-    CCSprite* _logo;
-    AnimatedMenuItem* _facebook_button;
-    AnimatedMenuItem *_settings;
-    AnimatedMenuItem *_play;
-    CCSprite* _junior;
+    cocos2d::CCSprite* _logo;
+    ADMenuItem* _facebook_button;
+    ADMenuItem *_settings;
+    ADMenuItem *_play;
+    cocos2d::CCSprite* _junior;
 
 
-    PopUpWindowManager _pop_up_manager;
-    void hideEverything(cocos2d::CCCallFunc *callback);
-    void onShareFacebookPressed(CCObject*);
+    void hideEverything(const Action& callback);
+    void onShareFacebookPressed();
     //Action when user presses on Play
-    void onPlayPressed(CCObject* pSender);
-    //Action after all animation have finished
-    void doPlayPressed();
+    void onPlayPressed();
 
     //Action when user presses Settings
-    void onSettingsPressed(CCObject* pSender);
-    //Action after all animation have finished
-    void doSettingsPressed();
-
-
-    MenuSpriteBatch* _poll_menu;
-    AnimatedMenuItem *_poll_yes;
-    AnimatedMenuItem *_poll_no;
-    CCSprite* _poll;
-    void pollYes(CCObject* pSender);
-    void pollNo(CCObject* pSender);
-    void pollHide();
-    void pollShow();
+    void onSettingsPressed();
 
     //on back clicked
-    void keyBackClicked();
-    //void keyMenuClicked();
-
+    void onBackClick();
 
     void doCloseGame();
 public:

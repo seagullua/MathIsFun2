@@ -4,11 +4,17 @@
 		<name>loading_screen/loading_screen.plist.xml</name>
 	</file>
 	<file>
-		<name>common/common.plist.xml</name>
+		<name>common/back_button.png</name>
+	</file>
+	
+	<file>
+		<name>yes_no/yes.png</name>
 	</file>
 	<file>
-		<name>yes_no/yes_no_menu.plist.xml</name>
+		<name>yes_no/no.png</name>
 	</file>
+
+	
 	<file>
 		<name>yes_no/quite_promt.png</name>
 	</file>

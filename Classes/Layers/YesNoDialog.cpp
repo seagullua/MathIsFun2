@@ -1,5 +1,6 @@
 #include "YesNoDialog.h"
 #include "Logic/Language.h"
+using namespace cocos2d;
 YesNoDialog::YesNoDialog(CCNode* content,
             CCObject* yes_callback,
             SEL_CallFunc yes_fun,
@@ -15,7 +16,7 @@ YesNoDialog::YesNoDialog(CCNode* content,
 void YesNoDialog::onCreate(CCNode *parent)
 {
     CCSize size = parent->getContentSize();
-    float scaled = Screen::getScaleFactor();
+    float scaled = ADScreen::getScaleFactor();
 
     parent->addChild(_content);
     _content->release();
@@ -24,31 +25,31 @@ void YesNoDialog::onCreate(CCNode *parent)
 
     _content->setPosition(ccp(x_middle, size.height*0.65));
 
-    SpritesLoader menu_spl = GraphicsManager::getLoaderFor(parent,
-                                                           "yes_no_menu.plist",
-                                                           "yes_no_menu.png");
+
     //Create menu items
     //Yes button
-    AnimatedMenuItem *yes_button = AnimatedMenuItem::create(
-                menu_spl->loadSprite("yes.png"),
-                this, menu_selector(YesNoDialog::yes));
+    ADMenuItem *yes_button = ADMenuItem::create(
+                CCSprite::create("yes.png"));
+    CONNECT(yes_button->signalOnClick,
+            this, &YesNoDialog::yes);
 
 
     //Settings button
-    AnimatedMenuItem *no_button = AnimatedMenuItem::create(
-                menu_spl->loadSprite("no.png"),
-                this, menu_selector(YesNoDialog::no));
+    ADMenuItem *no_button = ADMenuItem::create(
+                CCSprite::create("no.png"));
+    CONNECT(no_button->signalOnClick,
+            this, &YesNoDialog::no);
 
     //Create menu
-    MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
+    CCMenu* menu = CCMenu::create();
     menu->setPosition(ccp(x_middle, size.height*0.3));
-    menu->menu()->addChild(yes_button);
-    menu->menu()->addChild(no_button);
-    menu->menu()->alignItemsHorizontallyWithPadding(120/scaled);
+    menu->addChild(yes_button);
+    menu->addChild(no_button);
+    menu->alignItemsHorizontallyWithPadding(120/scaled);
     parent->addChild(menu);
 }
 
-void YesNoDialog::yes(CCObject*)
+void YesNoDialog::yes()
 {
     if(_yes_obj && _yes_fun)
     {
@@ -57,7 +58,7 @@ void YesNoDialog::yes(CCObject*)
     closeWindow();
 }
 
-void YesNoDialog::no(CCObject*)
+void YesNoDialog::no()
 {
     if(_no_obj && _no_fun)
     {

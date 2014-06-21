@@ -1,7 +1,14 @@
 #include "LevelKeyboard.h"
-//#include <algorithm>
-LevelKeyboard::LevelKeyboard(const CCSize &zone, PopUpWindowManager &pop_up_m) : _buttons(BUTTONS_COUNT), _mode(None),
-    _listener(0), _zone(zone), _layout_mode(Horizontal), _pop_up_window_manager(pop_up_m)
+using namespace cocos2d;
+
+LevelKeyboard::LevelKeyboard(const CCSize &zone,
+                             ADPopUpWindowManager &pop_up_m) :
+    _buttons(BUTTONS_COUNT),
+    _mode(None),
+    _listener(0),
+    _zone(zone),
+    _layout_mode(Horizontal),
+    _pop_up_window_manager(pop_up_m)
 {
     this->setContentSize(zone);
     this->setCascadeOpacityEnabled(true);
@@ -36,6 +43,14 @@ LevelKeyboard::LevelKeyboard(const CCSize &zone, PopUpWindowManager &pop_up_m) :
     _buttons[multiply] = createButton("multiply.png");
     _buttons[left_parenthesis] = createButton("left.png");
     _buttons[right_parenthesis] = createButton("right.png");
+
+    for(unsigned int i=0; i<_buttons.size(); ++i)
+    {
+        ButtonsCodes code(static_cast<ButtonsCodes>(i));
+        _buttons[i]->setClickAction([code, this](){
+            this->onKeyPressed(code);
+        });
+    }
 
     _base_button_size = _buttons[b0]->getContentSize();
 
@@ -75,19 +90,17 @@ CCPoint LevelKeyboard::getButtonPosition(const ButtonsCodes code)
 }
 CCSize LevelKeyboard::getButtonSizeScaled(const ButtonsCodes code)
 {
-    AnimatedMenuItem* item = _buttons[code];
-    float scale = item->getBaseScale();
+    ADMenuItem* item = _buttons[code];
+    float scale = item->getScaleBase();
     CCSize content_size = item->getContentSize();
     return CCSize(content_size.width * scale,
                   content_size.height * scale);
 }
 
-AnimatedMenuItem* LevelKeyboard::createButton(const char* name)
+ADMenuItem* LevelKeyboard::createButton(const char* name)
 {
     //Create menu item
-    return AnimatedMenuItem::create(
-                _col_spl->loadSprite(name),
-                this, menu_selector(LevelKeyboard::onKeyPressed));
+    return ADMenuItem::createWithSpriteSheetSprite(_col_spl->loadSprite(name));
 }
 /**
  * @brief Arranges the given list of item into the giving number of
@@ -154,11 +167,11 @@ void LevelKeyboard::arrangeButtons(const ItemsArr& items,
             unsigned int index = y*columns+x;
             if(index < items_number)
             {
-                AnimatedMenuItem* item = items[y*columns+x];
+                ADMenuItem* item = items[y*columns+x];
                 if(item)
                 {
                     item->setVisible(true);
-                    item->setBaseScale(scale_factor);
+                    item->setScaleBase(scale_factor);
                     item->setPosition(ccp(horizontal_disp, -vertical_disp));
                 }
                 horizontal_disp += (button_width_in_units + spacing_in_units)
@@ -176,22 +189,11 @@ void LevelKeyboard::arrangeButtons(const ItemsArr& items,
 
 }
 
-void LevelKeyboard::onKeyPressed(CCObject* pSender)
+void LevelKeyboard::onKeyPressed(LevelKeyboard::ButtonsCodes code)
 {
     if(_listener)
     {
-        unsigned int found_i = _buttons.size();
-        for(unsigned int i=0; i<found_i; ++i)
-        {
-            if(_buttons[i] == pSender)
-            {
-                found_i = i;
-            }
-        }
-        if(found_i < _buttons.size())
-        {
-            _listener->onKeyPressed(ButtonsCodes(found_i));
-        }
+        _listener->onKeyPressed(code);
     }
 }
 
@@ -327,7 +329,7 @@ void LevelKeyboard::rearangeButtons(const Mode& mask)
 
 }
 
-LevelKeyboard* LevelKeyboard::create(const CCSize& zone, PopUpWindowManager &pop_up_m)
+LevelKeyboard* LevelKeyboard::create(const CCSize& zone, ADPopUpWindowManager &pop_up_m)
 {
     LevelKeyboard *pRet = new LevelKeyboard(zone,pop_up_m);
     if (pRet)

@@ -1,21 +1,48 @@
 #include "Settings.h"
 #include "Scenes/MainMenu.h"
 #include "Scenes/Developers.h"
-#include "Core/MusicSettings.h"
 #include "Logic/RW.h"
 #include "Logic/Language.h"
 #include "Store.h"
-#include "Core/Statistics.h"
+#include <ADLib/Device/ADSoundManager.h>
+static const int NORMAL_SPRITE = 10;
+static const int SELECTED_SPRITE = 20;
+
+using namespace cocos2d;
+
+void switchImages(ADMenuItem* item);
+
+
 
 Settings::Settings():_menu_name(0),
-    _sound_on(MusicSettings::isSoundEffectOn()),
-    _music_on(MusicSettings::isMusicOn()),
-    _expert_mode_on(RW::isExpertMode()), _pop_up_manager(this)
+    _sound_on(ADSoundManager::isSoundTurnedOn()),
+    _music_on(ADSoundManager::isMusicTurnedOn()),
+    _expert_mode_on(RW::isExpertMode())
 {
 }
+
+ADMenuItem* createToggleButton(const std::string& normal_sprite,
+                               const std::string& selected_sprite,
+                               bool is_selected)
+{
+    CCSprite* expert_mode_on = CCSprite::create(normal_sprite.c_str());
+    expert_mode_on->setTag(NORMAL_SPRITE);
+    CCSprite* expert_mode_off = CCSprite::create(selected_sprite.c_str());
+    expert_mode_off->setTag(SELECTED_SPRITE);
+    expert_mode_off->setVisible(false);
+    expert_mode_off->setPosition(expert_mode_off->getContentSize()*0.5f);
+
+    ADMenuItem* expert_mode = ADMenuItem::create(expert_mode_on);
+    expert_mode->addChild(expert_mode_off);
+
+    if(is_selected)
+        switchImages(expert_mode);
+    return expert_mode;
+}
+
 bool Settings::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }
@@ -24,11 +51,11 @@ bool Settings::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
     float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
 
 
@@ -49,106 +76,97 @@ bool Settings::init()
     _menu_name->runAction(developers_fade_in);
 
 
-    _settings_menu = GraphicsManager::getLoaderFor(
-                0,
-                Language::localizeFileName("settings/settings_menu.plist").c_str(),
-                Language::localizeFileName("settings/settings_menu.png").c_str());
+    //    _settings_menu = GraphicsManager::getLoaderFor(
+    //                0,
+    //                Language::localizeFileName("settings/settings_menu.plist").c_str(),
+    //                Language::localizeFileName("settings/settings_menu.png").c_str());
 
-    _settings_menu_new = GraphicsManager::getLoaderFor(
-                0,
-                "settings/settings_menu_new.plist",
-                "settings/settings_menu_new.png");
+    //    _settings_menu_new = GraphicsManager::getLoaderFor(
+    //                0,
+    //                "settings/settings_menu_new.plist",
+    //                "settings/settings_menu_new.png");
     //Create menu with collections
-    MenuSpriteBatch* menu = MenuSpriteBatch::create(_settings_menu);
-    MenuSpriteBatch* menu_new = MenuSpriteBatch::create(_settings_menu_new);
+    CCMenu* menu = CCMenu::create();
+    CCMenu* menu_new = CCMenu::create();
 
     //TODO: calculate is Expert mode off or on and show the correct logo
     //expert_mode
     _menu_item.reserve(6);
 
-    if(_expert_mode_on)
-    {
-        _menu_item.push_back(AnimatedMenuItem::create(
-                                 _settings_menu_new->loadSprite("Expert_mode_on.png"),
-                                 this, menu_selector(Settings::onExpertModeSelect)));
-    }
-    else
-    {
-        _menu_item.push_back(AnimatedMenuItem::create(
-                                 _settings_menu_new->loadSprite("Expert_mode_off.png"),
-                                 this, menu_selector(Settings::onExpertModeSelect)));
-    }
 
-    if (MusicSettings::isSoundEffectOn() == true)
-    {
-        //sound =
-        _menu_item.push_back(AnimatedMenuItem::create(
-                                 _settings_menu_new->loadSprite("Sound_on.png"),
-                                 this, menu_selector(Settings::onSoundSelect)));
-    }
-    else if(MusicSettings::isSoundEffectOn() == false)
-    {
-        //sound =
-        _menu_item.push_back(AnimatedMenuItem::create(
-                                 _settings_menu_new->loadSprite("Sound_off.png"),
-                                 this, menu_selector(Settings::onSoundSelect)));
-    }
+    ADMenuItem* expert_mode = createToggleButton(
+                "settings/Expert_mode_on.png",
+                "settings/Expert_mode_off.png",
+                !_expert_mode_on);
+    expert_mode->setClickAction([expert_mode, this](){
+        this->onExpertModeSelect(expert_mode);
+    });
+    _menu_item.push_back(expert_mode);
+
+    ADMenuItem* sound = createToggleButton(
+                "settings/Sound_on.png",
+                "settings/Sound_off.png",
+                !ADSoundManager::isSoundTurnedOn());
+    sound->setClickAction([sound, this](){
+        this->onSoundSelect(sound);
+    });
+    _menu_item.push_back(sound);
 
 
-    if (MusicSettings::isMusicOn() == true )
-    {
-        //music =
-        _menu_item.push_back(AnimatedMenuItem::create(
-                                 _settings_menu_new->loadSprite("Music_on.png"),
-                                 this, menu_selector(Settings::onMusicSelect)));
-    }
-    else if (MusicSettings::isMusicOn() == false)
-    {
-        //music =
-        _menu_item.push_back(AnimatedMenuItem::create(
-                                 _settings_menu_new->loadSprite("Music_off.png"),
-                                 this, menu_selector(Settings::onMusicSelect)));
-    }
+    ADMenuItem* music = createToggleButton(
+                "settings/Music_on.png",
+                "settings/Music_off.png",
+                !ADSoundManager::isMusicTurnedOn());
+    music->setClickAction([music, this](){
+        this->onMusicSelect(music);
+    });
+    _menu_item.push_back(music);
 
-    menu_new->menu()->addChild(_menu_item[0]);
-    menu_new->menu()->addChild(_menu_item[1]);
-    menu_new->menu()->addChild(_menu_item[2]);
+
+    menu_new->addChild(_menu_item[0]);
+    menu_new->addChild(_menu_item[1]);
+    menu_new->addChild(_menu_item[2]);
     //menu->menu()->alignItemsVerticallyWithPadding(30/scaled);
     //menu->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
-    //AnimatedMenuItem* developers =
-    _menu_item.push_back(AnimatedMenuItem::create(
-                             _settings_menu->loadSprite("Developers.png"),
-                             this, menu_selector(Settings::onDevelopersSelect)));
+    //ADMenuItem* developers =
+    ADMenuItem* developers = ADMenuItem::create(
+                CCSprite::create("settings/Developers.png"));
+    CONNECT(developers->signalOnClick,
+            this, &Settings::onDevelopersSelect);
 
-    _menu_item.push_back(AnimatedMenuItem::create(
-                             _settings_menu->loadSprite("Reset_progress.png"),
-                             this, menu_selector(Settings::onResetProgressSelect)));
-#ifndef JUNIOR
-    AnimatedMenuItem* restore = AnimatedMenuItem::create(
-                _settings_menu->loadSprite("Restore_purchases.png"),
-                this, menu_selector(Settings::onRestorePurchasesSelect));
+    _menu_item.push_back(developers);
+
+    ADMenuItem* reset_progress = ADMenuItem::create(
+                CCSprite::create("settings/Reset_progress.png"));
+    CONNECT(reset_progress->signalOnClick,
+            this, &Settings::onResetProgressSelect);
+
+    _menu_item.push_back(reset_progress);
+
+
+    ADMenuItem* restore = ADMenuItem::create(
+                CCSprite::create("settings/Restore_purchases.png"));
+    CONNECT(restore->signalOnClick,
+            this, &Settings::onRestorePurchasesSelect);
     _menu_item.push_back(restore);
-#endif
 
-    menu->menu()->addChild(_menu_item[3]);
-    menu->menu()->addChild(_menu_item[4]);
-#ifndef JUNIOR
-    menu->menu()->addChild(_menu_item[5]);
-#endif
+
+    menu->addChild(_menu_item[3]);
+    menu->addChild(_menu_item[4]);
+    menu->addChild(_menu_item[5]);
+
     //_menu_item[3]->setPosition(ccp(0, -visibleSize.height/3 + origin.y ));
-    menu->menu()->alignItemsVerticallyWithPadding(20/scaled);
-    menu_new->menu()->alignItemsHorizontallyWithPadding(70/scaled);
+    menu->alignItemsVerticallyWithPadding(20/scaled);
+    menu_new->alignItemsHorizontallyWithPadding(70/scaled);
     menu->setPosition(ccp(x_middle_of_sheet,130/scaled + origin.y));
     menu_new->setPosition(ccp(x_middle_of_sheet, visibleSize.height/2 + 30/scaled + origin.y));
-#ifndef JUNIOR
     restore->setPositionY(restore->getPositionY()+30/scaled);
-#endif
 
     this->addChild(menu);
     this->addChild(menu_new);
-    _pop_up_manager.addMenuToAutoDisable(menu->menu());
-    _pop_up_manager.addMenuToAutoDisable(menu_new->menu());
+    _pop_up_manager.addMenuToAutoDisable(menu);
+    _pop_up_manager.addMenuToAutoDisable(menu_new);
     //slowly came to the screen
     //for (unsigned int i=0; i<_menu_item.size(); ++i)
     //{
@@ -173,40 +191,32 @@ cocos2d::CCScene* Settings::scene()
 
     // add layer as a child to scene
     CCCallFunc* back = CCCallFunc::create(layer,
-                                          callfunc_selector(Settings::onKeyBackClicked));
+                                          callfunc_selector(SceneStyle::simulateBackClick));
     BackgroundHolder::backgroundSwitchTo(scene,back);
     scene->addChild(layer);
 
     // return the scene
     return scene;
 }
-void Settings::onExpertModeSelect(CCObject* sender)
+void Settings::onExpertModeSelect(ADMenuItem* item)
 {
-    AnimatedMenuItem* item = dynamic_cast<AnimatedMenuItem*>(sender);
-    CCAssert(item, "");
-    if(item)
+    if (_expert_mode_on==true)
     {
 
-        if (_expert_mode_on==true)
-        {
+        RW::setExpertMode(false);
+        _expert_mode_on=false;
 
-            RW::setExpertMode(false);
-            _expert_mode_on=false;
-            CCNode* old = item->getNormalImage();
-            item->setNormalImage(_settings_menu_new->loadSprite("Expert_mode_off.png"));
-            old->removeFromParent();
-        }
-        else
-        {
-            RW::setExpertMode(true);
-            _expert_mode_on=true;
-            CCNode* old = item->getNormalImage();
-            item->setNormalImage(_settings_menu_new->loadSprite("Expert_mode_on.png"));
-            old->removeFromParent();
-        }
     }
+    else
+    {
+        RW::setExpertMode(true);
+        _expert_mode_on=true;
+
+    }
+    switchImages(item);
+
 }
-void Settings::onResetProgressSelect(CCObject*)
+void Settings::onResetProgressSelect()
 {
     CCSprite* label = CCSprite::create(Language::localizeFileName("reset_progress.png").c_str());
 
@@ -219,85 +229,64 @@ void Settings::doDeleteProgress()
     RW::deletePersistentInfo();
 }
 
-void Settings::onRestorePurchasesSelect(CCObject*)
+void Settings::onRestorePurchasesSelect()
 {
     Store::restorePurchases();
 
 }
 
-void Settings::onSoundSelect(CCObject* sender)
+void Settings::onSoundSelect(ADMenuItem* item)
 {
-    AnimatedMenuItem* item = dynamic_cast<AnimatedMenuItem*>(sender);
-    CCAssert(item, "");
-    if(item)
+
+    if (_sound_on==true)
     {
-        if (_sound_on==true)
-        {
-            _sound_on=false;
-            MusicSettings::turnOffSoundEffect();
-            CCNode* old = item->getNormalImage();
-            item->setNormalImage(_settings_menu_new->loadSprite("Sound_off.png"));
-            old->removeFromParent();
-        }
-        else
-        {
-            _sound_on=true;
-            MusicSettings::turnOnSoundEffect();
-            CCNode* old = item->getNormalImage();
-            item->setNormalImage(_settings_menu_new->loadSprite("Sound_on.png"));
-            old->removeFromParent();
-        }
+        _sound_on=false;
+        ADSoundManager::turnOffSound();
+
     }
+    else
+    {
+        _sound_on=true;
+        ADSoundManager::turnOnSound();
+
+    }
+    switchImages(item);
 }
 
-void Settings::onMusicSelect(CCObject* sender)
+void Settings::onMusicSelect(ADMenuItem* item)
 {
-    AnimatedMenuItem* item = dynamic_cast<AnimatedMenuItem*>(sender);
-    CCAssert(item, "");
-    if(item)
+    if (_music_on==true)
     {
-        BackgroundHolder::resetMusic();
-        if (_music_on==true)
-        {
-            _music_on=false;
-            MusicSettings::turnOffMusic();
-            CCNode* old = item->getNormalImage();
-            item->setNormalImage(_settings_menu_new->loadSprite("Music_off.png"));
-            old->removeFromParent();
-        }
-        else
-        {
-            _music_on=true;
-            MusicSettings::turnOnMusic();
-            CCNode* old = item->getNormalImage();
-            item->setNormalImage(_settings_menu_new->loadSprite("Music_on.png"));
-            old->removeFromParent();
-        }
+        _music_on=false;
+        ADSoundManager::turnOffMusic();
+
     }
+    else
+    {
+        _music_on=true;
+        ADSoundManager::turnOnMusic();
+
+    }
+    switchImages(item);
 }
-void Settings::onDevelopersSelect(CCObject* /*sender*/)
+void Settings::onDevelopersSelect()
 {
     ADStatistics::logEvent("Developers Click");
     CCDirector::sharedDirector()->replaceScene(Developers::scene());
 }
 
-void Settings::keyBackClicked()
+void Settings::onBackClick()
 {
-    if(!_pop_up_manager.backAction())
-    {
-        RW::flushSettings();
-        hideEverything(
-                    CCCallFunc::create(
-                        this,
-                        callfunc_selector(Settings::doGoBack)));
-    }
-}
-void Settings::doGoBack()
-{
-    CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+
+    RW::flushSettings();
+    hideEverything([](){
+        CCDirector::sharedDirector()->replaceScene(MainMenu::scene());
+    });
+
 }
 
-void Settings::hideEverything(cocos2d::CCCallFunc *callback)
+
+void Settings::hideEverything(const Action& callback)
 {
     const float delay = 0.20f;
     CCFadeTo* settings_move = CCFadeTo::create(delay, 0);
@@ -315,6 +304,6 @@ void Settings::hideEverything(cocos2d::CCCallFunc *callback)
     this->runAction(
                 CCSequence::create(
                     CCDelayTime::create(delay),
-                    callback,
+                    ADCallFunc::create(callback),
                     NULL));
 }

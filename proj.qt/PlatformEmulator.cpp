@@ -1,9 +1,5 @@
 #include "AppDelegate.h"
-#include "Core/Browser.h"
-#include "Core/Statistics.h"
 #include "Logic/Language.h"
-#include "Core/Notification.h"
-#include "Core/Distributor.h"
 //#include <ADLib/PlatformImpl/ADVirtualCurrency_None.hpp>
 #include <ADLib/Device/ADAds.h>
 #include "cocos2d.h"

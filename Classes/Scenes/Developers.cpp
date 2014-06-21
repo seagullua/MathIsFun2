@@ -1,14 +1,14 @@
 #include "Developers.h"
 #include "Scenes/Settings.h"
 #include "Logic/Language.h"
-#include "Core/Browser.h"
+using namespace cocos2d;
 
 Developers::Developers():_menu_name(0),_developers(0), _version(0)
 {
 }
 bool Developers::init()
 {
-    if ( !CCLayer::init() )
+    if ( !SceneStyle::init() )
     {
         return false;
     }
@@ -16,11 +16,11 @@ bool Developers::init()
     //To trigger back button
     this->setKeypadEnabled(true);
     //Get the size of the screen we can see
-    CCSize visibleSize = Screen::getVisibleSize();
+    CCSize visibleSize = ADScreen::getVisibleSize();
 
     //Get the screen start of cordinates
-    CCPoint origin = Screen::getOrigin();
-    float scaled = Screen::getScaleFactor();
+    CCPoint origin = ADScreen::getOrigin();
+    float scaled = ADScreen::getScaleFactor();
     float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
 
     _menu_name = CCSprite::create(Language::localizeFileName("settings/developers_menu_name.png").c_str());
@@ -38,12 +38,10 @@ bool Developers::init()
     CCPoint logo_target_position_2 = ccp(x_middle_of_sheet,
                                        visibleSize.height/2 + origin.y);
 
-    SpritesLoader developers_spl = GraphicsManager::getLoaderFor(
-                this,
-                "settings/settings_developers_ad.plist",
-                "settings/settings_developers_ad.png");
 
-     _developers = developers_spl->loadSprite("Diana_Andriy_Developers.png");
+
+     _developers = CCSprite::create("settings/Diana_Andriy_Developers.png");
+     this->addChild(_developers);
     //Put this label at the top of the screen
     _developers->setAnchorPoint(ccp(0.5, 0.5));
 
@@ -56,36 +54,31 @@ bool Developers::init()
     _developers->runAction(developers_fade_in);
 
 
-    SpritesLoader contact_menu_spl = GraphicsManager::getLoaderFor(
-                0,
-                "settings/contact_developers_menu.plist",
-                "settings/contact_developers_menu.png");
 
-    MenuSpriteBatch* menu = MenuSpriteBatch::create(contact_menu_spl);
+
+    CCMenu* menu = CCMenu::create();
     float posY = origin.y + 150/scaled;
-    _x4enjoy_item = (AnimatedMenuItem::create(
-                             contact_menu_spl->loadSprite("4enjoy.png"),
-                             this, menu_selector(Developers::onSite)));
+    _x4enjoy_item = ADMenuItem::create(
+                             CCSprite::create("settings/4enjoy.png"));
+    CONNECT(_x4enjoy_item->signalOnClick, this, &Developers::onSite);
 
-#ifndef JUNIOR
-    _send_item = (AnimatedMenuItem::create(
-                             contact_menu_spl->loadSprite("button_send_email.png"),
-                             this, menu_selector(Developers::onSendLetter)));
+    _send_item = ADMenuItem::create(
+                             CCSprite::create("settings/button_send_email.png"));
+    CONNECT(_send_item->signalOnClick, this, &Developers::onSendLetter);
 
 
     _send_item->setAnchorPoint(ccp(0.5,0.5));
     _send_item->setPosition(ccp(_developers->getPositionX(),posY));
-#endif
+
 
     _x4enjoy_item->setAnchorPoint(ccp(0.5,0.5));
     _x4enjoy_item->setPosition(ccp(_developers->getPositionX(),
                                   origin.y + 50/scaled));
 
-    menu->menu()->addChild(_x4enjoy_item);
+    menu->addChild(_x4enjoy_item);
 
-#ifndef JUNIOR
-    menu->menu()->addChild(_send_item);
-#endif
+    menu->addChild(_send_item);
+
 
     _version = CCSprite::create("settings/version.png");
     _version->setAnchorPoint(ccp(0, 0));
@@ -100,11 +93,11 @@ bool Developers::init()
     CCFadeTo* version_fade_in = CCFadeTo::create(0.6f, 255);
     _version->runAction(version_fade_in);
 
-#ifndef JUNIOR
+
     _send_item->setOpacity(0);
     CCFadeTo* send_item_fade_in = CCFadeTo::create(0.6f, 255);
     _send_item->runAction(send_item_fade_in);
-#endif
+
 
     _x4enjoy_item->setOpacity(0);
     CCFadeTo* x4enjoy_item_fade_in = CCFadeTo::create(0.6f, 255);
@@ -123,34 +116,29 @@ cocos2d::CCScene* Developers::scene()
 
     // add layer as a child to scene
     CCCallFunc* back = CCCallFunc::create(layer,
-                                          callfunc_selector(Developers::onKeyBackClicked));
+                                          callfunc_selector(SceneStyle::simulateBackClick));
     BackgroundHolder::backgroundSwitchTo(scene,back);
     scene->addChild(layer);
 
     // return the scene
     return scene;
 }
-void Developers::keyBackClicked()
+void Developers::onBackClick()
 {
-    hideEverything(
-                CCCallFunc::create(
-                    this,
-                    callfunc_selector(Developers::doGoBack)));
+    hideEverything([](){
+        CCDirector::sharedDirector()->replaceScene(Settings::scene());
+    });
 }
 
-void Developers::doGoBack()
-{
-    CCDirector::sharedDirector()->replaceScene(Settings::scene());
-}
 
-void Developers::hideEverything(cocos2d::CCCallFunc *callback)
+void Developers::hideEverything(const Action &callback)
 {
     float delay = 0.30f;
     //CCFadeTo* move = CCFadeTo::create(delay, 0);
     _version->runAction(CCFadeTo::create(delay,0));
- #ifndef JUNIOR
+
     _send_item->runAction(CCFadeTo::create(delay,0));
- #endif
+
     _x4enjoy_item->runAction(CCFadeTo::create(delay,0));
     _menu_name->runAction(CCFadeTo::create(delay, 0));
     _developers->runAction(CCFadeTo::create(delay, 0));
@@ -158,19 +146,18 @@ void Developers::hideEverything(cocos2d::CCCallFunc *callback)
     this->runAction(
                 CCSequence::create(
                     CCDelayTime::create(delay),
-                    callback,
+                    ADCallFunc::create(callback),
                     NULL));
 }
-void Developers::onSendLetter(CCObject*)
+void Developers::onSendLetter()
 {
     ADBrowser::sendMail("feedback@4enjoy.com", "Math Is Fun Feedback");
     //Browser::openURL(Browser::sendEmail);
 }
 
-void Developers::onSite(CCObject*)
+void Developers::onSite()
 {
-#ifndef JUNIOR
-    ADBrowser::openWebURL(createRedirectURL("200"));
-    //Browser::openURL(Browser::Site4Enjoy);
-#endif
+
+    ADBrowser::openWebURL(GameInfo::SITE_URL);
+
 }
