@@ -5,6 +5,8 @@
 #include "Logic/Language.h"
 #include "Store.h"
 #include <ADLib/Device/ADSoundManager.h>
+#include <ADLib/Device/ADLanguage.h>
+#include "GameInfo.h"
 static const int NORMAL_SPRITE = 10;
 static const int SELECTED_SPRITE = 20;
 
@@ -14,7 +16,8 @@ void switchImages(ADMenuItem* item);
 
 
 
-Settings::Settings():_menu_name(0),
+Settings::Settings():
+    //_menu_name(0),
     _sound_on(ADSoundManager::isSoundTurnedOn()),
     _music_on(ADSoundManager::isMusicTurnedOn()),
     _expert_mode_on(RW::isExpertMode())
@@ -60,32 +63,34 @@ bool Settings::init()
 
 
     //Get the Select level label
-    _menu_name = CCSprite::create(Language::localizeFileName("settings/Settings.png").c_str());
-    this->addChild(_menu_name);
-    //Put this label at the top of the screen
-    _menu_name->setAnchorPoint(ccp(0.5, 1));
-    CCPoint logo_target_position = ccp(x_middle_of_sheet,
+    _settings_scene_title = CCLabelTTF::create(_("settings_menu.scene.title"),
+                                           ADLanguage::getFontName(),
+                                           45);
+    _settings_scene_title->setColor(GameInfo::COLOR_DARK_BLUE);
+    _settings_scene_title->setAnchorPoint(ccp(0.5,1));
+    CCPoint settings_scene_title_target_position = ccp(x_middle_of_sheet,
                                        visibleSize.height + origin.y - 50/scaled);
-    _menu_name->setPosition(logo_target_position);
-    //_menu_name->setColor(ccc3(71,218,196));
-    //Make it fade in slowly
+    _settings_scene_title->setPosition(settings_scene_title_target_position);
 
     //make slowly come to the screen
-    _menu_name->setOpacity(0);
-    CCFadeTo* developers_fade_in = CCFadeTo::create(0.2f, 255);
-    _menu_name->runAction(developers_fade_in);
+    _settings_scene_title->setOpacity(0);
+    CCFadeTo* settings_scene_title_fade_in = CCFadeTo::create(0.2f, 255);
+    _settings_scene_title->runAction(settings_scene_title_fade_in);
+    this->addChild(_settings_scene_title);
 
+    //_menu_name = CCSprite::create(Language::localizeFileName("settings/Settings.png").c_str());
+    //this->addChild(_menu_name);
+    //Put this label at the top of the screen
+//    _menu_name->setAnchorPoint(ccp(0.5, 1));
+//    CCPoint logo_target_position = ccp(x_middle_of_sheet,
+//                                       visibleSize.height + origin.y - 50/scaled);
+//    _menu_name->setPosition(logo_target_position);
 
-    //    _settings_menu = GraphicsManager::getLoaderFor(
-    //                0,
-    //                Language::localizeFileName("settings/settings_menu.plist").c_str(),
-    //                Language::localizeFileName("settings/settings_menu.png").c_str());
+//    //make slowly come to the screen
+//    _menu_name->setOpacity(0);
+//    CCFadeTo* developers_fade_in = CCFadeTo::create(0.2f, 255);
+//    _menu_name->runAction(developers_fade_in);
 
-    //    _settings_menu_new = GraphicsManager::getLoaderFor(
-    //                0,
-    //                "settings/settings_menu_new.plist",
-    //                "settings/settings_menu_new.png");
-    //Create menu with collections
     CCMenu* menu = CCMenu::create();
     CCMenu* menu_new = CCMenu::create();
 
@@ -130,8 +135,11 @@ bool Settings::init()
     //menu->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
     //ADMenuItem* developers =
-    ADMenuItem* developers = ADMenuItem::create(
-                CCSprite::create("settings/Developers.png"));
+    CCLabelTTF* developers_title = CCLabelTTF::create(_("settings_menu.developers.title"),
+                                           ADLanguage::getFontName(),
+                                           45);
+    developers_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
+    ADMenuItem* developers = ADMenuItem::create(developers_title);
     CONNECT(developers->signalOnClick,
             this, &Settings::onDevelopersSelect);
 
@@ -290,7 +298,7 @@ void Settings::hideEverything(const Action& callback)
 {
     const float delay = 0.20f;
     CCFadeTo* settings_move = CCFadeTo::create(delay, 0);
-    _menu_name->runAction(settings_move);
+    _settings_scene_title->runAction(settings_move);
 
     float fade_out_duration = 0.15f;
     for(unsigned int i=0; i<_menu_item.size(); ++i)

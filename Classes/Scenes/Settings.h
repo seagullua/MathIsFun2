@@ -13,7 +13,8 @@ private:
 //    SpritesLoader _settings_menu;
 //    SpritesLoader _settings_menu_new;
     std::vector<ADMenuItem*> _menu_item;
-    cocos2d::CCSprite* _menu_name;
+    cocos2d::CCLabelTTF* _settings_scene_title;
+    //cocos2d::CCSprite* _menu_name;
     bool _sound_on;
     bool _music_on;
     bool _expert_mode_on;

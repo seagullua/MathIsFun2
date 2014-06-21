@@ -228,6 +228,18 @@ bool AppDelegate::applicationDidFinishLaunching()
         ADSoundManager::playSoundEffect("music/choose.wav");
     });
 
+
+    //fonts
+    std::string latin_font = "fonts/Flow Bold.ttf";
+
+    std::string cyrilic_font = "fonts/Patrick Hand.ttf";
+
+    ADLanguage::addSupportedLanguage("en", latin_font);
+    //ADLanguage::addSupportedLanguage("uk", cyrilic_font);
+
+    ADLanguage::setDefaultLanguage("en");
+    ADLanguage::getLanguage();
+
     return true;
 }
 void AppDelegate::AdsOffListener::wasClickedDisableAllAds()
