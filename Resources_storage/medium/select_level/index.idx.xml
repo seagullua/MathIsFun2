@@ -9,4 +9,73 @@
 		<lang>1</lang>
 	</file>
 	
+	<file>
+		<name>level_tiles/tile_100.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_200.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_300.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_400.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_500.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_600.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_1000.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_2000.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_3000.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_4000.plist.xml</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>level_tiles/tile_locked.plist.xml</name>
+	</file>
+	
+	<file>
+		<name>level_tiles_junior/tile_100.plist.xml</name>
+		<project>junior</project>
+	</file>
+	<file>
+		<name>level_tiles_junior/tile_201.plist.xml</name>
+		<project>junior</project>
+	</file>
+	<file>
+		<name>level_tiles_junior/tile_301.plist.xml</name>
+		<project>junior</project>
+	</file>
+	<file>
+		<name>level_tiles_junior/tile_401.plist.xml</name>
+		<project>junior</project>
+	</file>
+	<file>
+		<name>level_tiles_junior/tile_501.plist.xml</name>
+		<project>junior</project>
+	</file>
+	<file>
+		<name>level_tiles_junior/tile_601.plist.xml</name>
+		<project>junior</project>
+	</file>
+	
 </directory>
