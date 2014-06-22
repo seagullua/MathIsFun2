@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-06-21 22:05+0200\n"
+"POT-Creation-Date: 2014-06-22 13:25+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,6 +25,20 @@ msgstr "Settings"
 #: ../../Classes/Scenes/Settings.cpp:126
 msgid "settings_menu.developers.title"
 msgstr "Developers"
+
+#: ../../Classes/Scenes/Settings.cpp:138
+msgid "settings_menu.reset.title"
+msgstr "Reset Progress"
+
+#: ../../Classes/Scenes/Settings.cpp:150
+msgid "settings_menu.restore.title"
+msgstr "Restore Purchases"
+
+#: ../../Classes/Scenes/Settings.cpp:225
+msgid "pop_up.reset_progress.title"
+msgstr ""
+"Would you like to reset\n"
+" your Progress?"
 
 #~ msgid "iap.error.billing_unavaliable"
 #~ msgstr "Error"

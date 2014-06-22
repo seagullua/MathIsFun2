@@ -3,16 +3,6 @@
 	<file>
 		<name>developers/4enjoy.png</name>
 	</file>
-
-	<file>
-		<name>menu/Developers.png.xml</name>
-	</file>
-	<file>
-		<name>menu/Reset_progress.png.xml</name>
-	</file>
-	<file>
-		<name>menu/Restore_purchases.png.xml</name>
-	</file>
 	
 	<file>
 		<name>menu/Music_off.png</name>
@@ -32,9 +22,5 @@
 	<file>
 		<name>menu/Expert_mode_on.png</name>
 	</file>
-	
-	<file>
-		<name>menu_name/Settings.png.xml</name>
-		<lang>1</lang>
-	</file>
+
 </directory>

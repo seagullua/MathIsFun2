@@ -1,29 +1,59 @@
 #include "YesNoDialog.h"
 #include "Logic/Language.h"
+#include "GameInfo.h"
 using namespace cocos2d;
+
 YesNoDialog::YesNoDialog(CCNode* content,
             CCObject* yes_callback,
             SEL_CallFunc yes_fun,
             CCObject* no_callback,
             SEL_CallFunc no_fun)
-    : _content(content), _yes_obj(yes_callback), _yes_fun(yes_fun),
-      _no_obj(no_callback), _no_fun(no_fun)
+    : _content(content),
+      _title(nullptr),
+      _yes_obj(yes_callback),
+      _yes_fun(yes_fun),
+      _no_obj(no_callback),
+      _no_fun(no_fun)
 {
     _content->retain();
 }
 
+YesNoDialog::YesNoDialog(cocos2d::CCLabelTTF* title,
+            CCObject* yes_callback,
+            cocos2d::SEL_CallFunc yes_fun,
+            CCObject* no_callback,
+            cocos2d::SEL_CallFunc no_fun):
+    _content(nullptr),
+    _title(title),
+    _yes_obj(yes_callback),
+    _yes_fun(yes_fun),
+    _no_obj(no_callback),
+    _no_fun(no_fun)
+{
+
+}
 
 void YesNoDialog::onCreate(CCNode *parent)
 {
     CCSize size = parent->getContentSize();
     float scaled = ADScreen::getScaleFactor();
-
-    parent->addChild(_content);
-    _content->release();
-
     float x_middle = size.width / 2;
 
-    _content->setPosition(ccp(x_middle, size.height*0.65));
+    //create title with CCSprite
+    if(_content)
+    {
+        parent->addChild(_content);
+        _content->release();
+
+        _content->setPosition(ccp(x_middle, size.height*0.65));
+    }
+    else
+    {
+        //create title with LabelTTF
+        _title->setColor(GameInfo::COLOR_LIGHT_BLUE);
+        parent->addChild(_title);
+        _title->setPosition(ccp(x_middle, size.height*0.65));
+    }
 
 
     //Create menu items

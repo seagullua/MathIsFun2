@@ -230,9 +230,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 
     //fonts
-    std::string latin_font = "fonts/Flow Bold.ttf";
+    std::string cyrilic_font  = "fonts/Flow-Bold.ttf";
 
-    std::string cyrilic_font = "fonts/Patrick Hand.ttf";
+    std::string latin_font = "fonts/Patrick Hand.ttf";
 
     ADLanguage::addSupportedLanguage("en", latin_font);
     //ADLanguage::addSupportedLanguage("uk", cyrilic_font);

@@ -81,7 +81,7 @@ bool Settings::init()
 
     ////////////////////////////////////////////////////////
 
-    //create function list
+    //create menu for items
     CCMenu* menu = CCMenu::create();
     CCMenu* menu_new = CCMenu::create();
     _menu_item.reserve(6);
@@ -125,7 +125,7 @@ bool Settings::init()
     //set Developers title, Restore, Reset
     CCLabelTTF* developers_title = CCLabelTTF::create(_("settings_menu.developers.title"),
                                            ADLanguage::getFontName(),
-                                           45);
+                                           40);
     developers_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
     ADMenuItem* developers = ADMenuItem::create(developers_title);
     CONNECT(developers->signalOnClick,
@@ -135,8 +135,11 @@ bool Settings::init()
 
     /////////////////////////////////////////////////////
 
-    ADMenuItem* reset_progress = ADMenuItem::create(
-                CCSprite::create("settings/Reset_progress.png"));
+    CCLabelTTF* reset_title = CCLabelTTF::create(_("settings_menu.reset.title"),
+                                           ADLanguage::getFontName(),
+                                           40);
+    reset_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
+    ADMenuItem* reset_progress = ADMenuItem::create(reset_title);
     CONNECT(reset_progress->signalOnClick,
             this, &Settings::onResetProgressSelect);
 
@@ -144,8 +147,11 @@ bool Settings::init()
 
     //////////////////////////////////////////
 
-    ADMenuItem* restore = ADMenuItem::create(
-                CCSprite::create("settings/Restore_purchases.png"));
+    CCLabelTTF* restore_title = CCLabelTTF::create(_("settings_menu.restore.title"),
+                                           ADLanguage::getFontName(),
+                                           40);
+    restore_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
+    ADMenuItem* restore = ADMenuItem::create(restore_title);
     CONNECT(restore->signalOnClick,
             this, &Settings::onRestorePurchasesSelect);
     _menu_item.push_back(restore);
@@ -158,12 +164,16 @@ bool Settings::init()
     //_menu_item[3]->setPosition(ccp(0, -visibleSize.height/3 + origin.y ));
     menu->alignItemsVerticallyWithPadding(20/SCALE);
     menu_new->alignItemsHorizontallyWithPadding(70/SCALE);
-    menu->setPosition(ccp(x_middle_of_sheet,130/SCALE + ORIGIN.y));
-    menu_new->setPosition(ccp(x_middle_of_sheet, VISIBLE_SIZE.height/2 + 30/SCALE + ORIGIN.y));
+
+    menu->setPosition(ccp(x_middle_of_sheet,
+                          130/SCALE + ORIGIN.y));
+    menu_new->setPosition(ccp(x_middle_of_sheet,
+                              VISIBLE_SIZE.height/2 + 30/SCALE + ORIGIN.y));
     restore->setPositionY(restore->getPositionY()+30/SCALE);
 
     this->addChild(menu);
     this->addChild(menu_new);
+
     _pop_up_manager.addMenuToAutoDisable(menu);
     _pop_up_manager.addMenuToAutoDisable(menu_new);
 
@@ -212,10 +222,12 @@ void Settings::onExpertModeSelect(ADMenuItem* item)
 }
 void Settings::onResetProgressSelect()
 {
-    CCSprite* label = CCSprite::create(Language::localizeFileName("reset_progress.png").c_str());
-
-    _pop_up_manager.openWindow(new YesNoDialog(label,
-                                               this, callfunc_selector(Settings::doDeleteProgress)));
+    CCLabelTTF* pop_up_title = CCLabelTTF::create(_("pop_up.reset_progress.title"),
+                                           ADLanguage::getFontName(),
+                                           40);
+    _pop_up_manager.openWindow(new YesNoDialog(pop_up_title,
+                                               this,
+                                               callfunc_selector(Settings::doDeleteProgress)));
 
 }
 void Settings::doDeleteProgress()
