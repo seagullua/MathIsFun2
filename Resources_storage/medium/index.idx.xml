@@ -14,14 +14,7 @@
 		<name>yes_no/no.png</name>
 	</file>
 
-	
-	<file>
-		<name>yes_no/quite_promt.png</name>
-	</file>
-	<file>
-		<name>yes_no/reset_progress.png.xml</name>
-		<lang>1</lang>
-	</file>
+
 	<file>
 		<name>sheet_menu/sheet_menu.plist.xml</name>
 		
