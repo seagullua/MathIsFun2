@@ -132,16 +132,8 @@ void LevelScene::onBackClick()
         //If we in pause state
         if(_found_solution_is_opened)
         {
-            //We should hide the found solutions
-            //        if(_last_pop_up)
-            //        {
-            //            _last_pop_up->hideMe(0);
-            //        }
-            //        else
-            //        {
-            //TODO: make animation
             do_goToLevelSelect();
-            //}
+
         }
         else
         {
@@ -172,7 +164,6 @@ bool LevelScene::init()
         return false;
     }
 
-    //TODO: to change back button appearance
     //To trigger back button
     this->setKeypadEnabled(true);
 
@@ -253,11 +244,8 @@ bool LevelScene::init()
         //_pop_up_manager.addBannerToAutoDisable(_top_banner);
     }
 
-//Ads end
-//#ifndef TEMPORARY_HIDE
     _hint->setPosition(ccp(origin.x + visibleSize.width/2 -120/scaled,
                            origin.y + visibleSize.height/2 -100/scaled ));
-//#endif
 
     //we create the play button and now show it
     _play->setVisible(false);
@@ -270,11 +258,9 @@ bool LevelScene::init()
     _restart->setOpacity(0);
     CCFadeTo* restart_show = CCFadeTo::create(0.5f, 255);
     _restart->runAction(restart_show);
-//#ifndef TEMPORARY_HIDE
     _hint->setOpacity(0);
     CCFadeTo* hint_show = CCFadeTo::create(0.5f, 255);
     _hint->runAction(hint_show);
-//#endif
 
 
     //get the full number of collection levels

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>images.{lang}.png</texture>
-	<sheet>images.{lang}.plist</sheet>
-	
-	<image>select_collection.png.xml</image>
-</spritesheet>
