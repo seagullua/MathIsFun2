@@ -37,52 +37,94 @@ CCScene* MainMenu::scene()
 // on "init" you need to initialize your instance
 bool MainMenu::init()
 {
-    //////////////////////////////
-    // 1. super init first
+    // super init first
     if ( !SceneStyle::init() )
     {
         return false;
     }
 
     //Get the size of the screen we can see
-    CCSize visibleSize = ADScreen::getVisibleSize();
+    CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
     //Get the screen start of cordinates
-    CCPoint origin = ADScreen::getOrigin();
-    float scaled = ADScreen::getScaleFactor();
+    CCPoint ORIGIN = ADScreen::getOrigin();
+    float SCALE = ADScreen::getScaleFactor();
 
+    /////////////////////////////////////////////////////
 
     //Place logo
     _logo = CCSprite::create("main_menu/logo.png");
     _logo->setScale(0.77f);
     _logo->setAnchorPoint(ccp(0.5, 1));
 
-    float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
+    float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
     CCPoint logo_target_position = ccp(x_middle_of_sheet,
-                                       visibleSize.height + origin.y - 80/scaled);
+                                       VISIBLE_SIZE.height + ORIGIN.y - 80/SCALE);
     _logo->setPosition(ccp(x_middle_of_sheet,
-                           2*visibleSize.height));
+                           2*VISIBLE_SIZE.height));
     this->addChild(_logo);
 
     CCMoveTo* logo_move = CCMoveTo::create(0.3f, logo_target_position);
     _logo->runAction(logo_move);
 
-    //Create menu items
+    /////////////////////////////////////////////////
+
+    //help parameters
+    float logo_size = _logo->boundingBox().size.height;
+    float logo_end = logo_target_position.y - logo_size;
+
+
+    float right_x = VISIBLE_SIZE.width + ORIGIN.x - 122/SCALE;
+    float up_y = VISIBLE_SIZE.height + ORIGIN.y - 107/SCALE;
+
+    //create menu for settings and play buttons
+    _main_menu = CCMenu::create();
+    _main_menu->setPosition(ccp(0, 0));
+    this->addChild(_main_menu);
+
+    //create menu for share button
+    _share_menu = CCMenu::create();
+    _share_menu->setPosition(ccp(right_x,up_y));
+    this->addChild(_share_menu);
+
+
+    ///////////////////////////////////////////////
+
     //Play button
     _play = ADMenuItem::create(CCSprite::create("main_menu/play.png"));
     CONNECT(_play->signalOnClick,
             this, &MainMenu::onPlayPressed);
+
+    _play->setPosition(ccp(x_middle_of_sheet, logo_end / 2));
+    _play->setAnchorPoint(ccp(0.5f, 0.5f));
+    CCPoint menuPlay_target_position = _play->getPosition();
+    _play->setPosition(ccp(_play->getPositionX(), -VISIBLE_SIZE.height));
+
+
+    _main_menu->addChild(_play);
+
+    //animate play button
+    CCMoveTo* play_move = CCMoveTo::create(0.3f, menuPlay_target_position);
+    _play->runAction(CCSequence::create(CCDelayTime::create(logo_move->getDuration()), play_move, NULL));
+
+    ////////////////////////////////////////////////
 
     //Settings button
     _settings = ADMenuItem::create(CCSprite::create("main_menu/settings.png"));
     CONNECT(_settings->signalOnClick,
             this, &MainMenu::onSettingsPressed);
 
+    _main_menu->addChild(_settings);
 
-    float right_x = visibleSize.width + origin.x - 122/scaled;
-    float up_y = visibleSize.height + origin.y - 107/scaled;
+    _settings->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width - 122/SCALE, ORIGIN.y + 75/SCALE));
+    CCPoint settings_target_position = _settings->getPosition();
+    _settings->setPosition(ccp(_settings->getPositionX(), -VISIBLE_SIZE.height));
 
-    _share_menu = CCMenu::create();
+    CCMoveTo* settings_move = CCMoveTo::create(0.3f, settings_target_position);
+    _settings->runAction(CCSequence::create(CCDelayTime::create(logo_move->getDuration()*2), settings_move, NULL));
 
+    //////////////////////////////////////////////////
+
+    //facebook button
     _facebook_button = ADMenuItem::create(CCSprite::create("main_menu/facebook_logo.png"));
     CONNECT(_facebook_button->signalOnClick,
             this,&MainMenu::onShareFacebookPressed);
@@ -93,48 +135,14 @@ bool MainMenu::init()
     _facebook_button->runAction
             (CCSequence::create(CCDelayTime::create(0.3f), facebook_move, NULL));
 
-    _share_menu->setPosition(ccp(right_x,up_y));
 
     _share_menu->addChild(_facebook_button);
-    this->addChild(_share_menu);
 
-    //Create menu
-    _main_menu = CCMenu::create();
-    _main_menu->addChild(_play);
-    _main_menu->addChild(_settings);
-    //_main_menu->menu()->alignItemsVertically();
-    this->addChild(_main_menu);
+    //////////////////////////////////////////
 
-
-
-
-    //Calculate menu position
-    float logo_size = _logo->boundingBox().size.height;
-    float logo_end = logo_target_position.y - logo_size;
-
-    _play->setPosition(ccp(x_middle_of_sheet, logo_end / 2));
-    _play->setAnchorPoint(ccp(0.5f, 0.5f));
-    CCPoint menuPlay_target_position = _play->getPosition();
-    _play->setPosition(ccp(_play->getPositionX(), -visibleSize.height));
-
-    //_settings->setAnchorPoint(ccp(1, 0));
-
-    _settings->setPosition(ccp(origin.x + visibleSize.width - 122/scaled, origin.y + 75/scaled));
-    CCPoint settings_target_position = _settings->getPosition();
-    _settings->setPosition(ccp(_settings->getPositionX(), -visibleSize.height));
-
-    CCMoveTo* play_move = CCMoveTo::create(0.3f, menuPlay_target_position);
-    _play->runAction(CCSequence::create(CCDelayTime::create(logo_move->getDuration()), play_move, NULL));
-    CCMoveTo* settings_move = CCMoveTo::create(0.3f, settings_target_position);
-    _settings->runAction(CCSequence::create(CCDelayTime::create(logo_move->getDuration()*2), settings_move, NULL));
-
-
-    _main_menu->setPosition(ccp(0, 0));
-
+    //add menu to disable for pop up window
     _pop_up_manager.addMenuToAutoDisable(_main_menu);
     _pop_up_manager.addMenuToAutoDisable(_share_menu);
-
-
 
     return true;
 }
@@ -162,9 +170,11 @@ void MainMenu::hideEverything(const Action& callback)
 void MainMenu::onBackClick()
 {
 
-    CCSprite* label = CCSprite::create("quite_promt.png");
+    CCLabelTTF* pop_up_title = CCLabelTTF::create(_("main_menu.go_out.title"),
+                                                  ADLanguage::getFontName(),
+                                                  40);
 
-    _pop_up_manager.openWindow(new YesNoDialog(label,
+    _pop_up_manager.openWindow(new YesNoDialog(pop_up_title,
                                                this, callfunc_selector(MainMenu::doCloseGame)));
 
 }
