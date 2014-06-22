@@ -11,6 +11,7 @@ public:
 
 private:
     cocos2d::CCLabelTTF* _developers_window_title;
+    cocos2d::CCLabelTTF* _developers_window_list;
     ADMenuItem* _x4enjoy_item;
 
     void onBackClick();

@@ -46,6 +46,26 @@ bool Developers::init()
 
     //developers
     //TODO:create developers list
+    _developers_window_list = CCLabelTTF::create(_("developers.list"),
+                                           ADLanguage::getFontName(),
+                                           60);
+    _developers_window_list->setAnchorPoint(ccp(0.5, 0.5));
+    _developers_window_list->setPosition(ccp(x_middle_of_sheet,
+                                         VISIBLE_SIZE.height*0.5f + ORIGIN.y));
+    _developers_window_list->setColor(GameInfo::COLOR_DARK_GREEN);
+    this->addChild(_developers_window_list);
+
+    //Make it fade in slowly
+    _developers_window_list->setOpacity(0);
+    CCFadeTo* title_fade_in_list = CCFadeTo::create(0.6f, 255);
+    _developers_window_list->runAction(title_fade_in_list);
+
+    /////////////////////////////////////////////////////////////////
+
+
+
+
+    //_("developers.list");
 
     /////////////////////////////////////////////////////////////////
 
