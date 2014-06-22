@@ -14,33 +14,9 @@ using namespace cocos2d;
 
 class LevelScene::BuyHints : public PopUpWindowStyle
 {
-
-public:
-    BuyHints()
-
-    {}
 private:
-    void buyHints(const unsigned int num)
-    {
-        std::stringstream ss;
-        ss << Store::PREFIX_BUY_HINTS << num;
-        Store::buyItem(ss.str());
-    }
 
-    void onBuy10()
-    {
-        buyHints(10);
-    }
-    void onBuy50()
-    {
-        buyHints(50);
-    }
-    void onBuy1000()
-    {
-        buyHints(1000);
-    }
-
-    void onOk(CCObject*)
+    void onOk()
     {
         closeWindow();
     }
@@ -51,59 +27,60 @@ private:
 
         CCSize size = parent->getContentSize();
         float x_middle = size.width / 2;
-        CCSprite* text = CCSprite::create(Language::localizeFileName("level_scene/hint_title.png").c_str());
-        text->setPosition(ccp(x_middle, size.height * 0.65f));
+
+
+        //add window title
+        CCLabelTTF* text = CCLabelTTF::create(_("pop_up.buy_hints.title"),
+                                              ADLanguage::getFontName(),
+                                              55);
+        text->setColor(GameInfo::COLOR_GRAY);
+        text->setPosition(ccp(x_middle, size.height * 0.85f));
         parent->addChild(text);
 
 
-        SpritesLoader menu_spl = GraphicsManager::getLoaderFor(0,
-                                                               "level_scene/hint_buttons.en.plist",
-                                                               "level_scene/hint_buttons.en.png");
-        MenuSpriteBatch* menu = MenuSpriteBatch::create(menu_spl);
-        menu->setPosition(ccp(0,0));
-        menu->setAnchorPoint(ccp(0,0));
-        menu->setContentSize(size);
-        parent->addChild(menu);
-
-
-        float vertical_pos = 110/scaled;
+        //add lamp
         CCSprite* lamp = CCSprite::create("level_scene/lamp.png");
         parent->addChild(lamp);
         lamp->setScale(0.8f);
-
-        lamp->setPosition(ccp(200/scaled, 310/scaled));
-
-
-        ADMenuItem *hint_10_item = ADMenuItem::createWithSpriteSheetSprite(
-                    menu_spl->loadSprite("hint_10_button.png"));
-        CONNECT(hint_10_item->signalOnClick, this, &BuyHints::onBuy10);
-
-        hint_10_item->setPosition(ccp(200/scaled,
-                                        vertical_pos));
-
-        ADMenuItem *hint_50_item = ADMenuItem::createWithSpriteSheetSprite(
-                    menu_spl->loadSprite("hint_50_button.png"));
-        CONNECT(hint_50_item->signalOnClick, this, &BuyHints::onBuy50);
-
-        hint_50_item->setPosition(ccp(425/scaled,
-                                   vertical_pos));
-
-        ADMenuItem *hint_1000_item = ADMenuItem::createWithSpriteSheetSprite(
-                    menu_spl->loadSprite("hint_1000_button.png"));
-        CONNECT(hint_1000_item->signalOnClick, this, &BuyHints::onBuy1000);
-
-        hint_1000_item->setPosition(ccp(650/scaled,
-                                    vertical_pos));
-
-        float scale = 0.95f;
-        hint_1000_item->setScaleBase(scale);
-        hint_50_item->setScaleBase(scale);
-        hint_10_item->setScaleBase(scale);
-        menu->menu()->addChild(hint_1000_item);
-        menu->menu()->addChild(hint_50_item);
-        menu->menu()->addChild(hint_10_item);
+        lamp->setPosition(ccp(parent->getContentSize().width*0.2,
+                              parent->getContentSize().height*0.5));
 
 
+        //add text - tommorow wil be more hints
+        CCLabelTTF* hint_text = CCLabelTTF::create(_("pop_up.buy_hints.text"),
+                                              ADLanguage::getFontName(),
+                                              45);
+        hint_text->setColor(GameInfo::COLOR_ORANGE);
+        hint_text->setPosition(ccp(parent->getContentSize().width*0.6,
+                                   parent->getContentSize().height*0.5));
+        parent->addChild(hint_text);
+
+
+        //create menu for buttons
+        CCMenu* menu = CCMenu::create();
+        menu->setPosition(ccp(0,0));
+
+
+        //add OK button
+        CCSprite* ok_border = CCSprite::create("level_scene/background1.png");
+        ok_border->setPosition(ccp(parent->getContentSize().width*0.5,
+                                   parent->getContentSize().height*0.65));
+
+        CCLabelTTF* ok_text = CCLabelTTF::create(_("pop_up.get_hints.button.ok"),
+                                                 ADLanguage::getFontName(),
+                                                 35);
+        ok_text->setColor(GameInfo::COLOR_LIGHT_BLUE);
+        ok_text->setPosition(ok_border->getContentSize()*0.5);
+
+        ADMenuItem* ok_button = ADMenuItem::create(ok_border);
+
+        ok_button->addChild(ok_text);
+        ok_button->setPosition(ccp(parent->getContentSize().width*0.5,
+                                   parent->getContentSize().height*0.2));
+        CONNECT(ok_button->signalOnClick, this, &BuyHints::onOk);
+        menu->addChild(ok_button);
+
+        parent->addChild(menu);
     }
 };
 

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>hint_buttons.{lang}.png</texture>
-	<sheet>hint_buttons.{lang}.plist</sheet>
-	
-	<image>ok_button.png.xml</image>
-</spritesheet>

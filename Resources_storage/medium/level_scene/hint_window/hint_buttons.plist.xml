@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>hint_buttons.{lang}.png</texture>
-	<sheet>hint_buttons.{lang}.plist</sheet>
-	
-	<image>hint_10_button.png.xml</image>
-	<image>hint_50_button.png.xml</image>
-	<image>hint_1000_button.png.xml</image>
-</spritesheet>

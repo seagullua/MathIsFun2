@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-06-22 15:08+0200\n"
+"POT-Creation-Date: 2014-06-22 15:55+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,6 +25,20 @@ msgstr "No more solutions"
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
 msgstr "Developers"
+
+#: ../../Classes/Scenes/LevelScene.cpp:33
+msgid "pop_up.buy_hints.title"
+msgstr "Get hints"
+
+#: ../../Classes/Scenes/LevelScene.cpp:49
+msgid "pop_up.buy_hints.text"
+msgstr ""
+"There wil be more hints\n"
+"tomorrow! Verify it later!"
+
+#: ../../Classes/Scenes/LevelScene.cpp:64
+msgid "pop_up.get_hints.button.ok"
+msgstr "OK"
 
 #: ../../Classes/Scenes/MainMenu.cpp:173
 msgid "main_menu.go_out.title"

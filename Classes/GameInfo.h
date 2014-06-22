@@ -14,6 +14,7 @@ public:
     static cocos2d::ccColor3B COLOR_LIGHT_BLUE;
     static cocos2d::ccColor3B COLOR_DARK_BLUE;
     static cocos2d::ccColor3B COLOR_ORANGE;
+    static cocos2d::ccColor3B COLOR_GRAY;
 };
 
 #endif // GAMEINFO_H
