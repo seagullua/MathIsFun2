@@ -256,7 +256,7 @@ bool LevelScenePopUp::init()
     //_parent->setVisible(false);
     _parent->sleep();
 
-    Tutorial::getInstance()->onSolutionFound(this);
+    //Tutorial::getInstance()->onSolutionFound(this);
 
     return true;
 }

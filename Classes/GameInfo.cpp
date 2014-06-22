@@ -8,3 +8,4 @@ std::string GameInfo::BACKGROUND_MUSIC = "music/math_is_fun" MUSIC_EXT;
 
 cocos2d::ccColor3B GameInfo::COLOR_LIGHT_BLUE = cocos2d::ccc3(13,133,255);
 cocos2d::ccColor3B GameInfo::COLOR_DARK_BLUE = cocos2d::ccc3(34,117,202);
+cocos2d::ccColor3B GameInfo::COLOR_ORANGE= cocos2d::ccc3(255,144,0);

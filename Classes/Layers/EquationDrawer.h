@@ -72,7 +72,9 @@ private:
     //cocos2d::CCSprite* _selected_sprite;
     //CCNode* _backup_sprite;
     CCNode* _message_node;
-    cocos2d::CCSprite* _message_node_text;
+    //cocos2d::CCSprite* _message_node_text;
+    //Changed
+    cocos2d::CCLabelTTF* _message_node_text;
     MenuSpriteBatch* _message_node_menu;
     ADMenuItem* _message_node_button;
 

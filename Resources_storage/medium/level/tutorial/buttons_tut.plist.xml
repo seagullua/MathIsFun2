@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>buttons_tut.{lang}.png</texture>
-	<sheet>buttons_tut.{lang}.plist</sheet>
-	
-	<image>restart_tut.png.xml</image>
-	<image>levels_tut.png.xml</image>
-</spritesheet>

@@ -107,7 +107,6 @@ private:
     }
 };
 
-//TODO: implement starting and the ending animation of the level
 LevelScene::LevelScene(Level *level)
     : _level(level),
       _levelStop(0),

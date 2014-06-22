@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-06-22 14:01+0200\n"
+"POT-Creation-Date: 2014-06-22 15:08+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,6 +13,14 @@ msgstr ""
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
+
+#: ../../Classes/Layers/EquationDrawer.cpp:727
+msgid "solution.already_found_solution"
+msgstr "Alreay found solution"
+
+#: ../../Classes/Layers/EquationDrawer.cpp:837
+msgid "solution.no_more_solution"
+msgstr "No more solutions"
 
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"

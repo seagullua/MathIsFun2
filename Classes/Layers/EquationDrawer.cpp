@@ -2,9 +2,10 @@
 #include "DebugLayer.h"
 #include "Logic/RW.h"
 #include "LevelScenePopUp.h"
-#include "Logic/Tutorial.h"
+//#include "Logic/Tutorial.h"
 #include "Scenes/LevelScene.h"
 #include "Logic/Language.h"
+#include "GameInfo.h"
 
 using namespace cocos2d;
 static const int NORMAL_SPRITE = 10;
@@ -56,7 +57,7 @@ void EquationDrawer::sleep()
                         CCCallFunc::create(this, callfunc_selector(EquationDrawer::finishHide)),
                         NULL));
 
-    Tutorial::getInstance()->hideLabels();
+    //Tutorial::getInstance()->hideLabels();
 
     hideMessageNode();
 }
@@ -88,7 +89,7 @@ void EquationDrawer::wakeup()
     this->setVisible(true);
     this->setOpacity(0);
     this->stopAllActions();
-    Tutorial::getInstance()->showLabels();
+    //Tutorial::getInstance()->showLabels();
     this->runAction(CCSequence::createWithTwoActions(
                         CCFadeTo::create(0.3f, 255),
                         CCCallFunc::create(this, callfunc_selector(EquationDrawer::finishShow))));
@@ -369,7 +370,7 @@ EquationDrawer::EquationDrawer(
     this->setOpacity(0);
     this->runAction(CCFadeTo::create(0.3f, 255));
 
-    Tutorial::getInstance()->onLevelStart(this);
+    //Tutorial::getInstance()->onLevelStart(this);
 
     recalculateEquation();
 
@@ -471,7 +472,7 @@ void EquationDrawer::onFreeSpacePressed(unsigned int found_i)
 
     switchImages(_substitutors[_substituting_now_id]);
 
-    Tutorial::getInstance()->onEmptySpaceTouch(this);
+    //Tutorial::getInstance()->onEmptySpaceTouch(this);
 }
 void EquationDrawer::substituteAnything(const char& cur,
                                         const unsigned int substituting_now_id)
@@ -613,7 +614,7 @@ void EquationDrawer::substituteParenthesis(const Symbol::ParenthesisType& op,
 }
 void EquationDrawer::recalculateEquation()
 {
-    Tutorial::getInstance()->onSubstitutionMade(this);
+   // Tutorial::getInstance()->onSubstitutionMade(this);
     _draft.clear();
     //    ExpressionResults res;
 
@@ -723,8 +724,12 @@ void EquationDrawer::recalculateEquation()
             {
                 _message_node = CCNodeRGBA::create();
 
-                _message_node_text = CCSprite::create(Language::localizeFileName("level/tutorial/already_found.png").c_str());
+                _message_node_text = CCLabelTTF::create(_("solution.already_found_solution"),
+                                                        ADLanguage::getFontName(),
+                                                        30);
+                //CCSprite::create(Language::localizeFileName("level/tutorial/already_found.png").c_str());
                 CCSize text_size = _message_node_text->getContentSize();
+                _message_node_text->setColor(GameInfo::COLOR_ORANGE);
 
                 _message_node->setContentSize(CCSize(text_size.width, text_size.height*1.75f));
                 _message_node_text->setAnchorPoint(ccp(0,0));
@@ -735,8 +740,11 @@ void EquationDrawer::recalculateEquation()
                     _parent->restart();
                 };
 
+                CCLabelTTF* restart_tutorial = CCLabelTTF::create("",
+                                                        ADLanguage::getFontName(),
+                                                        30);
                 _message_node_button = ADMenuItem::create(
-                            CCSprite::create("level/tutorial/restart_tut.png"),
+                            restart_tutorial/*CCSprite::create("level/tutorial/restart_tut.png")*/,
                             click_action);
 
                 CCMenu* menu = CCMenu::create();
@@ -770,7 +778,7 @@ void EquationDrawer::recalculateEquation()
 
 void EquationDrawer::showMessageNode()
 {
-    Tutorial::getInstance()->hideLabels();
+    //Tutorial::getInstance()->hideLabels();
     _message_node_button->setEnabled(true);
     _message_node_button->runAction(CCFadeTo::create(0.3f, 255));
     _message_node_text->runAction(CCFadeTo::create(0.3f, 255));
@@ -820,7 +828,17 @@ void EquationDrawer::initNoMoreSolutions()
         _no_more_solutions_shown = true;
         _message_node = CCNodeRGBA::create();
 
-        _message_node_text = CCSprite::create(Language::localizeFileName("level/tutorial/no_more_solutions.png").c_str());
+
+
+        CCLabelTTF* solutions_text = CCLabelTTF::create("",
+                                                ADLanguage::getFontName(),
+                                                30);
+        solutions_text->setColor(GameInfo::COLOR_LIGHT_BLUE);
+        _message_node_text = CCLabelTTF::create(_("solution.no_more_solution"),
+                                                ADLanguage::getFontName(),
+                                                35);
+        _message_node_text->setColor(GameInfo::COLOR_ORANGE);
+        /*CCSprite::create(Language::localizeFileName("level/tutorial/no_more_solutions.png").c_str());*/
         CCSize text_size = _message_node_text->getContentSize();
 
         _message_node->setContentSize(CCSize(text_size.width, text_size.height*1.75f));
@@ -833,7 +851,7 @@ void EquationDrawer::initNoMoreSolutions()
         };
 
         _message_node_button = ADMenuItem::create(
-                    CCSprite::create("level/tutorial/levels_tut.png"),
+                    solutions_text/*CCSprite::create("level/tutorial/levels_tut.png")*/,
                     click_action);
 
         CCMenu* menu = CCMenu::create();
@@ -848,7 +866,7 @@ void EquationDrawer::initNoMoreSolutions()
         _message_node->addChild(menu);
 
 
-        _message_node_text->setOpacity(0);
+        //_message_node_text->setOpacity(0);
         _message_node_button->setOpacity(0);
 
 
