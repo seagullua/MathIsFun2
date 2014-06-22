@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>found_solutions.{lang}.png</texture>
-	<sheet>found_solutions.{lang}.plist</sheet>
-	
-	<image>fs_logo.png.xml</image>
-</spritesheet>
