@@ -53,29 +53,5 @@
 		<name>level_tiles/tile_locked.plist.xml</name>
 	</file>
 	
-	<file>
-		<name>level_tiles_junior/tile_100.plist.xml</name>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>level_tiles_junior/tile_201.plist.xml</name>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>level_tiles_junior/tile_301.plist.xml</name>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>level_tiles_junior/tile_401.plist.xml</name>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>level_tiles_junior/tile_501.plist.xml</name>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>level_tiles_junior/tile_601.plist.xml</name>
-		<project>junior</project>
-	</file>
 	
 </directory>
