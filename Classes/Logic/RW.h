@@ -24,9 +24,9 @@ public:
     static bool unlockCollection(Collection* col);
     static void deletePersistentInfo();
     static bool isExpertMode();
-    static bool hasTranslationPollAlreadyShown();
+    //static bool hasTranslationPollAlreadyShown();
     static bool isAdsDisabled();
-    static void pollIsShown();
+    //static void pollIsShown();
     static void setExpertMode(bool expert);
     static void flushSettings();
 
@@ -71,29 +71,24 @@ public:
     static void prepareForLevelBuild();
 #endif
 
-#ifdef JUNIOR
-    uint64_t _last_hints_add;
-#endif
-
 private:
     static void updateStampsAndCrownsCount();
     static void saveLevelSolutions(Level* l);
     static void unlockNextLevel(Level* l, bool flush=true);
     static void saveGame(ADStreamOut &os);
 
-    static void flushCollectionInfo(Collection *a, ADStreamOut& os);
-    static void readCollectionInfo(Collection* a, ADStreamIn& is);
-    static void loadGame(ADStreamIn& is);
-    static const std::string _save_file_name;
-    static const std::string _settings_file_name;
-#ifndef CC_WIN8_METRO
-    static std::string _save_file_path;
-    static std::string _settings_file_path;
-    static std::string _poll_file_path;
-#else
-	static std::wstring _save_file_path;
-    static std::wstring _settings_file_path;
-#endif
+    static void flushCollectionInfo(Collection *a);
+    static void readCollectionInfo(Collection* a);
+    static void loadGame();
+    //static const std::string _save_file_name;
+    //static const std::string _settings_file_name;
+//#ifndef CC_WIN8_METRO
+//    static std::string _save_file_path;
+//    static std::string _settings_file_path;
+//    static std::string _poll_file_path;
+//#else
+    //static std::wstring _save_file_path;
+    //static std::wstring _settings_file_path;
 };
 
 #endif // RW_H
