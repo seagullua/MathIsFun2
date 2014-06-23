@@ -10,6 +10,9 @@ public:
     static std::string SITE_URL;
     static std::string BACKGROUND_MUSIC;
 
+    //sizes
+    static int SIZE_MENU_TITLE;
+
     //colors
     static cocos2d::ccColor3B COLOR_LIGHT_BLUE;
     static cocos2d::ccColor3B COLOR_DARK_BLUE;

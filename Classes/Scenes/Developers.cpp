@@ -30,7 +30,7 @@ bool Developers::init()
     //developer window title
     _developers_window_title = CCLabelTTF::create(_("developers_scene.title"),
                                            ADLanguage::getFontName(),
-                                           45);
+                                           GameInfo::SIZE_MENU_TITLE);
     _developers_window_title->setAnchorPoint(ccp(0.5, 1));
     _developers_window_title->setPosition(ccp(x_middle_of_sheet,
                                          VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
