@@ -161,6 +161,9 @@
 		<name>unlock_window/play_button.png.xml</name>
 		<lang>1</lang>
 	</file>
+	<file>
+		<name>unlock_window/button_background.png</name>
+	</file>
 	
 	<file>
 		<name>unlock_window/unlock_buttons_junior.plist.xml</name>

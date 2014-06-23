@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-06-23 12:24+0200\n"
+"POT-Creation-Date: 2014-06-23 21:44+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,6 +21,44 @@ msgstr "Alreay found solution"
 #: ../../Classes/Layers/EquationDrawer.cpp:837
 msgid "solution.no_more_solution"
 msgstr "No more solutions"
+
+#: ../../Classes/Layers/LevelStop.cpp:43
+msgid "menu.resume"
+msgstr "Resume"
+
+#: ../../Classes/Layers/LevelStop.cpp:51
+msgid "menu.restart"
+msgstr "Restart"
+
+#: ../../Classes/Layers/LevelStop.cpp:60
+msgid "menu.skip_level"
+msgstr "Skip Level"
+
+#: ../../Classes/Layers/LevelStop.cpp:69
+msgid "menu.found_solutions"
+msgstr "Found Solutions"
+
+#: ../../Classes/Layers/LevelStop.cpp:77
+msgid "menu.levels"
+msgstr "Levels"
+
+#: ../../Classes/PopUp/UnlockWindow.cpp:17
+msgid "select_collection.unlock_title"
+msgstr ""
+"You need more stamps\n"
+"to unlock this collection"
+
+#: ../../Classes/PopUp/UnlockWindow.cpp:25
+msgid "select_collection.unlock_title_small"
+msgstr "Try to play more or unlock now"
+
+#: ../../Classes/PopUp/UnlockWindow.cpp:87
+msgid "select_collection.unlock_image"
+msgstr "Unlock All"
+
+#: ../../Classes/PopUp/UnlockWindow.cpp:101
+msgid "select_collection.play_more_image"
+msgstr "Play More"
 
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
@@ -251,9 +289,6 @@ msgstr ""
 
 #~ msgid "Good_level"
 #~ msgstr "Good"
-
-#~ msgid "So_level"
-#~ msgstr "I don`t know"
 
 #~ msgid "Bad_level"
 #~ msgstr "Bad"

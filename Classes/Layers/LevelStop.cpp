@@ -48,23 +48,37 @@ bool LevelStop::init()
     CONNECT(resume_button->signalOnClick,
             this, &LevelStop::onResume);
 
-    ADMenuItem* restart_button = ADMenuItem::create(
-                CCSprite::create("stop_level/Restart.png"));
+    CCLabelTTF* restart = CCLabelTTF::create(_("menu.restart"),
+                       ADLanguage::getFontName(),
+                       size_font);
+    restart->setColor(GameInfo::COLOR_DARK_BLUE);
+
+    ADMenuItem* restart_button = ADMenuItem::create(restart);
     CONNECT(restart_button->signalOnClick,
             this, &LevelStop::onRestart);
 
-    ADMenuItem* skip_button = ADMenuItem::create(
-                CCSprite::create("stop_level/Skip_level.png"));
+    CCLabelTTF* skip_level = CCLabelTTF::create(_("menu.skip_level"),
+                       ADLanguage::getFontName(),
+                       size_font);
+    skip_level->setColor(GameInfo::COLOR_DARK_BLUE);
+
+    ADMenuItem* skip_button = ADMenuItem::create(skip_level);
     CONNECT(skip_button->signalOnClick,
             this, &LevelStop::onSkipLevel);
 
-    ADMenuItem* found_solutions_button = ADMenuItem::create(
-                CCSprite::create("stop_level/Found_Solutions.png"));
+    CCLabelTTF* found_solutions = CCLabelTTF::create(_("menu.found_solutions"),
+                       ADLanguage::getFontName(),
+                       size_font);
+    found_solutions->setColor(GameInfo::COLOR_DARK_BLUE);
+    ADMenuItem* found_solutions_button = ADMenuItem::create(found_solutions);
     CONNECT(found_solutions_button->signalOnClick,
             this, &LevelStop::onFoundSolutions);
 
-    ADMenuItem* levels_button = ADMenuItem::create(
-                CCSprite::create("stop_level/Levels.png"));
+    CCLabelTTF* levels = CCLabelTTF::create(_("menu.levels"),
+                       ADLanguage::getFontName(),
+                       size_font);
+    levels->setColor(GameInfo::COLOR_RED);
+    ADMenuItem* levels_button = ADMenuItem::create(levels);
     CONNECT(levels_button->signalOnClick,
             this, &LevelStop::onLevels);
 

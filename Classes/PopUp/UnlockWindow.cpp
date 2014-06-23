@@ -1,6 +1,9 @@
 #include "UnlockWindow.h"
 #include "cocos2d-A.h"
 #include "Logic/Language.h"
+#include "GameInfo.h"
+#include "ADLib/Device/ADLanguage.h"
+
 using namespace cocos2d;
 
 void UnlockWindow::onCreate(cocos2d::CCNode *parent)
@@ -9,9 +12,25 @@ void UnlockWindow::onCreate(cocos2d::CCNode *parent)
 
     CCSize size = parent->getContentSize();
     float x_middle = size.width / 2;
-    CCSprite* text = CCSprite::create(Language::localizeFileName("select_collection/unlock_title.png").c_str());
-    text->setPosition(ccp(x_middle, size.height * 0.76f));
+  int size_font =45;
+   int size_font_small =30;
+    CCLabelTTF* text  = CCLabelTTF::create(_("select_collection.unlock_title"),
+                                           ADLanguage::getFontName(),
+                                           size_font);
+    text->setAnchorPoint(ccp(0.5, 1));
+    text->setPosition(ccp(x_middle, size.height * 0.95f));
+    text->setColor(GameInfo:: COLOR_DARK);
     parent->addChild(text);
+
+    CCLabelTTF* text_small  = CCLabelTTF::create(_("select_collection.unlock_title_small"),
+                                           ADLanguage::getFontName(),
+                                           size_font_small);
+    text_small->setAnchorPoint(ccp(0.5, 1));
+    text_small->setPosition(ccp(x_middle, size.height * 0.68f));
+    text_small->setColor(GameInfo:: COLOR_DARK);
+    parent->addChild(text_small);
+    //CCSprite* text = CCSprite::create(Language::localizeFileName("select_collection/unlock_title.png").c_str());
+
 
     CCSprite* stamp = CCSprite::create("select_collection/unlock_stamp.png");
     stamp->setPosition(ccp(0,size.height*0.48));
@@ -61,16 +80,51 @@ void UnlockWindow::onCreate(cocos2d::CCNode *parent)
     parent->addChild(menu);
 
 
-    CCSprite* unlock_image = CCSprite::create("select_collection/unlock_button.png");
-    CCSize image_size = unlock_image->getContentSize();
+    //CCSprite* unlock_image = CCSprite::create("select_collection/unlock_button.png");
+    CCSprite* unlock_image = CCSprite::create("select_collection/button_background.png");
+    unlock_image->setColor(GameInfo::COLOR_DARK_GREEN);
+
+    ADMenuItem *unlock_item = ADMenuItem::create(unlock_image);
+    CONNECT(unlock_item->signalOnClick,
+            this, &UnlockWindow::onPlayMoreClick);
 
 
-    CCSprite* play_more_image = CCSprite::create("select_collection/play_more_button.png");
+
+
+    CCLabelTTF* button_label_unlock_image  = CCLabelTTF::create(_("select_collection.unlock_image"),
+                                           ADLanguage::getFontName(),
+                                           size_font);
+    button_label_unlock_image->setPosition(ccp(unlock_image->getContentSize().width*0.5f,
+                                               unlock_image->getContentSize().height*0.68f));
+    button_label_unlock_image->setColor(GameInfo::COLOR_DARK_GREEN);
+
+    CCLabelTTF* button_label_unlock_image_price  = CCLabelTTF::create("$0.99",
+                                           ADLanguage::getFontName(),
+                                           size_font/2);
+    button_label_unlock_image_price->setPosition(ccp(unlock_image->getContentSize().width*0.5f,
+                                               unlock_image->getContentSize().height*0.3f));
+    button_label_unlock_image_price->setColor(GameInfo::COLOR_DARK_GREEN);
+
+    unlock_item->addChild(button_label_unlock_image);
+    unlock_item->addChild(button_label_unlock_image_price);
+
+    CCSprite* play_more_image = CCSprite::create("select_collection/button_background.png");
+    play_more_image->setColor(GameInfo::COLOR_DARK_BLUE);
+
+
     ADMenuItem *play_more_item = ADMenuItem::create(play_more_image);
     CONNECT(play_more_item->signalOnClick,
             this, &UnlockWindow::onPlayMoreClick);
 
+    CCLabelTTF* button_label_play_more_image  = CCLabelTTF::create(_("select_collection.play_more_image"),
+                                           ADLanguage::getFontName(),
+                                           size_font);
+    button_label_play_more_image->setPosition(ccp(play_more_image->getContentSize().width*0.5f,
+                                                  play_more_image->getContentSize().height*0.55f));
+   button_label_play_more_image->setColor(GameInfo::COLOR_DARK_BLUE);
+    play_more_item->addChild(button_label_play_more_image);
 
+ CCSize image_size = unlock_image->getContentSize();
     float design_scale = 1;
     play_more_item->setPosition(ccp(100*design_scale/scaled+image_size.width/2,
                                     53*design_scale/scaled+image_size.height/2));
@@ -80,13 +134,15 @@ void UnlockWindow::onCreate(cocos2d::CCNode *parent)
 
 
 
-    ADMenuItem *next_level = ADMenuItem::create(unlock_image);
-    CONNECT(play_more_item->signalOnClick,
-            this, &UnlockWindow::onUnlockClick);
+//    ADMenuItem *next_level = ADMenuItem::create(unlock_image);
+//    CONNECT(play_more_item->signalOnClick,
+//            this, &UnlockWindow::onUnlockClick);
 
-    next_level->setPosition(ccp(600*design_scale/scaled,
+    unlock_item->setPosition(ccp(250*design_scale/scaled,
                                 53*design_scale/scaled+image_size.height/2));
-    menu->addChild(next_level);
+    play_more_item->setPosition(ccp(600*design_scale/scaled,
+                                53*design_scale/scaled+image_size.height/2));
+    menu->addChild(unlock_item);
 
     menu->addChild(play_more_item);
 
