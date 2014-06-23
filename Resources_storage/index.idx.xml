@@ -5,28 +5,14 @@
 		<project>mif</project>
 	</file>
 	<file>
-		<name>levels_junior.ad.xml</name>
-		<project>junior</project>
-	</file>
-	<file>
 		<name>Logo.png</name>
 		<platform>win8</platform>
 		<project>mif</project>
 	</file>
 	<file>
-		<name>Logo.junior.png.xml</name>
-		<platform>win8</platform>
-		<project>junior</project>
-	</file>
-	<file>
 		<name>SmallLogo.png</name>
 		<platform>win8</platform>
 		<project>mif</project>
-	</file>
-	<file>
-		<name>SmallLogo.junior.png.xml</name>
-		<platform>win8</platform>
-		<project>junior</project>
 	</file>
 	<file>
 		<name>SplashScreen.png</name>
@@ -37,12 +23,7 @@
 		<platform>win8</platform>
 		<project>mif</project>
 	</file>
-	<file>
-		<name>StoreLogo.junior.png.xml</name>
-		<platform>win8</platform>
-		<project>junior</project>
-	</file>
-	<file>
+	<!--<file>
 		<name>WinPhoneAppIcon.png</name>
 		<platform>winphone8</platform>
 		<project>junior</project>
@@ -56,6 +37,6 @@
 		<name>WinPhoneSmall.png</name>
 		<platform>winphone8</platform>
 		<project>junior</project>
-	</file>
+	</file>!-->
 	
 </directory>

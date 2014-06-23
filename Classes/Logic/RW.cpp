@@ -119,13 +119,13 @@ bool RW::hasTranslationPollAlreadyShown()
 }
 void RW::pollIsShown()
 {
-#ifndef JUNIOR
-    if(_rw)
-    {
-        std::ofstream os(_poll_file_path.c_str());
-        os << 1;
-    }
-#endif
+//#ifndef JUNIOR
+//    if(_rw)
+//    {
+//        std::ofstream os(_poll_file_path.c_str());
+//        os << 1;
+//    }
+//#endif
 }
 
 bool RW::unlockCollection(Collection* col)

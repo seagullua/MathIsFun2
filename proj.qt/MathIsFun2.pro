@@ -82,7 +82,8 @@ SOURCES += main.cpp \
     ../Classes/Scenes/SceneStyle.cpp \
     ../Classes/GameInfo.cpp \
     ../Classes/PopUp/UnlockWindow.cpp \
-    ../Classes/PopUp/PurchaseWindow.cpp
+    ../Classes/PopUp/PurchaseWindow.cpp \
+    ../Classes/Logic/SavesManager.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -128,5 +129,6 @@ HEADERS += \
     ../Classes/Scenes/SceneStyle.h \
     ../Classes/GameInfo.h \
     ../Classes/PopUp/UnlockWindow.h \
-    ../Classes/PopUp/PurchaseWindow.h
+    ../Classes/PopUp/PurchaseWindow.h \
+    ../Classes/Logic/SavesManager.h
 
