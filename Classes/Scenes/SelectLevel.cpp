@@ -3,6 +3,8 @@
 #include "Logic/Level.h"
 #include "Scenes/LevelScene.h"
 #include "Logic/Language.h"
+#include "GameInfo.h"
+#include "ADLib/Device/ADLanguage.h"
 
 using namespace cocos2d;
 
@@ -64,12 +66,12 @@ bool SelectLevel::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = ADScreen::getVisibleSize();
 
-    //Get the screen start of cordinates
-    CCPoint origin = ADScreen::getOrigin();
-    float scaled = ADScreen::getScaleFactor();
-
+    CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+     //Get the screen start of cordinates
+    CCPoint ORIGIN = ADScreen::getOrigin();
+    float SCALE = ADScreen::getScaleFactor();
+    float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
 
 
     SpritesLoader menu_name_spl = GraphicsManager::getLoaderFor(
@@ -78,13 +80,28 @@ bool SelectLevel::init()
                 Language::localizeFileName("select_level/menu_name.png").c_str());
 
     //Get the Select level label
-    _menu_name = menu_name_spl->loadSprite("select_levels.png");
-    //Put this label at the top of the screen
+   // _menu_name = menu_name_spl->loadSprite("select_levels.png");
+    _menu_name = CCLabelTTF::create(_("select_levels.title"),
+                                           ADLanguage::getFontName(),
+                                           GameInfo::SIZE_MENU_TITLE);
     _menu_name->setAnchorPoint(ccp(0.5, 1));
-    float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
-    CCPoint logo_target_position = ccp(x_middle_of_sheet,
-                                       visibleSize.height + origin.y - 50/scaled);
-    _menu_name->setPosition(logo_target_position);
+    _menu_name->setPosition(ccp(x_middle_of_sheet,
+                                         VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
+    _menu_name->setColor(GameInfo::COLOR_ORANGE);
+    this->addChild(_menu_name);
+
+    //Make it fade in slowly
+    _menu_name->setOpacity(0);
+    CCFadeTo* title_fade_in = CCFadeTo::create(0.6f, 255);
+    _menu_name->runAction(title_fade_in);
+
+
+    //Put this label at the top of the screen
+ //   _menu_name->setAnchorPoint(ccp(0.5, 1));
+//    float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
+ //   CCPoint logo_target_position = ccp(x_middle_of_sheet,
+  //                                     VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE);
+ //   _menu_name->setPosition(logo_target_position);
     // _menu_name->setColor(ccc3(71,218,196));
 
     //Make it fade in slowly

@@ -7,6 +7,9 @@
 #include "PopUp/UnlockWindow.h"
 #include "PopUp/PurchaseWindow.h"
 #include "Store.h"
+#include "GameInfo.h"
+#include "ADLib/Device/ADLanguage.h"
+#include "Logic/Language.h"
 using namespace cocos2d;
 
 
@@ -311,11 +314,15 @@ bool SelectCollection::init()
     this->setKeypadEnabled(true);
 
     //Get the size of the screen we can see
-    CCSize visibleSize = ADScreen::getVisibleSize();
+
+    CCSize VISIBLE_SIZE = ADScreen::getVisibleSize();
+    CCPoint ORIGIN = ADScreen::getOrigin();
+    float SCALE = ADScreen::getScaleFactor();
+    float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
+
 
     //Get the screen start of cordinates
-    CCPoint origin = ADScreen::getOrigin();
-    float scaled = ADScreen::getScaleFactor();
+
     //Get the sprites loader
     SpritesLoader spl;
 
@@ -327,21 +334,53 @@ bool SelectCollection::init()
 
     if(_mode == Collections)
     {
-        _title_select_collection =  CCSprite::create(
-                    Language::localizeFileName("select_collection/select_collection.png").c_str());
+    //    _title_select_collection =  CCSprite::create(
+    //                Language::localizeFileName("select_collection/select_collection.png").c_str());
+    //    this->addChild(_title_select_collection);
+
+        //developer window title
+        _title_select_collection = CCLabelTTF::create(_("select_collection.title"),
+                                               ADLanguage::getFontName(),
+                                               GameInfo::SIZE_MENU_TITLE);
+        _title_select_collection->setAnchorPoint(ccp(0.5, 1));
+        _title_select_collection->setPosition(ccp(x_middle_of_sheet,
+                                             VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
+        _title_select_collection->setColor(GameInfo:: COLOR_ORANGE);
         this->addChild(_title_select_collection);
+
+        //Make it fade in slowly
+        _title_select_collection->setOpacity(0);
+        CCFadeTo* title_fade_in = CCFadeTo::create(0.6f, 255);
+        _title_select_collection->runAction(title_fade_in);
+
+
     }
     else
     {
-        _title_select_collection = CCSprite::create(
-                    Language::localizeFileName("select_collection/game_store.png").c_str());
+   //     _title_select_collection = CCSprite::create(
+   //                 Language::localizeFileName("select_collection/game_store.png").c_str());
+   //     this->addChild(_title_select_collection);
+
+        _title_select_collection = CCLabelTTF::create(_("game_store.title"),
+                                               ADLanguage::getFontName(),
+                                               GameInfo::SIZE_MENU_TITLE);
+        _title_select_collection->setAnchorPoint(ccp(0.5, 1));
+        _title_select_collection->setPosition(ccp(x_middle_of_sheet,
+                                             VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
+        _title_select_collection->setColor(GameInfo:: COLOR_ORANGE);
         this->addChild(_title_select_collection);
+
+        //Make it fade in slowly
+        _title_select_collection->setOpacity(0);
+        CCFadeTo* title_fade_in = CCFadeTo::create(0.6f, 255);
+        _title_select_collection->runAction(title_fade_in);
+
     }
     //Put this label at the top of the screen
     _title_select_collection->setAnchorPoint(ccp(0.5, 1));
-    float x_middle_of_sheet = (visibleSize.width-133/scaled)/2 + origin.x;
+    //float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
     CCPoint logo_target_position = ccp(x_middle_of_sheet,
-                                       visibleSize.height + origin.y - 50/scaled);
+                                       VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE);
     _title_select_collection->setPosition(logo_target_position);
 
     //Make it fade in slowly
@@ -360,7 +399,7 @@ bool SelectCollection::init()
     _collections_menu = MenuSpriteBatch::create(_papers_spl);
 
 
-    float padding_left = 330/scaled;
+    float padding_left = 330/SCALE;
     unsigned int i = 0;
 
     const CollectionsArr& arr = RW::getCollections();
@@ -432,7 +471,7 @@ bool SelectCollection::init()
     }
 
     _pop_up_manager.addMenuToAutoDisable(_collections_menu->menu());
-    newScrolling(_collections_menu, i*padding_left + 20/scaled);
+    newScrolling(_collections_menu, i*padding_left + 20/SCALE);
 
     return true;
 }
