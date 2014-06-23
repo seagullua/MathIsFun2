@@ -15,7 +15,7 @@ private:
     cocos2d::CCPoint _sheet_target_position;
     CCNode* _sheet_menu;
     LevelScene* _level_scene;
-    std::vector<cocos2d::CCSprite*> _menu;
+    //std::vector<cocos2d::CCSprite*> _menu;
 
 
     void onSkipLevel();

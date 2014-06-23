@@ -383,10 +383,10 @@ bool SelectCollection::init()
                                        VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE);
     _title_select_collection->setPosition(logo_target_position);
 
-    //Make it fade in slowly
-    _title_select_collection->setOpacity(0);
-    CCFadeTo* logo_fade_in = CCFadeTo::create(0.3f, 255);
-    _title_select_collection->runAction(logo_fade_in);
+//    //Make it fade in slowly
+//    _title_select_collection->setOpacity(0);
+//    CCFadeTo* logo_fade_in = CCFadeTo::create(0.3f, 255);
+//    _title_select_collection->runAction(logo_fade_in);
 
 
     //Create menu with collections

@@ -105,9 +105,9 @@ bool SelectLevel::init()
     // _menu_name->setColor(ccc3(71,218,196));
 
     //Make it fade in slowly
-    _menu_name->setOpacity(0);
-    CCFadeTo* logo_fade_in = CCFadeTo::create(0.3f, 255);
-    _menu_name->runAction(logo_fade_in);
+//    _menu_name->setOpacity(0);
+//    CCFadeTo* logo_fade_in = CCFadeTo::create(0.3f, 255);
+//    _menu_name->runAction(logo_fade_in);
 
     buildLevelsTiles();
     return true;

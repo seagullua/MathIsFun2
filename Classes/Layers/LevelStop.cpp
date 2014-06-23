@@ -39,37 +39,32 @@ bool LevelStop::init()
     //sheet->setRotation(-90);
     // sheet->setAnchorPoint(ccp(0,0));
 
-
-
-    _menu.push_back(CCSprite::create("stop_level/Resume.png"));
-    ADMenuItem* resume_button = ADMenuItem::create(
-                _menu[_menu.size()-1]);
+    int size_font =55;
+    CCLabelTTF* resume = CCLabelTTF::create(_("menu.resume"),
+                       ADLanguage::getFontName(),
+                       size_font);
+    resume->setColor(GameInfo::COLOR_DARK_BLUE);
+    ADMenuItem* resume_button = ADMenuItem::create(resume);
     CONNECT(resume_button->signalOnClick,
             this, &LevelStop::onResume);
 
-    _menu.push_back(CCSprite::create("stop_level/Restart.png"));
     ADMenuItem* restart_button = ADMenuItem::create(
-                _menu[_menu.size()-1]);
+                CCSprite::create("stop_level/Restart.png"));
     CONNECT(restart_button->signalOnClick,
             this, &LevelStop::onRestart);
 
-    _menu.push_back(CCSprite::create("stop_level/Skip_level.png"));
     ADMenuItem* skip_button = ADMenuItem::create(
-                _menu[_menu.size()-1]);
+                CCSprite::create("stop_level/Skip_level.png"));
     CONNECT(skip_button->signalOnClick,
             this, &LevelStop::onSkipLevel);
 
-
-    _menu.push_back(CCSprite::create("stop_level/Found_Solutions.png"));
     ADMenuItem* found_solutions_button = ADMenuItem::create(
-                _menu[_menu.size()-1]);
+                CCSprite::create("stop_level/Found_Solutions.png"));
     CONNECT(found_solutions_button->signalOnClick,
             this, &LevelStop::onFoundSolutions);
 
-
-    _menu.push_back(CCSprite::create("stop_level/Levels.png"));
     ADMenuItem* levels_button = ADMenuItem::create(
-                _menu[_menu.size()-1]);
+                CCSprite::create("stop_level/Levels.png"));
     CONNECT(levels_button->signalOnClick,
             this, &LevelStop::onLevels);
 
