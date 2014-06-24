@@ -51,13 +51,21 @@ void SavesManager::initDefaultValues()
     //first time set no date - it will be automatically closed
 
     //set date for music, sound, expert mode, full version
-    ADStorage::setValue<int64_t>(BLOCK_MUSIC,1);
-    ADStorage::setValue<int64_t>(BLOCK_SOUND,1);
-    ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,0);
-    ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
+    if(!ADStorage::hasValue(BLOCK_MUSIC))
+        ADStorage::setValue<int64_t>(BLOCK_MUSIC,1);
+    if(!ADStorage::hasValue(BLOCK_SOUND))
+        ADStorage::setValue<int64_t>(BLOCK_SOUND,1);
+
+    if(!ADStorage::hasValue(BLOCK_EXPERT_MODE))
+        ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,0);
+
+
+    if(!ADStorage::hasValue(BLOCK_FULL_VERSION))
+        ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
 
     //add 10 hints
-    ADStorage::setValue<int64_t>(BLOCK_HINTS,10);
+    if(!ADStorage::hasValue(BLOCK_HINTS))
+        ADStorage::setValue<int64_t>(BLOCK_HINTS,10);
 }
 
 //SLOTS
