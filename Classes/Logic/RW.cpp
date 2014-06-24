@@ -53,28 +53,28 @@ void RW::init()
 //#endif
 }
 
-#ifndef CC_WIN8_METRO
-bool fileExists(const char* name)
-{
-    FILE *fp = fopen(name, "r");
-    bool bRet = false;
+//#ifndef CC_WIN8_METRO
+//bool fileExists(const char* name)
+//{
+//    FILE *fp = fopen(name, "r");
+//    bool bRet = false;
 
-    if (fp)
-    {
-        bRet = true;
-        fclose(fp);
-    }
+//    if (fp)
+//    {
+//        bRet = true;
+//        fclose(fp);
+//    }
 
-    return bRet;
-}
-#else
-#include <Windows.h>
-bool fileExists(const wchar_t* name)
-{
-    WIN32_FILE_ATTRIBUTE_DATA  fileInfo;
-    return GetFileAttributesExW(name, GetFileExInfoStandard, &fileInfo);
-}
-#endif
+//    return bRet;
+//}
+//#else
+//#include <Windows.h>
+//bool fileExists(const wchar_t* name)
+//{
+//    WIN32_FILE_ATTRIBUTE_DATA  fileInfo;
+//    return GetFileAttributesExW(name, GetFileExInfoStandard, &fileInfo);
+//}
+//#endif
 
 //const std::string RW::_save_file_name = "mif_save.ad";
 //const std::string RW::_settings_file_name = "mif_settings.ad";
@@ -266,12 +266,12 @@ void RW::loadGame(/*ADStreamIn& is*/)
 //        for(CollectionsArr::iterator i = _rw->_collections.begin();
 //            i<_rw->_collections.end(); ++i)
 //        {
-            uint32_t col_id = i.first;
+            //uint32_t col_id = i.first;
 
-            CollectionsArr::iterator col = _rw->_collections.find(col_id);
+            //CollectionsArr::iterator col = _rw->_collections.find(col_id);
 
 
-            Collection* a = col->second;
+            Collection* a = i.second;
             readCollectionInfo(a);
             a->updateStampsAndCrownsCount();
 
@@ -312,11 +312,11 @@ void RW::readCollectionInfo(Collection* a)
         bool has_status = SavesManager::getInstance()->hasCollectionStateValue(a->getCollectionID());
         if(has_status)
             a->_state = SavesManager::getInstance()->getCollectionState(a->getCollectionID());
-        else
-            a->_state = Collection::Locked;
 
-        if(a->getCollectionID() == 100)
-            a->_state = Collection::Unlocked;
+        //if(a->getCollectionID() == 100)
+        //    a->_state = Collection::Unlocked;
+
+
         //uint32_t status = uint32_t(Collection::InShop);
         //is >> status;
 
@@ -346,11 +346,7 @@ void RW::readCollectionInfo(Collection* a)
                     bool has_level_status = SavesManager::getInstance()->hasLevelStateValue(a->getCollectionID(),l->getLevelID());
                     if(has_level_status)
                         l->_state = (SavesManager::getInstance()->getLevelState(a->getCollectionID(),l->getLevelID()));
-                    else
-                        l->_state = Level::Locked;
 
-                    if(a->getCollectionID() == 100 && l->getLevelID() == 0)
-                        l->_state = Level::NoStamps;
 
                     //If we read about this level it should be unlocked
                     //l->_state = Level::NoStamps;
@@ -401,6 +397,7 @@ void RW::flushCollectionInfo(Collection* a/*, ADStreamOut& os*/)
                 SavesManager::getInstance()->levelSolutionChanged(a->getCollectionID(),
                                                                   l->getLevelID(),
                                                                   l->getSolutions());
+
             }
         }
 //        os << uint32_t(a->getCollectionID());
