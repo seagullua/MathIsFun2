@@ -189,7 +189,7 @@ bool RW::registerSolution(Level* l, const Solution& s)
             //MANAGER set to storage new found solutions
             SavesManager::getInstance()->levelSolutionChanged(l->getLevelCollection()->getCollectionID(),
                                                               l->getLevelID(),
-                                                              l->getSolutions());
+                                                              l->getFoundSolutions());
 
 
             //Update stamps counts
@@ -370,7 +370,8 @@ void RW::readCollectionInfo(Collection* a)
 //                    }
 
                     //Get new stamp status
-                    l->updateStampsStatus();
+                    //TODO: I comment it, because it gives NoStamps status at the begin
+                    //l->updateStampsStatus();
 
                 //}
             //}
@@ -389,14 +390,16 @@ void RW::flushCollectionInfo(Collection* a/*, ADStreamOut& os*/)
         for(unsigned int i=0; i<a->_levels.size(); ++i)
         {
             Level* l = a->_levels[i];
-            SavesManager::getInstance()->updateLevelState(a->getCollectionID(),
-                                                          l->getLevelID(),
-                                                          l->getLevelState());
+
             if(l->getLevelState() != Level::Locked)
             {
+                SavesManager::getInstance()->updateLevelState(a->getCollectionID(),
+                                                              l->getLevelID(),
+                                                              l->getLevelState());
+
                 SavesManager::getInstance()->levelSolutionChanged(a->getCollectionID(),
                                                                   l->getLevelID(),
-                                                                  l->getSolutions());
+                                                                  l->getFoundSolutions());
 
             }
         }
@@ -452,7 +455,7 @@ void RW::flushCollectionInfo(Collection* a/*, ADStreamOut& os*/)
 
 //            //if(a->getCollectionState() == Collection::Unlocked)
 //            //{
-////            flushCollectionInfo(a, os);
+//           flushCollectionInfo(a, os);
 //            flushCollectionInfo(a);
 //            //}
 //        }
@@ -514,6 +517,11 @@ void RW::deletePersistentInfo()
     }
 }
 
+/**
+ * @brief RW::readSavedData
+ *firstly fill auto data
+ *then read from saves(ADStorage)
+ */
 void RW::readSavedData()
 {
     if(_rw)
