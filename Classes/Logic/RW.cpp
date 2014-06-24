@@ -239,6 +239,20 @@ void RW::setExpertMode(bool expert)
 void RW::buyFullVersion()
 {
     SavesManager::getInstance()->setFullVersion(true);
+
+    //set collections open
+    if(_rw)
+    {
+        for(auto& i : _rw->_collections)
+        {
+            Collection* a = i.second;
+            a->_state = Collection::Unlocked;
+
+            //MANAGER
+            SavesManager::getInstance()->unlockCollection(a->getCollectionID());
+
+        }
+    }
 }
 
 /**
@@ -368,7 +382,8 @@ void RW::readSavedData()
             Collection* a = it->second;
             //stamps_max += a->stampsMax();
 
-            if(a->getCollectionID()==100)
+            //open first two collections
+            if(a->getCollectionID()==100 || a->getCollectionID()==200)
                 a->_state = Collection::Unlocked;
             if(a->getCollectionState() == Collection::InShop && _rw->_buy_all_purchased)
             {
@@ -436,6 +451,7 @@ void RW::readSettings()
 #endif
 }
 
+//save settings
 void RW::flushSettings()
 {
 #ifndef RW_DEBUG
@@ -449,6 +465,7 @@ void RW::flushSettings()
         SavesManager::getInstance()->setMusic(music_on);
         SavesManager::getInstance()->setSound(sounds_on);
         SavesManager::getInstance()->setFullVersion(!_rw->_ads_disabled);
+        SavesManager::getInstance()->setHint(_rw->_hints_count);
     }
 #endif
 }
@@ -625,9 +642,11 @@ void RW::updateStampsAndCrownsCount()
         _rw->_stamps_obtained = stamps;
     }
 }
-unsigned int RW::getHintCount()
+int64_t RW::getHintCount()
 {
-    return _rw->_hints_count;
+   int64_t res =  SavesManager::getInstance()->getHintCount();
+    _rw->_hints_count =res;
+   return _rw->_hints_count;
 }
 void RW::addHints(unsigned int to_add)
 {
@@ -713,7 +732,7 @@ void RW::buyCollection(const Collection::CollectionID id)
 
 RW::RW()
     : _expert_mode(SavesManager::getInstance()->isExpertModeOn()),
-      _hints_count(SavesManager::getInstance()->getHintCount()),
+      _hints_count(0),
       _unlock_all_purchased(false),
       _buy_all_purchased(false),
       _ads_disabled(!SavesManager::getInstance()->isAds())

@@ -40,7 +40,7 @@ public:
     //save settings
     static void flushSettings();
 
-    static unsigned int getHintCount();
+    static int64_t getHintCount();
     static void useOneHint();
     static void addHints(unsigned int to_add);
 
@@ -77,7 +77,7 @@ private:
     unsigned int _stamps_obtained;
     unsigned int _crowns_obtained;
     CollectionsArr _collections;
-    unsigned int _hints_count;
+    int64_t _hints_count;
     static const uint16_t _levels_mark = 0xAABD;
 
 

@@ -42,6 +42,7 @@ public:
     void setFullVersion(bool full_version);
     void minusHint();
     void addHint(int num=1);
+    void setHint(int64_t new_hint);
 
     void unlockCollection(Collection::CollectionID id);
     void unlockLevel(Collection::CollectionID c_id,

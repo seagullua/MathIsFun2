@@ -278,7 +278,8 @@ bool LevelScene::init()
 
     //show the quantity of hints
     std::stringstream hint_num;
-    hint_num << (RW::getHintCount());
+    int64_t hints = RW::getHintCount();
+    hint_num << (hints);
     std::string cur_hint_num(hint_num.str());
 
     _hint_quantity = CCLabelBMFont::create(cur_hint_num.c_str(),

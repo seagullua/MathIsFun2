@@ -126,7 +126,11 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
                                                    const std::string& label_name,
                                                    const std::string& stamps_label_text,
                                                    const ccColor3B& color,
-                                                   const SpritesLoader& papers_spl, const std::string &stamp_file_name, bool show_crown, bool show_new, bool more_level_tile)
+                                                   const SpritesLoader& papers_spl,
+                                                   const std::string &stamp_file_name,
+                                                   bool show_crown,
+                                                   bool show_new,
+                                                   bool more_level_tile)
 {
     CCSprite* background = papers_spl->loadSprite("collection_background.png");
     ADMenuItem* paper_item = ADMenuItem::createWithSpriteSheetSprite(background);
@@ -211,7 +215,13 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
 
 
         stamps_number->setPositionX(stamp_position);
-        stamp->setPositionX(stamp_position);
+        if(stamps_label_text==" ")
+        {
+            stamp->setAnchorPoint(ccp(0.5, 0.5));
+            stamp->setPositionX(center);
+        }
+        else
+            stamp->setPositionX(stamp_position);
 
         paper_item->addChild(stamps_number);
     }
@@ -243,14 +253,15 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
     if(collection->getCollectionState() == Collection::Locked)
     {
 
-        int to_unlock = collection->stampsToUnlock();
-        int overal_stamps = RW::allStampsObtained();
+        //we eill not use it in new version
+        //int to_unlock = collection->stampsToUnlock();
+        //int overal_stamps = RW::allStampsObtained();
 
-        int stamps_needed = to_unlock - overal_stamps;
-        if(stamps_needed < 0)
-            stamps_needed = 0;
+        //int stamps_needed = to_unlock - overal_stamps;
+        //if(stamps_needed < 0)
+        //    stamps_needed = 0;
 
-        stamps_label << stamps_needed;
+        //stamps_label << stamps_needed;
         image_name << "select_collection/coll_lock.png";
         label_name << "select_collection/clabel_locked.png";
         color = ccc3(221,221,221);
@@ -298,7 +309,12 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
     return createCollectionItem(image_name.str(),
                                 Language::localizeFileName(label_name.str()),
                                 stamps_label_str,
-                                color,spl, stamp_file_name, show_crown, show_new, false);
+                                color,
+                                spl,
+                                stamp_file_name,
+                                show_crown,
+                                show_new,
+                                false);
 }
 
 bool SelectCollection::init()

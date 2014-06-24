@@ -147,16 +147,25 @@ void SavesManager::minusHint()
 {
     int64_t hints = ADStorage::getValue<int64_t>(BLOCK_HINTS, 0);
     if(hints>0)
-        hints--;
-    return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);
+    {
+        hints=hints-1;
+        return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);
+    }
 }
 
 void SavesManager::addHint(int num)
 {
     int64_t hints = ADStorage::getValue<int64_t>(BLOCK_HINTS, 0);
     if(hints>0)
+    {
         hints+=num;
-    return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);
+        return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);
+    }
+}
+
+void SavesManager::setHint(int64_t new_hint)
+{
+    return ADStorage::setValue<int64_t>(BLOCK_HINTS, new_hint);
 }
 
 void SavesManager::unlockCollection(Collection::CollectionID id)
