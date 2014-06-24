@@ -350,13 +350,13 @@ void RW::readSavedData()
     {
 #ifndef RW_DEBUG
         readSettings();
-        unsigned int stamps_max = 0;
+        //unsigned int stamps_max = 0;
         //Fill by the default info
         for(CollectionsArr::iterator it=_rw->_collections.begin();
             it!=_rw->_collections.end(); ++it)
         {
             Collection* a = it->second;
-            stamps_max += a->stampsMax();
+            //stamps_max += a->stampsMax();
 
             if(a->getCollectionID()==100)
                 a->_state = Collection::Unlocked;
@@ -382,7 +382,7 @@ void RW::readSavedData()
                 a->_max_stamps += l->getSolutions().size();
             }
         }
-        _rw->_stamps_max = stamps_max;
+        //_rw->_stamps_max = stamps_max;
 
         //Read saved info
         loadGame();
