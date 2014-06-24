@@ -96,6 +96,9 @@ void Loading::loadingCallBack(CCObject *)
 #include <ADLib/Device/ADInApp.h>
 void Loading::initRW()
 {
+    //load storage
+    ADStorage::loadInitialData();
+
     //TODO: write cleanup
     RW::init();
     std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels.ad");
@@ -107,7 +110,11 @@ void Loading::initRW()
     ss.write((char*)file_cont, size);
 
     ADStreamIn stream(ss);
+
+    //read levels
     RW::readLevelsInformation(stream);
+
+    //read saves
     RW::readSavedData();
 
     Tutorial::getInstance()->init();

@@ -121,7 +121,20 @@ public:
     void updateStampsStatus();
 };
 
+inline ADStreamIn& operator>>(ADStreamIn& st, Level::LevelState& state)
+{
+    uint32_t value=0;
 
+    st >> value;
+    state = static_cast<Level::LevelState>(value);
+
+    return st;
+}
+inline ADStreamOut& operator<<(ADStreamOut& st, const Level::LevelState state)
+{
+    st << static_cast<uint32_t>(state);
+    return st;
+}
 #include <ADLib/Device/ADStatistics.h>
 ADStatistics::Params levelToStatisticsParams(Level* level);
 

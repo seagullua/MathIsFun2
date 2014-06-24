@@ -95,4 +95,19 @@ public:
     void updateStampsAndCrownsCount();
 };
 
+inline ADStreamIn& operator>>(ADStreamIn& st, Collection::CollectionState& state)
+{
+    uint32_t value=0;
+
+    st >> value;
+    state = static_cast<Collection::CollectionState>(value);
+    return st;
+}
+inline ADStreamOut& operator<<(ADStreamOut& st,
+                        const Collection::CollectionState& state)
+{
+    st << static_cast<uint32_t>(state);
+    return st;
+}
+
 #endif // COLLECTION_H

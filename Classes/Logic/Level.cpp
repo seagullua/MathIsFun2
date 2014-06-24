@@ -117,6 +117,7 @@ const Stamps Level::getLevelStamps() const
     return st;
 }
 
+#include "SavesManager.h"
 void Level::updateStampsStatus()
 {
     StampsColors needed = StampsColors::forSolutions(_existing_solutions.size());
@@ -133,6 +134,11 @@ void Level::updateStampsStatus()
         if(found_solutions == _existing_solutions.size())
             _state = Level::Crown;
     }
+
+    //update level state in saves
+    SavesManager::getInstance()->updateLevelState(this->getLevelCollection()->getCollectionID(),
+                                                  this->getLevelID(),
+                                                  this->getLevelState());
 }
 
 Level::~Level()
