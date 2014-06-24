@@ -49,21 +49,8 @@ OTHER_FILES += \
     col4.collection \
     col5.collection \
     col6.collection \
-    easy1.levels \
-    easy2.levels \
-    medium3.levels \
-    hard5.levels \
-    medium4.levels \
-    ultrahard6.levels \
-    easy0.levels \
-    col4000.collection \
-    col3000.collection \
-    col2000.collection \
-    col1000.collection \
-    junior1.collection \
-    junior6.collection \
-    junior5.collection \
-    junior4.collection \
-    junior3.collection \
-    junior2.collection
+    col7.collection \
+    col8.collection \
+    col9.collection \
+    col10.collection
 

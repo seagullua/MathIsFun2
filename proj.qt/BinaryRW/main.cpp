@@ -17,9 +17,6 @@ int main()
 
     define_mif();
     std::cout << "==============================" << std::endl;
-    std::cout << "Junior generation" << std::endl;
-    define_junior();
-    std::cout << "==============================" << std::endl;
     return 0;
 }
 #else

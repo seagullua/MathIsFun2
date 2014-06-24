@@ -21,6 +21,10 @@ public:
     static cocos2d::ccColor3B COLOR_RED;
     static cocos2d::ccColor3B COLOR_GRAY;
     static cocos2d::ccColor3B COLOR_DARK;
+    static bool useMultiply ()
+    {
+        return false;
+    }
 };
 
 #endif // GAMEINFO_H

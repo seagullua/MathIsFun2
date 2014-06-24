@@ -1,184 +1,145 @@
 //Fifth collection
 COLLECTION
-COLLECTION_STAMPS_TO_UNLOCK(150)
+COLLECTION_STAMPS_TO_UNLOCK(0)
 COLLECTION_ID(500)
-COLLECTION_COLOR(246,136,64)
+COLLECTION_COLOR(250,127,225)
 COLLECTION_FREE(true)
-COLLECTION_DIFFICULTY(Hard)
+COLLECTION_DIFFICULTY(Medium)
 //a little difficult
 
 //Level 1
 LEVEL
-        EQUATION(2#2#2=3#3#3)
-        ADD_SOLUTION(++*-)
-        ADD_SOLUTION(+**-)
-        ADD_SOLUTION(*+*-)
+        EQUATION(2+7=_)
+        ADD_SOLUTION(9)
 END_LEVEL
 
 
 //Level 2
 
 LEVEL
-        EQUATION(1A2A3#4=5A6)
-        ADD_SOLUTION(+*++)
-        ADD_SOLUTION(-+*+)
-        ADD_SOLUTION(-*+-)
+        EQUATION(5+5=__)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 
 
 //Level 3
 LEVEL
-        EQUATION(1@2@2=4#5#6)
-        ADD_SOLUTION(2-**)
-        ADD_SOLUTION(++-+)
-        ADD_SOLUTION(+*-+)
+        EQUATION(10-3=_)
+        ADD_SOLUTION(7)
 END_LEVEL
 
 //Level 4
 LEVEL
-        EQUATION(12*12=1AAA2)
-        ADD_SOLUTION(2*1)
-        ADD_SOLUTION(42+)
-        ADD_SOLUTION(46-)
+        EQUATION(9+1=__)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 //Level 5
 LEVEL
- EQUATION(1+&1#1&=2)
- ADD_SOLUTION(1-0)
- ADD_SOLUTION((*))
+        EQUATION(8-2=_)
+        ADD_SOLUTION(6)
 END_LEVEL
 
 //Level 6
+
 LEVEL
-        EQUATION(1@@31=3_2)
-        ADD_SOLUTION(2*7)
-        ADD_SOLUTION(+33)
+        EQUATION(7+3=__)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 //Level 7
 LEVEL
-        EQUATION(1%2%3%4=5@6)
-        ADD_SOLUTION(+*++)
-        ADD_SOLUTION(-+*+)
-        ADD_SOLUTION(-*+-)
+        EQUATION(9-1=_)
+        ADD_SOLUTION(8)
 END_LEVEL
 
 //Level 8
+
 LEVEL
-        EQUATION(4#6#8=(1#3)#2)
-        ADD_SOLUTION(+-+-)
-        ADD_SOLUTION(-+++)
-        ADD_SOLUTION(-+**)
+        EQUATION(10+0=_0)
+        ADD_SOLUTION(1)
 END_LEVEL
 
 //Level 9
 LEVEL
- EQUATION(1@2@3=%1%1%%1)
- ADD_SOLUTION(+-(-)*)
- ADD_SOLUTION(+-(*)-)
- ADD_SOLUTION(-+(+)*)
- ADD_SOLUTION(-+(*)+)
- ADD_SOLUTION(*-(-)-)
+        EQUATION(8+1=_)
+        ADD_SOLUTION(9)
 END_LEVEL
 
 
 //Level 10
 LEVEL
-        EQUATION(2_#7=1@1@2)
-        ADD_SOLUTION(6**8)
-        ADD_SOLUTION(7*9-)
+        EQUATION(9-2=_)
+        ADD_SOLUTION(7)
 END_LEVEL
 
 
 //Level 11
-LEVEL
-        EQUATION(@6@9@=5@44)
-        ADD_SOLUTION(5-5-)
-        ADD_SOLUTION(5*95)
-END_LEVEL
 
+LEVEL
+        EQUATION(10-_=8)
+        ADD_SOLUTION(2)
+END_LEVEL
 
 //Level 12
 LEVEL
-        EQUATION(6%%5%&%=4*3)
-        ADD_SOLUTION(+(+1))
-        ADD_SOLUTION(*(-3))
+        EQUATION(7-3=_)
+        ADD_SOLUTION(4)
 END_LEVEL
 
 
 
 //Level 13
 LEVEL
-        EQUATION(6%%4%2%1%=2#2)
-        ADD_SOLUTION(-(+*)-)
-        ADD_SOLUTION(-(-*)+)
-        ADD_SOLUTION(-(-*)*)
+        EQUATION(9-6=_)
+        ADD_SOLUTION(3)
 END_LEVEL
 
 
 //Level 14
 LEVEL
-        EQUATION(3%4%3%4=3A3)
-        ADD_SOLUTION(++-+)
-        ADD_SOLUTION(+---)
-        ADD_SOLUTION(-+++)
-        ADD_SOLUTION(--+-)
-        ADD_SOLUTION(*-*-)
+        EQUATION(8-5=_)
+        ADD_SOLUTION(3)
 END_LEVEL
 
 
 
 //Level 15
 LEVEL
-        EQUATION(1%%1#1%=5@4)
-        ADD_SOLUTION(+(-)-)
-        ADD_SOLUTION(-(-)-)
-        ADD_SOLUTION(*(*)-)
+        EQUATION(9-4=_)
+        ADD_SOLUTION(5)
 END_LEVEL
 
 //Level 16
 LEVEL
-        EQUATION(8A@A9=87@2)
-        ADD_SOLUTION(5+8*)
-        ADD_SOLUTION(8*91)
-        ADD_SOLUTION(+9*+)
+        EQUATION(9-8=_)
+        ADD_SOLUTION(1)
 END_LEVEL
 
 //Level 17
 LEVEL
-        EQUATION(1@_*6=8A0)
-        ADD_SOLUTION(351)
-        ADD_SOLUTION(404)
-        ADD_SOLUTION(457)
-        ADD_SOLUTION(*0*)
+        EQUATION(9-7=_)
+        ADD_SOLUTION(2)
 END_LEVEL
 
 //Level 18
 LEVEL
- EQUATION(5A4A3A=5*_)
- ADD_SOLUTION(++18)
- ADD_SOLUTION(++69)
- ADD_SOLUTION(-+47)
- ADD_SOLUTION(-+98)
+        EQUATION(5+4=_)
+        ADD_SOLUTION(9)
 END_LEVEL
-
 
 //Level 19
 LEVEL
- EQUATION(2_#5#4=$1#1$)
- ADD_SOLUTION(0-*(-))
- ADD_SOLUTION(1-*(*))
- ADD_SOLUTION(2-*(+))
+        EQUATION(9-5=_)
+        ADD_SOLUTION(4)
 END_LEVEL
 
 
 //Level 20
 LEVEL
-        EQUATION(3#14@@=12_)
-        ADD_SOLUTION(+*99)
-        ADD_SOLUTION(**36)
+        EQUATION(6+3=_)
+        ADD_SOLUTION(9)
 END_LEVEL
 
 

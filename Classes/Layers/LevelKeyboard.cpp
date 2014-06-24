@@ -1,4 +1,5 @@
 #include "LevelKeyboard.h"
+#include "GameInfo.h"
 using namespace cocos2d;
 
 LevelKeyboard::LevelKeyboard(const CCSize &zone,
@@ -225,7 +226,10 @@ void LevelKeyboard::rearangeButtons(const Mode& mask)
         {
             to_arrange.push_back(_buttons[add]);
             to_arrange.push_back(_buttons[substract]);
-            to_arrange.push_back(_buttons[multiply]);
+            if(GameInfo::useMultiply())
+            {
+                to_arrange.push_back(_buttons[multiply]);
+            }
         }
         to_arrange.push_back(_buttons[b1]);
         to_arrange.push_back(_buttons[b2]);
@@ -241,7 +245,10 @@ void LevelKeyboard::rearangeButtons(const Mode& mask)
         to_arrange.push_back(_buttons[b8]);
         to_arrange.push_back(_buttons[b9]);
         if(operations && _layout_mode == Horizontal)
-            to_arrange.push_back(_buttons[multiply]);
+            if(GameInfo::useMultiply())
+            {
+                to_arrange.push_back(_buttons[multiply]);
+            }
         if(parenthesis)
         {
             to_arrange.push_back(_buttons[left_parenthesis]);
@@ -291,7 +298,10 @@ void LevelKeyboard::rearangeButtons(const Mode& mask)
             }
             to_arrange.push_back(_buttons[add]);
             to_arrange.push_back(_buttons[substract]);
-            to_arrange.push_back(_buttons[multiply]);
+            if(GameInfo::useMultiply())
+            {
+                to_arrange.push_back(_buttons[multiply]);
+            }
             if(_layout_mode == Horizontal)
             {
                 to_arrange.push_back(_buttons[left_parenthesis]);
@@ -311,7 +321,10 @@ void LevelKeyboard::rearangeButtons(const Mode& mask)
             to_arrange.reserve(3);
             to_arrange.push_back(_buttons[add]);
             to_arrange.push_back(_buttons[substract]);
-            to_arrange.push_back(_buttons[multiply]);
+            if(GameInfo::useMultiply())
+            {
+                to_arrange.push_back(_buttons[multiply]);
+            }
             arrangeButtons(to_arrange,2);
         }
 
