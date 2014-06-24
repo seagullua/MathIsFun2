@@ -1,14 +1,11 @@
 #include "RW.h"
 #include <cassert>
 #include "SavesManager.h"
-//#include <fstream>
 #include <ADLib/Device/ADSoundManager.h>
-
 #include "Math/Equation.h"
 #include <sstream>
 
 #ifndef RW_DEBUG
-
 #include "cocos2d.h"
 using namespace cocos2d;
 #endif
@@ -104,23 +101,6 @@ Level* RW::skipLevel(Level* l)
     return getNextLevel(l);
 }
 
-//delete during refactoring this function
-//bool RW::hasTranslationPollAlreadyShown()
-//{
-//    return true;
-//}
-//delete during refactoring this function
-//void RW::pollIsShown()
-//{
-//#ifndef JUNIOR
-//    if(_rw)
-//    {
-//        std::ofstream os(_poll_file_path.c_str());
-//        os << 1;
-//   }
-//#endif
-//}
-
 bool RW::unlockCollection(Collection* col)
 {
     if(_rw)
@@ -162,13 +142,6 @@ void RW::unlockNextLevel(Level* l, bool flush)
 }
 bool RW::isAdsDisabled()
 {
-//#ifdef JUNIOR
-//    return true;
-//#else
-//    return _rw->_ads_disabled;
-//#endif
-    //get from storage
-
     //MANAGER
     return (!SavesManager::getInstance()->isAds());
 }
@@ -227,50 +200,10 @@ void RW::loadGame(/*ADStreamIn& is*/)
 {
     if(_rw)
     {
-        //Read the number of collections
-        //uint16_t mark_check = 0;
-        //is >> mark_check;
-
-        //if(mark_check == _levels_mark)
-        //{
-
-//            uint32_t collections_number = 0;
-//            is >> collections_number;
-
-
-//            //Read all collections
-//            for(unsigned int i=0; i<collections_number && is.isOK(); ++i)
-//            {
-//                uint32_t col_id = 0;
-//                is >> col_id;
-
-//                CollectionsArr::iterator col = _rw->_collections.find(col_id);
-
-//                //If the collection id is valid
-//                if(col == _rw->_collections.end())
-//                    is.setError();
-//                else
-//                {
-//                    Collection* a = col->second;
-//                    readCollectionInfo(a, is);
-//                    a->updateStampsAndCrownsCount();
-//                }
-//            }
-
-        //}
-
 
         //Read all collections
         for(auto& i : _rw->_collections)
         {
-//        for(CollectionsArr::iterator i = _rw->_collections.begin();
-//            i<_rw->_collections.end(); ++i)
-//        {
-            //uint32_t col_id = i.first;
-
-            //CollectionsArr::iterator col = _rw->_collections.find(col_id);
-
-
             Collection* a = i.second;
             readCollectionInfo(a);
             a->updateStampsAndCrownsCount();
@@ -307,74 +240,30 @@ void RW::readCollectionInfo(Collection* a)
 {
     if(_rw)
     {
-
         //get status from MANGER(saves)
         bool has_status = SavesManager::getInstance()->hasCollectionStateValue(a->getCollectionID());
         if(has_status)
             a->_state = SavesManager::getInstance()->getCollectionState(a->getCollectionID());
 
-        //if(a->getCollectionID() == 100)
-        //    a->_state = Collection::Unlocked;
+        for(unsigned int i=0; i<a->_levels.size();++i)
+        {
+            Level* l = a->_levels[i];
+            bool has_level_status = SavesManager::getInstance()->hasLevelStateValue(a->getCollectionID(),l->getLevelID());
+            if(has_level_status)
+                l->_state = (SavesManager::getInstance()->getLevelState(a->getCollectionID(),l->getLevelID()));
 
 
-        //uint32_t status = uint32_t(Collection::InShop);
-        //is >> status;
-
-
-        //Read the number of levels in collection
-        //uint16_t levels_number = 0;
-        //is >> levels_number;
-        //a->_state = Collection::CollectionState(status);
-
-        //If number is valid
-//        if(levels_number <= a->_levels.size())
-//        {
-            //Read all levels
-//            for(unsigned int i=0; i<levels_number && is.isOK(); ++i)
-//            {
-            for(unsigned int i=0; i<a->_levels.size();++i)
+            //read found solutions
+            bool has_solutions = SavesManager::getInstance()->hasSolutions(a->getCollectionID(),l->getLevelID());
+            if(has_solutions)
             {
-                //uint32_t lev_id = static_cast<uint32_t>(a->_levels.size());
-                //is >> lev_id;
+                l->_found_solutions = SavesManager::getInstance()->getSolutions(a->getCollectionID(),l->getLevelID());
+            }
 
-                //If the level id is valid
-                //if(lev_id >= a->_levels.size())
-                 //   is.setError();
-                //else
-                //{
-                    Level* l = a->_levels[i];
-                    bool has_level_status = SavesManager::getInstance()->hasLevelStateValue(a->getCollectionID(),l->getLevelID());
-                    if(has_level_status)
-                        l->_state = (SavesManager::getInstance()->getLevelState(a->getCollectionID(),l->getLevelID()));
+            //Get new stamp status
+            //TODO: I comment it, because it gives NoStamps status at the begin
+            //l->updateStampsStatus();
 
-
-                    //If we read about this level it should be unlocked
-                    //l->_state = Level::NoStamps;
-
-                    //Read the found solutions
-                    //Solutions sol;
-                    //is >> sol;
-
-                    //read found solutions
-                    bool has_solutions = SavesManager::getInstance()->hasSolutions(a->getCollectionID(),l->getLevelID());
-                    if(has_solutions)
-                    {
-                        l->_found_solutions = SavesManager::getInstance()->getSolutions(a->getCollectionID(),l->getLevelID());
-                    }
-                    //Add only valid solutions
-//                    l->_found_solutions.reserve(sol.size());
-//                    for(unsigned int j=0; j<sol.size(); ++j)
-//                    {
-//                        if(l->hasSolution(sol[j]))
-//                            l->_found_solutions.push_back(sol[j]);
-//                    }
-
-                    //Get new stamp status
-                    //TODO: I comment it, because it gives NoStamps status at the begin
-                    //l->updateStampsStatus();
-
-                //}
-            //}
         }
     }
 }
@@ -403,74 +292,16 @@ void RW::flushCollectionInfo(Collection* a/*, ADStreamOut& os*/)
 
             }
         }
-//        os << uint32_t(a->getCollectionID());
-
-//        //Calculate the number of opened levels
-//        uint16_t unlocked_levels = 0;
-//        for(unsigned int i=0; i<a->_levels.size(); ++i)
-//        {
-//            Level* l = a->_levels[i];
-//            if(l->getLevelState() != Level::Locked)
-//                unlocked_levels++;
-//        }
-
-//        os << uint32_t(a->getCollectionState());
-
-//        //Flush only opened levels
-//        os << unlocked_levels;
-//        for(unsigned int i=0; i<a->_levels.size(); ++i)
-//        {
-//            Level* l = a->_levels[i];
-//            if(l->getLevelState() != Level::Locked)
-//            {
-//                os << uint32_t(l->getLevelID()) << l->_found_solutions;
-//            }
-//        }
     }
 
 }
 
 //save all collection info
-//void RW::saveGame(ADStreamOut& os)
-//{
-//    if(_rw)
-//    {
-//        //CCLog("Save game started");
-//        //		//Find the number of opened collections
-//        //		unsigned int unlocked_collections = 0;
-//        //		for(unsigned int i=0; i<_rw->_collections.size(); ++i)
-//        //		{
-//        //			Collection* a = _rw->_collections[i];
-//        //			if(a->getCollectionState() == Collection::Unlocked)
-//        //				unlocked_collections++;
-//        //		}
-//        os << uint16_t(_rw->_levels_mark);
-//        os << uint32_t(_rw->_collections.size());
-
-//        //Flush each opened collection
-//        for(CollectionsArr::iterator it = _rw->_collections.begin();
-//            it != _rw->_collections.end(); ++it)
-//        {
-//            Collection* a = it->second;
-
-//            //if(a->getCollectionState() == Collection::Unlocked)
-//            //{
-//           flushCollectionInfo(a, os);
-//            flushCollectionInfo(a);
-//            //}
-//        }
-//        //CCLog("Save game ended");
-//    }
-
-//}
 void RW::saveGame()
 {
     if(_rw)
     {
-        flushSettings();/*
-        std::stringstream ss(std::ios::out | std::ios::binary);
-        ADStreamOut os(ss);*/
-
+        flushSettings();
 
         for(CollectionsArr::iterator it = _rw->_collections.begin();
             it != _rw->_collections.end(); ++it)
@@ -484,9 +315,6 @@ void RW::saveGame()
             }
         }
 
-        //std::ofstream oss(_save_file_path.c_str(), std::ios::out | std::ios::binary);
-        //oss.write(ss.str().c_str(), ss.str().length());
-
     }
 }
 
@@ -495,12 +323,6 @@ void RW::deletePersistentInfo()
 {
     if(_rw)
     {
-//        if(fileExists(_save_file_path.c_str()))
-//        {
-//            std::ofstream oss(_save_file_path.c_str(), std::ios::out | std::ios::binary);
-//            oss.close();
-//        }
-
         for(CollectionsArr::iterator it = _rw->_collections.begin();
             it != _rw->_collections.end(); ++it)
         {
@@ -528,48 +350,13 @@ void RW::readSavedData()
     {
 #ifndef RW_DEBUG
         readSettings();
-
-//#ifdef JUNIOR
-//        bool emit_dayly_hints = false;
-//        uint64_t curtime = time(0);
-//        if(curtime > _rw->_last_hints_add)
-//        {
-//            const uint64_t day = 3600 * 24;
-//            if(curtime > _rw->_last_hints_add + day)
-//            {
-//                emit_dayly_hints = true;
-//            }
-//            else
-//            {
-//                time_t curt = curtime;
-//                time_t lastt = _rw->_last_hints_add;
-//                struct tm * cur_info = localtime ( &curt );
-//                unsigned int cur_day = cur_info->tm_mday;
-
-//                struct tm * last_info = localtime ( &lastt );
-//                unsigned int last_day = last_info->tm_mday;
-
-//                if(cur_day != last_day)
-//                    emit_dayly_hints = true;
-
-//            }
-//        }
-//        if(emit_dayly_hints)
-//        {
-//            _rw->_last_hints_add = curtime;
-//            _rw->addHints(3);
-//            _rw->flushSettings();
-//        }
-
-//#endif
-
         unsigned int stamps_max = 0;
         //Fill by the default info
         for(CollectionsArr::iterator it=_rw->_collections.begin();
             it!=_rw->_collections.end(); ++it)
         {
             Collection* a = it->second;
-            //stamps_max += a->stampsMax();
+            stamps_max += a->stampsMax();
 
             if(a->getCollectionID()==100)
                 a->_state = Collection::Unlocked;
@@ -595,16 +382,11 @@ void RW::readSavedData()
                 a->_max_stamps += l->getSolutions().size();
             }
         }
-        //_rw->_stamps_max = stamps_max;
+        _rw->_stamps_max = stamps_max;
 
         //Read saved info
-        //if(fileExists(_save_file_path.c_str()))
-        //{
-            //std::ifstream iss(_save_file_path.c_str(), std::ios::in | std::ios::binary);
-            //ADStreamIn is(iss);
+        loadGame();
 
-            loadGame(/*is*/);
-        //}
 
 
         updateStampsAndCrownsCount();
@@ -621,59 +403,12 @@ void RW::readSettings()
         bool music_on = SavesManager::getInstance()->isMusicOn();
         bool sounds_on = SavesManager::getInstance()->isSoundOn();
 
-//        if(fileExists(_settings_file_path.c_str()))
-//        {
-//            std::ifstream iss(_settings_file_path.c_str(), std::ios::in | std::ios::binary);
-//            ADStreamIn is(iss);
 
-//            is >> expert_mode >> music_on >> sounds_on;
-
-//            uint16_t unlock_all = 0;
-//            uint16_t buy_all = 0;
-//            uint32_t hints = 0;
 //            is >> unlock_all >> buy_all >> hints;
 //            _rw->_unlock_all_purchased = (unlock_all == 1);
 //            _rw->_buy_all_purchased = (buy_all == 1);
 
-
-
-//#ifndef JUNIOR
-//            const unsigned int MAX_HINTS = 5000;
-//#else
-//            const unsigned int MAX_HINTS = 100;
-//#endif/*
-            /*if(hints > MAX_HINTS)
-                hints = MAX_HINTS;*/
             _rw->_hints_count = SavesManager::getInstance()->getHintCount();
-
-
-
-//#ifdef JUNIOR
-//            is >> _rw->_last_hints_add;
-//#ifdef WIN32
-//            //   _rw->_hints_count += 1000;
-//#endif
-//#endif
-
-//            uint32_t ads_mark_check = 0;
-//            is >> ads_mark_check;
-
-//            if(ads_mark_check == ADS_MARK)
-//            {
-//                uint16_t ads_off = 0;
-//                is >> ads_off;
-
-//                _rw->_ads_disabled = (ads_off == 1);
-//            }
-
-//            if(!_rw->_ads_disabled)
-//            {
-//                if(_rw->_unlock_all_purchased || _rw->_buy_all_purchased)
-//                {
-//                    _rw->_ads_disabled = true;
-//                }
-//            }
-//        }
 
             _rw->_ads_disabled = !SavesManager::getInstance()->isAds();
 
@@ -693,13 +428,9 @@ void RW::readSettings()
 
 void RW::flushSettings()
 {
-    //TODO: implement it
 #ifndef RW_DEBUG
     if(_rw)
     {
-        //std::ofstream oss(_settings_file_path.c_str(), std::ios::out | std::ios::binary);
-        //ADStreamOut os(oss);
-
         bool expert_mode = RW::isExpertMode();
         bool music_on = ADSoundManager::isMusicTurnedOn();
         bool sounds_on = ADSoundManager::isSoundTurnedOn();
@@ -708,18 +439,6 @@ void RW::flushSettings()
         SavesManager::getInstance()->setMusic(music_on);
         SavesManager::getInstance()->setSound(sounds_on);
         SavesManager::getInstance()->setFullVersion(!_rw->_ads_disabled);
-
-        //os << expert_mode << music_on << sounds_on;
-        //os << uint16_t(_rw->_unlock_all_purchased ? 1 : 0) << uint16_t(_rw->_buy_all_purchased ? 1 : 0);
-        //os << uint32_t(_rw->_hints_count);
-
-
-//#ifdef JUNIOR
-//        os << _rw->_last_hints_add;
-//#endif
-
-        //os << ADS_MARK << uint16_t(_rw->_ads_disabled ? 1 : 0);
-
     }
 #endif
 }
@@ -735,12 +454,6 @@ unsigned int RW::allStampsObtained()
     assert(_rw);
     return _rw->_stamps_obtained;
 }
-
-//unsigned int RW::allStampsMax()
-//{
-//    assert(_rw);
-//    return _rw->_stamps_max;
-//}
 
 unsigned int RW::allCrownsObtained()
 {

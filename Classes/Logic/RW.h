@@ -24,9 +24,7 @@ public:
     static bool unlockCollection(Collection* col);
     static void deletePersistentInfo();
     static bool isExpertMode();
-    //static bool hasTranslationPollAlreadyShown();
     static bool isAdsDisabled();
-    //static void pollIsShown();
     static void setExpertMode(bool expert);
     static void flushSettings();
 
@@ -75,7 +73,6 @@ private:
     static void updateStampsAndCrownsCount();
     static void saveLevelSolutions(Level* l);
     static void unlockNextLevel(Level* l, bool flush=true);
-    //static void saveGame(ADStreamOut &os);
 
     static void flushCollectionInfo(Collection *a);
     static void readCollectionInfo(Collection* a);
