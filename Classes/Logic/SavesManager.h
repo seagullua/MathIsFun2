@@ -41,6 +41,7 @@ public:
     void setExpertMode(bool expert_mode);
     void setFullVersion(bool full_version);
     void minusHint();
+    void addHint(int num=1);
 
     void unlockCollection(Collection::CollectionID id);
     void unlockLevel(Collection::CollectionID c_id,
@@ -49,6 +50,8 @@ public:
     void updateLevelState(Collection::CollectionID c_id,
                           Level::LevelID,
                           Level::LevelState);
+    void updateCollectionState(Collection::CollectionID c_id,
+                          Collection::CollectionState);
 
     //bool
     bool hasSolutions(Collection::CollectionID c_id,

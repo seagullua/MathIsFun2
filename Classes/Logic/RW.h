@@ -75,7 +75,7 @@ private:
     static void updateStampsAndCrownsCount();
     static void saveLevelSolutions(Level* l);
     static void unlockNextLevel(Level* l, bool flush=true);
-    static void saveGame(ADStreamOut &os);
+    //static void saveGame(ADStreamOut &os);
 
     static void flushCollectionInfo(Collection *a);
     static void readCollectionInfo(Collection* a);

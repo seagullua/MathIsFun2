@@ -107,7 +107,14 @@ void Loading::initRW()
     ss.write((char*)file_cont, size);
 
     ADStreamIn stream(ss);
+
+    //load storage
+    ADStorage::loadInitialData();
+
+    //read levels
     RW::readLevelsInformation(stream);
+
+    //read saves
     RW::readSavedData();
 
     Tutorial::getInstance()->init();

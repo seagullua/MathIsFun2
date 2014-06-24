@@ -34,12 +34,14 @@ void SavesManager::initStorageBlocks()
     ADStorage::createMapBlock<Level::LevelState>(BLOCK_LEVELS, KeyType::Int);
     ADStorage::createMapBlock<Collection::CollectionState>(BLOCK_COLLECTIONS, KeyType::Int);
 
+    ADStorage::createValueBlock<int64_t>(BLOCK_HINTS);
+
     ADStorage::createValueBlock<int64_t>(BLOCK_MUSIC);
     ADStorage::createValueBlock<int64_t>(BLOCK_SOUND);
     ADStorage::createValueBlock<int64_t>(BLOCK_EXPERT_MODE);
     ADStorage::createValueBlock<int64_t>(BLOCK_FULL_VERSION);
 
-    ADStorage::createValueBlock<int64_t>(BLOCK_HINTS);
+
 }
 
 void SavesManager::initDefaultValues()
@@ -49,13 +51,13 @@ void SavesManager::initDefaultValues()
     //first time set no date - it will be automatically closed
 
     //set date for music, sound, expert mode, full version
-    ADStorage::setValue(BLOCK_MUSIC,1);
-    ADStorage::setValue(BLOCK_SOUND,1);
-    ADStorage::setValue(BLOCK_EXPERT_MODE,0);
-    ADStorage::setValue(BLOCK_FULL_VERSION,0);
+    ADStorage::setValue<int64_t>(BLOCK_MUSIC,1);
+    ADStorage::setValue<int64_t>(BLOCK_SOUND,1);
+    ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,0);
+    ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
 
     //add 10 hints
-    ADStorage::setValue(BLOCK_HINTS,10);
+    ADStorage::setValue<int64_t>(BLOCK_HINTS,10);
 }
 
 //SLOTS
@@ -64,7 +66,7 @@ void SavesManager::levelSolutionChanged(Collection::CollectionID id_collection,
                                         Solutions solutions)
 {
     int64_t key = getLevelID(id_collection,id_level);
-    ADStorage::setMapValue(BLOCK_SOLUTIONS, key, solutions);
+    ADStorage::setMapValue<Solutions>(BLOCK_SOLUTIONS, key, solutions);
 }
 const int64_t SavesManager::getHintCount()
 {
@@ -114,7 +116,7 @@ void SavesManager::setMusic(bool music_mode)
     int64_t music_mode_value = 0;
     if(music_mode)
         music_mode_value = 1;
-    ADStorage::setValue(BLOCK_MUSIC,music_mode_value);
+    ADStorage::setValue<int64_t>(BLOCK_MUSIC,music_mode_value);
 }
 
 void SavesManager::setSound(bool sound_mode)
@@ -122,7 +124,7 @@ void SavesManager::setSound(bool sound_mode)
     int64_t mode_value = 0;
     if(sound_mode)
         mode_value = 1;
-    ADStorage::setValue(BLOCK_SOUND,mode_value);
+    ADStorage::setValue<int64_t>(BLOCK_SOUND,mode_value);
 }
 
 void SavesManager::setExpertMode(bool expert_mode)
@@ -130,7 +132,7 @@ void SavesManager::setExpertMode(bool expert_mode)
     int64_t mode_value = 0;
     if(expert_mode)
         mode_value = 1;
-    ADStorage::setValue(BLOCK_EXPERT_MODE,mode_value);
+    ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,mode_value);
 }
 
 void SavesManager::setFullVersion(bool full_version)
@@ -138,7 +140,7 @@ void SavesManager::setFullVersion(bool full_version)
     int64_t mode_value = 0;
     if(full_version)
         mode_value = 1;
-    ADStorage::setValue(BLOCK_FULL_VERSION,mode_value);
+    ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,mode_value);
 }
 
 void SavesManager::minusHint()
@@ -146,19 +148,27 @@ void SavesManager::minusHint()
     int64_t hints = ADStorage::getValue<int64_t>(BLOCK_HINTS, 0);
     if(hints>0)
         hints--;
-    return ADStorage::setValue(BLOCK_HINTS, hints);
+    return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);
+}
+
+void SavesManager::addHint(int num)
+{
+    int64_t hints = ADStorage::getValue<int64_t>(BLOCK_HINTS, 0);
+    if(hints>0)
+        hints+=num;
+    return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);
 }
 
 void SavesManager::unlockCollection(Collection::CollectionID id)
 {
-    ADStorage::setMapValue(BLOCK_COLLECTIONS, id, Collection::CollectionState::Unlocked);
+    ADStorage::setMapValue<Collection::CollectionState>(BLOCK_COLLECTIONS, id, Collection::Unlocked);
 }
 
 void SavesManager::unlockLevel(Collection::CollectionID c_id,
                                Level::LevelID l_id)
 {
     int64_t id = getLevelID(c_id,l_id);
-    ADStorage::setMapValue(BLOCK_LEVELS, id, Level::LevelState::NoStamps);
+    ADStorage::setMapValue<Level::LevelState>(BLOCK_LEVELS, id, Level::NoStamps);
 }
 
 void SavesManager::updateLevelState(Collection::CollectionID c_id,
@@ -166,7 +176,13 @@ void SavesManager::updateLevelState(Collection::CollectionID c_id,
                                     Level::LevelState new_state)
 {
     int64_t id = getLevelID(c_id,l_id);
-    ADStorage::setMapValue(BLOCK_LEVELS, id, new_state);
+    ADStorage::setMapValue<Level::LevelState>(BLOCK_LEVELS, id, new_state);
+}
+
+void SavesManager::updateCollectionState(Collection::CollectionID c_id,
+                      Collection::CollectionState state)
+{
+    ADStorage::setMapValue<Collection::CollectionState>(BLOCK_COLLECTIONS, c_id, state);
 }
 
 bool SavesManager::hasSolutions(Collection::CollectionID c_id,
@@ -200,7 +216,7 @@ Collection::CollectionState SavesManager::getCollectionState(
 {
     return ADStorage::getMapValue<Collection::CollectionState>(BLOCK_COLLECTIONS,
                                                                id,
-                                                               Collection::CollectionState::Locked);
+                                                               Collection::Locked);
 }
 
 Level::LevelState SavesManager::getLevelState(
@@ -210,7 +226,7 @@ Level::LevelState SavesManager::getLevelState(
     int64_t id = getLevelID(c_id,l_id);
     return ADStorage::getMapValue<Level::LevelState>(BLOCK_LEVELS,
                                                      id,
-                                                     Level::LevelState::Locked);
+                                                     Level::Locked);
 
 }
 

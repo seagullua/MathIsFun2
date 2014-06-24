@@ -349,6 +349,9 @@ void RW::readCollectionInfo(Collection* a)
                     else
                         l->_state = Level::Locked;
 
+                    if(a->getCollectionID() == 100 && l->getLevelID() == 0)
+                        l->_state = Level::NoStamps;
+
                     //If we read about this level it should be unlocked
                     //l->_state = Level::NoStamps;
 
@@ -384,8 +387,22 @@ void RW::flushCollectionInfo(Collection* a/*, ADStreamOut& os*/)
 {
     if(_rw)
     {
-        //TODO: write it correctly
+        //MANAGER: save info
+        SavesManager::getInstance()->unlockCollection(a->getCollectionID());
 
+        for(unsigned int i=0; i<a->_levels.size(); ++i)
+        {
+            Level* l = a->_levels[i];
+            SavesManager::getInstance()->updateLevelState(a->getCollectionID(),
+                                                          l->getLevelID(),
+                                                          l->getLevelState());
+            if(l->getLevelState() != Level::Locked)
+            {
+                SavesManager::getInstance()->levelSolutionChanged(a->getCollectionID(),
+                                                                  l->getLevelID(),
+                                                                  l->getSolutions());
+            }
+        }
 //        os << uint32_t(a->getCollectionID());
 
 //        //Calculate the number of opened levels
@@ -414,38 +431,38 @@ void RW::flushCollectionInfo(Collection* a/*, ADStreamOut& os*/)
 }
 
 //save all collection info
-void RW::saveGame(ADStreamOut& os)
-{
-    if(_rw)
-    {
-        //CCLog("Save game started");
-        //		//Find the number of opened collections
-        //		unsigned int unlocked_collections = 0;
-        //		for(unsigned int i=0; i<_rw->_collections.size(); ++i)
-        //		{
-        //			Collection* a = _rw->_collections[i];
-        //			if(a->getCollectionState() == Collection::Unlocked)
-        //				unlocked_collections++;
-        //		}
-        os << uint16_t(_rw->_levels_mark);
-        os << uint32_t(_rw->_collections.size());
+//void RW::saveGame(ADStreamOut& os)
+//{
+//    if(_rw)
+//    {
+//        //CCLog("Save game started");
+//        //		//Find the number of opened collections
+//        //		unsigned int unlocked_collections = 0;
+//        //		for(unsigned int i=0; i<_rw->_collections.size(); ++i)
+//        //		{
+//        //			Collection* a = _rw->_collections[i];
+//        //			if(a->getCollectionState() == Collection::Unlocked)
+//        //				unlocked_collections++;
+//        //		}
+//        os << uint16_t(_rw->_levels_mark);
+//        os << uint32_t(_rw->_collections.size());
 
-        //Flush each opened collection
-        for(CollectionsArr::iterator it = _rw->_collections.begin();
-            it != _rw->_collections.end(); ++it)
-        {
-            Collection* a = it->second;
+//        //Flush each opened collection
+//        for(CollectionsArr::iterator it = _rw->_collections.begin();
+//            it != _rw->_collections.end(); ++it)
+//        {
+//            Collection* a = it->second;
 
-            //if(a->getCollectionState() == Collection::Unlocked)
-            //{
-//            flushCollectionInfo(a, os);
-            flushCollectionInfo(a);
-            //}
-        }
-        //CCLog("Save game ended");
-    }
+//            //if(a->getCollectionState() == Collection::Unlocked)
+//            //{
+////            flushCollectionInfo(a, os);
+//            flushCollectionInfo(a);
+//            //}
+//        }
+//        //CCLog("Save game ended");
+//    }
 
-}
+//}
 void RW::saveGame()
 {
     if(_rw)
@@ -462,6 +479,7 @@ void RW::saveGame()
 
             if(a->getCollectionState() == Collection::Unlocked)
             {
+
                 flushCollectionInfo(a);
             }
         }
@@ -488,7 +506,11 @@ void RW::deletePersistentInfo()
         {
             Collection* a = it->second;
             if(a->_state == Collection::Unlocked)
+            {
                 a->_state = Collection::Locked;
+                SavesManager::getInstance()->updateCollectionState(a->getCollectionID(),
+                                                                   Collection::Locked);
+            }
         }
         readSavedData();
         saveGame();
@@ -676,6 +698,11 @@ void RW::flushSettings()
         bool expert_mode = RW::isExpertMode();
         bool music_on = ADSoundManager::isMusicTurnedOn();
         bool sounds_on = ADSoundManager::isSoundTurnedOn();
+
+        SavesManager::getInstance()->setExpertMode(expert_mode);
+        SavesManager::getInstance()->setMusic(music_on);
+        SavesManager::getInstance()->setSound(sounds_on);
+        SavesManager::getInstance()->setFullVersion(!_rw->_ads_disabled);
 
         //os << expert_mode << music_on << sounds_on;
         //os << uint16_t(_rw->_unlock_all_purchased ? 1 : 0) << uint16_t(_rw->_buy_all_purchased ? 1 : 0);
@@ -877,6 +904,8 @@ unsigned int RW::getHintCount()
 void RW::addHints(unsigned int to_add)
 {
     _rw->_hints_count += to_add;
+    SavesManager::getInstance()->addHint(to_add);
+
     flushSettings();
 }
 
