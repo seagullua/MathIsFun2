@@ -146,6 +146,12 @@ bool RW::isAdsDisabled()
     return (!SavesManager::getInstance()->isAds());
 }
 
+
+bool RW::isFullVersion()
+{
+    return (SavesManager::getInstance()->isFullVersion());
+}
+
 bool RW::registerSolution(Level* l, const Solution& s)
 {
     if(_rw)
@@ -229,6 +235,10 @@ void RW::setExpertMode(bool expert)
         //MANAGER
         SavesManager::getInstance()->setExpertMode(expert);
     }
+}
+void RW::buyFullVersion()
+{
+    SavesManager::getInstance()->setFullVersion(true);
 }
 
 /**
