@@ -81,8 +81,6 @@ SOURCES += main.cpp \
     PlatformEmulator.cpp \
     ../Classes/Scenes/SceneStyle.cpp \
     ../Classes/GameInfo.cpp \
-    ../Classes/PopUp/UnlockWindow.cpp \
-    ../Classes/PopUp/PurchaseWindow.cpp \
     ../Classes/Logic/SavesManager.cpp \
     ../Classes/PopUp/BuyFullVersion.cpp
 
@@ -129,9 +127,6 @@ HEADERS += \
     ../Classes/Core/Native.h \
     ../Classes/Scenes/SceneStyle.h \
     ../Classes/GameInfo.h \
-    ../Classes/PopUp/UnlockWindow.h \
-    ../Classes/PopUp/PurchaseWindow.h \
     ../Classes/Logic/SavesManager.h \
-    ../Classes/PopUp/PurchaseWindow.h \
     ../Classes/PopUp/BuyFullVersion.h
 
