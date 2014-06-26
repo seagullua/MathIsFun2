@@ -49,12 +49,15 @@ const Collection::CollectionState Collection::getCollectionState() const
     return _state;
 }
 #include "Logic/RW.h"
+#include "SavesManager.h"
 bool Collection::isReadyToBeUnlocked() const
 {
     if(_state == Locked)
     {
-        unsigned int overall_stamp = RW::allStampsObtained();
-        if(overall_stamp >= _stamps_to_unlock)
+//        unsigned int overall_stamp = RW::allStampsObtained();
+//        if(overall_stamp >= _stamps_to_unlock)
+//            return true;
+        if(SavesManager::getInstance()->isFullVersion())
             return true;
     }
     return false;

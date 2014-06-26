@@ -57,7 +57,7 @@ void SavesManager::initDefaultValues()
         ADStorage::setValue<int64_t>(BLOCK_SOUND,1);
 
     if(!ADStorage::hasValue(BLOCK_EXPERT_MODE))
-        ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,0);
+        ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,1);
 
 
     if(!ADStorage::hasValue(BLOCK_FULL_VERSION))
