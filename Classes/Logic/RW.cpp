@@ -385,12 +385,8 @@ void RW::readSavedData()
             //open first two collections
             if(a->getCollectionID()==100 || a->getCollectionID()==200)
                 a->_state = Collection::Unlocked;
-            if(a->getCollectionState() == Collection::InShop && _rw->_buy_all_purchased)
-            {
+            else
                 a->_state = Collection::Locked;
-            }
-            if(_rw->_unlock_all_purchased && a->getCollectionState() == Collection::Locked)
-                a->_state = Collection::Unlocked;
 
 
             a->_stamps_obtained = 0;
@@ -656,7 +652,7 @@ void RW::addHints(unsigned int to_add)
     flushSettings();
 }
 
-//TODO: unnecessary function
+//buy full version
 void RW::unlockAllCollectionsPurchased()
 {
     if(_rw)
@@ -670,30 +666,7 @@ void RW::unlockAllCollectionsPurchased()
                 a->_state = Collection::Unlocked;
             }
         }
-        _rw->_unlock_all_purchased = true;
-
-        saveGame();
-
-    }
-}
-void RW::buyAllCollectionsPurchased()
-{
-    if(_rw)
-    {
-        for(CollectionsArr::iterator it = _rw->_collections.begin();
-            it != _rw->_collections.end(); ++it)
-        {
-            Collection* a = it->second;
-            if(a->getCollectionState() == Collection::InShop)
-            {
-                if(_rw->_unlock_all_purchased)
-                    a->_state = Collection::Unlocked;
-                else
-                    a->_state = Collection::Locked;
-
-            }
-        }
-        _rw->_buy_all_purchased = true;
+        //_rw->_unlock_all_purchased = true;
 
         saveGame();
 
@@ -716,25 +689,9 @@ void RW::useOneHint()
     }
 }
 
-void RW::buyCollection(const Collection::CollectionID id)
-{
-    if(_rw)
-    {
-        CollectionsArr::iterator it = _rw->_collections.find(id);
-        if(it != _rw->_collections.end())
-        {
-            Collection* a = it->second;
-            a->_state = Collection::Unlocked;
-            saveGame();
-        }
-    }
-}
-
 RW::RW()
     : _expert_mode(SavesManager::getInstance()->isExpertModeOn()),
       _hints_count(0),
-      _unlock_all_purchased(false),
-      _buy_all_purchased(false),
       _ads_disabled(!SavesManager::getInstance()->isAds())
 {
 }

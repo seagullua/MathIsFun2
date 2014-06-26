@@ -46,9 +46,8 @@ public:
 
 
     static void saveGame();
+    //buy full version
     static void unlockAllCollectionsPurchased();
-    static void buyAllCollectionsPurchased();
-    static void buyCollection(const Collection::CollectionID id);
     static void disableAds();
 
 
@@ -71,12 +70,11 @@ private:
     static RW* _rw;
     RW();
     bool _expert_mode;
-    bool _unlock_all_purchased;
-    bool _buy_all_purchased;
     bool _ads_disabled;
     unsigned int _stamps_obtained;
     unsigned int _crowns_obtained;
     CollectionsArr _collections;
+
     int64_t _hints_count;
     static const uint16_t _levels_mark = 0xAABD;
 
