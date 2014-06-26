@@ -17,6 +17,17 @@ void BuyFullVersion::onCreate(CCNode *parent)
     window_title->setPosition(ccp(x_middle, size.height * 0.85f));
     parent->addChild(window_title);
 
+    /////////////////////////////////////////////////////////
+
+    //add full version description
+    CCLabelTTF* description = CCLabelTTF::create(_("buy_full_version.description"),
+                                                  ADLanguage::getFontName(),
+                                                  40);
+    description->setColor(GameInfo::COLOR_LIGHT_GRAY);
+    description->setPosition(ccp(x_middle+size.width*0.15, size.height * 0.55f));
+    parent->addChild(description);
+
+    ////////////////////////////////////////////////////
 
     //create menu for buttons
     CCMenu* menu = CCMenu::create();

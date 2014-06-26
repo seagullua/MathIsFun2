@@ -41,48 +41,56 @@ unsigned int itemIdToId(const std::string& item_id, const std::string& prefix)
 
 void InAppDelegate::purchaseSuccessful(const ADInApp::ProductID& itemId)
 {
-    bool kill_ads = false;
-    if(itemId == Store::ITEM_UNLOCK_ALL)
+    //bool kill_ads = false;
+    if(itemId == Store::BUY_FULL_VERSION)
     {
         RW::unlockAllCollectionsPurchased();
         SelectCollection::purchaseReload();
-        kill_ads = true;
-    }
-    else if(itemId == Store::ITEM_BUY_ALL)
-    {
-        RW::buyAllCollectionsPurchased();
-        SelectCollection::purchaseOpenCollections();
-        kill_ads = true;
-    }
-    else if(isPrefixItem(itemId, Store::PREFIX_BUY_COLLECTION))
-    {
-        unsigned int coll_id = itemIdToId(itemId, Store::PREFIX_BUY_COLLECTION);
-        RW::buyCollection(coll_id);
-        SelectCollection::purchaseOpenCollections();
-        kill_ads = true;
-    }
-    else if(isPrefixItem(itemId, Store::PREFIX_BUY_HINTS))
-    {
-        unsigned int count = itemIdToId(itemId, Store::PREFIX_BUY_HINTS);
-        RW::addHints(count);
-        LevelScene::purchaseUpdateHints();
-        kill_ads = true;
-    }
-    if(itemId == Store::ITEM_KILL_ADS || kill_ads)
-    {
-        if(!RW::isAdsDisabled())
-        {
-            RW::disableAds();
 
-            if (itemId == Store::ITEM_KILL_ADS)
-            {
-                RW::addHints(10);
-                LevelScene::purchaseUpdateHints();
-            }
-
-            ADAds::disableAds();
-        }
+        RW::disableAds();
+        ADAds::disableAds();
     }
+//    if(itemId == Store::ITEM_UNLOCK_ALL)
+//    {
+//        RW::unlockAllCollectionsPurchased();
+//        SelectCollection::purchaseReload();
+//        kill_ads = true;
+//    }
+//    else if(itemId == Store::ITEM_BUY_ALL)
+//    {
+//        RW::buyAllCollectionsPurchased();
+//        SelectCollection::purchaseOpenCollections();
+//        kill_ads = true;
+//    }
+//    else if(isPrefixItem(itemId, Store::PREFIX_BUY_COLLECTION))
+//    {
+//        unsigned int coll_id = itemIdToId(itemId, Store::PREFIX_BUY_COLLECTION);
+//        RW::buyCollection(coll_id);
+//        SelectCollection::purchaseOpenCollections();
+//        kill_ads = true;
+//    }
+//    else if(isPrefixItem(itemId, Store::PREFIX_BUY_HINTS))
+//    {
+//        unsigned int count = itemIdToId(itemId, Store::PREFIX_BUY_HINTS);
+//        RW::addHints(count);
+//        LevelScene::purchaseUpdateHints();
+//        kill_ads = true;
+//    }
+//    if(itemId == Store::ITEM_KILL_ADS || kill_ads)
+//    {
+//        if(!RW::isAdsDisabled())
+//        {
+//            RW::disableAds();
+
+//            if (itemId == Store::ITEM_KILL_ADS)
+//            {
+//                RW::addHints(10);
+//                LevelScene::purchaseUpdateHints();
+//            }
+
+//            ADAds::disableAds();
+//        }
+//    }
 }
 void InAppDelegate::purchaseFailed(const ADInApp::ProductID&, const ADInApp::ErrorType)
 {}

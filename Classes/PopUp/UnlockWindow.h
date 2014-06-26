@@ -18,7 +18,7 @@ private:
     }
     void onUnlockClick()
     {
-        Store::buyItem(Store::ITEM_UNLOCK_ALL);
+        //Store::buyItem(Store::ITEM_UNLOCK_ALL);
     }
 
 

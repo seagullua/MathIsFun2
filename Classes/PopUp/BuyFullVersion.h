@@ -13,7 +13,7 @@ public:
 private:
     void onBuyFullVersionClick()
     {
-
+        Store::buyItem(Store::BUY_FULL_VERSION);
     }
     void onBuyLaterClick()
     {

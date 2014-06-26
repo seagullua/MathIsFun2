@@ -15,16 +15,16 @@ private:
     void onBuyOneClick()
     {
         std::stringstream ss;
-        ss << Store::PREFIX_BUY_COLLECTION << _collection->getCollectionID();
-        bool res = Store::buyItem(ss.str());
-        if(!res)
-        {
-            cocos2d::CCLog(("Buy collection failed: "+ss.str()).c_str());
-        }
+        //ss << Store::PREFIX_BUY_COLLECTION << _collection->getCollectionID();
+        //bool res = Store::buyItem(ss.str());
+        //if(!res)
+        //{
+        //    cocos2d::CCLog(("Buy collection failed: "+ss.str()).c_str());
+        //}
     }
     void onBuyAllClick()
     {
-        Store::buyItem(Store::ITEM_BUY_ALL);
+       // Store::buyItem(Store::ITEM_BUY_ALL);
     }
 
 
