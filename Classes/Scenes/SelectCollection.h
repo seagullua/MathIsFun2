@@ -11,19 +11,13 @@
 class SelectCollection : public SceneStyle
 {
 public:
-    enum Mode
-    {
-        Collections,
-        Shop
-    };
-
-    SelectCollection(const Mode mode = Collections);
+    SelectCollection();
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
 
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
-    static cocos2d::CCScene* scene(const Mode mode = Collections);
-    static SelectCollection* create(const Mode mode = Collections);
+    static cocos2d::CCScene* scene();
+    static SelectCollection* create();
 
 
 
@@ -90,12 +84,9 @@ private:
 
     static cocos2d::CCPoint _last_scroll_view_offset;
     ADScrollView* _collections_scroll_view;
-    Mode _mode;
-
-
     ADAds::Banner* _bottom_banner;
 public:
-    CREATE_FUNC(SelectCollection)
+    //CREATE_FUNC(SelectCollection)
 };
 
 #endif // SELECTCOLLECTION_H

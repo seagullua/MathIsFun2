@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-06-26 14:36+0200\n"
+"POT-Creation-Date: 2014-06-26 15:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,6 +41,18 @@ msgstr "Found Solutions"
 #: ../../Classes/Layers/LevelStop.cpp:77
 msgid "menu.levels"
 msgstr "Levels"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:13
+msgid "buy_full_version.title"
+msgstr "Buy Full Game Version"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:43
+msgid "pop_up.buy_full_version.button.buy_now"
+msgstr "Buy Now"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:67
+msgid "pop_up.buy_full_version.button.later"
+msgstr "Buy Later"
 
 #: ../../Classes/PopUp/UnlockWindow.cpp:17
 msgid "select_collection.unlock_title"
@@ -89,57 +101,53 @@ msgstr "OK"
 msgid "main_menu.go_out.title"
 msgstr "Would you like to leave the program?"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:126
+#: ../../Classes/Scenes/SelectCollection.cpp:95
 msgid "collection_name.100"
 msgstr "Orange Juice"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:127
+#: ../../Classes/Scenes/SelectCollection.cpp:96
 msgid "collection_name.200"
 msgstr "Green Kivi"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:128
+#: ../../Classes/Scenes/SelectCollection.cpp:97
 msgid "collection_name.300"
 msgstr "Big Grapes"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:129
+#: ../../Classes/Scenes/SelectCollection.cpp:98
 msgid "collection_name.400"
 msgstr "Lime Jelly"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:130
+#: ../../Classes/Scenes/SelectCollection.cpp:99
 msgid "collection_name.500"
 msgstr "Magenta Cherry"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:131
+#: ../../Classes/Scenes/SelectCollection.cpp:100
 msgid "collection_name.600"
 msgstr "Yellow Lemon"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:133
+#: ../../Classes/Scenes/SelectCollection.cpp:102
 msgid "collection_name.1000"
 msgstr "African Grapefruit"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:134
+#: ../../Classes/Scenes/SelectCollection.cpp:103
 msgid "collection_name.2000"
 msgstr "Nutritious Plum"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:135
+#: ../../Classes/Scenes/SelectCollection.cpp:104
 msgid "collection_name.3000"
 msgstr "Autumn Apple"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:136
+#: ../../Classes/Scenes/SelectCollection.cpp:105
 msgid "collection_name.4000"
 msgstr "Raspberry"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:138
+#: ../../Classes/Scenes/SelectCollection.cpp:107
 msgid "collection_name.locked"
 msgstr "Locked"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:373
+#: ../../Classes/Scenes/SelectCollection.cpp:321
 msgid "select_collection.title"
 msgstr "Select Collection"
-
-#: ../../Classes/Scenes/SelectCollection.cpp:395
-msgid "game_store.title"
-msgstr "Game Store"
 
 #: ../../Classes/Scenes/SelectLevel.cpp:84
 msgid "select_levels.title"
@@ -166,6 +174,9 @@ msgid "pop_up.reset_progress.title"
 msgstr ""
 "Would you like to reset\n"
 " your Progress?"
+
+#~ msgid "game_store.title"
+#~ msgstr "Game Store"
 
 #~ msgid "iap.error.billing_unavaliable"
 #~ msgstr "Error"

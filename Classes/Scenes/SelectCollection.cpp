@@ -5,7 +5,7 @@
 #include "Logic/Language.h"
 #include "SelectCollection_UnlockAnimator.h"
 #include "PopUp/UnlockWindow.h"
-#include "PopUp/PurchaseWindow.h"
+#include "PopUp/BuyFullVersion.h"
 #include "Store.h"
 #include "GameInfo.h"
 #include "ADLib/Device/ADLanguage.h"
@@ -14,23 +14,19 @@ using namespace cocos2d;
 
 
 
-
-
-
-SelectCollection::SelectCollection(const Mode mode)
+SelectCollection::SelectCollection()
     : _title_select_collection(0),
-      _mode(mode),
       _bottom_banner(0)
 {
 }
 
-CCScene* SelectCollection::scene(const Mode mode)
+CCScene* SelectCollection::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
 
     // 'layer' is an autorelease object
-    SelectCollection *layer = SelectCollection::create(mode);
+    SelectCollection *layer = SelectCollection::create();
 
     // add layer as a child to scene
     CCCallFunc* back = CCCallFunc::create(layer,
@@ -42,9 +38,9 @@ CCScene* SelectCollection::scene(const Mode mode)
     return scene;
 }
 
-SelectCollection* SelectCollection::create(const SelectCollection::Mode mode)
+SelectCollection* SelectCollection::create()
 {
-    SelectCollection *pRet = new SelectCollection(mode);
+    SelectCollection *pRet = new SelectCollection();
     if (pRet && pRet->init())
     {
         pRet->autorelease();
@@ -64,12 +60,8 @@ void SelectCollection::onBackClick()
 {
 
     hideEverything([this](){
-        if(_mode == Shop)
-            CCDirector::sharedDirector()->replaceScene(
-                        SelectCollection::scene(Collections));
-        else
-            CCDirector::sharedDirector()->replaceScene(
-                        MainMenu::scene());
+        CCDirector::sharedDirector()->replaceScene(
+                    MainMenu::scene());
     });
 
 }
@@ -84,24 +76,8 @@ void SelectCollection::onCollectionSelect(const CollectionTile& selected)
 
         if(current->getCollectionState()==Collection::Locked)
         {
-            //                //The collection locked;
-            unsigned int more_stamps_needed = current->stampsToUnlock() -
-                    RW::allStampsObtained();
-            //                more_stamps_needed;
-            //                CCLOG("More stamps needed");
-            //                //TODO: show the window with number of stamps needed
-            _pop_up_manager.openWindow(new UnlockWindow(more_stamps_needed));
-        }
-        else if(current->getCollectionState() == Collection::InShop)
-        {
-            if(_mode == Shop)
-            {
-                _pop_up_manager.openWindow(new PurchaseWindow(current));
-            }
-            else
-            {
-                CCLOG("Something wrong with collection");
-            }
+            //open Window Buy Full Version
+            _pop_up_manager.openWindow(new BuyFullVersion());
         }
         else
         {
@@ -112,13 +88,6 @@ void SelectCollection::onCollectionSelect(const CollectionTile& selected)
 
         }
     }
-    else
-    {
-        hideEverything([](){
-            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Shop));
-        });
-    }
-
 
 }
 void toTranslation()
@@ -203,17 +172,11 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
 
         CCNode* stamps_number = 0;
 
-        if(_mode == Collections)
-        {
-            ccColor3B label_color(ccc3(61,63,64));
-            stamps_number = createLabel(stamps_label_text,  "font/mathisfun_digits.plist",
-                                        "font/mathisfun_digits.png",
-                                        label_color);
-        }
-        else
-        {
-            stamps_number = CCSprite::create(stamps_label_text.c_str());
-        }
+        ccColor3B label_color(ccc3(61,63,64));
+        stamps_number = createLabel(stamps_label_text,  "font/mathisfun_digits.plist",
+                                    "font/mathisfun_digits.png",
+                                    label_color);
+
         stamps_number->setAnchorPoint(ccp(0,0.5));
         stamps_number->setPositionY(stamp->getPositionY());
 
@@ -351,62 +314,27 @@ bool SelectCollection::init()
     float SCALE = ADScreen::getScaleFactor();
     float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
 
-
-    //Get the screen start of cordinates
-
     //Get the sprites loader
     SpritesLoader spl;
 
-    if(_mode != Collections)
-    {
-        ADStatistics::logEvent("OnMoreLevelsClick");
-    }
-    //Get the Select collection label
+    //window title
+    _title_select_collection = CCLabelTTF::create(_("select_collection.title"),
+                                           ADLanguage::getFontName(),
+                                           GameInfo::SIZE_MENU_TITLE);
+    _title_select_collection->setAnchorPoint(ccp(0.5, 1));
+    _title_select_collection->setPosition(ccp(x_middle_of_sheet,
+                                         VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
+    _title_select_collection->setColor(GameInfo:: COLOR_ORANGE);
+    this->addChild(_title_select_collection);
 
-    if(_mode == Collections)
-    {
-    //    _title_select_collection =  CCSprite::create(
-    //                Language::localizeFileName("select_collection/select_collection.png").c_str());
-    //    this->addChild(_title_select_collection);
-
-        //developer window title
-        _title_select_collection = CCLabelTTF::create(_("select_collection.title"),
-                                               ADLanguage::getFontName(),
-                                               GameInfo::SIZE_MENU_TITLE);
-        _title_select_collection->setAnchorPoint(ccp(0.5, 1));
-        _title_select_collection->setPosition(ccp(x_middle_of_sheet,
-                                             VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
-        _title_select_collection->setColor(GameInfo:: COLOR_ORANGE);
-        this->addChild(_title_select_collection);
-
-        //Make it fade in slowly
-        _title_select_collection->setOpacity(0);
-        CCFadeTo* title_fade_in = CCFadeTo::create(0.6f, 255);
-        _title_select_collection->runAction(title_fade_in);
+    //Make it fade in slowly
+    _title_select_collection->setOpacity(0);
+    CCFadeTo* title_fade_in = CCFadeTo::create(0.6f, 255);
+    _title_select_collection->runAction(title_fade_in);
 
 
-    }
-    else
-    {
-   //     _title_select_collection = CCSprite::create(
-   //                 Language::localizeFileName("select_collection/game_store.png").c_str());
-   //     this->addChild(_title_select_collection);
 
-        _title_select_collection = CCLabelTTF::create(_("game_store.title"),
-                                               ADLanguage::getFontName(),
-                                               GameInfo::SIZE_MENU_TITLE);
-        _title_select_collection->setAnchorPoint(ccp(0.5, 1));
-        _title_select_collection->setPosition(ccp(x_middle_of_sheet,
-                                             VISIBLE_SIZE.height + ORIGIN.y - 50/SCALE));
-        _title_select_collection->setColor(GameInfo:: COLOR_ORANGE);
-        this->addChild(_title_select_collection);
 
-        //Make it fade in slowly
-        _title_select_collection->setOpacity(0);
-        CCFadeTo* title_fade_in = CCFadeTo::create(0.6f, 255);
-        _title_select_collection->runAction(title_fade_in);
-
-    }
     //Put this label at the top of the screen
     _title_select_collection->setAnchorPoint(ccp(0.5, 1));
     //float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
@@ -434,71 +362,39 @@ bool SelectCollection::init()
     unsigned int i = 0;
 
     const CollectionsArr& arr = RW::getCollections();
-    bool in_shop = false;
     bool unlocked_one = false;
     for(CollectionsArr::const_iterator it=arr.begin(); it!=arr.end();++it)
     {
         Collection* a = it->second;
 
-        if((a->getCollectionState() != Collection::InShop && _mode == Collections )
-                || (a->getCollectionState() == Collection::InShop && _mode == Shop))
-        {
-            ADMenuItem* paper_item = createCollectionItem(a, _papers_spl);
-            _collections_menu->menu()->addChild(paper_item, 100);
-            //paper_item->setBaseScale(0.7f);
-            paper_item->setPositionX(i * padding_left);
-            i++;
 
-            CollectionTile tile(paper_item, a);
-            _tiles[paper_item] = tile;
-            paper_item->setClickAction([tile, this](){
-                onCollectionSelect(tile);
-            });
-
-            if(a->isReadyToBeUnlocked())
-            {
-
-                CollectionUnlockAnimator* anim = new CollectionUnlockAnimator(_tiles[paper_item], this);
-                anim->autorelease();
-                anim->unlockItem();
-                RW::unlockCollection(a);
-                unlocked_one = true;
-            }
-        }
-        else
-        {
-            in_shop = true;
-        }
-    }
-
-    if(unlocked_one)
-    {
-        RW::saveGame();
-    }
-    if(in_shop && _mode == Collections)
-    {
-        ADMenuItem* paper_item = createCollectionItem(
-                    "select_collection/more_levels_image.png",
-                    Language::localizeFileName("select_collection/clabel_shop.png"),
-                    "",
-                    ccc3(246, 145, 255),
-                    //ccc3(255,153,237),
-                    _papers_spl,
-                    "",
-                    false,
-                    false,
-                    true);
+        ADMenuItem* paper_item = createCollectionItem(a, _papers_spl);
         _collections_menu->menu()->addChild(paper_item, 100);
         //paper_item->setBaseScale(0.7f);
         paper_item->setPositionX(i * padding_left);
         i++;
 
-
-        CollectionTile tile(paper_item, 0, true);
+        CollectionTile tile(paper_item, a);
         _tiles[paper_item] = tile;
         paper_item->setClickAction([tile, this](){
             onCollectionSelect(tile);
         });
+
+        if(a->isReadyToBeUnlocked())
+        {
+
+            CollectionUnlockAnimator* anim = new CollectionUnlockAnimator(_tiles[paper_item], this);
+            anim->autorelease();
+            anim->unlockItem();
+            RW::unlockCollection(a);
+            unlocked_one = true;
+        }
+
+    }
+
+    if(unlocked_one)
+    {
+        RW::saveGame();
     }
 
     _pop_up_manager.addMenuToAutoDisable(_collections_menu->menu());
@@ -591,8 +487,8 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
     //Add our tiles to scroll area
     _collections_scroll_view->addChild(menu);
     _collections_scroll_view->addHighPriorityTouchListener(menu->menu());
-    if(_mode == Collections)
-        _collections_scroll_view->setContentOffset(_last_scroll_view_offset, false);
+
+    _collections_scroll_view->setContentOffset(_last_scroll_view_offset, false);
     //_collections_menu->menu()->setTouchPriority(10);
     //collections->setTouchPriority(-500);
     //Place menu just in place
@@ -624,8 +520,8 @@ void SelectCollection::hideEverything(const Action& callback)
     CCFadeTo* logo_fade = CCFadeTo::create(0.15f, 0);
     _title_select_collection->runAction(logo_fade);
 
-    if(_mode == Collections)
-        _last_scroll_view_offset = _collections_scroll_view->getContentOffset();
+
+    _last_scroll_view_offset = _collections_scroll_view->getContentOffset();
 
     if(_bottom_banner)
         _bottom_banner->removeFromParent();
@@ -660,7 +556,7 @@ void SelectCollection::purchaseReload()
     {
         SelectCollection* col = _last_scene_ptr;
         col->hideEverything([col](){
-            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(col->_mode));
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
         });
     }
 }
@@ -671,7 +567,7 @@ void SelectCollection::purchaseOpenCollections()
     {
         SelectCollection* col = _last_scene_ptr;
         col->hideEverything([](){
-            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene(Collections));
+            CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
         });
     }
 }

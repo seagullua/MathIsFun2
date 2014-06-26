@@ -196,6 +196,14 @@
 		<name>buy_window/zebra.png</name>
 		<project>mif</project>
 	</file>
+	<file>
+		<name>buy_window/background1.png</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>buy_window/background2.png</name>
+		<project>mif</project>
+	</file>
 	
 	
 </directory>
