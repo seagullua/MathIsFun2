@@ -202,7 +202,7 @@ void RW::release()
  * @brief RW::loadGame
  * read collection saves
  */
-void RW::loadGame(/*ADStreamIn& is*/)
+void RW::loadGame()
 {
     if(_rw)
     {

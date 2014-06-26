@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
-	<!--<file>
-		<name>collection_logos/collection_logos.plist.xml</name>
-	</file>-->
-	
-	<file>
-		<name>images/select_collection.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>images/game_store.png.xml</name>
-		<lang>1</lang>
-	</file>
-	
-	<file>
-		<name>new_collection/clabel_locked.png.xml</name>
-		<lang>1</lang>
-	</file>
+
 	<file>
 		<name>new_collection/new_collection.plist.xml</name>
 	</file>
@@ -74,26 +58,7 @@
 		<lang>1</lang>
 		<project>mif</project>
 	</file>
-	<file>
-		<name>new_collection/clabel_shop.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>new_collection/clabel_hard.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>new_collection/clabel_ultrahard.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>new_collection/clabel_easy.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>new_collection/clabel_medium.png.xml</name>
-		<lang>1</lang>
-	</file>
+
 	<file>
 		<name>new_collection/coll_lock.png</name>
 	</file>
@@ -137,60 +102,7 @@
 		<name>new_collection/coll_4000.png</name>
 		<project>mif</project>
 	</file>
-	<file>
-		<name>new_collection/more_levels_image.png</name>
-	</file>
-	
-	<file>
-		<name>unlock_window/unlock_title.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
 
-	<file>
-		<name>unlock_window/unlock_title_junior.png.xml</name>
-		<lang>1</lang>
-		<project>junior</project>
-	</file>
-	
-	<file>
-		<name>unlock_window/unlock_button.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>unlock_window/play_button.png.xml</name>
-		<lang>1</lang>
-	</file>
-	<file>
-		<name>unlock_window/button_background.png</name>
-	</file>
-	
-	<file>
-		<name>unlock_window/unlock_buttons_junior.plist.xml</name>
-		<lang>1</lang>
-		<project>junior</project>
-	</file>
-	
-	<file>
-		<name>unlock_window/unlock_stamp.png</name>
-	</file>
-	
-	<file>
-		<name>buy_window/buy_all_button.png.xml</name>
-		<lang>1</lang>
-		
-	</file>
-	<file>
-		<name>buy_window/buy_one_button.png.xml</name>
-		<lang>1</lang>
-		
-	</file>
-	
-	<file>
-		<name>buy_window/buy_title.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
 	
 	<file>
 		<name>buy_window/zebra.png</name>

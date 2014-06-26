@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>buy_buttons.{lang}.png</texture>
-	<sheet>buy_buttons.{lang}.plist</sheet>
-	
-	<image>buy_all_button.png.xml</image>
-	<image>buy_one_button.png.xml</image>
-</spritesheet>

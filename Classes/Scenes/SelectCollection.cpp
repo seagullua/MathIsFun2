@@ -250,19 +250,6 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
             stamps_label << collection->stampsObtained() << "/" << collection->stampsMax();
             stamps_label_str = stamps_label.str();
         }
-        else
-        {
-            Collection::Difficulty diff = collection->getDifficulty();
-            if(diff == Collection::Easy)
-                stamps_label_str = "select_collection/clabel_easy.png";
-            else if(diff == Collection::Medium)
-                stamps_label_str = "select_collection/clabel_medium.png";
-            else if(diff == Collection::Hard)
-                stamps_label_str = "select_collection/clabel_hard.png";
-            else//(diff == Collection::UltraHard)
-                stamps_label_str = "select_collection/clabel_ultrahard.png";
-            stamps_label_str = Language::localizeFileName(stamps_label_str);
-        }
         image_name << "select_collection/coll_"<< collection->getCollectionID() <<".png";
         //label_name << "select_collection/clabel_"<< collection->getCollectionID() <<".png";
         collection_title = "collection_name."+AD_to_string(collection->getCollectionID());

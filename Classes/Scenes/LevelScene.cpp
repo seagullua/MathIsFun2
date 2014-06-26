@@ -23,7 +23,7 @@ private:
 
     void onCreate(CCNode *parent)
     {
-        float scaled = ADScreen::getScaleFactor();
+        //float scaled = ADScreen::getScaleFactor();
 
         CCSize size = parent->getContentSize();
         float x_middle = size.width / 2;
