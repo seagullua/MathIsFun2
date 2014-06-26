@@ -12,5 +12,6 @@ cocos2d::ccColor3B GameInfo::COLOR_DARK_BLUE = cocos2d::ccc3(34,117,202);
 cocos2d::ccColor3B GameInfo::COLOR_DARK_GREEN = cocos2d::ccc3(0,222,30);
 cocos2d::ccColor3B GameInfo::COLOR_ORANGE= cocos2d::ccc3(255,144,0);
 cocos2d::ccColor3B GameInfo::COLOR_GRAY= cocos2d::ccc3(75,75,75);
+cocos2d::ccColor3B GameInfo::COLOR_LIGHT_GRAY= cocos2d::ccc3(121,121,121);
 cocos2d::ccColor3B GameInfo::COLOR_RED= cocos2d::ccc3(250,70,10);
 cocos2d::ccColor3B GameInfo::COLOR_DARK= cocos2d::ccc3(0,0,0);

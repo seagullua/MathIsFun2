@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Joiny\n"
-"POT-Creation-Date: 2014-06-23 21:44+0200\n"
+"Project-Id-Version: MathIsFun2\n"
+"POT-Creation-Date: 2014-06-26 14:36+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
@@ -52,11 +52,11 @@ msgstr ""
 msgid "select_collection.unlock_title_small"
 msgstr "Try to play more or unlock now"
 
-#: ../../Classes/PopUp/UnlockWindow.cpp:87
+#: ../../Classes/PopUp/UnlockWindow.cpp:94
 msgid "select_collection.unlock_image"
 msgstr "Unlock All"
 
-#: ../../Classes/PopUp/UnlockWindow.cpp:101
+#: ../../Classes/PopUp/UnlockWindow.cpp:119
 msgid "select_collection.play_more_image"
 msgstr "Play More"
 
@@ -68,7 +68,8 @@ msgstr "Developers"
 msgid "developers.list"
 msgstr ""
 "Andrii Chaika\n"
-"Diana Sirenko"
+"Diana Sirenko\n"
+"Ruslana Chaika"
 
 #: ../../Classes/Scenes/LevelScene.cpp:33
 msgid "pop_up.buy_hints.title"
@@ -88,11 +89,55 @@ msgstr "OK"
 msgid "main_menu.go_out.title"
 msgstr "Would you like to leave the program?"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:342
+#: ../../Classes/Scenes/SelectCollection.cpp:126
+msgid "collection_name.100"
+msgstr "Orange Juice"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:127
+msgid "collection_name.200"
+msgstr "Green Kivi"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:128
+msgid "collection_name.300"
+msgstr "Big Grapes"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:129
+msgid "collection_name.400"
+msgstr "Lime Jelly"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:130
+msgid "collection_name.500"
+msgstr "Magenta Cherry"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:131
+msgid "collection_name.600"
+msgstr "Yellow Lemon"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:133
+msgid "collection_name.1000"
+msgstr "African Grapefruit"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:134
+msgid "collection_name.2000"
+msgstr "Nutritious Plum"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:135
+msgid "collection_name.3000"
+msgstr "Autumn Apple"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:136
+msgid "collection_name.4000"
+msgstr "Raspberry"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:138
+msgid "collection_name.locked"
+msgstr "Locked"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:373
 msgid "select_collection.title"
 msgstr "Select Collection"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:364
+#: ../../Classes/Scenes/SelectCollection.cpp:395
 msgid "game_store.title"
 msgstr "Game Store"
 

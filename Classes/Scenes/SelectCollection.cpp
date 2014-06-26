@@ -121,7 +121,22 @@ void SelectCollection::onCollectionSelect(const CollectionTile& selected)
 
 
 }
+void toTranslation()
+{
+   _("collection_name.100");
+   _("collection_name.200");
+   _("collection_name.300");
+   _("collection_name.400");
+   _("collection_name.500");
+   _("collection_name.600");
 
+   _("collection_name.1000");
+   _("collection_name.2000");
+   _("collection_name.3000");
+   _("collection_name.4000");
+
+   _("collection_name.locked");
+}
 ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name,
                                                    const std::string& label_name,
                                                    const std::string& stamps_label_text,
@@ -170,7 +185,13 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
     line->setColor(color);
     line->setPosition(ccp(middle_width,paper_size.height*0.4));
 
-    CCSprite* label = CCSprite::create(label_name.c_str());
+
+    //add collection name or locked title
+    CCLabelTTF* label = CCLabelTTF::create(_(label_name),
+                                               ADLanguage::getFontName(),
+                                               35);
+
+    //CCSprite* label = CCSprite::create(label_name.c_str());
     label->setPosition(line->getPosition());
     paper_item->addChild(label);
 
@@ -243,7 +264,8 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
 {
     std::stringstream stamps_label;
     std::stringstream image_name;
-    std::stringstream label_name;
+    std::string collection_title="";
+    //std::stringstream label_name;
 
     ccColor3B color;
     bool show_crown = false;
@@ -252,19 +274,9 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
     std::string stamps_label_str;
     if(collection->getCollectionState() == Collection::Locked)
     {
-
-        //we eill not use it in new version
-        //int to_unlock = collection->stampsToUnlock();
-        //int overal_stamps = RW::allStampsObtained();
-
-        //int stamps_needed = to_unlock - overal_stamps;
-        //if(stamps_needed < 0)
-        //    stamps_needed = 0;
-
-        //stamps_label << stamps_needed;
         image_name << "select_collection/coll_lock.png";
-        label_name << "select_collection/clabel_locked.png";
-        color = ccc3(221,221,221);
+        collection_title="collection_name.locked";
+        color = GameInfo::COLOR_LIGHT_GRAY;
         stamps_label_str = stamps_label.str();
     }
     else
@@ -290,7 +302,8 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
             stamps_label_str = Language::localizeFileName(stamps_label_str);
         }
         image_name << "select_collection/coll_"<< collection->getCollectionID() <<".png";
-        label_name << "select_collection/clabel_"<< collection->getCollectionID() <<".png";
+        //label_name << "select_collection/clabel_"<< collection->getCollectionID() <<".png";
+        collection_title = "collection_name."+AD_to_string(collection->getCollectionID());
         color = collection->getColor();
     }
 
@@ -306,8 +319,10 @@ ADMenuItem* SelectCollection::createCollectionItem(Collection* collection, const
     else if(diff == Collection::UltraHard)
         stamp_file_name = "difstamp_ultrahard.png";
 
+    //Language::localizeFileName(label_name.str())
+
     return createCollectionItem(image_name.str(),
-                                Language::localizeFileName(label_name.str()),
+                                collection_title,
                                 stamps_label_str,
                                 color,
                                 spl,
