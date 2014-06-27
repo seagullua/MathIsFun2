@@ -69,7 +69,7 @@ private:
     std::string _draft;
     cocos2d::CCLabelBMFont* _eq_lab;
     cocos2d::CCLabelBMFont* _draft_label;
-    //cocos2d::CCSprite* _selected_sprite;
+    cocos2d::CCSprite* _selected_sprite;
     //CCNode* _backup_sprite;
     CCNode* _message_node;
     //cocos2d::CCSprite* _message_node_text;

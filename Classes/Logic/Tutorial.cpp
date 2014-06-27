@@ -6,6 +6,7 @@
 #include "Layers/LevelScenePopUp.h"
 #include "cocos2d-A.h"
 #include "Logic/Language.h"
+#include "GameInfo.h"
 using namespace cocos2d;
 void Tutorial::onLevelStart(EquationDrawer* eqd)
 {
@@ -14,38 +15,48 @@ void Tutorial::onLevelStart(EquationDrawer* eqd)
     {
 
         //First collection
-        if(level->getLevelCollection()->getCollectionID() == 100)
+        if(level->getLevelCollection()->getCollectionID() ==
+                GameInfo::TUTORIAL_COLLECTIONID_FIRST &&
+                level->getLevelID() == GameInfo::TUTORIAL_LEVELID_FIRST)
         {
-            unsigned int level_id = level->getLevelID();
-            //First level, first try
-            if(level_id <= 1
-                    && level->getFoundSolutions().size() == 0)
-            {
+            LevelKeyboard* keyboard = eqd->getLevelKeyboard();
+//            CCSprite* label = 0;
+//            if(level_id == 0)
+//                label = CCSprite::create("level/tutorial/touch_empty_space.png");
+//            else
+//                label = CCSprite::create("level/tutorial/touch_empty_space2.png");
+//            eqd->addChild(label);
+            ADMenuItem* empty_space = eqd->getSubstituteItems()[0];
+            float empty_space_position = empty_space->getPositionX();
+            float empty_space_width = empty_space->getContentSize().width;
+            float empty_space_scale = eqd->getEquaionLabelScale();
+//            label->setPosition(
+//                        ccp(
+//                            (empty_space_position + empty_space_width*empty_space_scale*0.5f),
+//                            keyboard->getPositionY()));
+//            if(level_id == 0)
+//                label->setAnchorPoint(ccp(0.5f, 1));
+//            else
+//                label->setAnchorPoint(ccp(149.0f / 404.0f, 1));
 
-                LevelKeyboard* keyboard = eqd->getLevelKeyboard();
-                CCSprite* label = 0;
-                if(level_id == 0)
-                    label = CCSprite::create("level/tutorial/touch_empty_space.png");
-                else
-                    label = CCSprite::create("level/tutorial/touch_empty_space2.png");
-                eqd->addChild(label);
-                ADMenuItem* empty_space = eqd->getSubstituteItems()[0];
-                float empty_space_position = empty_space->getPositionX();
-                float empty_space_width = empty_space->getContentSize().width;
-                float empty_space_scale = eqd->getEquaionLabelScale();
-                label->setPosition(
-                            ccp(
-                                (empty_space_position + empty_space_width*empty_space_scale*0.5f),
-                                keyboard->getPositionY()));
-                if(level_id == 0)
-                    label->setAnchorPoint(ccp(0.5f, 1));
-                else
-                    label->setAnchorPoint(ccp(149.0f / 404.0f, 1));
+//            switchLabel1To(label);
+//            switchLabel2To(0);
+            CCLabelTTF* tutorial = CCLabelTTF::create("TutorialMode1",
+                                                      ADLanguage::getFontName(),
+                                                      35);
+            tutorial->setPosition(ccp(
+                                                                 (empty_space_position + empty_space_width*empty_space_scale*0.5f),
+                                                                 keyboard->getPositionY()));
 
-                switchLabel1To(label);
-                switchLabel2To(0);
+            tutorial->setColor(GameInfo::COLOR_ORANGE);
 
-            }
+
+        }
+        else if(level->getLevelCollection()->getCollectionID() ==
+                GameInfo::TUTORIAL_COLLECTIONID_SECOND &&
+                level->getLevelID() == GameInfo::TUTORIAL_LEVELID_SECOND)
+        {
+
         }
     }
 }
@@ -90,13 +101,13 @@ void Tutorial::onEmptySpaceTouch(EquationDrawer* eqd)
                 {
                     button_pos = keyboard->getButtonPosition(LevelKeyboard::b3);
                     button_size = keyboard->getButtonSizeScaled(LevelKeyboard::b3);
-                    label = CCSprite::create("level/tutorial/select_digit.png");
+                    //label = CCSprite::create("level/tutorial/select_digit.png");
                 }
                 else
                 {
                     button_pos = keyboard->getButtonPosition(LevelKeyboard::multiply);
                     button_size = keyboard->getButtonSizeScaled(LevelKeyboard::multiply);
-                    label = CCSprite::create("level/tutorial/select_digit2.png");
+                    //label = CCSprite::create("level/tutorial/select_digit2.png");
                 }
                 label->setPositionX(button_pos.x + keyboard->getPositionX() + button_size.width*0.7f);
                 label->setPositionY(button_pos.y + keyboard->getPositionY() - keyboard->getContentSize().height);

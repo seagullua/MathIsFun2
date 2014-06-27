@@ -30,6 +30,14 @@ int GameInfo::BUY_LEVELID_FIRST=10;
 int GameInfo::BUY_COLLECTIONID_SECOND=200;
 int GameInfo::BUY_LEVELID_SECOND=19;
 
+
+//tutorial collections and levels
+int GameInfo::TUTORIAL_COLLECTIONID_FIRST=100;
+int GameInfo::TUTORIAL_LEVELID_FIRST=0;
+
+int GameInfo::TUTORIAL_COLLECTIONID_SECOND=200;
+int GameInfo::TUTORIAL_LEVELID_SECOND=0;
+
 const std::string GameInfo::doGetPackageName(const std::string game_name)
 {
     //TODO:chane it

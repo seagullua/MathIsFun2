@@ -2,7 +2,7 @@
 #include "DebugLayer.h"
 #include "Logic/RW.h"
 #include "LevelScenePopUp.h"
-//#include "Logic/Tutorial.h"
+#include "Logic/Tutorial.h"
 #include "Scenes/LevelScene.h"
 #include "Logic/Language.h"
 #include "GameInfo.h"
@@ -214,9 +214,8 @@ void EquationDrawer::initEquationLabel()
                 "level/input_space.plist",
                 "level/input_space.png");
 
-    //_selected_sprite = col_spl->loadSprite("selected.png");
-    //_selected_sprite->setVisible(false);
-    //_selected_sprite->setScale(symbol_scale);
+//    _selected_sprite = col_spl->loadSprite("selected.png");
+//    _selected_sprite->setVisible(false);
 
     _substitutions = MenuSpriteBatch::create(col_spl);
     this->addChild(_substitutions);
@@ -375,7 +374,7 @@ EquationDrawer::EquationDrawer(
     this->setOpacity(0);
     this->runAction(CCFadeTo::create(0.3f, 255));
 
-    //Tutorial::getInstance()->onLevelStart(this);
+    Tutorial::getInstance()->onLevelStart(this);
 
     recalculateEquation();
 
@@ -484,6 +483,8 @@ void EquationDrawer::onFreeSpacePressed(unsigned int found_i)
     switchImages(_substitutors[_substituting_now_id]);
 
     //Tutorial::getInstance()->onEmptySpaceTouch(this);
+
+    //_selected_sprite->setVisible(true);
 }
 void EquationDrawer::substituteAnything(const char& cur,
                                         const unsigned int substituting_now_id)

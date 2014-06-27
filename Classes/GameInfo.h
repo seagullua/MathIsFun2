@@ -42,6 +42,13 @@ public:
     static int BUY_LEVELID_FIRST;
     static int BUY_LEVELID_SECOND;
 
+    //tutorial levls
+    static int TUTORIAL_COLLECTIONID_FIRST;
+    static int TUTORIAL_LEVELID_FIRST;
+
+    static int TUTORIAL_COLLECTIONID_SECOND;
+    static int TUTORIAL_LEVELID_SECOND;
+
 
     static const std::string getPackageName(std::string game_name);
 
