@@ -8,9 +8,6 @@
 #include "GameInfo.h"
 
 using namespace cocos2d;
-static const int NORMAL_SPRITE = 10;
-static const int SELECTED_SPRITE = 20;
-
 const float EquationDrawer::_paper_cell_size = 35.5f;
 const ccColor3B EquationDrawer::EquationColor_NewSolution = ccc3(79,213,6);
 const ccColor3B EquationDrawer::EquationColor_OldSolution = ccc3(255,255,6);
@@ -259,13 +256,20 @@ void EquationDrawer::initEquationLabel()
                 this->onFreeSpacePressed(sub_id);
             };
 
-            sp->setTag(NORMAL_SPRITE);
+
             CCSprite* selected = col_spl->loadSprite("selected.png");
-            selected->setTag(SELECTED_SPRITE);
             selected->setVisible(false);
 
+
+
+            CCLog("iTag: %d", selected->getTag());
             ADMenuItem* item = ADMenuItem::createWithSpriteSheetSprite(
                         sp,click_action);
+
+            Pair p;
+            p.normal = sp;
+            p.selected = selected;
+            _substitutions_background[item] = p;
 
             item->addNephew(selected);
             item->setPosition(ccp(symbol_length*i,0));
@@ -275,6 +279,7 @@ void EquationDrawer::initEquationLabel()
             _substitutors.push_back(item);
             _substitutors_index.push_back(i);
             sub_id++;
+
         }
     }
 
@@ -421,24 +426,30 @@ void EquationDrawer::showUI()
     _parent->showPause();
 }
 
-void switchImages(ADMenuItem* item)
+void EquationDrawer::switchImages(ADMenuItem* item)
 {
-    CCNode* normal = item->getChildByTag(NORMAL_SPRITE);
-    CCNode* selected = item->getChildByTag(SELECTED_SPRITE);
-
-    if(normal && selected)
+    auto it = _substitutions_background.find(item);
+    if(it!=_substitutions_background.end())
     {
-        if(normal->isVisible())
+        Pair p = it->second;
+        CCNode* normal = p.normal;
+        CCNode* selected = p.selected;
+
+        if(normal && selected)
         {
-            normal->setVisible(false);
-            selected->setVisible(true);
-        }
-        else
-        {
-            normal->setVisible(true);
-            selected->setVisible(false);
+            if(normal->isVisible())
+            {
+                normal->setVisible(false);
+                selected->setVisible(true);
+            }
+            else
+            {
+                normal->setVisible(true);
+                selected->setVisible(false);
+            }
         }
     }
+
 }
 
 void EquationDrawer::onFreeSpacePressed(unsigned int found_i)

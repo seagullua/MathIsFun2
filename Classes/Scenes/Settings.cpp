@@ -12,7 +12,25 @@ static const int SELECTED_SPRITE = 20;
 
 using namespace cocos2d;
 
-void switchImages(ADMenuItem* item);
+void switchImages(ADMenuItem* item)
+{
+    CCNode* normal = item->getChildByTag(NORMAL_SPRITE);
+    CCNode* selected = item->getChildByTag(SELECTED_SPRITE);
+
+    if(normal && selected)
+    {
+        if(normal->isVisible())
+        {
+            normal->setVisible(false);
+            selected->setVisible(true);
+        }
+        else
+        {
+            normal->setVisible(true);
+            selected->setVisible(false);
+        }
+    }
+}
 
 
 

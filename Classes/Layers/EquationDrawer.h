@@ -115,6 +115,16 @@ private:
     void initDraft();
     void updateDraft();
     static const float _paper_cell_size;
+    struct Pair
+    {
+        cocos2d::CCSprite* selected;
+        cocos2d::CCSprite* normal;
+    };
+
+    typedef std::map<ADMenuItem*, Pair> SubstitutionsMap;
+    SubstitutionsMap _substitutions_background;
+
+    void switchImages(ADMenuItem* item);
 };
 
 #endif // EQUATIONDRAWER_H
