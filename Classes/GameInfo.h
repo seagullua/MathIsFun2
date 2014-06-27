@@ -41,6 +41,12 @@ public:
 
     static int BUY_LEVELID_FIRST;
     static int BUY_LEVELID_SECOND;
+
+
+    static const std::string getPackageName(std::string game_name);
+
+private:
+    static const std::string doGetPackageName(const std::string game_name);
 };
 
 #endif // GAMEINFO_H

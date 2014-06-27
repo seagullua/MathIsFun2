@@ -328,7 +328,7 @@ bool LevelScene::init()
     Level::LevelID level_id = _level->getLevelID();
 
     //Open rate me window, if it is OUR LEVEl
-    if(!SavesManager::isShowedRateMe())
+    if(!SavesManager::getInstance()->isShowedRateMe())
     {
         if(GameInfo::RATE_COLLECTIONID_FIRST == collection_id &&
                 GameInfo::RATE_LEVELID_FIRST == level_id)
@@ -343,7 +343,7 @@ bool LevelScene::init()
     }
 
     //Open Buy me window
-    if(!SavesManager::isFullVersion())
+    if(!SavesManager::getInstance()->isFullVersion())
     {
         if(GameInfo::BUY_COLLECTIONID_FIRST == collection_id &&
                 GameInfo::BUY_LEVELID_FIRST == level_id)

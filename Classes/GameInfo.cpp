@@ -29,3 +29,21 @@ int GameInfo::BUY_LEVELID_FIRST=10;
 
 int GameInfo::BUY_COLLECTIONID_SECOND=200;
 int GameInfo::BUY_LEVELID_SECOND=19;
+
+const std::string GameInfo::doGetPackageName(const std::string game_name)
+{
+    //TODO:chane it
+    if(game_name =="mif28")
+    {
+        if(ADInfo::getPlatform() == ADPlatform::iOS)
+            return "id657095501";
+        else
+            return "com.x4enjoy.mathisfun";
+    }
+
+}
+
+const std::string GameInfo::getPackageName(std::string game_name)
+{
+    return doGetPackageName(game_name);
+}

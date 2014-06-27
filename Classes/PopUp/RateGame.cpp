@@ -1,6 +1,6 @@
 #include "RateGame.h"
 #include "cocos2d-A.h"
-#include "GameInfo.h"
+
 using namespace cocos2d;
 
 void RateGame::onCreate(CCNode *parent)
