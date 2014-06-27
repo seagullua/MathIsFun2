@@ -9,6 +9,8 @@
 #include "Logic/RW.h"
 #include "Store.h"
 #include "Logic/Language.h"
+#include "PopUp/RateGame.h"
+#include "PopUp/BuyFullVersion.h"
 
 using namespace cocos2d;
 
@@ -320,6 +322,40 @@ bool LevelScene::init()
 
     this->addChild(_level_from);
 
+    /////////////////////////////////////////////////////////////////
+
+    Collection::CollectionID collection_id = _level->getLevelCollection()->getCollectionID();
+    Level::LevelID level_id = _level->getLevelID();
+
+    //Open rate me window, if it is OUR LEVEl
+    if(!SavesManager::isShowedRateMe())
+    {
+        if(GameInfo::RATE_COLLECTIONID_FIRST == collection_id &&
+                GameInfo::RATE_LEVELID_FIRST == level_id)
+        {
+            _pop_up_manager.openWindow(new RateGame());
+        }
+        else if(GameInfo::RATE_COLLECTIONID_SECOND == collection_id &&
+                GameInfo::RATE_LEVELID_SECOND == level_id)
+        {
+            _pop_up_manager.openWindow(new RateGame());
+        }
+    }
+
+    //Open Buy me window
+    if(!SavesManager::isFullVersion())
+    {
+        if(GameInfo::BUY_COLLECTIONID_FIRST == collection_id &&
+                GameInfo::BUY_LEVELID_FIRST == level_id)
+        {
+            _pop_up_manager.openWindow(new BuyFullVersion());
+        }
+        else if(GameInfo::BUY_COLLECTIONID_SECOND == collection_id &&
+                GameInfo::BUY_LEVELID_SECOND == level_id)
+        {
+            _pop_up_manager.openWindow(new BuyFullVersion());
+        }
+    }
 
     return true;
 }

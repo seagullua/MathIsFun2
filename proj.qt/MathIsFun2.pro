@@ -82,7 +82,8 @@ SOURCES += main.cpp \
     ../Classes/Scenes/SceneStyle.cpp \
     ../Classes/GameInfo.cpp \
     ../Classes/Logic/SavesManager.cpp \
-    ../Classes/PopUp/BuyFullVersion.cpp
+    ../Classes/PopUp/BuyFullVersion.cpp \
+    ../Classes/PopUp/RateGame.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \
@@ -128,5 +129,6 @@ HEADERS += \
     ../Classes/Scenes/SceneStyle.h \
     ../Classes/GameInfo.h \
     ../Classes/Logic/SavesManager.h \
-    ../Classes/PopUp/BuyFullVersion.h
+    ../Classes/PopUp/BuyFullVersion.h \
+    ../Classes/PopUp/RateGame.h
 

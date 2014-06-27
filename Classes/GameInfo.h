@@ -26,6 +26,21 @@ public:
     {
         return false;
     }
+
+
+    //set collection and levels for RatePopUpWindow
+    static int RATE_COLLECTIONID_FIRST;
+    static int RATE_COLLECTIONID_SECOND;
+
+    static int RATE_LEVELID_FIRST;
+    static int RATE_LEVELID_SECOND;
+
+    //set collections and levels for BuyFullVersionWindow
+    static int BUY_COLLECTIONID_FIRST;
+    static int BUY_COLLECTIONID_SECOND;
+
+    static int BUY_LEVELID_FIRST;
+    static int BUY_LEVELID_SECOND;
 };
 
 #endif // GAMEINFO_H

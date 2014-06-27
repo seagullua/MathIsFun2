@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-06-26 16:17+0200\n"
+"POT-Creation-Date: 2014-06-27 15:08+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -61,23 +61,21 @@ msgstr "Buy Now"
 msgid "pop_up.buy_full_version.button.later"
 msgstr "Buy Later"
 
-#: ../../Classes/PopUp/UnlockWindow.cpp:17
-msgid "select_collection.unlock_title"
-msgstr ""
-"You need more stamps\n"
-"to unlock this collection"
+#: ../../Classes/PopUp/RateGame.cpp:13
+msgid "rate_game.title"
+msgstr "Rate the App"
 
-#: ../../Classes/PopUp/UnlockWindow.cpp:25
-msgid "select_collection.unlock_title_small"
-msgstr "Try to play more or unlock now"
+#: ../../Classes/PopUp/RateGame.cpp:23
+msgid "rate_game.description"
+msgstr "Rate the App Now!"
 
-#: ../../Classes/PopUp/UnlockWindow.cpp:94
-msgid "select_collection.unlock_image"
-msgstr "Unlock All"
+#: ../../Classes/PopUp/RateGame.cpp:45
+msgid "pop_up.rate.button.rate_now"
+msgstr "Rate Now"
 
-#: ../../Classes/PopUp/UnlockWindow.cpp:119
-msgid "select_collection.play_more_image"
-msgstr "Play More"
+#: ../../Classes/PopUp/RateGame.cpp:65
+msgid "pop_up.rate.button.later"
+msgstr "Rate Later"
 
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
@@ -90,17 +88,17 @@ msgstr ""
 "Diana Sirenko\n"
 "Ruslana Chaika"
 
-#: ../../Classes/Scenes/LevelScene.cpp:33
+#: ../../Classes/Scenes/LevelScene.cpp:35
 msgid "pop_up.buy_hints.title"
 msgstr "Get hints"
 
-#: ../../Classes/Scenes/LevelScene.cpp:50
+#: ../../Classes/Scenes/LevelScene.cpp:52
 msgid "pop_up.buy_hints.text"
 msgstr ""
 "There wil be more hints\n"
 "tomorrow! Verify it later!"
 
-#: ../../Classes/Scenes/LevelScene.cpp:69
+#: ../../Classes/Scenes/LevelScene.cpp:71
 msgid "pop_up.get_hints.button.ok"
 msgstr "OK"
 
@@ -108,51 +106,51 @@ msgstr "OK"
 msgid "main_menu.go_out.title"
 msgstr "Would you like to leave the program?"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:95
+#: ../../Classes/Scenes/SelectCollection.cpp:94
 msgid "collection_name.100"
 msgstr "Orange Juice"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:96
+#: ../../Classes/Scenes/SelectCollection.cpp:95
 msgid "collection_name.200"
 msgstr "Green Kivi"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:97
+#: ../../Classes/Scenes/SelectCollection.cpp:96
 msgid "collection_name.300"
 msgstr "Big Grapes"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:98
+#: ../../Classes/Scenes/SelectCollection.cpp:97
 msgid "collection_name.400"
 msgstr "Lime Jelly"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:99
+#: ../../Classes/Scenes/SelectCollection.cpp:98
 msgid "collection_name.500"
 msgstr "Magenta Cherry"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:100
+#: ../../Classes/Scenes/SelectCollection.cpp:99
 msgid "collection_name.600"
 msgstr "Yellow Lemon"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:102
+#: ../../Classes/Scenes/SelectCollection.cpp:101
 msgid "collection_name.1000"
 msgstr "Grapefruit"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:103
+#: ../../Classes/Scenes/SelectCollection.cpp:102
 msgid "collection_name.2000"
 msgstr "Nutritious Plum"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:104
+#: ../../Classes/Scenes/SelectCollection.cpp:103
 msgid "collection_name.3000"
 msgstr "Autumn Apple"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:105
+#: ../../Classes/Scenes/SelectCollection.cpp:104
 msgid "collection_name.4000"
 msgstr "Raspberry"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:107
+#: ../../Classes/Scenes/SelectCollection.cpp:106
 msgid "collection_name.locked"
 msgstr "Locked"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:321
+#: ../../Classes/Scenes/SelectCollection.cpp:307
 msgid "select_collection.title"
 msgstr "Select Collection"
 
@@ -182,8 +180,19 @@ msgstr ""
 "Would you like to reset\n"
 " your Progress?"
 
-#~ msgid "game_store.title"
-#~ msgstr "Game Store"
+#~ msgid "select_collection.unlock_title"
+#~ msgstr ""
+#~ "You need more stamps\n"
+#~ "to unlock this collection"
+
+#~ msgid "select_collection.unlock_title_small"
+#~ msgstr "Try to play more or unlock now"
+
+#~ msgid "select_collection.unlock_image"
+#~ msgstr "Unlock All"
+
+#~ msgid "select_collection.play_more_image"
+#~ msgstr "Play More"
 
 #~ msgid "iap.error.billing_unavaliable"
 #~ msgstr "Error"
@@ -199,13 +208,6 @@ msgstr ""
 
 #~ msgid "Highscore:"
 #~ msgstr "Highscore:"
-
-#~ msgid "facebook.game_description"
-#~ msgstr ""
-#~ "Can you beat me? Letters 2048 is an improved version of classical 2048 "
-#~ "puzzle game. Instead of numbers you play with letters. Make a swipe to "
-#~ "move the tile. When two tiles with the same letter collide, they merge "
-#~ "into next letter. For example: A+A=B, K+K=L."
 
 #~ msgid "Add"
 #~ msgstr "Add"

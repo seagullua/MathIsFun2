@@ -40,7 +40,7 @@ void SavesManager::initStorageBlocks()
     ADStorage::createValueBlock<int64_t>(BLOCK_SOUND);
     ADStorage::createValueBlock<int64_t>(BLOCK_EXPERT_MODE);
     ADStorage::createValueBlock<int64_t>(BLOCK_FULL_VERSION);
-
+    ADStorage::createValueBlock<int64_t>(BLOCK_SHOW_RATE_ME);
 
 }
 
@@ -66,6 +66,9 @@ void SavesManager::initDefaultValues()
     //add 10 hints
     if(!ADStorage::hasValue(BLOCK_HINTS))
         ADStorage::setValue<int64_t>(BLOCK_HINTS,10);
+
+    if(!ADStorage::hasValue(BLOCK_SHOW_RATE_ME))
+        ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
 }
 
 //SLOTS
@@ -117,6 +120,13 @@ bool SavesManager::isAds()
     if(value == 0)
         return true;
     return false;
+}
+bool SavesManager::isShowedRateMe()
+{
+    int64_t value = ADStorage::getValue<int64_t>(BLOCK_SHOW_RATE_ME, 0);
+    if(value == 0)
+        return false;
+    return true;
 }
 
 void SavesManager::setMusic(bool music_mode)
@@ -173,7 +183,13 @@ void SavesManager::addHint(int num)
 
 void SavesManager::setHint(int64_t new_hint)
 {
-    return ADStorage::setValue<int64_t>(BLOCK_HINTS, new_hint);
+    ADStorage::setValue<int64_t>(BLOCK_HINTS, new_hint);
+}
+
+
+void SavesManager::showedRateMe()
+{
+    ADStorage::setValue<int64_t>(BLOCK_SHOW_RATE_ME, 1);
 }
 
 void SavesManager::unlockCollection(Collection::CollectionID id)

@@ -21,6 +21,8 @@ class SavesManager: public HasSlots
     static const int BLOCK_EXPERT_MODE = 70001;
     static const int BLOCK_FULL_VERSION = 80001;
 
+    static const int BLOCK_SHOW_RATE_ME = 90001;
+
 public:
     static SavesManager* getInstance();
 
@@ -35,6 +37,7 @@ public:
     bool isSoundOn();
     bool isExpertModeOn();
     bool isAds();
+    bool isShowedRateMe();
 
     void setMusic(bool music_mode);
     void setSound(bool sound_mode);
@@ -43,6 +46,9 @@ public:
     void minusHint();
     void addHint(int num=1);
     void setHint(int64_t new_hint);
+
+    //call when user clock RateTheGame
+    void showedRateMe();
 
     void unlockCollection(Collection::CollectionID id);
     void unlockLevel(Collection::CollectionID c_id,
@@ -82,12 +88,6 @@ private:
     SavesManager();
     SavesManager(SavesManager const&);
     void operator=(SavesManager const&);
-
-    //data
-    bool _music_on;
-
-    //id of level+collection and the collection data
-    //std::map<int64_t, Level> _levels;
 };
 
 #endif // SAVESMANAGER_H

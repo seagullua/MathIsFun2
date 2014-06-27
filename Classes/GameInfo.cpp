@@ -15,3 +15,17 @@ cocos2d::ccColor3B GameInfo::COLOR_GRAY= cocos2d::ccc3(75,75,75);
 cocos2d::ccColor3B GameInfo::COLOR_LIGHT_GRAY= cocos2d::ccc3(121,121,121);
 cocos2d::ccColor3B GameInfo::COLOR_RED= cocos2d::ccc3(250,70,10);
 cocos2d::ccColor3B GameInfo::COLOR_DARK= cocos2d::ccc3(0,0,0);
+
+int GameInfo::RATE_COLLECTIONID_FIRST=100;
+int GameInfo::RATE_LEVELID_FIRST=15;
+
+int GameInfo::RATE_COLLECTIONID_SECOND=200;
+int GameInfo::RATE_LEVELID_SECOND=5;
+
+//set collections and levels for BuyFullVersionWindow
+int GameInfo::BUY_COLLECTIONID_FIRST=200;
+int GameInfo::BUY_LEVELID_FIRST=10;
+
+
+int GameInfo::BUY_COLLECTIONID_SECOND=200;
+int GameInfo::BUY_LEVELID_SECOND=19;
