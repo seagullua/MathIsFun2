@@ -734,51 +734,61 @@ void EquationDrawer::recalculateEquation()
             }
             else
             {
-                _message_node = CCNodeRGBA::create();
-
-                _message_node_text = CCLabelTTF::create(_("solution.already_found_solution"),
-                                                        ADLanguage::getFontName(),
-                                                        30);
-                //CCSprite::create(Language::localizeFileName("level/tutorial/already_found.png").c_str());
-                CCSize text_size = _message_node_text->getContentSize();
-                _message_node_text->setColor(GameInfo::COLOR_ORANGE);
-
-                _message_node->setContentSize(CCSize(text_size.width, text_size.height*1.75f));
-                _message_node_text->setAnchorPoint(ccp(0,0));
-                _message_node->addChild(_message_node_text);
-                _message_node_text->setPosition(ccp(0, text_size.height*0.75f));
-
-                auto click_action = [this](){
-                    _parent->restart();
-                };
-
-                CCLabelTTF* restart_tutorial = CCLabelTTF::create("",
-                                                        ADLanguage::getFontName(),
-                                                        30);
-                _message_node_button = ADMenuItem::create(
-                            restart_tutorial/*CCSprite::create("level/tutorial/restart_tut.png")*/,
-                            click_action);
-
-                CCMenu* menu = CCMenu::create();
-                menu->addChild(_message_node_button);
-                //skip_button->setAnchorPoint(ccp(0.5, 0.5));
-                CCSize skip_size = _message_node_button->getContentSize();
-                float target_height = text_size.height*0.75f;
-                float scale =target_height / skip_size.height;
-                _message_node_button->setScale(scale);
-                _message_node_button->setPosition(ccp(text_size.width/2, target_height/2));
-                _message_node->addChild(menu);
-
-
-                _message_node_text->setOpacity(0);
-                _message_node_button->setOpacity(0);
+                //Do not show it is already foind solution
+                //show level end pop Up
+                _inserted_label->setColor(EquationColor_NewSolution);
+                LevelScenePopUp* pop_up = LevelScenePopUp::create(this);
+                _parent->addChild(pop_up);
+                _parent->hideMe(true);
+                _parent->onFoundSolutionOpen(pop_up);
 
 
 
+//                _message_node = CCNodeRGBA::create();
 
-                this->addChild(_message_node);
-                putMessageNodeInPlace();
-                showMessageNode();
+//                _message_node_text = CCLabelTTF::create(_("solution.already_found_solution"),
+//                                                        ADLanguage::getFontName(),
+//                                                        30);
+//                //CCSprite::create(Language::localizeFileName("level/tutorial/already_found.png").c_str());
+//                CCSize text_size = _message_node_text->getContentSize();
+//                _message_node_text->setColor(GameInfo::COLOR_ORANGE);
+
+//                _message_node->setContentSize(CCSize(text_size.width, text_size.height*1.75f));
+//                _message_node_text->setAnchorPoint(ccp(0,0));
+//                _message_node->addChild(_message_node_text);
+//                _message_node_text->setPosition(ccp(0, text_size.height*0.75f));
+
+//                auto click_action = [this](){
+//                    _parent->restart();
+//                };
+
+//                CCLabelTTF* restart_tutorial = CCLabelTTF::create("",
+//                                                        ADLanguage::getFontName(),
+//                                                        30);
+//                _message_node_button = ADMenuItem::create(
+//                            restart_tutorial/*CCSprite::create("level/tutorial/restart_tut.png")*/,
+//                            click_action);
+
+//                CCMenu* menu = CCMenu::create();
+//                menu->addChild(_message_node_button);
+//                //skip_button->setAnchorPoint(ccp(0.5, 0.5));
+//                CCSize skip_size = _message_node_button->getContentSize();
+//                float target_height = text_size.height*0.75f;
+//                float scale =target_height / skip_size.height;
+//                _message_node_button->setScale(scale);
+//                _message_node_button->setPosition(ccp(text_size.width/2, target_height/2));
+//                _message_node->addChild(menu);
+
+
+//                _message_node_text->setOpacity(0);
+//                _message_node_button->setOpacity(0);
+
+
+
+
+//                this->addChild(_message_node);
+//                putMessageNodeInPlace();
+//                showMessageNode();
             }
         }
 
@@ -837,56 +847,56 @@ void EquationDrawer::initNoMoreSolutions()
 {
     if(_level->getFoundSolutions().size() == _level->getSolutions().size())
     {
-        _no_more_solutions_shown = true;
-        _message_node = CCNodeRGBA::create();
+//        _no_more_solutions_shown = true;
+//        _message_node = CCNodeRGBA::create();
 
 
 
-        CCLabelTTF* solutions_text = CCLabelTTF::create("",
-                                                ADLanguage::getFontName(),
-                                                30);
-        solutions_text->setColor(GameInfo::COLOR_LIGHT_BLUE);
-        _message_node_text = CCLabelTTF::create(_("solution.no_more_solution"),
-                                                ADLanguage::getFontName(),
-                                                35);
-        _message_node_text->setColor(GameInfo::COLOR_ORANGE);
-        /*CCSprite::create(Language::localizeFileName("level/tutorial/no_more_solutions.png").c_str());*/
-        CCSize text_size = _message_node_text->getContentSize();
+//        CCLabelTTF* solutions_text = CCLabelTTF::create("",
+//                                                ADLanguage::getFontName(),
+//                                                30);
+//        solutions_text->setColor(GameInfo::COLOR_LIGHT_BLUE);
+//        _message_node_text = CCLabelTTF::create(_("solution.no_more_solution"),
+//                                                ADLanguage::getFontName(),
+//                                                35);
+//        _message_node_text->setColor(GameInfo::COLOR_ORANGE);
 
-        _message_node->setContentSize(CCSize(text_size.width, text_size.height*1.75f));
-        _message_node_text->setAnchorPoint(ccp(0,0));
-        _message_node->addChild(_message_node_text);
-        _message_node_text->setPosition(ccp(0, text_size.height*0.75f));
+//        CCSize text_size = _message_node_text->getContentSize();
 
-        auto click_action = [this](){
-            _parent->levels();
-        };
+//        _message_node->setContentSize(CCSize(text_size.width, text_size.height*1.75f));
+//        _message_node_text->setAnchorPoint(ccp(0,0));
+//        _message_node->addChild(_message_node_text);
+//        _message_node_text->setPosition(ccp(0, text_size.height*0.75f));
 
-        _message_node_button = ADMenuItem::create(
-                    solutions_text/*CCSprite::create("level/tutorial/levels_tut.png")*/,
-                    click_action);
+//        auto click_action = [this](){
+//            _parent->levels();
+//        };
 
-        CCMenu* menu = CCMenu::create();
+//        _message_node_button = ADMenuItem::create(
+//                    solutions_text,
+//                    click_action);
 
-        menu->addChild(_message_node_button);
-        //skip_button->setAnchorPoint(ccp(0.5, 0.5));
-        CCSize skip_size = _message_node_button->getContentSize();
-        float target_height = text_size.height*0.75f;
-        float scale =target_height / skip_size.height;
-        _message_node_button->setScale(scale);
-        _message_node_button->setPosition(ccp(text_size.width/2, target_height/2));
-        _message_node->addChild(menu);
+//        CCMenu* menu = CCMenu::create();
 
-
-        //_message_node_text->setOpacity(0);
-        _message_node_button->setOpacity(0);
+//        menu->addChild(_message_node_button);
+//        //skip_button->setAnchorPoint(ccp(0.5, 0.5));
+//        CCSize skip_size = _message_node_button->getContentSize();
+//        float target_height = text_size.height*0.75f;
+//        float scale =target_height / skip_size.height;
+//        _message_node_button->setScale(scale);
+//        _message_node_button->setPosition(ccp(text_size.width/2, target_height/2));
+//        _message_node->addChild(menu);
 
 
+//        //_message_node_text->setOpacity(0);
+//        _message_node_button->setOpacity(0);
 
 
-        this->addChild(_message_node);
-        putMessageNodeInPlace();
-        showMessageNode();
+
+
+//        this->addChild(_message_node);
+//        putMessageNodeInPlace();
+//        showMessageNode();
     }
 }
 

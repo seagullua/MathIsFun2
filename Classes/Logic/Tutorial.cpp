@@ -49,6 +49,7 @@ void Tutorial::onLevelStart(EquationDrawer* eqd)
                                                                  keyboard->getPositionY()));
 
             tutorial->setColor(GameInfo::COLOR_ORANGE);
+            eqd->addChild(tutorial);
 
 
         }
