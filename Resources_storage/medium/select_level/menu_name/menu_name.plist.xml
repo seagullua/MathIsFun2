@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<spritesheet>
-	<texture>menu_name.{lang}.png</texture>
-	<sheet>menu_name.{lang}.plist</sheet>
-	
-	<image>select_levels.png.xml</image>
-</spritesheet>

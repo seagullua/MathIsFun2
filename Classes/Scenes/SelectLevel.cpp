@@ -74,10 +74,10 @@ bool SelectLevel::init()
     float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
 
 
-    SpritesLoader menu_name_spl = GraphicsManager::getLoaderFor(
-                this,
-                Language::localizeFileName("select_level/menu_name.plist").c_str(),
-                Language::localizeFileName("select_level/menu_name.png").c_str());
+//    SpritesLoader menu_name_spl = GraphicsManager::getLoaderFor(
+//                this,
+//                Language::localizeFileName("select_level/menu_name.plist").c_str(),
+//                Language::localizeFileName("select_level/menu_name.png").c_str());
 
     //Get the Select level label
    // _menu_name = menu_name_spl->loadSprite("select_levels.png");

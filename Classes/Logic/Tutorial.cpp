@@ -93,8 +93,7 @@ void Tutorial::onEmptySpaceTouch(EquationDrawer* eqd)
 
 
     //First collectin
-    //hide labels
-    _help_arrow->runAction(CCFadeOut::create(0.2f));
+
 
     //add animation to '2'
     LevelKeyboard* keyboard = eqd->getLevelKeyboard();
@@ -104,12 +103,18 @@ void Tutorial::onEmptySpaceTouch(EquationDrawer* eqd)
             GameInfo::TUTORIAL_COLLECTIONID_FIRST &&
             level->getLevelID() == GameInfo::TUTORIAL_LEVELID_FIRST)
     {
+        //hide labels
+        _help_arrow->runAction(CCFadeOut::create(0.2f));
+
         keyboard->startNumberAnimation(LevelKeyboard::ButtonsCodes::b2);
     }
     else if(level->getLevelCollection()->getCollectionID() ==
             GameInfo::TUTORIAL_COLLECTIONID_SECOND &&
             level->getLevelID() == GameInfo::TUTORIAL_LEVELID_SECOND)
     {
+        //hide labels
+        _help_arrow->runAction(CCFadeOut::create(0.2f));
+
         keyboard->startNumberAnimation(LevelKeyboard::ButtonsCodes::b5);
     }
 }

@@ -43,7 +43,7 @@ void BuyFullVersion::onCreate(CCNode *parent)
     zebra->setPosition(ccp(200/scaled, 280/scaled));
 
 
-    CCSprite* button1 = CCSprite::create("select_collection/background2.png");
+    CCSprite* button1 = CCSprite::create("select_collection/background1.png");
 
     //////////////////////////////////////////////////
 
@@ -53,7 +53,7 @@ void BuyFullVersion::onCreate(CCNode *parent)
                                                    ADLanguage::getFontName(),
                                                    45);
     buy_now_title->setColor(GameInfo::COLOR_DARK_GREEN);
-
+    button2->setColor(GameInfo::COLOR_DARK_GREEN);
     ADMenuItem *buy_now_item = ADMenuItem::create(button2);
     buy_now_item->addChild(buy_now_title);
     CONNECT(buy_now_item->signalOnClick,
@@ -73,6 +73,7 @@ void BuyFullVersion::onCreate(CCNode *parent)
                                                    ADLanguage::getFontName(),
                                                    45);
     buy_later_title->setColor(GameInfo::COLOR_RED);
+    button1->setColor(GameInfo::COLOR_RED);
     CONNECT(buy_later_item->signalOnClick,
             this, &BuyFullVersion::onBuyLaterClick);
 

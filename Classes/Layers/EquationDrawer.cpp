@@ -54,7 +54,7 @@ void EquationDrawer::sleep()
                         CCCallFunc::create(this, callfunc_selector(EquationDrawer::finishHide)),
                         NULL));
 
-    Tutorial::getInstance()->hideLabels();
+    //Tutorial::getInstance()->hideLabels();
 
     hideMessageNode();
 }

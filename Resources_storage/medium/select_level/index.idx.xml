@@ -4,10 +4,6 @@
 	<file>
 		<name>marks/marks.plist.xml</name>
 	</file>
-	<file>
-		<name>menu_name/menu_name.plist.xml</name>
-		<lang>1</lang>
-	</file>
 	
 	<file>
 		<name>level_tiles/tile_100.plist.xml</name>
