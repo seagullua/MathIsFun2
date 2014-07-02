@@ -23,6 +23,8 @@ class SavesManager: public HasSlots
 
     static const int BLOCK_SHOW_RATE_ME = 90001;
 
+    static const int BLOCK_HINT_TIME = 100001;
+
 public:
     static SavesManager* getInstance();
 
@@ -46,6 +48,7 @@ public:
     void minusHint();
     void addHint(int num=1);
     void setHint(int64_t new_hint);
+    void setTimeForHints(time_t new_time);
 
     //call when user clock RateTheGame
     void showedRateMe();
@@ -73,6 +76,8 @@ public:
                                     Level::LevelID l_id);
     Solutions getSolutions(Collection::CollectionID c_id,
                            Level::LevelID l_id);
+
+    time_t getHintTime();
 
 private:
 

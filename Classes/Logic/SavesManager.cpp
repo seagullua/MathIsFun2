@@ -42,6 +42,8 @@ void SavesManager::initStorageBlocks()
     ADStorage::createValueBlock<int64_t>(BLOCK_FULL_VERSION);
     ADStorage::createValueBlock<int64_t>(BLOCK_SHOW_RATE_ME);
 
+    ADStorage::createValueBlock<time_t>(BLOCK_HINT_TIME);
+
 }
 
 void SavesManager::initDefaultValues()
@@ -69,6 +71,10 @@ void SavesManager::initDefaultValues()
 
     if(!ADStorage::hasValue(BLOCK_SHOW_RATE_ME))
         ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
+
+    //last time for hint add-s
+    if(!ADStorage::hasValue(BLOCK_HINT_TIME))
+        ADStorage::setValue<time_t>(BLOCK_HINT_TIME,0);
 }
 
 //SLOTS
@@ -186,6 +192,10 @@ void SavesManager::setHint(int64_t new_hint)
     ADStorage::setValue<int64_t>(BLOCK_HINTS, new_hint);
 }
 
+void SavesManager::setTimeForHints(time_t new_time)
+{
+    ADStorage::setValue<time_t>(BLOCK_HINT_TIME, new_time);
+}
 
 void SavesManager::showedRateMe()
 {
@@ -275,7 +285,10 @@ Solutions SavesManager::getSolutions(
 
 }
 
-
+time_t SavesManager::getHintTime()
+{
+    return ADStorage::getValue<time_t>(BLOCK_HINT_TIME, 0);
+}
 
 
 //private functions

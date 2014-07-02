@@ -34,55 +34,7 @@ void RW::init()
     ADStreamIn is(input);
     readLevelsInformation(is);
 #endif
-
-//#ifndef RW_DEBUG
-//#ifndef CC_WIN8_METRO
-//    std::string s = CCFileUtils::sharedFileUtils()->getWritablePath();
-//    //CCLog(s.c_str());
-//    _save_file_path = s + _save_file_name;
-//    _settings_file_path = s + _settings_file_name;
-//    _poll_file_path = s + "poll.mark";
-//    CCLOG(_save_file_path.c_str());
-//#else
-//    _save_file_path = CCFileUtils::sharedFileUtils()->getWriteablePathW() + CCUtf8ToUnicode(_save_file_name.c_str());
-//    _settings_file_path = CCFileUtils::sharedFileUtils()->getWriteablePathW() + CCUtf8ToUnicode(_settings_file_name.c_str());
-//#endif
-//#endif
 }
-
-//#ifndef CC_WIN8_METRO
-//bool fileExists(const char* name)
-//{
-//    FILE *fp = fopen(name, "r");
-//    bool bRet = false;
-
-//    if (fp)
-//    {
-//        bRet = true;
-//        fclose(fp);
-//    }
-
-//    return bRet;
-//}
-//#else
-//#include <Windows.h>
-//bool fileExists(const wchar_t* name)
-//{
-//    WIN32_FILE_ATTRIBUTE_DATA  fileInfo;
-//    return GetFileAttributesExW(name, GetFileExInfoStandard, &fileInfo);
-//}
-//#endif
-
-//const std::string RW::_save_file_name = "mif_save.ad";
-//const std::string RW::_settings_file_name = "mif_settings.ad";
-//#ifndef CC_WIN8_METRO
-//std::string RW::_save_file_path = "";
-//std::string RW::_settings_file_path = "";
-//std::string RW::_poll_file_path = "";
-//#else
-//std::wstring RW::_save_file_path = L"";
-//std::wstring RW::_settings_file_path = L"";
-//#endif
 
 Level* RW::getNextLevel(Level* l)
 {
@@ -194,7 +146,7 @@ void RW::release()
     if(_rw)
     {
         //saveGame();
-        //TODO: release all objects
+        //release all objects
     }
 }
 
@@ -374,6 +326,8 @@ void RW::readSavedData()
     {
 #ifndef RW_DEBUG
         readSettings();
+
+        readHints();
         //unsigned int stamps_max = 0;
         //Fill by the default info
         for(CollectionsArr::iterator it=_rw->_collections.begin();
@@ -415,6 +369,49 @@ void RW::readSavedData()
 #endif
     }
 }
+
+#include <ctime>
+#include "GameInfo.h"
+void RW::readHints()
+{
+    bool emit_dayly_hints = false;
+    time_t curtime = time(0);
+    time_t last_add_time = SavesManager::getInstance()->getHintTime();
+
+    if(last_add_time !=0)
+    {
+        if(curtime > last_add_time)
+        {
+            const time_t day = 3600 * 24;
+            if(curtime > last_add_time + day)
+            {
+                emit_dayly_hints = true;
+            }
+            else
+            {
+                time_t curt = curtime;
+                time_t lastt = last_add_time;
+                struct tm * cur_info = localtime ( &curt );
+                unsigned int cur_day = cur_info->tm_mday;
+
+                struct tm * last_info = localtime ( &lastt );
+                unsigned int last_day = last_info->tm_mday;
+
+                if(cur_day != last_day)
+                    emit_dayly_hints = true;
+
+            }
+        }
+        if(emit_dayly_hints)
+        {
+            SavesManager::getInstance()->setTimeForHints(curtime);
+            SavesManager::getInstance()->addHint(GameInfo::HINT_ADD);
+
+            _rw->_hints_count = SavesManager::getInstance()->getHintCount();
+        }
+    }
+}
+
 void RW::readSettings()
 {
 #ifndef RW_DEBUG

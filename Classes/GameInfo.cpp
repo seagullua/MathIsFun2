@@ -38,6 +38,9 @@ int GameInfo::TUTORIAL_LEVELID_FIRST=0;
 int GameInfo::TUTORIAL_COLLECTIONID_SECOND=200;
 int GameInfo::TUTORIAL_LEVELID_SECOND=0;
 
+//hints
+int GameInfo::HINT_ADD = 3;
+
 const std::string GameInfo::doGetPackageName(const std::string game_name)
 {
     //TODO:chane it

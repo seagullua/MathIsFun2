@@ -22,6 +22,9 @@ public:
     static cocos2d::ccColor3B COLOR_GRAY;
     static cocos2d::ccColor3B COLOR_LIGHT_GRAY;
     static cocos2d::ccColor3B COLOR_DARK;
+
+    //how much hints add every day
+    static int HINT_ADD;
     static bool useMultiply ()
     {
         return false;

@@ -66,6 +66,9 @@ private:
     static void writeLevelsInformation(ADStreamOut&);
     static void readLevelsInformation(ADStreamIn&);
 
+    //add everyday hints
+    static void readHints();
+
 
     static RW* _rw;
     RW();
