@@ -74,18 +74,18 @@ void Tutorial::onLevelStart(EquationDrawer* eqd)
 }
 void Tutorial::hideLabels()
 {
-    if(_help_arrow)
-    {
-        _help_arrow->runAction(CCFadeOut::create(0.2f));
-    }
+//    if(_help_arrow)
+//    {
+//        _help_arrow->runAction(CCFadeOut::create(0.2f));
+//    }
 }
 
 void Tutorial::showLabels()
 {
-    if(_help_arrow)
-    {
-        _help_arrow->runAction(CCFadeIn::create(0.2f));
-    }
+//    if(_help_arrow)
+//    {
+//        _help_arrow->runAction(CCFadeIn::create(0.2f));
+//    }
 }
 
 void Tutorial::onEmptySpaceTouch(EquationDrawer* eqd)
