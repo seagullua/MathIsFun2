@@ -71,6 +71,11 @@ public:
             _listener->retain();
     }
 
+    //for Tutorial
+    void startNumberAnimation(ButtonsCodes code);
+    void stopAnimation(ButtonsCodes code);
+
+
     //void setOpacity(GLubyte a);
 private:
     enum LayoutMode

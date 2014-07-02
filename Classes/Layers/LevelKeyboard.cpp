@@ -357,3 +357,21 @@ LevelKeyboard* LevelKeyboard::create(const CCSize& zone, ADPopUpWindowManager &p
         return NULL;
     }
 }
+void LevelKeyboard::startNumberAnimation(ButtonsCodes code)
+{
+    ADMenuItem* item = _buttons[code];
+    float duration = 0.2f;
+    float angle = 1.2;
+    item->runAction(
+                CCRepeatForever::create(
+                    CCSequence::create(
+                        CCScaleBy::create(duration, angle),
+                        CCScaleBy::create(duration, 1.0f/angle),
+                        NULL
+                        )));
+}
+
+void LevelKeyboard::stopAnimation(ButtonsCodes code)
+{
+
+}

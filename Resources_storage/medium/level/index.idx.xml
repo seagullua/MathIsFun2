@@ -8,13 +8,13 @@
 	</file>
 	
 	<file>
-		<name>level_end/find_more.png.xml</name>
+		<name>level_end/find_more_background.png</name>
 	</file>
 	<file>
-		<name>level_end/levels.png.xml</name>
+		<name>level_end/levels_background.png</name>
 	</file>
 	<file>
-		<name>level_end/next_level.png.xml</name>
+		<name>level_end/next_level_background.png</name>
 	</file>
 
 	<file>

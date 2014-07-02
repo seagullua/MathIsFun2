@@ -54,7 +54,7 @@ void EquationDrawer::sleep()
                         CCCallFunc::create(this, callfunc_selector(EquationDrawer::finishHide)),
                         NULL));
 
-    //Tutorial::getInstance()->hideLabels();
+    Tutorial::getInstance()->hideLabels();
 
     hideMessageNode();
 }
@@ -86,7 +86,7 @@ void EquationDrawer::wakeup()
     this->setVisible(true);
     this->setOpacity(0);
     this->stopAllActions();
-    //Tutorial::getInstance()->showLabels();
+    Tutorial::getInstance()->showLabels();
     this->runAction(CCSequence::createWithTwoActions(
                         CCFadeTo::create(0.3f, 255),
                         CCCallFunc::create(this, callfunc_selector(EquationDrawer::finishShow))));
@@ -482,7 +482,7 @@ void EquationDrawer::onFreeSpacePressed(unsigned int found_i)
 
     switchImages(_substitutors[_substituting_now_id]);
 
-    //Tutorial::getInstance()->onEmptySpaceTouch(this);
+    Tutorial::getInstance()->onEmptySpaceTouch(this);
 
     //_selected_sprite->setVisible(true);
 }
