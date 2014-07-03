@@ -101,7 +101,13 @@ void Loading::initRW()
 
     //TODO: write cleanup
     RW::init();
-    std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels.ad");
+
+    std::string fullPath = "";
+    if(GameInfo::GAME_VERSION == GameVersion::VersionPlus)
+        fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels.ad");
+    else if(GameInfo::GAME_VERSION == GameVersion::VerionMultiply)
+        fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels_multiplication.ad");
+
     unsigned long size = 0;
     unsigned char* file_cont = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "rb", &size);
 
