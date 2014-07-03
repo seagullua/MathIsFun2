@@ -97,7 +97,8 @@ private:
     static void flushCollectionInfo(Collection *a);
     static void readCollectionInfo(Collection* a);
     static void loadGame();
-
+    static void prepareForLevelBuild();
+    friend class RWNotationReader;
 };
 
 #endif // RW_H

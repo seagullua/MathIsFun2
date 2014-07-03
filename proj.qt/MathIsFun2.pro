@@ -83,7 +83,8 @@ SOURCES += main.cpp \
     ../Classes/GameInfo.cpp \
     ../Classes/Logic/SavesManager.cpp \
     ../Classes/PopUp/BuyFullVersion.cpp \
-    ../Classes/PopUp/RateGame.cpp
+    ../Classes/PopUp/RateGame.cpp \
+    ../Classes/Logic/RW_BuildLevels.cpp
 
 HEADERS += \
     ../Classes/AppMacros.h \

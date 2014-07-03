@@ -3,6 +3,12 @@
 #include "cocos2d-A.h"
 #include <string>
 
+enum class GameVersion{
+    VersionPlus,
+    VerionMultiply
+};
+
+
 class GameInfo
 {
 public:
@@ -51,6 +57,8 @@ public:
 
     static int TUTORIAL_COLLECTIONID_SECOND;
     static int TUTORIAL_LEVELID_SECOND;
+
+    static GameVersion GAME_VERSION;
 
 
     static const std::string getPackageName(std::string game_name);

@@ -4,7 +4,6 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     ../../Classes/Logic/Stamp.cpp \
-    ../../Classes/Logic/RW.cpp \
     ../../Classes/Logic/Level.cpp \
     ../../Classes/Logic/Collection.cpp \
     ../../Classes/Math/Term.cpp \
@@ -13,7 +12,8 @@ SOURCES += main.cpp \
     ../../Classes/Math/Node.cpp \
     ../../Classes/Math/ExpressionParser.cpp \
     ../../Classes/Math/Equation.cpp \
-    LevelsDefinition.cpp
+    LevelsDefinition.cpp \
+    ../../Classes/Logic/RW_BuildLevels.cpp
 INCLUDEPATH += ../BinaryRW/
 INCLUDEPATH += ../../Classes/Binary/
 INCLUDEPATH += ../../Classes/
@@ -52,5 +52,15 @@ OTHER_FILES += \
     col7.collection \
     col8.collection \
     col9.collection \
-    col10.collection
+    col10.collection \
+    mif-multiplication/mul10.collection \
+    mif-multiplication/mul9.collection \
+    mif-multiplication/mul8.collection \
+    mif-multiplication/mul7.collection \
+    mif-multiplication/mul6.collection \
+    mif-multiplication/mul5.collection \
+    mif-multiplication/mul4.collection \
+    mif-multiplication/mul3.collection \
+    mif-multiplication/mul2.collection \
+    mif-multiplication/mul1.collection
 

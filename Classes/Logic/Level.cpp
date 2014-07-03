@@ -116,7 +116,7 @@ const Stamps Level::getLevelStamps() const
 
     return st;
 }
-
+#ifndef RW_BUILD_LEVELS
 #include "SavesManager.h"
 void Level::updateStampsStatus()
 {
@@ -140,7 +140,7 @@ void Level::updateStampsStatus()
                                                   this->getLevelID(),
                                                   this->getLevelState());
 }
-
+#endif
 Level::~Level()
 {}
 

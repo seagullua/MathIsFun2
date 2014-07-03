@@ -9,13 +9,18 @@ using namespace std;
 
 #ifdef RW_BUILD_LEVELS
 void define_mif();
-void define_junior();
+void define_mif_multiplication();
 
 int main()
 {
     std::cout << "MIF generation" << std::endl;
 
     define_mif();
+    std::cout << "==============================" << std::endl;
+
+    std::cout << "Multiplication generation" << std::endl;
+
+    define_mif_multiplication();
     std::cout << "==============================" << std::endl;
     return 0;
 }

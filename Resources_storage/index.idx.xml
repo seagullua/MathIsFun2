@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <directory>
 	<file>
-		<name>levels_mif.ad.xml</name>
+		<name>levels.ad</name>
+		<project>mif</project>
+	</file>
+	<file>
+		<name>levels_multiplication.ad</name>
 		<project>mif</project>
 	</file>
 	<file>

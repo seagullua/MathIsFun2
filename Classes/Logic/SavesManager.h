@@ -1,7 +1,7 @@
 #ifndef SAVESMANAGER_H
 #define SAVESMANAGER_H
 
-#include "cocos2d.h"
+//#include "cocos2d.h"
 #include <ADLib/ADSignals.h>
 #include <ADLib/Storage.h>
 #include "Collection.h"

@@ -67,7 +67,7 @@ void SavesManager::initDefaultValues()
 
     //add 10 hints
     if(!ADStorage::hasValue(BLOCK_HINTS))
-        ADStorage::setValue<int64_t>(BLOCK_HINTS,10);
+        ADStorage::setValue<int64_t>(BLOCK_HINTS,7);
 
     if(!ADStorage::hasValue(BLOCK_SHOW_RATE_ME))
         ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);

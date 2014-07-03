@@ -5,8 +5,8 @@
 #include "Math/Equation.h"
 #include <sstream>
 
-#ifndef RW_DEBUG
-#include "cocos2d.h"
+#ifndef RW_BUILD_LEVELS
+//#include "cocos2d.h"
 using namespace cocos2d;
 #endif
 
@@ -15,13 +15,7 @@ using namespace cocos2d;
 #include <ctime>
 static const uint32_t ADS_MARK = 0xAD001010;
 
-RW* RW::_rw = 0;
-#ifdef RW_BUILD_LEVELS
-void RW::prepareForLevelBuild()
-{
-    _rw = new RW();
-}
-#endif
+
 void RW::init()
 {
     //Init can be called only once
@@ -29,11 +23,6 @@ void RW::init()
 
     _rw = new RW();
 
-#ifdef RW_TEST_INPUT
-    std::ifstream input("../../Resources/levels.ad", std::ios::in | std::ios::binary);
-    ADStreamIn is(input);
-    readLevelsInformation(is);
-#endif
 }
 
 Level* RW::getNextLevel(Level* l)
@@ -480,15 +469,7 @@ unsigned int RW::allCrownsObtained()
     return _rw->_crowns_obtained;
 }
 
-ADStreamOut& operator<<(ADStreamOut& os, const cocos2d::ccColor3B& color)
-{
-    uint16_t r = color.r;
-    uint16_t g = color.g;
-    uint16_t b = color.b;
 
-    os << r << g << b;
-    return os;
-}
 
 ADStreamIn& operator>>(ADStreamIn& is, cocos2d::ccColor3B& color)
 {
@@ -501,39 +482,7 @@ ADStreamIn& operator>>(ADStreamIn& is, cocos2d::ccColor3B& color)
     return is;
 }
 
-/**
- * @brief RW::writeLevelsInformation
- * @param os
- * use during AD file creation
- */
-void RW::writeLevelsInformation(ADStreamOut& os)
-{
-    if(_rw)
-    {
-        uint32_t coll_size = static_cast<uint32_t>(_rw->_collections.size());
-        os << _rw->_levels_mark << coll_size;
 
-        for(CollectionsArr::iterator it=_rw->_collections.begin();
-            it != _rw->_collections.end(); ++it)
-        {
-            Collection* a = it->second;
-            uint16_t free = a->_collection_free ? 1 : 0;
-            uint16_t difficulty = a->_collection_difficulty;
-            os << uint32_t(a->_collection_id) << free << difficulty << a->_collection_color << a->_stamps_to_unlock;
-
-            uint32_t level_number = static_cast<uint32_t>(a->_levels.size());
-            os << level_number;
-
-            for(unsigned int lev_id=0; lev_id<level_number; ++lev_id)
-            {
-                Level* l = a->_levels[lev_id];
-                //std::string test =l->_equation->getUntouchedLhsString();
-                os << l->_equation->getUntouchedLhsString() << l->_equation->getUntouchedRhsString();
-                os << l->_existing_solutions;
-            }
-        }
-    }
-}
 
 /**
  * @brief RW::readLevelsInformation

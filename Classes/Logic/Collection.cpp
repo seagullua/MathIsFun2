@@ -49,6 +49,8 @@ const Collection::CollectionState Collection::getCollectionState() const
     return _state;
 }
 #include "Logic/RW.h"
+
+#ifndef RW_BUILD_LEVELS
 #include "SavesManager.h"
 bool Collection::isReadyToBeUnlocked() const
 {
@@ -62,6 +64,7 @@ bool Collection::isReadyToBeUnlocked() const
     }
     return false;
 }
+#endif
 
 void Collection::updateStampsAndCrownsCount()
 {
