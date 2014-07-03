@@ -8,57 +8,7 @@
 		<name>new_collection/new_collection2.plist.xml</name>
 	</file>
 	
-	<file>
-		<name>new_collection/clabel_100.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_200.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_300.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_400.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_500.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_600.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_1000.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_2000.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_3000.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>new_collection/clabel_4000.png.xml</name>
-		<lang>1</lang>
-		<project>mif</project>
-	</file>
-
+	
 	<file>
 		<name>new_collection/coll_lock.png</name>
 	</file>

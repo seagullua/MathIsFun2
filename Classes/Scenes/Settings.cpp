@@ -84,7 +84,7 @@ bool Settings::init()
     //set scene title
     _settings_scene_title = CCLabelTTF::create(_("settings_menu.scene.title"),
                                            ADLanguage::getFontName(),
-                                           45);
+                                           GameInfo::SIZE_MENU_TITLE);
     _settings_scene_title->setColor(GameInfo::COLOR_DARK_BLUE);
     _settings_scene_title->setAnchorPoint(ccp(0.5,1));
     CCPoint settings_scene_title_target_position = ccp(x_middle_of_sheet,

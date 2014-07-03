@@ -8,39 +8,6 @@
 		<name>levels_multiplication.ad</name>
 		<project>mif</project>
 	</file>
-	<file>
-		<name>Logo.png</name>
-		<platform>win8</platform>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>SmallLogo.png</name>
-		<platform>win8</platform>
-		<project>mif</project>
-	</file>
-	<file>
-		<name>SplashScreen.png</name>
-		<platform>win8</platform>
-	</file>
-	<file>
-		<name>StoreLogo.png</name>
-		<platform>win8</platform>
-		<project>mif</project>
-	</file>
-	<!--<file>
-		<name>WinPhoneAppIcon.png</name>
-		<platform>winphone8</platform>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>WinPhoneMedium.png</name>
-		<platform>winphone8</platform>
-		<project>junior</project>
-	</file>
-	<file>
-		<name>WinPhoneSmall.png</name>
-		<platform>winphone8</platform>
-		<project>junior</project>
-	</file>!-->
+	
 	
 </directory>
