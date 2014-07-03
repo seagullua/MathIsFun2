@@ -378,8 +378,7 @@ void RW::readHints()
     time_t curtime = time(0);
     time_t last_add_time = SavesManager::getInstance()->getHintTime();
 
-    if(last_add_time !=0)
-    {
+
         if(curtime > last_add_time)
         {
             const time_t day = 3600 * 24;
@@ -409,7 +408,7 @@ void RW::readHints()
 
             _rw->_hints_count = SavesManager::getInstance()->getHintCount();
         }
-    }
+
 }
 
 void RW::readSettings()

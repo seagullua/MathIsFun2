@@ -37,7 +37,7 @@ void RateGame::onCreate(CCNode *parent)
     menu->setContentSize(size);
     parent->addChild(menu);
 
-    CCSprite* button1 = CCSprite::create("select_collection/background2.png");
+    CCSprite* button1 = CCSprite::create("select_collection/background1.png");
 
     //////////////////////////////////////////////////
 
@@ -47,7 +47,7 @@ void RateGame::onCreate(CCNode *parent)
                                                    ADLanguage::getFontName(),
                                                    45);
     rate_now_title->setColor(GameInfo::COLOR_DARK_GREEN);
-
+    button2->setColor(GameInfo::COLOR_DARK_GREEN);
     ADMenuItem *rate_now_item = ADMenuItem::create(button2);
     rate_now_item->addChild(rate_now_title);
     CONNECT(rate_now_item->signalOnClick,
@@ -62,6 +62,7 @@ void RateGame::onCreate(CCNode *parent)
     ///////////////////////////////////////////////////////////////
 
     //buy later
+    button1->setColor(GameInfo::COLOR_RED);
     ADMenuItem *rate_later_item = ADMenuItem::create(button1);
     CCLabelTTF* rate_later_title = CCLabelTTF::create(_("pop_up.rate.button.later"),
                                                    ADLanguage::getFontName(),
