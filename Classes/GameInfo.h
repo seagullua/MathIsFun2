@@ -33,7 +33,11 @@ public:
     static int HINT_ADD;
     static bool useMultiply ()
     {
-        return false;
+        if(GAME_VERSION == GameVersion::VersionPlus)
+           return false;
+        else
+            return true;
+
     }
 
 

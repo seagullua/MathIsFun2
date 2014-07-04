@@ -40,8 +40,8 @@ int GameInfo::TUTORIAL_LEVELID_SECOND=0;
 
 //game version
 //TODO: change it to get another levels, resources and another
-GameVersion GameInfo::GAME_VERSION = GameVersion::VersionPlus;
-
+GameVersion GameInfo::GAME_VERSION = GameVersion::VerionMultiply;
+//GameVersion GameInfo::GAME_VERSION = GameVersion::VersionPlus;//
 //hints
 int GameInfo::HINT_ADD = 3;
 

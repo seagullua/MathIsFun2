@@ -9,130 +9,141 @@ COLLECTION_DIFFICULTY(Hard)
 //Medium4
 //Level 1
 LEVEL
-        EQUATION(7+1+1=_)
-        ADD_SOLUTION(9)
+        EQUATION(6*1=_)
+        ADD_SOLUTION(6)
 END_LEVEL
+
 
 //Level 2
 LEVEL
-        EQUATION(1+1+1=_)
-        ADD_SOLUTION(3)
+        EQUATION(2*6=_2)
+        ADD_SOLUTION(1)
 END_LEVEL
+
 
 //Level 3
 LEVEL
-        EQUATION(2+0+0=_)
-        ADD_SOLUTION(2)
+        EQUATION(6*3=_8)
+        ADD_SOLUTION(1)
 END_LEVEL
+
 
 //Level 4
 LEVEL
-        EQUATION(1+2+0=_)
-        ADD_SOLUTION(3)
+        EQUATION(6*4=2_)
+        ADD_SOLUTION(4)
 END_LEVEL
+
 
 //Level 5
 LEVEL
-        EQUATION(2+2+2=_)
-        ADD_SOLUTION(6)
+        EQUATION(6*5=_0)
+        ADD_SOLUTION(3)
 END_LEVEL
+
 
 
 //Level 6
 LEVEL
-        EQUATION(2+0+2=_)
-        ADD_SOLUTION(4)
+        EQUATION(6*6=__)
+        ADD_SOLUTION(36)
 END_LEVEL
+
 
 //Level 7
 LEVEL
-        EQUATION(3+2+0=_)
-        ADD_SOLUTION(5)
+        EQUATION(6*7=4_)
+        ADD_SOLUTION(2)
 END_LEVEL
+
 
 
 //Level 8
 LEVEL
-        EQUATION(1+2+3=_)
-        ADD_SOLUTION(6)
+        EQUATION(6*8=__)
+        ADD_SOLUTION(48)
 END_LEVEL
+
 
 
 //Level 9
 
 LEVEL
-        EQUATION(3+5+0=_)
-        ADD_SOLUTION(8)
+        EQUATION(6*_=54)
+        ADD_SOLUTION(9)
 END_LEVEL
+
 
 //Level 10
 LEVEL
-        EQUATION(4+1+1=_)
-        ADD_SOLUTION(6)
+        EQUATION(6*10=__)
+        ADD_SOLUTION(60)
 END_LEVEL
 
 //Level 11
 LEVEL
-        EQUATION(0+1+2=_)
-        ADD_SOLUTION(3)
+        EQUATION(6*_=5_)
+        ADD_SOLUTION(94)
 END_LEVEL
+
 
 
 //Level 12
 LEVEL
-        EQUATION(6+1+1=_)
-        ADD_SOLUTION(8)
+        EQUATION(3*_=_8)
+        ADD_SOLUTION(61)
 END_LEVEL
+
 
 
 //Level 13
 LEVEL
-        EQUATION(2+5+2=_)
-        ADD_SOLUTION(9)
+        EQUATION(4*6=_4)
+        ADD_SOLUTION(2)
 END_LEVEL
 
 //Level 14
 LEVEL
-        EQUATION(0+3+3=_)
-        ADD_SOLUTION(6)
+        EQUATION(6*6=3_)
+        ADD_SOLUTION(0)
 END_LEVEL
 //Level 15
 LEVEL
-        EQUATION(4+4+1=_)
-        ADD_SOLUTION(9)
+        EQUATION(7*6=__)
+        ADD_SOLUTION(42)
 END_LEVEL
 
 //Level 16
 LEVEL
-        EQUATION(5+1+1=_)
-        ADD_SOLUTION(7)
+        EQUATION(8*6=4_)
+        ADD_SOLUTION(8)
 END_LEVEL
 
 //Level 17
 LEVEL
-        EQUATION(4+0+4=_)
-        ADD_SOLUTION(8)
+        EQUATION(6*9=_4)
+        ADD_SOLUTION(5)
 END_LEVEL
 
 //Level 18
 LEVEL
-        EQUATION(3+3+3=_)
-        ADD_SOLUTION(9)
+        EQUATION(6*10=_0)
+        ADD_SOLUTION(6)
 END_LEVEL
 
 
 
 //Level 19
 LEVEL
-        EQUATION(5+4+1=__)
-        ADD_SOLUTION(10)
+        EQUATION(6*7=_2)
+        ADD_SOLUTION(4)
 END_LEVEL
 
-
 //Level 20
+
 LEVEL
-        EQUATION(5+5+0=__)
-        ADD_SOLUTION(10)
+        EQUATION(6*2=1_)
+        ADD_SOLUTION(2)
 END_LEVEL
 
 
