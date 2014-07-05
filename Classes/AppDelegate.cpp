@@ -111,7 +111,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //ADLanguage::addSupportedLanguage("ko");
     //ADLanguage::addSupportedLanguage("tr");
     //ADLanguage::addSupportedLanguage("it");
-    //ADLanguage::addSupportedLanguage("uk");
+    ADLanguage::addSupportedLanguage("uk");
     //ADLanguage::addSupportedLanguage("nl");
     //ADLanguage::addSupportedLanguage("pl");
     //ADLanguage::addSupportedLanguage("hu");

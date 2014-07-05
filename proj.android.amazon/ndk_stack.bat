@@ -1,1 +1,0 @@
-"C:/Program Files (x86)/Android/android-sdk\platform-tools\adb" logcat | "C:/android-ndk-r9c/ndk-stack" -sym "G:\cocos2d-x-new\projects\MathIsFun\proj.android.amazon\obj\local\armeabi"
