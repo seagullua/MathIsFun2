@@ -71,24 +71,24 @@ msgstr "Оцінити Пізніше"
 
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
-msgstr "Developers"
+msgstr "Розробники"
 
 #: ../../Classes/Scenes/Developers.cpp:49
 msgid "developers.list"
 msgstr ""
-"Andrii Chaika\n"
-"Diana Sirenko\n"
-"Ruslana Chaika"
+"Андрій Чайка\n"
+"Діана Сіренко\n"
+"Руслана Чайка"
 
 #: ../../Classes/Scenes/LevelScene.cpp:35
 msgid "pop_up.buy_hints.title"
-msgstr "Get hints"
+msgstr "Отримати підказки"
 
 #: ../../Classes/Scenes/LevelScene.cpp:52
 msgid "pop_up.buy_hints.text"
 msgstr ""
-"There wil be more hints\n"
-"tomorrow! Verify it later!"
+"Завтра буде більше підказок! \n"
+" Перевірте пізніше!"
 
 #: ../../Classes/Scenes/LevelScene.cpp:71
 msgid "pop_up.get_hints.button.ok"
@@ -96,81 +96,81 @@ msgstr "OK"
 
 #: ../../Classes/Scenes/MainMenu.cpp:173
 msgid "main_menu.go_out.title"
-msgstr "Would you like to leave the program?"
+msgstr "Хочете вийти з програми?"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:94
 msgid "collection_name.100"
-msgstr "Orange Juice"
+msgstr "Апельсиновий Сік"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:95
 msgid "collection_name.200"
-msgstr "Green Kivi"
+msgstr "Зелене Ківі"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:96
 msgid "collection_name.300"
-msgstr "Big Grapes"
+msgstr "Великий Виноград"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:97
 msgid "collection_name.400"
-msgstr "Lime Jelly"
+msgstr "Лаймове Желе"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:98
 msgid "collection_name.500"
-msgstr "Magenta Cherry"
+msgstr "Червоні Черешні"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:99
 msgid "collection_name.600"
-msgstr "Yellow Lemon"
+msgstr "Жовтий Лимон"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:101
 msgid "collection_name.1000"
-msgstr "Grapefruit"
+msgstr "Грейпфрут"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:102
 msgid "collection_name.2000"
-msgstr "Nutritious Plum"
+msgstr "Поживна Слива"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:103
 msgid "collection_name.3000"
-msgstr "Autumn Apple"
+msgstr "Осіннє Яблуко"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:104
 msgid "collection_name.4000"
-msgstr "Raspberry"
+msgstr "Малина"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:106
 msgid "collection_name.locked"
-msgstr "Locked"
+msgstr "Закрито"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:307
 msgid "select_collection.title"
-msgstr "Select Collection"
+msgstr "Вибір Колекції"
 
 #: ../../Classes/Scenes/SelectLevel.cpp:84
 msgid "select_levels.title"
-msgstr "Select Levels"
+msgstr "Вибір Рівнів"
 
 #: ../../Classes/Scenes/Settings.cpp:85
 msgid "settings_menu.scene.title"
-msgstr "Settings"
+msgstr "Налаштування"
 
 #: ../../Classes/Scenes/Settings.cpp:144
 msgid "settings_menu.developers.title"
-msgstr "Developers"
+msgstr "Розробники"
 
 #: ../../Classes/Scenes/Settings.cpp:156
 msgid "settings_menu.reset.title"
-msgstr "Reset Progress"
+msgstr "Очистити Історію Гри"
 
 #: ../../Classes/Scenes/Settings.cpp:168
 msgid "settings_menu.restore.title"
-msgstr "Restore Purchases"
+msgstr "Відновити Покупки"
 
 #: ../../Classes/Scenes/Settings.cpp:243
 msgid "pop_up.reset_progress.title"
 msgstr ""
-"Would you like to reset\n"
-" your Progress?"
+"Ви впевнені що хочете видалити\n"
+"всю інформацію про пройдені рівні?"
 
 #~ msgid "solution.already_found_solution"
 #~ msgstr "Alreay found solution"

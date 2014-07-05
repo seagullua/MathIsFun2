@@ -16,79 +16,79 @@ msgstr ""
 
 #: ../../Classes/Layers/LevelStop.cpp:43
 msgid "menu.resume"
-msgstr "Resume"
+msgstr "Продолжить"
 
 #: ../../Classes/Layers/LevelStop.cpp:51
 msgid "menu.restart"
-msgstr "Restart"
+msgstr "Сначала"
 
 #: ../../Classes/Layers/LevelStop.cpp:60
 msgid "menu.skip_level"
-msgstr "Skip Level"
+msgstr "Пропустить"
 
 #: ../../Classes/Layers/LevelStop.cpp:69
 msgid "menu.found_solutions"
-msgstr "Found Solutions"
+msgstr "Найденные Решения"
 
 #: ../../Classes/Layers/LevelStop.cpp:77
 msgid "menu.levels"
-msgstr "Levels"
+msgstr "Уровни"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:13
 msgid "buy_full_version.title"
-msgstr "Buy Full Game Version"
+msgstr "Купить Полную версию Игры"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:23
 msgid "buy_full_version.description"
 msgstr ""
-"-no ads\n"
-"-more levels\n"
-"-more fun"
+"-Без рекламы\n"
+"-200 уровней для детей\n"
+"-Счет до 10, сложение и вычитание"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:52
 msgid "pop_up.buy_full_version.button.buy_now"
-msgstr "Buy Now"
+msgstr "Купить Сейчас"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:72
 msgid "pop_up.buy_full_version.button.later"
-msgstr "Buy Later"
+msgstr "Купить Позже"
 
 #: ../../Classes/PopUp/RateGame.cpp:13
 msgid "rate_game.title"
-msgstr "Rate the App"
+msgstr "Нравится Игра?"
 
 #: ../../Classes/PopUp/RateGame.cpp:23
 msgid "rate_game.description"
-msgstr "Rate the App Now!"
+msgstr "Оценить Игру Сейчас"
 
 #: ../../Classes/PopUp/RateGame.cpp:46
 msgid "pop_up.rate.button.rate_now"
-msgstr "Rate Now"
+msgstr "Оценить Сейчас"
 
 #: ../../Classes/PopUp/RateGame.cpp:67
 msgid "pop_up.rate.button.later"
-msgstr "Rate Later"
+msgstr "Оценить Позже"
 
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
-msgstr "Developers"
+msgstr "Разработчики"
 
 #: ../../Classes/Scenes/Developers.cpp:49
 msgid "developers.list"
 msgstr ""
-"Andrii Chaika\n"
-"Diana Sirenko\n"
-"Ruslana Chaika"
+"Андрий Чайка\n"
+"Диана Сиренко\n"
+"Руслана Чайка"
 
 #: ../../Classes/Scenes/LevelScene.cpp:35
 msgid "pop_up.buy_hints.title"
-msgstr "Get hints"
+msgstr "Получить Подсказки"
 
 #: ../../Classes/Scenes/LevelScene.cpp:52
 msgid "pop_up.buy_hints.text"
 msgstr ""
-"There will be more hints\n"
-"tomorrow! Verify it later!"
+"Завтра будет больше подсказок! \n"
+"Проверьте позже!"
 
 #: ../../Classes/Scenes/LevelScene.cpp:71
 msgid "pop_up.get_hints.button.ok"
@@ -96,81 +96,81 @@ msgstr "OK"
 
 #: ../../Classes/Scenes/MainMenu.cpp:173
 msgid "main_menu.go_out.title"
-msgstr "Would you like to leave the program?"
+msgstr "Хотите выйти из программы?"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:94
 msgid "collection_name.100"
-msgstr "Orange Juice"
+msgstr "Апельсиновый Сок"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:95
 msgid "collection_name.200"
-msgstr "Green Kivi"
+msgstr "Зеленое Киви"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:96
 msgid "collection_name.300"
-msgstr "Big Grapes"
+msgstr "Большой Виноград"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:97
 msgid "collection_name.400"
-msgstr "Lime Jelly"
+msgstr "Лаймовое Желе"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:98
 msgid "collection_name.500"
-msgstr "Magenta Cherry"
+msgstr "Красные Черешни"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:99
 msgid "collection_name.600"
-msgstr "Yellow Lemon"
+msgstr "Желтый Лимон"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:101
 msgid "collection_name.1000"
-msgstr "Grapefruit"
+msgstr "Грейпфрут"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:102
 msgid "collection_name.2000"
-msgstr "Nutritious Plum"
+msgstr "Питательная Слива"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:103
 msgid "collection_name.3000"
-msgstr "Autumn Apple"
+msgstr "Осеннее Яблоко"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:104
 msgid "collection_name.4000"
-msgstr "Raspberry"
+msgstr "Малина"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:106
 msgid "collection_name.locked"
-msgstr "Locked"
+msgstr "Закрыто"
 
 #: ../../Classes/Scenes/SelectCollection.cpp:307
 msgid "select_collection.title"
-msgstr "Select Collection"
+msgstr "Выбор Коллекции"
 
 #: ../../Classes/Scenes/SelectLevel.cpp:84
 msgid "select_levels.title"
-msgstr "Select Levels"
+msgstr "Вибор Уровней"
 
 #: ../../Classes/Scenes/Settings.cpp:85
 msgid "settings_menu.scene.title"
-msgstr "Settings"
+msgstr "Настройки"
 
 #: ../../Classes/Scenes/Settings.cpp:144
 msgid "settings_menu.developers.title"
-msgstr "Developers"
+msgstr "Разработчики"
 
 #: ../../Classes/Scenes/Settings.cpp:156
 msgid "settings_menu.reset.title"
-msgstr "Reset Progress"
+msgstr "Очистить Историю Игры"
 
 #: ../../Classes/Scenes/Settings.cpp:168
 msgid "settings_menu.restore.title"
-msgstr "Restore Purchases"
+msgstr "Возобновить Покупки"
 
 #: ../../Classes/Scenes/Settings.cpp:243
 msgid "pop_up.reset_progress.title"
 msgstr ""
-"Would you like to reset\n"
-" your Progress?"
+"Вы уверены, что хотите удалить \n"
+"всю информацию о пройденных уровнях?"
 
 #~ msgid "solution.already_found_solution"
 #~ msgstr "Alreay found solution"
