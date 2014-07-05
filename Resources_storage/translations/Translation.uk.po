@@ -16,58 +16,58 @@ msgstr ""
 
 #: ../../Classes/Layers/LevelStop.cpp:43
 msgid "menu.resume"
-msgstr "Resume"
+msgstr "Продовжити"
 
 #: ../../Classes/Layers/LevelStop.cpp:51
 msgid "menu.restart"
-msgstr "Restart"
+msgstr "Спочатку"
 
 #: ../../Classes/Layers/LevelStop.cpp:60
 msgid "menu.skip_level"
-msgstr "Skip Level"
+msgstr "Пропустити"
 
 #: ../../Classes/Layers/LevelStop.cpp:69
 msgid "menu.found_solutions"
-msgstr "Found Solutions"
+msgstr "Знайдені розв`язки"
 
 #: ../../Classes/Layers/LevelStop.cpp:77
 msgid "menu.levels"
-msgstr "Levels"
+msgstr "Рівні"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:13
 msgid "buy_full_version.title"
-msgstr "Buy Full Game Version"
+msgstr "Придбати Повну Версію Гри"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:23
 msgid "buy_full_version.description"
 msgstr ""
-"-no ads\n"
-"-more levels\n"
-"-more fun"
+"-Без реклами\n"
+"-200 рівнів для дітей\n"
+"-Лічба до 10, додавання та віднімання"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:52
 msgid "pop_up.buy_full_version.button.buy_now"
-msgstr "Buy Now"
+msgstr "Купити Зараз"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:72
 msgid "pop_up.buy_full_version.button.later"
-msgstr "Buy Later"
+msgstr "Купити Пізніше"
 
 #: ../../Classes/PopUp/RateGame.cpp:13
 msgid "rate_game.title"
-msgstr "Rate the App"
+msgstr "Подобається Гра?"
 
 #: ../../Classes/PopUp/RateGame.cpp:23
 msgid "rate_game.description"
-msgstr "Rate the App Now!"
+msgstr "Оцінити гру зараз"
 
 #: ../../Classes/PopUp/RateGame.cpp:46
 msgid "pop_up.rate.button.rate_now"
-msgstr "Rate Now"
+msgstr "Оцінити Зараз"
 
 #: ../../Classes/PopUp/RateGame.cpp:67
 msgid "pop_up.rate.button.later"
-msgstr "Rate Later"
+msgstr "Оцінити Пізніше"
 
 #: ../../Classes/Scenes/Developers.cpp:31
 msgid "developers_scene.title"
