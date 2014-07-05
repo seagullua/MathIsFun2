@@ -19,16 +19,18 @@ project.addModule('android_ADStatistics_Flurry')
 project.addModule('android_ADLanguage')
 project.addModule('android_ADNotification')
 project.addModule('android_ADBrowser')
+project.addModule('android_ADFacebook_None')
+project.addModule('android_ADHttp_None')
 
-project.project_name = 'Math Is Fun'
-project.package_name = 'com.x4enjoy.mathisfun'
-project.version_name = "1.52"
-project.version_code = "12"
+project.project_name = 'Math Is Fun 2-7'
+project.package_name = 'com.x4enjoy.mathisfun_kids'
+project.version_name = "1.2"
+project.version_code = "1"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'mif',
     'android',
-    ['en','ru','uk']
+    ['en']
 )
 
 project.signature = createAndroidSignature('build.android/math-is-fun.jks',
