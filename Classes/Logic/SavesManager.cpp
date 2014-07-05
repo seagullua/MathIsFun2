@@ -1,6 +1,6 @@
 #include "SavesManager.h"
 #include "Math/Solution.h"
-
+#include "ADLib.h"
 
 SavesManager SavesManager::instance;
 
@@ -44,6 +44,8 @@ void SavesManager::initStorageBlocks()
 
     ADStorage::createValueBlock<time_t>(BLOCK_HINT_TIME);
 
+    //last time ads shown
+    ADStorage::createValueBlock<time_t>(BLOCK_ADS_SHOW_TIME);
 }
 
 void SavesManager::initDefaultValues()
@@ -64,6 +66,12 @@ void SavesManager::initDefaultValues()
 
     if(!ADStorage::hasValue(BLOCK_FULL_VERSION))
         ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
+    else
+    {
+        if(isFullVersion())
+            ADAds::disableAds();
+    }
+
 
     //add 10 hints
     if(!ADStorage::hasValue(BLOCK_HINTS))
@@ -75,6 +83,10 @@ void SavesManager::initDefaultValues()
     //last time for hint add-s
     if(!ADStorage::hasValue(BLOCK_HINT_TIME))
         ADStorage::setValue<time_t>(BLOCK_HINT_TIME,0);
+
+    //last time ads shown
+    if(!ADStorage::hasValue(BLOCK_ADS_SHOW_TIME))
+        ADStorage::setValue<time_t>(BLOCK_ADS_SHOW_TIME, 0);
 }
 
 //SLOTS
@@ -290,6 +302,15 @@ time_t SavesManager::getHintTime()
     return ADStorage::getValue<time_t>(BLOCK_HINT_TIME, 0);
 }
 
+void SavesManager::setADSTimeShowen(time_t last_time)
+{
+    ADStorage::setValue<time_t>(BLOCK_ADS_SHOW_TIME, last_time);
+}
+
+time_t SavesManager::getLastADSTimeShown()
+{
+    return ADStorage::getValue<time_t>(BLOCK_ADS_SHOW_TIME, 0);
+}
 
 //private functions
 int64_t SavesManager::getLevelID(

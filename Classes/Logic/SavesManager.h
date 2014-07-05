@@ -25,6 +25,8 @@ class SavesManager: public HasSlots
 
     static const int BLOCK_HINT_TIME = 100001;
 
+    static const int BLOCK_ADS_SHOW_TIME = 200001;
+
 public:
     static SavesManager* getInstance();
 
@@ -78,6 +80,10 @@ public:
                            Level::LevelID l_id);
 
     time_t getHintTime();
+
+    //ADS
+    void setADSTimeShowen(time_t last_time);
+    time_t getLastADSTimeShown();
 
 private:
 

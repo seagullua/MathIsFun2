@@ -47,7 +47,6 @@ private:
     cocos2d::CCMenu* _screenEllements;
     LevelScenePopUp* _last_pop_up;
     Solution _hint_solution;
-    ADAds::Banner* _top_banner;
 
     class BuyHints;
     void onKeyPauseClicked();

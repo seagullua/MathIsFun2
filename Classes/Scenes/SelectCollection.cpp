@@ -67,7 +67,7 @@ void SelectCollection::onBackClick()
 
 void SelectCollection::onCollectionSelect(const CollectionTile& selected)
 {
-
+    ADAds::prepareInterstitial();
     if(!selected.isShopTile())
     {
         //We selected this collection

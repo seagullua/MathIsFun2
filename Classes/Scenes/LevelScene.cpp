@@ -92,8 +92,7 @@ LevelScene::LevelScene(Level *level)
       _screenEllements(0),
       _last_pop_up(0),
       _found_solution_is_opened(false),
-      _found_solutions(0),
-      _top_banner(0)
+      _found_solutions(0)
 {
     _last_scene = this;
 }
@@ -229,22 +228,6 @@ bool LevelScene::init()
     _restart->setPosition(ccp(origin.x + visibleSize.width/2 -500/scaled,
                               origin.y + visibleSize.height/2 -100/scaled ));
 
-//Ads
-    float top_zone_end = origin.x + visibleSize.width - 530/scaled - _restart->getContentSize().width / 2;
-    float top_zone_start = origin.x + 150/scaled + _play->getContentSize().width/2;
-    float top_zone_height = _play->getContentSize().height * 1.3f;
-
-    CCSize top_zone(top_zone_end - top_zone_start, top_zone_height);
-    _top_banner = ADAds::getBanner(top_zone);
-    if(_top_banner != 0)
-    {
-        this->addChild(_top_banner);
-        _top_banner->setAnchorPoint(ccp(0.5, 0.5));
-        _top_banner->setPositionX(top_zone_start + top_zone.width/2);
-        _top_banner->setPositionY(origin.y + visibleSize.height - 98.5f/scaled);
-        //_top_banner->showAds();
-        //_pop_up_manager.addBannerToAutoDisable(_top_banner);
-    }
 
     _hint->setPosition(ccp(origin.x + visibleSize.width/2 -120/scaled,
                            origin.y + visibleSize.height/2 -100/scaled ));
@@ -500,10 +483,7 @@ void LevelScene::hidePauseAndPlay()
 
 void LevelScene::hideMe(bool hide_all)
 {
-    if(_top_banner)
-    {
-        _top_banner->hideAds();
-    }
+
     _last_scene = 0;
     _equation->sleep();
     if(!hide_all)
@@ -546,14 +526,6 @@ void LevelScene::hideMe(bool hide_all)
 }
 void LevelScene::showMe()
 {
-    if(_top_banner)
-    {
-        this->runAction(CCSequence::createWithTwoActions(
-                            CCDelayTime::create(0.3f),
-                            CCCallFunc::create(_top_banner,
-                                               callfunc_selector(
-                                                   ADAds::Banner::showAds))));
-    }
     _last_scene = this;
     //CCFadeTo* play_hide = CCFadeTo::create(0.3f, 0);
     //_play->runAction(play_hide);

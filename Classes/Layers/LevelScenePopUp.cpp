@@ -280,15 +280,26 @@ void LevelScenePopUp::hideMe(const ADCallFunc::Action &callback)
                     ADCallFunc::create(callback),
                     NULL));
 }
+
+#include "Logic/SavesManager.h"
+#include <ctime>
 void LevelScenePopUp::showInterstitial()
 {
-    if(ADAds::getInterstialTimesShowed() < 5)
+    //show interstitial once per 30 seconds
+    if(!SavesManager::getInstance()->isFullVersion())
     {
-        if(rand() % 3 == 0)
+        time_t last_ad_shown_time = SavesManager::getInstance()->getLastADSTimeShown();
+        time_t curtime = time(0);
+        time_t delta = curtime - last_ad_shown_time;
+
+        if(delta > 30)
         {
             ADAds::showInterstitial();
+            ADAds::prepareInterstitial();
+
+            //save last time ads was shown
+            SavesManager::getInstance()->setADSTimeShowen(curtime);
         }
-        ADAds::prepareInterstitial();
     }
 }
 
