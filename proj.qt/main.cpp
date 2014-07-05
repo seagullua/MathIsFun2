@@ -30,7 +30,7 @@ int CALLBACK WinMain(
 
 
     emulator->setFitTheScreen(true);
-    emulator->setDevice(Device::IPad2);
+    emulator->setDevice(Device::Galaxy_Tab2_10);
     emulator->setLanguage("en");
     emulator->setOrientation(Orientation::Landscape);
     return emulator->run();
