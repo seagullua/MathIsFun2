@@ -291,9 +291,17 @@ void LevelScenePopUp::showInterstitial()
         time_t last_ad_shown_time = SavesManager::getInstance()->getLastADSTimeShown();
         time_t curtime = time(0);
         time_t delta = curtime - last_ad_shown_time;
+        time_t delata_const = 30;
 
-        if(delta > 30)
-        {
+        //if ADS mare than 5 time was shown  - show once in 45 minute,
+        //in more -once in 1 minute
+        if (ADAds::getInterstialTimesShowed() > 5)
+            delata_const = 45;
+        if(ADAds::getInterstialTimesShowed() > 10)
+            delata_const = 60;
+
+        if(delta > delata_const)
+        { 
             ADAds::showInterstitial();
             ADAds::prepareInterstitial();
 

@@ -130,10 +130,7 @@ void Loading::initRW()
          **/
 
 
-    if(RW::isAdsDisabled())
-        ADAds::disableAds();
-    else
-        ADAds::prepareInterstitial();
+    ADAds::prepareInterstitial();
 
     ADInApp::loadStore(ADInApp::Mode::Production);
 
