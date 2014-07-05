@@ -181,7 +181,7 @@ void SelectLevel::buildLevelsTiles()
 
 
     CCSize banner_size(zone_size.width, zone_size.height*0.25 - banner_padding);
-    _bottom_banner = ADAds::getBanner(banner_size);
+    _bottom_banner = nullptr;//ADAds::getBanner(banner_size);
 
 
 

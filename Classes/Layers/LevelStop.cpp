@@ -95,7 +95,7 @@ bool LevelStop::init()
 
     this->addChild(menu);
 
-    menu->alignItemsVerticallyWithPadding(1/scaled);
+    menu->alignItemsVerticallyWithPadding(30/scaled);
     menu->setPosition(ccp(visibleSize.width/2 + origin.x,
                           visibleSize.height/2 + origin.y - 20/scaled));
 
