@@ -32,56 +32,24 @@ AppDelegate::~AppDelegate()
 void initInAppPurchases()
 {
     typedef ADInApp::Product Product;
-
-//    Product hint_10("hint_10", "$0.99");
-//    Product hint_50("hint_50", "$1.99");
-//    Product hint_1000("hint_1000", "$4.99");
-
-//    Product buy_4000("buy_4000", "$0.99");
-//    Product buy_3000("buy_3000", "$0.99");
-//    Product buy_2000("buy_2000", "$0.99");
-//    Product buy_1000("buy_1000", "$0.99");
-
-//    Product buy_all("buy_all", "$1.99");
-//    Product kill_ads("kill_ads", "$0.99");
-//    Product unlock_all("unlock_all", "$0.99");
-
-    Product buy_full_version("buy_full_version","$2.99");
-
-
     ADStore store = ADInfo::getStore();
+
+
+    ADInApp::Price price = "$1.99";
+    if (store == ADStore::iTunes)
+        price = "$2.99";
+    Product buy_full_version("buy_full_version",price);
+
+
+
     if(store == ADStore::GooglePlay)
     {
         ADInApp::setStoreKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzczlRlnsAzWe4OxJmP5FimkV1yZHIq2WZJ0hjMRj0kej4qBOs44d5udwZSsvFpQU19H/K1i9AgYzjimwDe2boOcsfIKQ69UqG3qugyPnwkJafOGrNodB/zPKVwdSx2XmmbgQdIO8j2XGUkhAxQdGR/q2sKUycaodBum5n5H3PeyP/UlSci6djDenU4BN5It6bBulRgQpPFFdzptBRWFXJJ1WF+Js+OGY376Q+evp+9I+74JRJ8RSgwTgrnD3AO2b+GxvwQtZWcS4qCLpZ4BKqcBh1i842HqaKlaJIB7Ktn+p0P3pb0SUiUKdTrfUq6TBn22tkOcVnPlDAUjtXAFLQQIDAQAB");
 
-//        hint_10.setParameter("type", "consumable");
-//        hint_50.setParameter("type", "consumable");
-//        hint_1000.setParameter("type", "consumable");
-
-//        buy_4000.setParameter("type", "non-consumable");
-//        buy_3000.setParameter("type", "non-consumable");
-//        buy_2000.setParameter("type", "non-consumable");
-//        buy_1000.setParameter("type", "non-consumable");
-
-//        buy_all.setParameter("type", "non-consumable");
-//        kill_ads.setParameter("type", "non-consumable");
-//        unlock_all.setParameter("type", "non-consumable");
 
         buy_full_version.setParameter("type", "non-consumable");
     }
 
-//    ADInApp::addProduct(hint_10);
-//    ADInApp::addProduct(hint_50);
-//    ADInApp::addProduct(hint_1000);
-
-//    ADInApp::addProduct(buy_4000);
-//    ADInApp::addProduct(buy_3000);
-//    ADInApp::addProduct(buy_2000);
-//    ADInApp::addProduct(buy_1000);
-
-//    ADInApp::addProduct(buy_all);
-//    ADInApp::addProduct(kill_ads);
-//    ADInApp::addProduct(unlock_all);
 
     ADInApp::addProduct(buy_full_version);
 
@@ -93,6 +61,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     //TODO: new keys set
     //Statistics init
+
     if(ADInfo::getPlatform() == ADPlatform::Android)
         ADStatistics::setApplicationKey("H4R6T9SPWVBVT5JCNJTZ");
     else if(ADInfo::getPlatform() == ADPlatform::iOS)

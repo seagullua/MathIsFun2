@@ -22,7 +22,7 @@ void BuyFullVersion::onCreate(CCNode *parent)
     //add full version description
     CCLabelTTF* description = CCLabelTTF::create(_("buy_full_version.description"),
                                                   ADLanguage::getFontName(),
-                                                  40);
+                                                  35);
     description->setHorizontalAlignment(kCCTextAlignmentLeft);
     description->setColor(GameInfo::COLOR_LIGHT_GRAY);
     description->setPosition(ccp(x_middle+size.width*0.15, size.height * 0.55f));

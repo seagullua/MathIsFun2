@@ -30,8 +30,8 @@ int CALLBACK WinMain(
 
 
     emulator->setFitTheScreen(true);
-    emulator->setDevice(Device::Galaxy_Tab2_10);
-    emulator->setLanguage("ru");
+    emulator->setDevice(Device::IPhone4GS);
+    emulator->setLanguage("en");
     emulator->setOrientation(Orientation::Landscape);
     return emulator->run();
 }
