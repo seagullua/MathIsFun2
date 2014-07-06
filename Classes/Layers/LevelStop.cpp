@@ -25,21 +25,14 @@ bool LevelStop::init()
     spl->inject(true);
     CCSprite* sheet = spl->loadSprite("pop_up_paper.png");
 
-    //Create the zone for menu
-    //CCSize menu_zone_size(sheet->getContentSize());
 
     sheet->setPosition(ccp(visibleSize.width/2+origin.x,
                            visibleSize.height/2+origin.y));
-    //sheet->setPosition(ccp(_sheet_target_position.x,
-    //_sheet_target_position.y-visibleSize.height));
-    //_sheet_menu->setContentSize(menu_zone_size);
-    //_sheet_menu->setAnchorPoint(ccp(0.5,0.5));
-    //_sheet_menu->runAction(CCMoveTo::create(0.2f, _sheet_target_position));
 
-    //sheet->setRotation(-90);
-    // sheet->setAnchorPoint(ccp(0,0));
+    int size_font =45;
 
-    int size_font =55;
+    ///////////////////////////////////////////
+
     CCLabelTTF* resume = CCLabelTTF::create(_("menu.resume"),
                        ADLanguage::getFontName(),
                        size_font);
@@ -47,6 +40,8 @@ bool LevelStop::init()
     ADMenuItem* resume_button = ADMenuItem::create(resume);
     CONNECT(resume_button->signalOnClick,
             this, &LevelStop::onResume);
+
+    ///////////////////////////////////////////
 
     CCLabelTTF* restart = CCLabelTTF::create(_("menu.restart"),
                        ADLanguage::getFontName(),
@@ -57,6 +52,8 @@ bool LevelStop::init()
     CONNECT(restart_button->signalOnClick,
             this, &LevelStop::onRestart);
 
+    ///////////////////////////////////////////
+
     CCLabelTTF* skip_level = CCLabelTTF::create(_("menu.skip_level"),
                        ADLanguage::getFontName(),
                        size_font);
@@ -66,13 +63,17 @@ bool LevelStop::init()
     CONNECT(skip_button->signalOnClick,
             this, &LevelStop::onSkipLevel);
 
+    ///////////////////////////////////////////
+
     CCLabelTTF* found_solutions = CCLabelTTF::create(_("menu.found_solutions"),
                        ADLanguage::getFontName(),
-                       size_font);
+                       size_font*0.85f);
     found_solutions->setColor(GameInfo::COLOR_DARK_BLUE);
     ADMenuItem* found_solutions_button = ADMenuItem::create(found_solutions);
     CONNECT(found_solutions_button->signalOnClick,
             this, &LevelStop::onFoundSolutions);
+
+    ///////////////////////////////////////////
 
     CCLabelTTF* levels = CCLabelTTF::create(_("menu.levels"),
                        ADLanguage::getFontName(),

@@ -288,17 +288,9 @@ void RW::deletePersistentInfo()
 {
     if(_rw)
     {
-        for(CollectionsArr::iterator it = _rw->_collections.begin();
-            it != _rw->_collections.end(); ++it)
-        {
-            Collection* a = it->second;
-            if(a->_state == Collection::Unlocked)
-            {
-                a->_state = Collection::Locked;
-                SavesManager::getInstance()->updateCollectionState(a->getCollectionID(),
-                                                                   Collection::Locked);
-            }
-        }
+        //delete saves
+        SavesManager::getInstance()->deleteSaves();
+
         readSavedData();
         saveGame();
     }

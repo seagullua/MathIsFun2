@@ -12,7 +12,7 @@ void BuyFullVersion::onCreate(CCNode *parent)
     //create window title
     CCLabelTTF* window_title = CCLabelTTF::create(_("buy_full_version.title"),
                                                   ADLanguage::getFontName(),
-                                                  55);
+                                                  45);
     window_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
     window_title->setPosition(ccp(x_middle, size.height * 0.85f));
     parent->addChild(window_title);
@@ -54,6 +54,13 @@ void BuyFullVersion::onCreate(CCNode *parent)
                                                    ADLanguage::getFontName(),
                                                    45);
     buy_now_title->setColor(GameInfo::COLOR_DARK_GREEN);
+
+    //fix font size
+    if(buy_now_title->getContentSize().width*1.2f >= button2->getContentSize().width)
+    {
+        buy_now_title->setFontSize(35);
+    }
+
     button2->setColor(GameInfo::COLOR_DARK_GREEN);
     ADMenuItem *buy_now_item = ADMenuItem::create(button2);
     buy_now_item->addChild(buy_now_title);
@@ -73,6 +80,12 @@ void BuyFullVersion::onCreate(CCNode *parent)
     CCLabelTTF* buy_later_title = CCLabelTTF::create(_("pop_up.buy_full_version.button.later"),
                                                    ADLanguage::getFontName(),
                                                    45);
+    //fix font size
+    if(buy_later_title->getContentSize().width*1.2f >= button2->getContentSize().width)
+    {
+        buy_later_title->setFontSize(35);
+    }
+
     buy_later_title->setColor(GameInfo::COLOR_RED);
     button1->setColor(GameInfo::COLOR_RED);
     CONNECT(buy_later_item->signalOnClick,

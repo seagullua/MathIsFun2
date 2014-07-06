@@ -312,6 +312,12 @@ time_t SavesManager::getLastADSTimeShown()
     return ADStorage::getValue<time_t>(BLOCK_ADS_SHOW_TIME, 0);
 }
 
+void SavesManager::deleteSaves()
+{
+    ADStorage::cleanMapBlock(BLOCK_SOLUTIONS,KeyType::Int);
+    ADStorage::cleanMapBlock(BLOCK_LEVELS,KeyType::Int);
+}
+
 //private functions
 int64_t SavesManager::getLevelID(
         Collection::CollectionID id_collection,

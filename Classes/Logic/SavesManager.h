@@ -85,6 +85,9 @@ public:
     void setADSTimeShowen(time_t last_time);
     time_t getLastADSTimeShown();
 
+    //delete saves
+    void deleteSaves();
+
 private:
 
     void initStorageBlocks();

@@ -44,17 +44,17 @@ private:
         CCSprite* lamp = CCSprite::create("level_scene/lamp.png");
         parent->addChild(lamp);
         lamp->setScale(0.8f);
-        lamp->setPosition(ccp(parent->getContentSize().width*0.2,
-                              parent->getContentSize().height*0.5));
+        lamp->setPosition(ccp(x_middle,
+                              size.height * 0.68f));
 
 
         //add text - tommorow wil be more hints
         CCLabelTTF* hint_text = CCLabelTTF::create(_("pop_up.buy_hints.text"),
                                               ADLanguage::getFontName(),
-                                              45);
+                                              40);
         hint_text->setColor(GameInfo::COLOR_ORANGE);
-        hint_text->setPosition(ccp(parent->getContentSize().width*0.6,
-                                   parent->getContentSize().height*0.5));
+        hint_text->setPosition(ccp(x_middle,
+                                   parent->getContentSize().height*0.4));
         parent->addChild(hint_text);
 
 
@@ -78,7 +78,7 @@ private:
 
         ok_button->addChild(ok_text);
         ok_button->setPosition(ccp(parent->getContentSize().width*0.5,
-                                   parent->getContentSize().height*0.2));
+                                   parent->getContentSize().height*0.18));
         CONNECT(ok_button->signalOnClick, this, &BuyHints::onOk);
         menu->addChild(ok_button);
 

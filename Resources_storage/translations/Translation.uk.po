@@ -43,7 +43,8 @@ msgid "buy_full_version.description"
 msgstr ""
 "- Без реклами\n"
 "- 200 рівнів для дітей\n"
-"- Лічба до 10, додавання та віднімання"
+"- Лічба до 10,\n"
+"додавання та віднімання"
 
 #: ../../Classes/PopUp/BuyFullVersion.cpp:52
 msgid "pop_up.buy_full_version.button.buy_now"

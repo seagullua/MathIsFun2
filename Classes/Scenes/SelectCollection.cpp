@@ -159,6 +159,12 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
                                                ADLanguage::getFontName(),
                                                35);
 
+    //fix collection name size
+    if(label->getContentSize().width*1.1f >= line->getContentSize().width)
+    {
+        label->setFontSize(28);
+    }
+
     //CCSprite* label = CCSprite::create(label_name.c_str());
     label->setPosition(line->getPosition());
     paper_item->addChild(label);
