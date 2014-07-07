@@ -419,7 +419,6 @@ void RW::flushSettings()
         SavesManager::getInstance()->setExpertMode(expert_mode);
         SavesManager::getInstance()->setMusic(music_on);
         SavesManager::getInstance()->setSound(sounds_on);
-        //SavesManager::getInstance()->setFullVersion(!_rw->_ads_disabled);
         SavesManager::getInstance()->setHint(_rw->_hints_count);
     }
 #endif

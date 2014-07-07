@@ -134,7 +134,7 @@ bool SavesManager::isExpertModeOn()
 }
 bool SavesManager::isAds()
 {
-    int64_t value = ADStorage::getValue<int64_t>(BLOCK_EXPERT_MODE, 0);
+    int64_t value = ADStorage::getValue<int64_t>(BLOCK_FULL_VERSION, 0);
     if(value == 0)
         return true;
     return false;
