@@ -3,6 +3,8 @@
 *.lo
 *.o
 
+TestScreens
+
 # Compiled Dynamic libraries
 *.so
 *.dylib

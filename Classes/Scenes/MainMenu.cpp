@@ -170,7 +170,7 @@ bool MainMenu::init()
 
 
        _buy_full_version->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.8f,
-                                      settings_target_position.y+250/SCALE));
+                                      settings_target_position.y+300/SCALE));
 
         _main_menu->addChild(_buy_full_version);
 

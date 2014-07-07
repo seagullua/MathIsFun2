@@ -93,7 +93,9 @@ msgstr "OK"
 
 #: ../../Classes/Scenes/MainMenu.cpp:150
 msgid "main_menu.buy_full_version.button"
-msgstr "Получить Полную Версию"
+msgstr ""
+"Получить\n"
+"Полную Версию"
 
 #: ../../Classes/Scenes/MainMenu.cpp:220
 msgid "main_menu.go_out.title"

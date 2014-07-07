@@ -19,7 +19,7 @@ private:
     void openMenu();
     void preloadSprites();
     void drawEverything(float);
-	void initRW();
+
     //void loadingBackground(CCObject *obj);
 	void loadMusicAsync();
 
@@ -39,6 +39,7 @@ private:
 	std::queue<std::string> _q_sound_to_load;
 	std::queue<std::string> _q_plists_to_load;
 public:
+    static void initRW();
     Loading();
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();

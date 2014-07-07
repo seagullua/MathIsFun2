@@ -158,11 +158,12 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
     CCLabelTTF* label = CCLabelTTF::create(_(label_name),
                                                ADLanguage::getFontName(),
                                                35);
+    float max_width = line->getContentSize().width*0.9f;
 
     //fix collection name size
-    if(label->getContentSize().width*1.1f >= line->getContentSize().width)
+    if(label->getContentSize().width >= max_width)
     {
-        label->setFontSize(28);
+        label->setScale(max_width / label->getContentSize().width);
     }
 
     //CCSprite* label = CCSprite::create(label_name.c_str());

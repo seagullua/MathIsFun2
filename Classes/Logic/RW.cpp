@@ -448,6 +448,11 @@ const CollectionsArr &RW::getCollections()
     assert(_rw);
     return _rw->_collections;
 }
+Collection* RW::getCollection(Collection::CollectionID col_id)
+{
+    std::map<Collection::CollectionID, Collection*>::iterator itr = _rw->_collections.find(col_id);
+    return itr->second;
+}
 
 unsigned int RW::allStampsObtained()
 {
