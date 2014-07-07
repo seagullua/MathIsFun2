@@ -45,20 +45,20 @@ int GameInfo::TUTORIAL_LEVELID_SECOND=0;
 int GameInfo::HINT_ADD = 3;
 
 ADPackageName GameInfo::APP_MIF_27_FREE = ADPackageName::create(
-            "com.x4enjoy.mathisfun_kids", //Android
+            "com.x4enjoy.mathisfun.kids", //Android
             "id896468015", //iOS id
             "id-windows-phone"); //Windows Phone
 
 ADPackageName GameInfo::APP_MIF_27_PREMIUM = ADPackageName::create(
-            "com.x4enjoy.mathisfun_kids_premium", //Android
+            "com.x4enjoy.mathisfun.kids.premium", //Android
             "id00000...", //iOS id
             "id-windows-phone"); //Windows Phone
 ADPackageName GameInfo::APP_MIF_MULTIPLICATION_FREE = ADPackageName::create(
-            "com.x4enjoy.mathisfun_multiplication", //Android
+            "com.x4enjoy.mathisfun.multiplication", //Android
             "id00000...", //iOS id
             "id-windows-phone"); //Windows Phone
 ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::create(
-            "com.x4enjoy.mathisfun_multiplication_premium", //Android
+            "com.x4enjoy.mathisfun.multiplication.premium", //Android
             "id00000...", //iOS id
             "id-windows-phone"); //Windows Phone
 

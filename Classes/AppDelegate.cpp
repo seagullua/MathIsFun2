@@ -44,8 +44,7 @@ void initInAppPurchases()
 
     if(store == ADStore::GooglePlay)
     {
-        ADInApp::setStoreKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzczlRlnsAzWe4OxJmP5FimkV1yZHIq2WZJ0hjMRj0kej4qBOs44d5udwZSsvFpQU19H/K1i9AgYzjimwDe2boOcsfIKQ69UqG3qugyPnwkJafOGrNodB/zPKVwdSx2XmmbgQdIO8j2XGUkhAxQdGR/q2sKUycaodBum5n5H3PeyP/UlSci6djDenU4BN5It6bBulRgQpPFFdzptBRWFXJJ1WF+Js+OGY376Q+evp+9I+74JRJ8RSgwTgrnD3AO2b+GxvwQtZWcS4qCLpZ4BKqcBh1i842HqaKlaJIB7Ktn+p0P3pb0SUiUKdTrfUq6TBn22tkOcVnPlDAUjtXAFLQQIDAQAB");
-
+        ADInApp::setStoreKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1eWcrKw7sfifjhLGCq+X7jOrFeh7eJdw3uqi9nFcP4cHRPwgpSqYm3+qn3CQNbBQ9D+rQXewnaKSaR3drVvl4cOPOOkO7iXiuA/t6AWx1dpOivPhzXCN+9vzz6wXVkzi0fPXydGNM1bbTQA0mQxmR+9j4HWfKgrnP6+3XoLHNahhf2ltLfFDukYl0woYrG9DBvFllmUfpaLLoLJL/9TmT8FWknSN8izUqfL4VwkBaceb/yIIELL3SEFnGQkUV7nO26E+giPNY7JRoHv1oQBPEcGNTxxM5nFZfp+2TYOtpGlznjy7yRwfGB+B2hhqZAM22GBBSlAMLm/XnD/jelDuIwIDAQAB");
 
         buy_full_version.setParameter("type", "non-consumable");
     }
@@ -72,18 +71,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //Language init
     ADLanguage::addSupportedLanguage("en");
     ADLanguage::addSupportedLanguage("ru");
-    //ADLanguage::addSupportedLanguage("es");
-    //ADLanguage::addSupportedLanguage("ja");
-    //ADLanguage::addSupportedLanguage("pt");
-    //ADLanguage::addSupportedLanguage("de");
-    //ADLanguage::addSupportedLanguage("fr");
-    //ADLanguage::addSupportedLanguage("ko");
-    //ADLanguage::addSupportedLanguage("tr");
-    //ADLanguage::addSupportedLanguage("it");
     ADLanguage::addSupportedLanguage("uk");
-    //ADLanguage::addSupportedLanguage("nl");
-    //ADLanguage::addSupportedLanguage("pl");
-    //ADLanguage::addSupportedLanguage("hu");
 
     ADLanguage::setDefaultLanguage("en");
     ADLanguage::getLanguage();
@@ -143,58 +131,37 @@ bool AppDelegate::applicationDidFinishLaunching()
     ADStore store = ADInfo::getStore();
     ADPlatform platform = ADInfo::getPlatform();
 
-    std::stringstream pid_banner;
     std::stringstream pid_interstitial;
 
 
-    //TODO: new keys set
-    pid_banner << "ca-app-pub-" << 16126979 << 60946304 << "/";
     pid_interstitial << "ca-app-pub-" << 16126979 << 60946304 << "/";
 
     if(platform == ADPlatform::Android)
     {
         if(store == ADStore::SamsungStore)
         {
-            //ca-app-pub-1612697960946304/1841661079
-            pid_banner  << 1841661079;
             //ca-app-pub-1612697960946304/3318394274
             pid_interstitial << 3318394274;
         }
         else if(store == ADStore::GooglePlay)
         {
-            //ca-app-pub-1612697960946304/3457995077
-            pid_banner << 3457995077;
-            //ca-app-pub-1612697960946304/4934728274
-            pid_interstitial << 4934728274;
+            //ca-app-pub-1612697960946304/7149173479
+            pid_interstitial << 7149173479;
         }
         else
         {
-            //ca-app-pub-1612697960946304/6411461477
-            pid_banner << 6411461477;
             //ca-app-pub-1612697960946304/7888194679
             pid_interstitial << 7888194679;
         }
     }
     else if(platform == ADPlatform::iOS)
     {
-        //ca-app-pub-1612697960946304/7748593879
-        pid_banner << 7748593879;
-
         //ca-app-pub-1612697960946304/9225327070
         pid_interstitial << 9225327070;
     }
 
-    ADAds::registerBannerType("BANNER", pid_banner.str());
-    ADAds::registerBannerType("IAB_BANNER", pid_banner.str());
-
     ADAds::registerInterstitialType(pid_interstitial.str());
 
-    if(platform == ADPlatform::Android)
-    {
-        //ADAds::addTestDevice("419CBB113860522A7AB95487DBB0CC2B"); //Andriy Tab
-        ADAds::addTestDevice("9AC43D4250441F63E2E677C2C06F5D41"); //Diana Tab
-        ADAds::addTestDevice("C31238A94F2B52E9F4B77E58270A3943"); //Tonya
-    }
 
     //Init ADMenuItem
     ADMenuItem::setAllClicksAction([](){
