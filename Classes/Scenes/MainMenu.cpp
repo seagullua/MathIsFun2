@@ -61,7 +61,7 @@ bool MainMenu::init()
 
     float x_middle_of_sheet = (VISIBLE_SIZE.width-133/SCALE)/2 + ORIGIN.x;
     CCPoint logo_target_position = ccp(x_middle_of_sheet,
-                                       VISIBLE_SIZE.height + ORIGIN.y - 80/SCALE);
+                                       VISIBLE_SIZE.height + ORIGIN.y - 70/SCALE);
     _logo->setPosition(ccp(x_middle_of_sheet,
                            2*VISIBLE_SIZE.height));
     this->addChild(_logo);
@@ -97,7 +97,7 @@ bool MainMenu::init()
     CONNECT(_play->signalOnClick,
             this, &MainMenu::onPlayPressed);
 
-    _play->setPosition(ccp(x_middle_of_sheet, logo_end / 2));
+    _play->setPosition(ccp(x_middle_of_sheet, logo_end / 1.8));
     _play->setAnchorPoint(ccp(0.5f, 0.5f));
     CCPoint menuPlay_target_position = _play->getPosition();
     _play->setPosition(ccp(_play->getPositionX(), -VISIBLE_SIZE.height));
@@ -142,6 +142,7 @@ bool MainMenu::init()
     _share_menu->addChild(_facebook_button);
 
     //////////////////////////////////////////
+
 
     if(!SavesManager::getInstance()->isFullVersion())
     {

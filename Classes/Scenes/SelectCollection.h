@@ -86,7 +86,9 @@ private:
     ADScrollView* _collections_scroll_view;
     ADAds::Banner* _bottom_banner;
 public:
-    //CREATE_FUNC(SelectCollection)
+
+    //for screen maker
+    void moveCollectionScrollZone();
 };
 
 #endif // SELECTCOLLECTION_H

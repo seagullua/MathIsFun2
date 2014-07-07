@@ -26,6 +26,9 @@ public:
     void restart();
     void showFoundSolutions();
     static void purchaseUpdateHints();
+
+    //for screens maker
+    void clickEquationSpace(int space_id);
 private:
     static LevelScene* _last_scene;
     void do_skipLevel();

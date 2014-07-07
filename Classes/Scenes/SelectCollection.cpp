@@ -564,5 +564,16 @@ void SelectCollection::purchaseOpenCollections()
         });
     }
 }
+void SelectCollection::moveCollectionScrollZone()
+{
+    CCPoint min_offset = _collections_scroll_view->minContainerOffset();
+    CCLog("Min: %f,%f", min_offset.x, min_offset.y);
+
+    CCPoint max_offset =_collections_scroll_view->maxContainerOffset();
+    CCLog("Max: %f,%f", max_offset.x, max_offset.y);
+    CCPoint middle_offset = (min_offset)*0.28;
+
+    _collections_scroll_view->setContentOffset(middle_offset);
+}
 
 CCPoint SelectCollection::_last_scroll_view_offset = ccp(0,0);

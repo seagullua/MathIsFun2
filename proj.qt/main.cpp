@@ -6,12 +6,14 @@
 USING_NS_CC;
 
 void openMainScene(TestInfo info);
-void openAllCollectionScene(TestInfo info);
+void openAllCollectionScene(TestInfo info,
+                            bool first_collections);
 void openOneCollectionScene(TestInfo info,
                               int collection_number);
 void openOneLevelScene(TestInfo info,
                        int collection_number,
-                       int level_number);
+                       int level_number,
+                       int free_space_id);
 
 void prepare(TestInfo info);
 
@@ -39,7 +41,7 @@ int CALLBACK WinMain(
 
 
     emulator->setFitTheScreen(true);
-    emulator->setDevice(Device::IPhone4GS);
+    emulator->setDevice(Device::Galaxy_Tab2_7);
     emulator->setLanguage("uk");
     emulator->setOrientation(Orientation::Landscape);
 
@@ -48,12 +50,32 @@ int CALLBACK WinMain(
     emulator->addTestCase(&prepare);
 
     emulator->addTestCase(&openMainScene);
-    emulator->addTestCase(&openAllCollectionScene);
+    emulator->addTestCase([](TestInfo info){
+        openAllCollectionScene(info,true);
+    });
+    emulator->addTestCase([](TestInfo info){
+        openAllCollectionScene(info,false);
+    });
     emulator->addTestCase([](TestInfo info){
         openOneCollectionScene(info,100);
     });
     emulator->addTestCase([](TestInfo info){
-        openOneLevelScene(info,100,7);
+        openOneCollectionScene(info,300);
+    });
+    emulator->addTestCase([](TestInfo info){
+        openOneCollectionScene(info,500);
+    });
+    emulator->addTestCase([](TestInfo info){
+        openOneLevelScene(info,100,7,0);
+    });
+    emulator->addTestCase([](TestInfo info){
+        openOneLevelScene(info,600,0,0);
+    });
+    emulator->addTestCase([](TestInfo info){
+        openOneLevelScene(info,500,1,1);
+    });
+    emulator->addTestCase([](TestInfo info){
+        openOneLevelScene(info,3000,3,0);
     });
 
     return emulator->run();
@@ -86,9 +108,23 @@ void openMainScene(TestInfo info)
         info.finish();
     });
 }
-void openAllCollectionScene(TestInfo info)
+void openAllCollectionScene(TestInfo info,
+                            bool first_collections)
 {
-    CCDirector::sharedDirector()->replaceScene(SelectCollection::scene());
+    // 'scene' is an autorelease object
+    CCScene *scene = CCScene::create();
+
+    // 'layer' is an autorelease object
+    SelectCollection *layer = SelectCollection::create();
+
+    BackgroundHolder::backgroundSwitchTo(scene,0,false);
+    scene->addChild(layer);
+    CCDirector::sharedDirector()->replaceScene(scene);
+
+    //move scroll zone
+    if(!first_collections)
+        layer->moveCollectionScrollZone();
+
     ADDeviceEmulator::runLater(2.5f, [info](){
 
         ADDeviceEmulator::createScreenShoot(info);
@@ -111,7 +147,8 @@ void openOneCollectionScene(TestInfo info,
 
 void openOneLevelScene(TestInfo info,
                        int collection_number,
-                       int level_number)
+                       int level_number,
+                       int free_space_id)
 {
     Collection* collection = RW::getCollection(collection_number);
 
@@ -127,8 +164,19 @@ void openOneLevelScene(TestInfo info,
         }
     }
 
-    CCDirector::sharedDirector()->replaceScene(LevelScene::scene(level));
-    ADDeviceEmulator::runLater(2.5f, [info](){
+    // 'scene' is an autorelease object
+    CCScene *scene = CCScene::create();
+
+    // 'layer' is an autorelease object
+    LevelScene *layer = LevelScene::create(level);
+
+    BackgroundHolder::backgroundSwitchTo(scene,0,false);
+    scene->addChild(layer);
+    CCDirector::sharedDirector()->replaceScene(scene);
+    layer->clickEquationSpace(free_space_id);
+
+    ADDeviceEmulator::runLater(3.5f, [info](){
+
 
         ADDeviceEmulator::createScreenShoot(info);
         info.finish();

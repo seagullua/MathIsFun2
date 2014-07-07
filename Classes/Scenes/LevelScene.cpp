@@ -621,3 +621,7 @@ void LevelScene::purchaseUpdateHints()
         _last_scene->_pop_up_manager.closeWindow();
     }
 }
+void LevelScene::clickEquationSpace(int space_id)
+{
+    _equation->onFreeSpacePressed(space_id);
+}

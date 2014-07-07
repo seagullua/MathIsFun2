@@ -40,7 +40,7 @@ public:
 
 
     void substituteAnything(const char& cur, const unsigned int substituting_now_id);
-
+    void onFreeSpacePressed(unsigned int found_i);
 private:
     class KeyboardReactor : public LevelKeyboard::KeyboardDelegate
     {
@@ -102,7 +102,7 @@ private:
     void substituteParenthesis(const Symbol::ParenthesisType& op,
                                const unsigned int substituting_now_id,
                                const bool is_hint_mode=false);
-    void onFreeSpacePressed(unsigned int found_i);
+
     void recalculateEquation();
     void showMessageNode();
     void hideMessageNode();

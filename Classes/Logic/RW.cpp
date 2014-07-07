@@ -177,24 +177,6 @@ void RW::setExpertMode(bool expert)
         SavesManager::getInstance()->setExpertMode(expert);
     }
 }
-void RW::buyFullVersion()
-{
-    SavesManager::getInstance()->setFullVersion(true);
-
-    //set collections open
-    if(_rw)
-    {
-        for(auto& i : _rw->_collections)
-        {
-            Collection* a = i.second;
-            a->_state = Collection::Unlocked;
-
-            //MANAGER
-            SavesManager::getInstance()->unlockCollection(a->getCollectionID());
-
-        }
-    }
-}
 
 /**
  * @brief RW::readCollectionInfo
@@ -437,7 +419,7 @@ void RW::flushSettings()
         SavesManager::getInstance()->setExpertMode(expert_mode);
         SavesManager::getInstance()->setMusic(music_on);
         SavesManager::getInstance()->setSound(sounds_on);
-        SavesManager::getInstance()->setFullVersion(!_rw->_ads_disabled);
+        //SavesManager::getInstance()->setFullVersion(!_rw->_ads_disabled);
         SavesManager::getInstance()->setHint(_rw->_hints_count);
     }
 #endif
@@ -597,6 +579,8 @@ void RW::addHints(unsigned int to_add)
 //buy full version
 void RW::unlockAllCollectionsPurchased()
 {
+
+    SavesManager::getInstance()->setFullVersion(true);
     if(_rw)
     {
         for(CollectionsArr::iterator it = _rw->_collections.begin();
@@ -606,9 +590,11 @@ void RW::unlockAllCollectionsPurchased()
             if(a->getCollectionState() == Collection::Locked)
             {
                 a->_state = Collection::Unlocked;
+
+                //MANAGER
+                SavesManager::getInstance()->unlockCollection(a->getCollectionID());
             }
         }
-        //_rw->_unlock_all_purchased = true;
 
         saveGame();
 

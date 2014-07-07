@@ -37,7 +37,6 @@ public:
 
 
     static void setExpertMode(bool expert);
-    static void buyFullVersion();
 
     //save settings
     static void flushSettings();
