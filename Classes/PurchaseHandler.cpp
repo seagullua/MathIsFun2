@@ -6,6 +6,7 @@
 #include "Logic/RW.h"
 #include "Scenes/SelectCollection.h"
 #include "Scenes/LevelScene.h"
+#include "Scenes/MainMenu.h"
 #include "Logic/SavesManager.h"
 using namespace cocos2d;
 
@@ -46,6 +47,7 @@ void InAppDelegate::purchaseSuccessful(const ADInApp::ProductID& itemId)
     {
         RW::unlockAllCollectionsPurchased();
         SelectCollection::purchaseReload();
+        MainMenu::purchaseReload();
 
         SavesManager::getInstance()->setFullVersion(true);
 

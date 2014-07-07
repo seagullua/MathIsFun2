@@ -18,7 +18,12 @@ MainMenu::MainMenu()
 {
 
 }
+MainMenu::~MainMenu()
+{
+    _me = nullptr;
+}
 
+MainMenu* MainMenu::_me = nullptr;
 CCScene* MainMenu::scene()
 {
     // 'scene' is an autorelease object
@@ -36,6 +41,15 @@ CCScene* MainMenu::scene()
     return scene;
 }
 
+void MainMenu::purchaseReload()
+{
+    if(_me)
+    {
+        _me->_pop_up_manager.backAction();
+        _me->_buy_full_version->setEnabled(false);
+        _me->_buy_full_version->runAction(CCFadeTo::create(0.3f, 0));
+    }
+}
 
 // on "init" you need to initialize your instance
 bool MainMenu::init()
@@ -146,6 +160,7 @@ bool MainMenu::init()
 
     if(!SavesManager::getInstance()->isFullVersion())
     {
+        _me = this;
         //create zebra image
         CCSprite* zebra = CCSprite::create("select_collection/zebra.png");
         //this->addChild(zebra);
@@ -194,7 +209,7 @@ bool MainMenu::init()
 }
 void MainMenu::hideEverything(const Action& callback)
 {
-
+    _me = nullptr;
     CCFadeTo* settings_move = CCFadeTo::create(0.15f, 0);
     CCFadeTo* play_move = CCFadeTo::create(0.15f, 0);
     CCFadeTo* logo_move = CCFadeTo::create(0.15f, 0);
