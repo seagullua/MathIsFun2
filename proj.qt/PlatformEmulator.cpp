@@ -34,4 +34,5 @@ std::string ADLanguage::platformGetDeviceLanguage()
 #include <ADLib/PlatformImpl/ADFacebook_None.hpp>
 #include <ADLib/PlatformImpl/ADHttp_NotSupported.hpp>
 
-
+#include "GameInfo.h"
+GameVersion GameInfo::GAME_VERSION = GameVersion::VersionPlus;

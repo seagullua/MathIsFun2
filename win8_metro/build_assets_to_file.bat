@@ -1,1 +1,0 @@
-build_assets.bat > assets.txt

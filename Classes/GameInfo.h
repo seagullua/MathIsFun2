@@ -65,10 +65,14 @@ public:
     static GameVersion GAME_VERSION;
 
 
-    static const std::string getPackageName(std::string game_name);
+    static const ADPackageName &getMyPackageName();
 
+    static ADPackageName APP_MIF_27_FREE;
+    static ADPackageName APP_MIF_27_PREMIUM;
+    static ADPackageName APP_MIF_MULTIPLICATION_FREE;
+    static ADPackageName APP_MIF_MULTIPLICATION_PREMIUM;
 private:
-    static const std::string doGetPackageName(const std::string game_name);
+    //static const std::string doGetPackageName(const std::string game_name);
 };
 
 #endif // GAMEINFO_H

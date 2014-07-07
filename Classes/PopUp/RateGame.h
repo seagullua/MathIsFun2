@@ -18,7 +18,7 @@ private:
         ADStatistics::logEvent("Rate Me Clicked");
 
         cocos2d::CCLog("on Rate Level clicked");
-        ADBrowser::openApplicationPage(GameInfo::getPackageName("mif28"));
+        ADBrowser::openApplicationPage(GameInfo::getMyPackageName());
         this->closeWindow();
     }
     void onRateLaterClick()

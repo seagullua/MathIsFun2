@@ -40,25 +40,37 @@ int GameInfo::TUTORIAL_LEVELID_SECOND=0;
 
 //game version
 //TODO: change it to get another levels, resources and another
-//GameVersion GameInfo::GAME_VERSION = GameVersion::VerionMultiply;
-GameVersion GameInfo::GAME_VERSION = GameVersion::VersionPlus;//
+
 //hints
 int GameInfo::HINT_ADD = 3;
 
-const std::string GameInfo::doGetPackageName(const std::string game_name)
+ADPackageName GameInfo::APP_MIF_27_FREE = ADPackageName::create(
+            "com.x4enjoy.mathisfun_kids", //Android
+            "id896468015", //iOS id
+            "id-windows-phone"); //Windows Phone
+
+ADPackageName GameInfo::APP_MIF_27_PREMIUM = ADPackageName::create(
+            "com.x4enjoy.mathisfun_kids_premium", //Android
+            "id00000...", //iOS id
+            "id-windows-phone"); //Windows Phone
+ADPackageName GameInfo::APP_MIF_MULTIPLICATION_FREE = ADPackageName::create(
+            "com.x4enjoy.mathisfun_multiplication", //Android
+            "id00000...", //iOS id
+            "id-windows-phone"); //Windows Phone
+ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::create(
+            "com.x4enjoy.mathisfun_multiplication_premium", //Android
+            "id00000...", //iOS id
+            "id-windows-phone"); //Windows Phone
+
+
+const ADPackageName& GameInfo::getMyPackageName()
 {
-    //TODO:chane it
-    if(game_name =="mif28")
+    if(GAME_VERSION == GameVersion::VersionPlus)
     {
-        if(ADInfo::getPlatform() == ADPlatform::iOS)
-            return "id657095501";
-        else
-            return "com.x4enjoy.mathisfun";
+        return APP_MIF_27_FREE;
     }
-
-}
-
-const std::string GameInfo::getPackageName(std::string game_name)
-{
-    return doGetPackageName(game_name);
+    else
+    {
+        return APP_MIF_MULTIPLICATION_FREE;
+    }
 }
