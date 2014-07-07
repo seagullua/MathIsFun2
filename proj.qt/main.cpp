@@ -125,7 +125,7 @@ void openAllCollectionScene(TestInfo info,
     if(!first_collections)
         layer->moveCollectionScrollZone();
 
-    ADDeviceEmulator::runLater(2.5f, [info](){
+    ADDeviceEmulator::runLater(4.5f, [info](){
 
         ADDeviceEmulator::createScreenShoot(info);
         info.finish();
