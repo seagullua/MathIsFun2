@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-07-05 17:23+0200\n"
+"POT-Creation-Date: 2014-07-07 11:12+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,23 +14,23 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
 
-#: ../../Classes/Layers/LevelStop.cpp:43
+#: ../../Classes/Layers/LevelStop.cpp:36
 msgid "menu.resume"
 msgstr "Продовжити"
 
-#: ../../Classes/Layers/LevelStop.cpp:51
+#: ../../Classes/Layers/LevelStop.cpp:46
 msgid "menu.restart"
 msgstr "Спочатку"
 
-#: ../../Classes/Layers/LevelStop.cpp:60
+#: ../../Classes/Layers/LevelStop.cpp:57
 msgid "menu.skip_level"
 msgstr "Пропустити"
 
-#: ../../Classes/Layers/LevelStop.cpp:69
+#: ../../Classes/Layers/LevelStop.cpp:68
 msgid "menu.found_solutions"
 msgstr "Знайдені розв`язки"
 
-#: ../../Classes/Layers/LevelStop.cpp:77
+#: ../../Classes/Layers/LevelStop.cpp:78
 msgid "menu.levels"
 msgstr "Рівні"
 
@@ -46,11 +46,11 @@ msgstr ""
 "- Лічба до 10,\n"
 "додавання та віднімання"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:52
+#: ../../Classes/PopUp/BuyFullVersion.cpp:53
 msgid "pop_up.buy_full_version.button.buy_now"
 msgstr "Купити Зараз"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:72
+#: ../../Classes/PopUp/BuyFullVersion.cpp:80
 msgid "pop_up.buy_full_version.button.later"
 msgstr "Купити Пізніше"
 
@@ -58,15 +58,11 @@ msgstr "Купити Пізніше"
 msgid "rate_game.title"
 msgstr "Подобається Гра?"
 
-#: ../../Classes/PopUp/RateGame.cpp:23
-msgid "rate_game.description"
-msgstr "Оцінити гру зараз"
-
 #: ../../Classes/PopUp/RateGame.cpp:46
 msgid "pop_up.rate.button.rate_now"
 msgstr "Оцінити Зараз"
 
-#: ../../Classes/PopUp/RateGame.cpp:67
+#: ../../Classes/PopUp/RateGame.cpp:71
 msgid "pop_up.rate.button.later"
 msgstr "Оцінити Пізніше"
 
@@ -95,7 +91,11 @@ msgstr ""
 msgid "pop_up.get_hints.button.ok"
 msgstr "OK"
 
-#: ../../Classes/Scenes/MainMenu.cpp:173
+#: ../../Classes/Scenes/MainMenu.cpp:150
+msgid "main_menu.buy_full_version.button"
+msgstr "Отримати Повну Версію"
+
+#: ../../Classes/Scenes/MainMenu.cpp:220
 msgid "main_menu.go_out.title"
 msgstr "Хочете вийти з програми?"
 
@@ -143,7 +143,7 @@ msgstr "Малина"
 msgid "collection_name.locked"
 msgstr "Закрито"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:307
+#: ../../Classes/Scenes/SelectCollection.cpp:313
 msgid "select_collection.title"
 msgstr "Вибір Колекції"
 
@@ -172,6 +172,9 @@ msgid "pop_up.reset_progress.title"
 msgstr ""
 "Ви впевнені що хочете видалити\n"
 "всю інформацію про пройдені рівні?"
+
+#~ msgid "rate_game.description"
+#~ msgstr "Оцінити гру зараз"
 
 #~ msgid "solution.already_found_solution"
 #~ msgstr "Alreay found solution"

@@ -6,12 +6,15 @@ USING_NS_CC;
 #include "Settings.h"
 #include "SimpleAudioEngine.h"
 #include "Logic/Language.h"
+#include "Logic/SavesManager.h"
 #include "Logic/RW.h"
+#include "PopUp/BuyFullVersion.h"
 
 MainMenu::MainMenu()
     :
       _main_menu(0),
-      _logo(0)
+      _logo(0),
+      _buy_full_version(nullptr)
 {
 
 }
@@ -140,6 +143,48 @@ bool MainMenu::init()
 
     //////////////////////////////////////////
 
+    if(!SavesManager::getInstance()->isFullVersion())
+    {
+        //create zebra image
+        CCSprite* zebra = CCSprite::create("select_collection/zebra.png");
+        //this->addChild(zebra);
+        //zebra->setScale(0.9f);
+        //zebra->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.8f,
+        //                       settings_target_position.y+200/SCALE));
+
+
+
+        //add Buy Full Version button
+       CCLabelTTF* buy_now_title = CCLabelTTF::create(_("main_menu.buy_full_version.button"),
+                                                       ADLanguage::getFontName(),
+                                                       45);
+        buy_now_title->setColor(GameInfo::COLOR_DARK_GREEN);
+        _buy_full_version = ADMenuItem::create(zebra);
+        _buy_full_version->addChild(buy_now_title);
+        buy_now_title->setPositionX(_buy_full_version->getContentSize().width*0.5);
+        buy_now_title->setAnchorPoint(ccp(0.5f, 1));
+        buy_now_title->setPositionY(0);
+
+        CONNECT(_buy_full_version->signalOnClick,
+                this, &MainMenu::onBuyFullVersionClicked);
+
+
+       _buy_full_version->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.8f,
+                                      settings_target_position.y+250/SCALE));
+
+        _main_menu->addChild(_buy_full_version);
+
+        ///////////////////////////////////////////
+
+        //add animation
+        _buy_full_version->setOpacity(0);
+        CCFadeTo* buy_move = CCFadeTo::create(0.5f, 255);
+        _buy_full_version->runAction
+                (CCSequence::create(CCDelayTime::create(0.3f), buy_move, NULL));
+
+    }
+    /////////////////////////////////////////
+
     //add menu to disable for pop up window
     _pop_up_manager.addMenuToAutoDisable(_main_menu);
     _pop_up_manager.addMenuToAutoDisable(_share_menu);
@@ -162,7 +207,12 @@ void MainMenu::hideEverything(const Action& callback)
     _facebook_button->runAction
             (CCSequence::create(CCDelayTime::create(0.15f), facebook_move, NULL));
 
-
+    if(_buy_full_version)
+    {
+        CCFadeTo* buy_move = CCFadeTo::create(0.15f, 0);
+        _buy_full_version->runAction
+                (CCSequence::create(CCDelayTime::create(0.15f), buy_move, NULL));
+    }
 
 }
 
@@ -182,6 +232,11 @@ void MainMenu::onBackClick()
 void MainMenu::onShareFacebookPressed()
 {
     ADBrowser::openWebURL(GameInfo::FACEBOOK_URL);
+}
+
+void MainMenu::onBuyFullVersionClicked()
+{
+     _pop_up_manager.openWindow(new BuyFullVersion());
 }
 
 //Action when user presses on Play

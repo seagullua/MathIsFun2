@@ -15,11 +15,13 @@ private:
     ADMenuItem* _facebook_button;
     ADMenuItem *_settings;
     ADMenuItem *_play;
-    cocos2d::CCSprite* _junior;
+    ADMenuItem *_buy_full_version;
 
 
     void hideEverything(const Action& callback);
     void onShareFacebookPressed();
+    void onBuyFullVersionClicked();
+
     //Action when user presses on Play
     void onPlayPressed();
 
