@@ -78,7 +78,7 @@ void SavesManager::initDefaultValues()
         ADStorage::setValue<int64_t>(BLOCK_HINTS,7);
 
     if(!ADStorage::hasValue(BLOCK_SHOW_RATE_ME))
-        ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
+        ADStorage::setValue<int64_t>(BLOCK_SHOW_RATE_ME,0);
 
     //last time for hint add-s
     if(!ADStorage::hasValue(BLOCK_HINT_TIME))

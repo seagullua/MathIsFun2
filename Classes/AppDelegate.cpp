@@ -62,9 +62,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     //Statistics init
 
     if(ADInfo::getPlatform() == ADPlatform::Android)
-        ADStatistics::setApplicationKey("H4R6T9SPWVBVT5JCNJTZ");
+        ADStatistics::setApplicationKey("3WK4P7YZWV5WBCSZWJTT");
     else if(ADInfo::getPlatform() == ADPlatform::iOS)
-        ADStatistics::setApplicationKey("479VHJ5J349H24W94XKQ");
+        ADStatistics::setApplicationKey("2N2D57R7FYHMY4PHNC7Y");
     ADStatistics::startSession();
     ADInfo::getStore();
 

@@ -6,7 +6,7 @@
 #include "Logic/RW.h"
 #include "Scenes/SelectCollection.h"
 #include "Scenes/LevelScene.h"
-
+#include "Logic/SavesManager.h"
 using namespace cocos2d;
 
 
@@ -46,6 +46,8 @@ void InAppDelegate::purchaseSuccessful(const ADInApp::ProductID& itemId)
     {
         RW::unlockAllCollectionsPurchased();
         SelectCollection::purchaseReload();
+
+        SavesManager::getInstance()->setFullVersion(true);
 
         RW::disableAds();
         ADAds::disableAds();

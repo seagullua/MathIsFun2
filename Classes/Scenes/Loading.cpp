@@ -139,98 +139,92 @@ void Loading::initRW()
 void Loading::addAll()
 {
 
+    //Root
+    addSpriteToLoad("back_button.png");
 
-//    addSpriteToLoad("common.png");
-//    addPlistToLoad("common.plist");
+    addSpriteToLoad("loading_screen.png");
+    addPlistToLoad("loading_screen.plist");
 
-//    addSpriteToLoad("loading_screen.png");
-//    addPlistToLoad("loading_screen.plist");
+    addSpriteToLoad("sheet_menu.png");
+    addPlistToLoad("sheet_menu.plist");
 
+    addSpriteToLoad("yes.png");
+    addSpriteToLoad("no.png");
 
+    //Font (drawable)
+    addSpriteToLoad("font/mathisfun.png");
+    addSpriteToLoad("font/mathisfun_digits.png");
+    addPlistToLoad("font/mathisfun_digits.plist");
 
+    //Level
+    addSpriteToLoad("level/input_space.png");
+    addPlistToLoad("level/input_space.plist");
 
-//    addSpriteToLoad("font/mathisfun.png");
-//    addSpriteToLoad("font/mathisfun_digits.png");
-//    addPlistToLoad("font/mathisfun_digits.plist");
+    addSpriteToLoad("level/keyboard.png");
+    addPlistToLoad("level/keyboard.plist");
 
-//    addSpriteToLoad("level/input_space.png");
-//    addPlistToLoad("level/input_space.plist");
+    addSpriteToLoad("level/level_end_menu.png");
+    addPlistToLoad("level/level_end_menu.plist");
 
-//    addSpriteToLoad("level/keyboard.png");
-//    addPlistToLoad("level/keyboard.plist");
-
-//    addSpriteToLoad("level/level_end.png");
-//    addPlistToLoad("level/level_end.plist");
-
-//    addSpriteToLoad("level/level_end_menu.png");
-//    addPlistToLoad("level/level_end_menu.plist");
-
-//    /*addSpriteToLoad(Language::localizeFileName("level/found_solutions.png").c_str());
-//    addPlistToLoad(Language::localizeFileName("level/found_solutions.plist").c_str());
-//    */
     addSpriteToLoad("level/stamps.png");
     addPlistToLoad("level/stamps.plist");
 
-//    addSpriteToLoad("level_scene/ellements.png");
-//    addPlistToLoad("level_scene/ellements.plist");
+    addSpriteToLoad("level/find_more_background.png");
+    addSpriteToLoad("level/levels_background.png");
+    addSpriteToLoad("level/next_level_background.png");
 
-//    addSpriteToLoad("main_menu/images.png");
-//    addPlistToLoad("main_menu/images.plist");
+    //Level Scene
+    addSpriteToLoad("level_scene/background1.png");
+    addSpriteToLoad("level_scene/lamp.png");
+    addSpriteToLoad("level_scene/lamp_hint.png");
+    addSpriteToLoad("level_scene/play_button.png");
+    addSpriteToLoad("level_scene/restart_button.png");
+    addSpriteToLoad("level_scene/stop_button.png");
 
-//    addSpriteToLoad("main_menu/menu.png");
-//    addPlistToLoad("main_menu/menu.plist");
+    //Main Menu
+    addSpriteToLoad("main_menu/facebook_logo.png");
+    addSpriteToLoad("main_menu/logo.png");
+    addSpriteToLoad("main_menu/play.png");
+    addSpriteToLoad("main_menu/settings.png");
 
-//    addSpriteToLoad("sheet_menu.png");
-//    addPlistToLoad("sheet_menu.plist");
+    //Select Collection
+    addSpriteToLoad("select_collection/new_collection.png");
+    addPlistToLoad("select_collection/new_collection.plist");
 
+    addSpriteToLoad("select_collection/new_collection2.png");
+    addPlistToLoad("select_collection/new_collection2.plist");
 
-//    addSpriteToLoad("select_collection/new_collection.png");
-//    addPlistToLoad("select_collection/new_collection.plist");
+    addSpriteToLoad("select_collection/background1.png");
+    addSpriteToLoad("select_collection/zebra.png");
 
-//    //addSpriteToLoad(Language::localizeFileName("select_collection/images.png").c_str());
-//    //addPlistToLoad(Language::localizeFileName("select_collection/images.plist").c_str());
-
-//    addSpriteToLoad("select_level/marks.png");
-//    addPlistToLoad("select_level/marks.plist");
-
-//    addSpriteToLoad(Language::localizeFileName("select_level/menu_name.png").c_str());
-//    addPlistToLoad(Language::localizeFileName("select_level/menu_name.plist").c_str());
-
-//    //    addSpriteToLoad(Language::localizeFileName("settings/developers_menu_name.png").c_str());
-//    //    addPlistToLoad(Language::localizeFileName("settings/developers_menu_name.plist").c_str());
-
-//    addSpriteToLoad("settings/settings_developers_ad.png");
-//    addPlistToLoad("settings/settings_developers_ad.plist");
-
-//    addSpriteToLoad(Language::localizeFileName("settings/settings_menu.png").c_str());
-//    addPlistToLoad(Language::localizeFileName("settings/settings_menu.plist").c_str());
-
-//    //addSpriteToLoad(Language::localizeFileName("settings/settings_name.png").c_str());
-//    //addPlistToLoad(Language::localizeFileName("settings/settings_name.plist").c_str());
-
-//    //	addSpriteToLoad("stop_level/sheet.png");
-//    //	addPlistToLoad("stop_level/sheet.plist");
-
-//    addSpriteToLoad(Language::localizeFileName("stop_level/stop_level_menu.png").c_str());
-//    addPlistToLoad(Language::localizeFileName("stop_level/stop_level_menu.plist").c_str());
+    //Select Level
+    addSpriteToLoad("select_level/marks.png");
+    addPlistToLoad("select_level/marks.plist");
 
 
-//    addSoundToLoad("music/choose.wav");
-//    addMusicToLoad(GameInfo::BACKGROUND_MUSIC.c_str());
+    //Settings
+    addSpriteToLoad("settings/4enjoy.png");
+    addSpriteToLoad("settings/Expert_mode_off.png");
+    addSpriteToLoad("settings/Expert_mode_on.png");
+    addSpriteToLoad("settings/Music_off.png");
+    addSpriteToLoad("settings/Music_on.png");
+    addSpriteToLoad("settings/Sound_off.png");
+    addSpriteToLoad("settings/Sound_on.png");
 
-//    const CollectionsArr& arr = RW::getCollections();
-//    for(CollectionsArr::const_iterator it = arr.begin(); it != arr.end(); ++it)
-//    {
-//        Collection* a = it->second;
-//        std::stringstream ss;
-//        std::stringstream ss_f;
-//        ss << "medium/select_collection/coll_" << a->getCollectionID() << ".png";
-//        ss_f << "medium/select_collection/clabel_" << a->getCollectionID() << ".png";
-//        addSpriteToLoad(ss.str().c_str());
-//        addSpriteToLoad(Language::localizeFileName(ss_f.str()).c_str());
-//    }
-//    addSpriteToLoad("medium/select_collection/coll_lock.png");
-//    addSpriteToLoad(Language::localizeFileName("medium/select_collection/clabel_locked.png").c_str());
+
+    addSoundToLoad("music/choose.wav");
+    addMusicToLoad(GameInfo::BACKGROUND_MUSIC.c_str());
+
+    const CollectionsArr& arr = RW::getCollections();
+    for(CollectionsArr::const_iterator it = arr.begin(); it != arr.end(); ++it)
+    {
+        Collection* a = it->second;
+        std::stringstream ss;
+        ss << "medium/select_collection/coll_" << a->getCollectionID() << ".png";
+        addSpriteToLoad(ss.str().c_str());
+
+    }
+    addSpriteToLoad("medium/select_collection/coll_lock.png");
 }
 void Loading::addSpriteToLoad(const char* sp)
 {
