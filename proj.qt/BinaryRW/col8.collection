@@ -10,40 +10,34 @@ COLLECTION_DIFFICULTY(Hard)
 //Hard6
 //Level 1
 LEVEL
-        EQUATION(6-_-_=1+4)
-        ADD_SOLUTION(01)
-        ADD_SOLUTION(10)
+        EQUATION(1+_-_=8)
+        ADD_SOLUTION(70)
+        ADD_SOLUTION(81)
+        ADD_SOLUTION(92)
 END_LEVEL
+
 
 //Level 2
 LEVEL
-        EQUATION(5-_+_=2-1)
-        ADD_SOLUTION(40)
-        ADD_SOLUTION(51)
-        ADD_SOLUTION(62)
-        ADD_SOLUTION(73)
-        ADD_SOLUTION(84)
-        ADD_SOLUTION(95)
+        EQUATION(4+_=5-_)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 
 
 //Level 3
 LEVEL
-        EQUATION(7-_+_=2+1)
-        ADD_SOLUTION(40)
-        ADD_SOLUTION(51)
-        ADD_SOLUTION(62)
-        ADD_SOLUTION(73)
-        ADD_SOLUTION(84)
-        ADD_SOLUTION(95)
+        EQUATION(2+_+2=6-_)
+        ADD_SOLUTION(02)
+        ADD_SOLUTION(11)
+        ADD_SOLUTION(20)
 END_LEVEL
-
 
 
 //Level 4
 LEVEL
-        EQUATION(_-1+_=2-1)
+        EQUATION(3-_+4=_+5)
         ADD_SOLUTION(02)
         ADD_SOLUTION(11)
         ADD_SOLUTION(20)
@@ -51,52 +45,44 @@ END_LEVEL
 
 //Level 5
 LEVEL
-        EQUATION(_+2+_=5-1)
-        ADD_SOLUTION(02)
-        ADD_SOLUTION(11)
-        ADD_SOLUTION(20)
+        EQUATION(5-2+_=3+2)
+        ADD_SOLUTION(2)
 END_LEVEL
+
 
 //Level 6
 LEVEL
-        EQUATION(_+3+_=5+1)
-        ADD_SOLUTION(03)
-        ADD_SOLUTION(12)
-        ADD_SOLUTION(21)
-        ADD_SOLUTION(30)
+        EQUATION(4+2+_=7-_)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
 END_LEVEL
+
 
 
 //Level 7
 LEVEL
-        EQUATION(3+1+_=_-1)
-        ADD_SOLUTION(05)
-        ADD_SOLUTION(16)
-        ADD_SOLUTION(27)
-        ADD_SOLUTION(38)
-        ADD_SOLUTION(49)
+        EQUATION(1+2+_=3-_)
+        ADD_SOLUTION(00)
 END_LEVEL
+
 
 
 
 
 //Level 8
 LEVEL
-        EQUATION(6-2-_=_+2)
-        ADD_SOLUTION(02)
-        ADD_SOLUTION(11)
-        ADD_SOLUTION(20)
+        EQUATION(2+2+_=5-_)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
 END_LEVEL
-
 
 
 //Level 9
 LEVEL
-        EQUATION(0+1-_=_-2)
-        ADD_SOLUTION(03)
-        ADD_SOLUTION(12)
-        ADD_SOLUTION(21)
-        ADD_SOLUTION(30)
+        EQUATION(4+_+_=9-3)
+        ADD_SOLUTION(02)
+        ADD_SOLUTION(11)
+        ADD_SOLUTION(20)
 END_LEVEL
 
 //Level 10
@@ -118,48 +104,36 @@ END_LEVEL
 
 //Level 12
 LEVEL
-        EQUATION(3-1-_=5-_)
-        ADD_SOLUTION(03)
-        ADD_SOLUTION(14)
-        ADD_SOLUTION(25)
-        ADD_SOLUTION(36)
-        ADD_SOLUTION(47)
-        ADD_SOLUTION(58)
-        ADD_SOLUTION(69)
+        EQUATION(3+_+_=5-0)
+        ADD_SOLUTION(02)
+        ADD_SOLUTION(11)
+        ADD_SOLUTION(20)
 END_LEVEL
 
 
 
 //Level 13
 LEVEL
-        EQUATION(4-1+_=6-_)
-        ADD_SOLUTION(03)
-        ADD_SOLUTION(12)
-        ADD_SOLUTION(21)
-        ADD_SOLUTION(30)
+        EQUATION(4+_+_=6-1)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 
 //Level 14
 LEVEL
-        EQUATION(4+3-_=3+_)
-        ADD_SOLUTION(04)
-        ADD_SOLUTION(13)
-        ADD_SOLUTION(22)
-        ADD_SOLUTION(31)
-        ADD_SOLUTION(40)
+        EQUATION(4+_+_=3+2)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 
 //Level 15
 LEVEL
-        EQUATION(4+3-_=3-_)
-        ADD_SOLUTION(40)
-        ADD_SOLUTION(51)
-        ADD_SOLUTION(62)
-        ADD_SOLUTION(73)
-        ADD_SOLUTION(84)
-        ADD_SOLUTION(95)
+        EQUATION(0+_+_=3-1)
+        ADD_SOLUTION(02)
+        ADD_SOLUTION(11)
+        ADD_SOLUTION(20)
 END_LEVEL
 
 //Level 16
@@ -178,7 +152,7 @@ END_LEVEL
 
 //Level 18
 LEVEL
-        EQUATION(3+1+_=6-_)
+        EQUATION(3+_+_=6-1)
         ADD_SOLUTION(02)
         ADD_SOLUTION(11)
         ADD_SOLUTION(20)
@@ -187,8 +161,9 @@ END_LEVEL
 
 //Level 19
 LEVEL
-        EQUATION(3+1+_=4-_)
-        ADD_SOLUTION(00)
+        EQUATION(3+_+_=4-0)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
 END_LEVEL
 
 
