@@ -2,6 +2,7 @@
 #include <ADLib/Device/ADSoundManager.h>
 #include <ADLib/Device.h>
 #include "GameInfo.h"
+#include "Logic/SavesManager.h"
 using namespace cocos2d;
 bool BackgroundHolder::_firstly=true;
 
@@ -41,13 +42,14 @@ void BackgroundHolder::do_backgroundSwitchTo(cocos2d::CCNode* node,
                                              const bool play_music)
 {
     //turn on the audio if we just open the game
-    if (play_music)
+    if (play_music && SavesManager::getInstance()->isMusicOn())
     {
+        ADSoundManager::turnOnMusic();
         ADSoundManager::playMusic(GameInfo::BACKGROUND_MUSIC);
     }
     else
     {
-        ADSoundManager::pauseMusic();
+        ADSoundManager::turnOffMusic();
     }
 
     //If we has layer

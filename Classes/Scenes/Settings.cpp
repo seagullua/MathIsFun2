@@ -6,6 +6,7 @@
 #include "Store.h"
 #include <ADLib/Device/ADSoundManager.h>
 #include <ADLib/Device/ADLanguage.h>
+#include "Logic/SavesManager.h"
 #include "GameInfo.h"
 static const int NORMAL_SPRITE = 10;
 static const int SELECTED_SPRITE = 20;
@@ -35,9 +36,9 @@ void switchImages(ADMenuItem* item)
 
 
 Settings::Settings():
-    _sound_on(ADSoundManager::isSoundTurnedOn()),
-    _music_on(ADSoundManager::isMusicTurnedOn()),
-    _expert_mode_on(RW::isExpertMode())
+    _sound_on(SavesManager::getInstance()->isSoundOn()),
+    _music_on(SavesManager::getInstance()->isMusicOn()),
+    _expert_mode_on(SavesManager::getInstance()->isExpertModeOn())
 {
 }
 
@@ -235,6 +236,7 @@ void Settings::onExpertModeSelect(ADMenuItem* item)
         _expert_mode_on=true;
 
     }
+    SavesManager::getInstance()->setExpertMode(_expert_mode_on);
     switchImages(item);
 
 }
@@ -274,6 +276,7 @@ void Settings::onSoundSelect(ADMenuItem* item)
         ADSoundManager::turnOnSound();
 
     }
+    SavesManager::getInstance()->setSound(_sound_on);
     switchImages(item);
 }
 
@@ -291,6 +294,7 @@ void Settings::onMusicSelect(ADMenuItem* item)
         ADSoundManager::turnOnMusic();
 
     }
+    SavesManager::getInstance()->setMusic(_music_on);
     switchImages(item);
 }
 void Settings::onDevelopersSelect()

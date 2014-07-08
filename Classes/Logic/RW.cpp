@@ -161,21 +161,12 @@ void RW::loadGame()
 }
 bool RW::isExpertMode()
 {
-    if(_rw)
-    {
-        return _rw->_expert_mode;
-    }
-    return false;
+    return SavesManager::getInstance()->isExpertModeOn();
 }
 
 void RW::setExpertMode(bool expert)
 {
-    if(_rw)
-    {
-        _rw->_expert_mode = expert;
-        //MANAGER
-        SavesManager::getInstance()->setExpertMode(expert);
-    }
+    SavesManager::getInstance()->setExpertMode(expert);
 }
 
 /**
@@ -409,19 +400,19 @@ void RW::readSettings()
 //save settings
 void RW::flushSettings()
 {
-#ifndef RW_DEBUG
-    if(_rw)
-    {
-        bool expert_mode = RW::isExpertMode();
-        bool music_on = ADSoundManager::isMusicTurnedOn();
-        bool sounds_on = ADSoundManager::isSoundTurnedOn();
+//#ifndef RW_DEBUG
+//    if(_rw)
+//    {
+//        bool expert_mode = RW::isExpertMode();
+//        bool music_on = ADSoundManager::isMusicTurnedOn();
+//        bool sounds_on = ADSoundManager::isSoundTurnedOn();
 
-        SavesManager::getInstance()->setExpertMode(expert_mode);
-        SavesManager::getInstance()->setMusic(music_on);
-        SavesManager::getInstance()->setSound(sounds_on);
-        SavesManager::getInstance()->setHint(_rw->_hints_count);
-    }
-#endif
+//        SavesManager::getInstance()->setExpertMode(expert_mode);
+//        SavesManager::getInstance()->setMusic(music_on);
+//        SavesManager::getInstance()->setSound(sounds_on);
+//        SavesManager::getInstance()->setHint(_rw->_hints_count);
+//    }
+//#endif
 }
 
 const CollectionsArr &RW::getCollections()
