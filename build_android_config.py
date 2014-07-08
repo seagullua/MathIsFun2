@@ -25,7 +25,7 @@ project.addModule('android_ADHttp_None')
 project.project_name = 'Math Is Fun 2-7'
 project.package_name = 'com.x4enjoy.mathisfun.kids'
 project.version_name = "1.2"
-project.version_code = "2"
+project.version_code = "3"
 project.resources_compile_task = createResourceCompilerTask(
     os.path.join(working_directory, 'Resources_storage'),
     'mif',
