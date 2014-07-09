@@ -53,7 +53,7 @@ END_LEVEL
 
 //Level 7
 LEVEL
-        EQUATION(3#3-1=5)
+        EQUATION(4#3-1=6)
         ADD_SOLUTION(+)
 END_LEVEL
 
@@ -111,8 +111,8 @@ END_LEVEL
 
 //Level 15
 LEVEL
-        EQUATION(1#5+2=8)
-        ADD_SOLUTION(+)
+        EQUATION(5#5+2=2)
+        ADD_SOLUTION(-)
 END_LEVEL
 
 //Level 16

@@ -131,9 +131,11 @@ END_LEVEL
 //Level 15
 LEVEL
         EQUATION(0+_+_=4)
-        ADD_SOLUTION(02)
-        ADD_SOLUTION(11)
-        ADD_SOLUTION(20)
+        ADD_SOLUTION(04)
+        ADD_SOLUTION(13)
+        ADD_SOLUTION(22)
+        ADD_SOLUTION(31)
+        ADD_SOLUTION(40)
 END_LEVEL
 
 //Level 16
