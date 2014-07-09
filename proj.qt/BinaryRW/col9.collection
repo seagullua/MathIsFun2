@@ -24,8 +24,8 @@ END_LEVEL
 
 //Level 3
 LEVEL
-        EQUATION(7-_+1=4)
-        ADD_SOLUTION(4)
+        EQUATION(7+_-5=4)
+        ADD_SOLUTION(2)
 END_LEVEL
 
 
@@ -60,6 +60,7 @@ END_LEVEL
 
 
 
+//Level 8
 LEVEL
         EQUATION(5+_+1=8)
         ADD_SOLUTION(2)

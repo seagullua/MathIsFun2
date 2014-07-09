@@ -75,7 +75,7 @@ END_LEVEL
 
 //Level 10
 LEVEL
-        EQUATION(5#2=6+1)
+        EQUATION(5#3=8)
         ADD_SOLUTION(+)
 END_LEVEL
 
