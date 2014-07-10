@@ -656,18 +656,20 @@ void EquationDrawer::recalculateEquation()
 
     bool is_duplicate = false;
 
+    RawSubstitutionsArr current_substitutions(_equation.substitutionsNumber());
+    unsigned int substitutions_number = _equation.substitutionsNumber();
+    for(unsigned int i=0; i<substitutions_number; ++i)
+    {
+        current_substitutions[i]=_equation.getSubstitutedSymbol(i).toString();
+    }
+    Solution current_solution(current_substitutions);
+
     if(left.isEvaluated() && right.isEvaluated())
     {
         //We can calculate both left and right side of equation
         if(left.result() == right.result())
         {
-            RawSubstitutionsArr current_substitutions(_equation.substitutionsNumber());
-            unsigned int substitutions_number = _equation.substitutionsNumber();
-            for(unsigned int i=0; i<substitutions_number; ++i)
-            {
-                current_substitutions[i]=_equation.getSubstitutedSymbol(i).toString();
-            }
-            Solution current_solution(current_substitutions);
+
             //const Solutions& found_solutions = _level->getFoundSolutions();
             if(RW::registerSolution(_level, current_solution))
             {
@@ -680,7 +682,7 @@ void EquationDrawer::recalculateEquation()
 
                 //This is new solution
                 _inserted_label->setColor(EquationColor_NewSolution);
-                LevelScenePopUp* pop_up = LevelScenePopUp::create(this);
+                LevelScenePopUp* pop_up = LevelScenePopUp::create(this, current_solution);
                 _parent->addChild(pop_up);
                 _parent->hideMe(true);
                 _parent->onFoundSolutionOpen(pop_up);
@@ -737,7 +739,7 @@ void EquationDrawer::recalculateEquation()
                 //Do not show it is already foind solution
                 //show level end pop Up
                 _inserted_label->setColor(EquationColor_NewSolution);
-                LevelScenePopUp* pop_up = LevelScenePopUp::create(this);
+                LevelScenePopUp* pop_up = LevelScenePopUp::create(this, current_solution);
                 _parent->addChild(pop_up);
                 _parent->hideMe(true);
                 _parent->onFoundSolutionOpen(pop_up);

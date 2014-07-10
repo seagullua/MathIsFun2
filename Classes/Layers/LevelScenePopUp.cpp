@@ -138,11 +138,21 @@ bool LevelScenePopUp::init()
 
     //    title->setPosition(ccp(409*design_scale/scaled, 445*design_scale/scaled));
     const Solutions& all_found_solutions = _parent->getLevel()->getFoundSolutions();
-    Solutions last_solution(1, all_found_solutions.back());
+    Solutions last_solution(1, _solution);
     DisplaySolution* solution = DisplaySolution::create(CCSize(371/scaled, 90/scaled),
                                                         _parent->getLevel(),
                                                         last_solution,
                                                         last_solution);
+    unsigned int stamp_ID = 0;
+    for(unsigned int i=0; i<all_found_solutions.size(); ++i)
+    {
+        if(all_found_solutions[i] == _solution)
+        {
+            stamp_ID = i;
+            break;
+        }
+    }
+
     this->addChild(solution);
     solution->setAnchorPoint(ccp(0.5f,0.5f));
     solution->setPosition(ccp(409*design_scale/scaled, 445*design_scale/scaled));
@@ -221,14 +231,6 @@ bool LevelScenePopUp::init()
 
                 if(stamp.newStamp())
                 {
-                    /*CCSequence* seq2 = CCSequence::createWithTwoActions(
-                                CCFadeTo::create(0.5f, 130),
-                                CCFadeTo::create(0.5f, 255));*/
-
-                    //CCSequence* seq2 = ;
-
-                    sp->runAction(getNewStampAction(stamps_scale));
-
                     if(current_level->getLevelState() == Level::Crown)
                     {
                         //Add crown to last stamp
@@ -237,10 +239,18 @@ bool LevelScenePopUp::init()
                         spc->setPosition(sp->getPosition());
 
                         spc->setAnchorPoint(ccp(0.5, 0));
-                        spc->runAction(getNewStampAction(stamps_scale));
+                        if(i == stamp_ID)
+                        {
+                            spc->runAction(getNewStampAction(stamps_scale));
+                        }
                         _crown = spc;
                     }
                 }
+                if(i == stamp_ID)
+                {
+                    sp->runAction(getNewStampAction(stamps_scale));
+                }
+
             }
             else
             {

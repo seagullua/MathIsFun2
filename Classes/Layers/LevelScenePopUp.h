@@ -2,11 +2,16 @@
 #define LEVELSCENEPOPUP_H
 #include "cocos2d-A.h"
 
+#include "Logic/Level.h"
 class EquationDrawer;
 class LevelScenePopUp : public cocos2d::CCNode, public HasSlots
 {
 private:
-    LevelScenePopUp(EquationDrawer* parent) : _parent(parent), _crown(0), _pause_banner(0)
+    LevelScenePopUp(EquationDrawer* parent, const Solution& solution) :
+        _parent(parent),
+        _crown(0),
+        _pause_banner(0),
+        _solution(solution)
     {}
     //void remove_self();
 
@@ -15,6 +20,7 @@ private:
     cocos2d::CCPoint _sheet_target_position;
     cocos2d::CCSprite* _crown;
     ADAds::Banner* _pause_banner;
+    Solution _solution;
     void onFindMoreSolutions();
     void onLevels();
 
@@ -34,9 +40,9 @@ public:
     }
 
     cocos2d::CCSprite* getCrown();
-    static LevelScenePopUp* create(EquationDrawer* obj)
+    static LevelScenePopUp* create(EquationDrawer* obj, const Solution& solution)
     {
-        LevelScenePopUp *pRet = new LevelScenePopUp(obj);
+        LevelScenePopUp *pRet = new LevelScenePopUp(obj, solution);
         if (pRet && pRet->init())
         {
             pRet->autorelease();
