@@ -19,10 +19,11 @@ END_LEVEL
 
 //Level 2
 LEVEL
-        EQUATION(2+_#3=6)
-        ADD_SOLUTION(1+)
-        ADD_SOLUTION(7-)
+        EQUATION(3+_#1=4)
+        ADD_SOLUTION(0+)
+        ADD_SOLUTION(2-)
 END_LEVEL
+
 
 
 
