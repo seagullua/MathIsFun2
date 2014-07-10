@@ -192,7 +192,7 @@ void SavesManager::minusHint()
 void SavesManager::addHint(int num)
 {
     int64_t hints = ADStorage::getValue<int64_t>(BLOCK_HINTS, 0);
-    if(hints>0)
+    if(hints>=0)
     {
         hints+=num;
         return ADStorage::setValue<int64_t>(BLOCK_HINTS, hints);

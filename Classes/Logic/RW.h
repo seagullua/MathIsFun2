@@ -79,7 +79,7 @@ private:
     unsigned int _crowns_obtained;
     CollectionsArr _collections;
 
-    int64_t _hints_count;
+    //int64_t _hints_count;
     static const uint16_t _levels_mark = 0xAABD;
 
 

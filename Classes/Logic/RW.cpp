@@ -360,7 +360,7 @@ void RW::readHints()
             SavesManager::getInstance()->setTimeForHints(curtime);
             SavesManager::getInstance()->addHint(GameInfo::HINT_ADD);
 
-            _rw->_hints_count = SavesManager::getInstance()->getHintCount();
+            //_rw->_hints_count = SavesManager::getInstance()->getHintCount();
         }
 
 }
@@ -379,7 +379,7 @@ void RW::readSettings()
 //            _rw->_unlock_all_purchased = (unlock_all == 1);
 //            _rw->_buy_all_purchased = (buy_all == 1);
 
-            _rw->_hints_count = SavesManager::getInstance()->getHintCount();
+            //_rw->_hints_count = SavesManager::getInstance()->getHintCount();
 
             _rw->_ads_disabled = !SavesManager::getInstance()->isAds();
 
@@ -555,12 +555,10 @@ void RW::updateStampsAndCrownsCount()
 int64_t RW::getHintCount()
 {
    int64_t res =  SavesManager::getInstance()->getHintCount();
-    _rw->_hints_count =res;
-   return _rw->_hints_count;
+   return res;
 }
 void RW::addHints(unsigned int to_add)
 {
-    _rw->_hints_count += to_add;
     SavesManager::getInstance()->addHint(to_add);
 
     flushSettings();
@@ -598,10 +596,11 @@ void RW::disableAds()
 
 void RW::useOneHint()
 {
-    assert(_rw->_hints_count > 0);
-    if(_rw->_hints_count > 0)
+    int hints = getHintCount();
+    assert(hints > 0);
+    if(hints > 0)
     {
-        _rw->_hints_count--;
+        hints--;
         SavesManager::getInstance()->minusHint();
         flushSettings();
     }
@@ -609,7 +608,6 @@ void RW::useOneHint()
 
 RW::RW()
     : _expert_mode(SavesManager::getInstance()->isExpertModeOn()),
-      _hints_count(0),
       _ads_disabled(!SavesManager::getInstance()->isAds())
 {
 }
