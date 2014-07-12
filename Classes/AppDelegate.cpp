@@ -48,6 +48,21 @@ void initInAppPurchases()
 
         buy_full_version.setParameter("type", "non-consumable");
     }
+    else if(store == ADStore::SamsungStore)
+    {
+        ADInApp::setStoreKey("100000104146");
+
+        buy_full_version.setParameter("samsung-id","buy_full_version");
+
+    }
+    else if(store == ADStore::AmazonStore)
+    {
+        buy_full_version.setParameter("asku","buy_full_version");
+    }
+    else if(store == ADStore::iTunes)
+    {
+        buy_full_version.setParameter("asku","buy_full_version");
+    }
 
 
     ADInApp::addProduct(buy_full_version);
@@ -95,11 +110,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     std::string resourse_directory = mediumResource.directory;
     float resourse_scale = 1;
 
-//    if(frameSize.width < 500)
-//    {
-//        resourse_directory = "little";
-//        resourse_scale = 0.375;
-//    }
+    //    if(frameSize.width < 500)
+    //    {
+    //        resourse_directory = "little";
+    //        resourse_scale = 0.375;
+    //    }
     std::vector<std::string> searchPath;
     searchPath.push_back(resourse_directory);
 
@@ -140,8 +155,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     {
         if(store == ADStore::SamsungStore)
         {
-            //ca-app-pub-1612697960946304/3318394274
-            pid_interstitial << 3318394274;
+            //ca-app-pub-1612697960946304/5795034672
+            pid_interstitial << 5795034672;
         }
         else if(store == ADStore::GooglePlay)
         {
@@ -150,14 +165,14 @@ bool AppDelegate::applicationDidFinishLaunching()
         }
         else
         {
-            //ca-app-pub-1612697960946304/7888194679
-            pid_interstitial << 7888194679;
+            //ca-app-pub-1612697960946304/5795034672
+            pid_interstitial << 5795034672;
         }
     }
     else if(platform == ADPlatform::iOS)
     {
-        //ca-app-pub-1612697960946304/9225327070
-        pid_interstitial << 9225327070;
+        //ca-app-pub-1612697960946304/9357276676
+        pid_interstitial << 9357276676;
     }
 
     ADAds::registerInterstitialType(pid_interstitial.str());
