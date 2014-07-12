@@ -2,7 +2,7 @@
 *.slo
 *.lo
 *.o
-
+*.pyc
 TestScreens
 
 # Compiled Dynamic libraries
