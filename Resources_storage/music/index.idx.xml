@@ -16,6 +16,7 @@
 	<file>
 		<name>math_is_fun.wav</name>
 		<platform>winphone8</platform>
+		<platform>wp8</platform>
 		<platform>android_win</platform>
 	</file>
 
