@@ -5,7 +5,7 @@
 	</file>
 	<file>
 		<name>math_is_fun.mp3</name>
-		<platform>win8</platform>
+		<platform>winrt</platform>
 		<platform>ios</platform>
 		
 	</file>
