@@ -80,6 +80,9 @@ bool AppDelegate::applicationDidFinishLaunching()
         ADStatistics::setApplicationKey("3WK4P7YZWV5WBCSZWJTT");
     else if(ADInfo::getPlatform() == ADPlatform::iOS)
         ADStatistics::setApplicationKey("2N2D57R7FYHMY4PHNC7Y");
+	else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+        ADStatistics::setApplicationKey("DN44PJ9MC8QFPQPCHYCR");
+
     ADStatistics::startSession();
     ADInfo::getStore();
 
@@ -173,6 +176,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     {
         //ca-app-pub-1612697960946304/9357276676
         pid_interstitial << 9357276676;
+    }
+	else if(platform == ADPlatform::WindowsPhone)
+    {
+        //ca-app-pub-1612697960946304/4272772278
+        pid_interstitial << 4272772278;
     }
 
     ADAds::registerInterstitialType(pid_interstitial.str());

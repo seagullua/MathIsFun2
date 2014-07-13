@@ -19,7 +19,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>Joiny_x86.xap</XapFilename>
+    <XapFilename>App_x86.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>PhoneDirect3DXamlAppInterop.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>

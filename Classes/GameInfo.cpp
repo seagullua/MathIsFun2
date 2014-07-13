@@ -47,7 +47,7 @@ int GameInfo::HINT_ADD = 3;
 ADPackageName GameInfo::APP_MIF_27_FREE = ADPackageName::create(
             "com.x4enjoy.mathisfun.kids", //Android
             "id896468015", //iOS id
-            "id-windows-phone"); //Windows Phone
+            "1af4d00f-fdc7-44e5-9486-1ab72d602e70"); //Windows Phone
 
 ADPackageName GameInfo::APP_MIF_27_PREMIUM = ADPackageName::create(
             "com.x4enjoy.mathisfun.kids.premium", //Android

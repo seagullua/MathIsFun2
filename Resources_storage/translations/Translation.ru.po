@@ -151,7 +151,7 @@ msgstr "Выбор Коллекции"
 
 #: ../../Classes/Scenes/SelectLevel.cpp:84
 msgid "select_levels.title"
-msgstr "Вибор Уровней"
+msgstr "Выбор Уровней"
 
 #: ../../Classes/Scenes/Settings.cpp:85
 msgid "settings_menu.scene.title"
