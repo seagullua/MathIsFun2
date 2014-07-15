@@ -383,7 +383,7 @@ void RW::readSettings()
 
             _rw->_ads_disabled = !SavesManager::getInstance()->isAds();
 
-        RW::setExpertMode(expert_mode);
+        //RW::setExpertMode(expert_mode);
         if(music_on)
             ADSoundManager::turnOnMusic();
         else

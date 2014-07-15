@@ -39,7 +39,7 @@ public:
             return true;
 
     }
-
+    static bool isExpertModeAvaliable();
 
     //set collection and levels for RatePopUpWindow
     static int RATE_COLLECTIONID_FIRST;

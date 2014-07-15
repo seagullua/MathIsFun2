@@ -74,3 +74,8 @@ const ADPackageName& GameInfo::getMyPackageName()
         return APP_MIF_MULTIPLICATION_FREE;
     }
 }
+
+bool GameInfo::isExpertModeAvaliable()
+{
+    return false;
+}

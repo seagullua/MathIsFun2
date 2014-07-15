@@ -106,14 +106,21 @@ bool Settings::init()
     _menu_item.reserve(6);
 
 
-    ADMenuItem* expert_mode = createToggleButton(
-                "settings/Expert_mode_on.png",
-                "settings/Expert_mode_off.png",
-                !_expert_mode_on);
-    expert_mode->setClickAction([expert_mode, this](){
-        this->onExpertModeSelect(expert_mode);
-    });
-    _menu_item.push_back(expert_mode);
+    if(GameInfo::isExpertModeAvaliable())
+    {
+        ADMenuItem* expert_mode = createToggleButton(
+                    "settings/Expert_mode_on.png",
+                    "settings/Expert_mode_off.png",
+                    !_expert_mode_on);
+        expert_mode->setClickAction([expert_mode, this](){
+            this->onExpertModeSelect(expert_mode);
+        });
+        _menu_item.push_back(expert_mode);
+    }
+    else
+    {
+        _menu_item.push_back(nullptr);
+    }
 
     ADMenuItem* sound = createToggleButton(
                 "settings/Sound_on.png",
@@ -135,9 +142,14 @@ bool Settings::init()
     _menu_item.push_back(music);
 
 
-    menu_new->addChild(_menu_item[0]);
+
+    if(GameInfo::isExpertModeAvaliable())
+    {
+        menu_new->addChild(_menu_item[0]);
+    }
     menu_new->addChild(_menu_item[1]);
     menu_new->addChild(_menu_item[2]);
+
 
     //////////////////////////////////////////////////////
 
@@ -198,9 +210,13 @@ bool Settings::init()
 
     for (unsigned int i=0; i<_menu_item.size(); ++i)
     {
-        _menu_item[i]->setOpacity(0);
-        CCFadeTo* fade_in = CCFadeTo::create(0.3f, 255);
-        _menu_item[i]->runAction(fade_in);
+        if(_menu_item[i])
+        {
+            _menu_item[i]->setOpacity(0);
+            CCFadeTo* fade_in = CCFadeTo::create(0.3f, 255);
+            _menu_item[i]->runAction(fade_in);
+        }
+
     }
     return true;
 }
@@ -323,9 +339,13 @@ void Settings::hideEverything(const Action& callback)
     float fade_out_duration = 0.15f;
     for(unsigned int i=0; i<_menu_item.size(); ++i)
     {
-        CCFadeTo* item_fade = CCFadeTo::create(fade_out_duration, 0);
-        _menu_item[i]->runAction(
-                    item_fade);
+        if(_menu_item[i])
+        {
+            CCFadeTo* item_fade = CCFadeTo::create(fade_out_duration, 0);
+            _menu_item[i]->runAction(
+                        item_fade);
+        }
+
         //delay += fade_out_duration/2;
         //fade_out_duration+=0.2f;
     }
