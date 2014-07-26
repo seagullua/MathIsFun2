@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-07-07 11:11+0200\n"
+"POT-Creation-Date: 2014-07-26 18:09+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -34,24 +34,42 @@ msgstr "Found Solutions"
 msgid "menu.levels"
 msgstr "Levels"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:13
+#: ../../Classes/PopUp/BuyFullVersion.cpp:19
 msgid "buy_full_version.title"
 msgstr "Buy Full Game Version"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:23
+#: ../../Classes/PopUp/BuyFullVersion.cpp:20
 msgid "buy_full_version.description"
 msgstr ""
 "- without ads\n"
 "- 200 levels for kids\n"
 "- addition and subtraction to 10"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:53
+#: ../../Classes/PopUp/BuyFullVersion.cpp:21
 msgid "pop_up.buy_full_version.button.buy_now"
 msgstr "Buy Now"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:80
+#: ../../Classes/PopUp/BuyFullVersion.cpp:22
 msgid "pop_up.buy_full_version.button.later"
 msgstr "Buy Later"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:26
+msgid "buy_no_ads.title"
+msgstr "Turn off ads"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:27
+msgid "buy_no_ads.description"
+msgstr ""
+"Enjoy playing without ads.\n"
+"Your kid will like it."
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:28
+msgid "pop_up.buy_no_ads.button.buy_now"
+msgstr "Turn off ads"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:29
+msgid "pop_up.buy_no_ads.button.later"
+msgstr "Later"
 
 #: ../../Classes/PopUp/RateGame.cpp:13
 msgid "rate_game.title"
@@ -90,11 +108,15 @@ msgstr ""
 msgid "pop_up.get_hints.button.ok"
 msgstr "OK"
 
-#: ../../Classes/Scenes/MainMenu.cpp:150
+#: ../../Classes/Scenes/MainMenu.cpp:177
 msgid "main_menu.buy_full_version.button"
 msgstr "Unlock Full Version"
 
-#: ../../Classes/Scenes/MainMenu.cpp:220
+#: ../../Classes/Scenes/MainMenu.cpp:181
+msgid "main_menu.no_ads.button"
+msgstr "Turn Off Ads"
+
+#: ../../Classes/Scenes/MainMenu.cpp:258
 msgid "main_menu.go_out.title"
 msgstr "Would you like to leave the program?"
 
@@ -142,7 +164,7 @@ msgstr "Raspberry"
 msgid "collection_name.locked"
 msgstr "Locked"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:313
+#: ../../Classes/Scenes/SelectCollection.cpp:314
 msgid "select_collection.title"
 msgstr "Select Collection"
 
@@ -150,23 +172,23 @@ msgstr "Select Collection"
 msgid "select_levels.title"
 msgstr "Select Levels"
 
-#: ../../Classes/Scenes/Settings.cpp:85
+#: ../../Classes/Scenes/Settings.cpp:86
 msgid "settings_menu.scene.title"
 msgstr "Settings"
 
-#: ../../Classes/Scenes/Settings.cpp:144
+#: ../../Classes/Scenes/Settings.cpp:157
 msgid "settings_menu.developers.title"
 msgstr "Developers"
 
-#: ../../Classes/Scenes/Settings.cpp:156
+#: ../../Classes/Scenes/Settings.cpp:169
 msgid "settings_menu.reset.title"
 msgstr "Reset Progress"
 
-#: ../../Classes/Scenes/Settings.cpp:168
+#: ../../Classes/Scenes/Settings.cpp:181
 msgid "settings_menu.restore.title"
 msgstr "Restore Purchases"
 
-#: ../../Classes/Scenes/Settings.cpp:243
+#: ../../Classes/Scenes/Settings.cpp:261
 msgid "pop_up.reset_progress.title"
 msgstr ""
 "Would you like to reset\n"

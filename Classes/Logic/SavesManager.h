@@ -36,17 +36,23 @@ public:
     const int64_t getHintCount();
 
 
-    bool isFullVersion();
+    bool isPurchaseCompleted();
+
+
     bool isMusicOn();
     bool isSoundOn();
     bool isExpertModeOn();
-    bool isAds();
+
+    static bool isPurchaseAllowed();
+    static bool isLevelsUnlocked();
+    static bool isAdsEnabled();
+
     bool isShowedRateMe();
 
     void setMusic(bool music_mode);
     void setSound(bool sound_mode);
     void setExpertMode(bool expert_mode);
-    void setFullVersion(bool full_version);
+    void setPurchaseCompleted(bool full_version);
     void minusHint();
     void addHint(int num=1);
     void setHint(int64_t new_hint);

@@ -1,7 +1,7 @@
 #include "SavesManager.h"
 #include "Math/Solution.h"
 #include "ADLib.h"
-
+#include "GameInfo.h"
 SavesManager SavesManager::instance;
 
 SavesManager::SavesManager()
@@ -68,7 +68,7 @@ void SavesManager::initDefaultValues()
         ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,0);
     else
     {
-        if(isFullVersion())
+        if(!isAdsEnabled())
             ADAds::disableAds();
     }
 
@@ -101,7 +101,7 @@ const int64_t SavesManager::getHintCount()
 {
     return ADStorage::getValue<int64_t>(BLOCK_HINTS, 0);
 }
-bool SavesManager::isFullVersion()
+bool SavesManager::isPurchaseCompleted()
 {
     int64_t version = ADStorage::getValue<int64_t>(BLOCK_FULL_VERSION, 0);
     if(version == 0)
@@ -131,13 +131,6 @@ bool SavesManager::isExpertModeOn()
     if(value == 0)
         return false;
     return true;
-}
-bool SavesManager::isAds()
-{
-    int64_t value = ADStorage::getValue<int64_t>(BLOCK_FULL_VERSION, 0);
-    if(value == 0)
-        return true;
-    return false;
 }
 bool SavesManager::isShowedRateMe()
 {
@@ -171,12 +164,43 @@ void SavesManager::setExpertMode(bool expert_mode)
     ADStorage::setValue<int64_t>(BLOCK_EXPERT_MODE,mode_value);
 }
 
-void SavesManager::setFullVersion(bool full_version)
+void SavesManager::setPurchaseCompleted(bool full_version)
 {
     int64_t mode_value = 0;
     if(full_version)
         mode_value = 1;
     ADStorage::setValue<int64_t>(BLOCK_FULL_VERSION,mode_value);
+}
+
+bool SavesManager::isPurchaseAllowed()
+{
+    return GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseDisableAds
+            || GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion;
+}
+
+bool SavesManager::isLevelsUnlocked()
+{
+    if(GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseDisableAds
+            || GameInfo::PURCHASE_TYPE == PurchaseType::NoAdsNoPurchase)
+    {
+        return true;
+    }
+    else
+    {
+        return SavesManager::getInstance()->isPurchaseCompleted();
+    }
+}
+
+bool SavesManager::isAdsEnabled()
+{
+    if(GameInfo::PURCHASE_TYPE == PurchaseType::NoAdsNoPurchase)
+    {
+        return false;
+    }
+    else
+    {
+        return !SavesManager::getInstance()->isPurchaseCompleted();
+    }
 }
 
 void SavesManager::minusHint()

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-07-07 11:12+0200\n"
+"POT-Creation-Date: 2014-07-26 18:02+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -34,11 +34,11 @@ msgstr "Найденные Решения"
 msgid "menu.levels"
 msgstr "Уровни"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:13
+#: ../../Classes/PopUp/BuyFullVersion.cpp:19
 msgid "buy_full_version.title"
 msgstr "Купить Полную версию Игры"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:23
+#: ../../Classes/PopUp/BuyFullVersion.cpp:20
 msgid "buy_full_version.description"
 msgstr ""
 "- Без рекламы\n"
@@ -46,13 +46,33 @@ msgstr ""
 "- Счет до 10,\n"
 "сложение и вычитание"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:53
+#: ../../Classes/PopUp/BuyFullVersion.cpp:21
 msgid "pop_up.buy_full_version.button.buy_now"
 msgstr "Купить Сейчас"
 
-#: ../../Classes/PopUp/BuyFullVersion.cpp:80
+#: ../../Classes/PopUp/BuyFullVersion.cpp:22
 msgid "pop_up.buy_full_version.button.later"
 msgstr "Купить Позже"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:26
+msgid "buy_no_ads.title"
+msgstr "Отключить рекламу"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:27
+msgid "buy_no_ads.description"
+msgstr ""
+"Играйте без рекламы.\n"
+"Вашему ребёнку это понравится."
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:28
+msgid "pop_up.buy_no_ads.button.buy_now"
+msgstr ""
+"Отключить\n"
+"Рекламу"
+
+#: ../../Classes/PopUp/BuyFullVersion.cpp:29
+msgid "pop_up.buy_no_ads.button.later"
+msgstr "Позже"
 
 #: ../../Classes/PopUp/RateGame.cpp:13
 msgid "rate_game.title"
@@ -91,13 +111,19 @@ msgstr ""
 msgid "pop_up.get_hints.button.ok"
 msgstr "OK"
 
-#: ../../Classes/Scenes/MainMenu.cpp:150
+#: ../../Classes/Scenes/MainMenu.cpp:177
 msgid "main_menu.buy_full_version.button"
 msgstr ""
 "Получить\n"
 "Полную Версию"
 
-#: ../../Classes/Scenes/MainMenu.cpp:220
+#: ../../Classes/Scenes/MainMenu.cpp:181
+msgid "main_menu.no_ads.button"
+msgstr ""
+"Отключить \n"
+"Рекламу"
+
+#: ../../Classes/Scenes/MainMenu.cpp:258
 msgid "main_menu.go_out.title"
 msgstr "Хотите выйти из программы?"
 
@@ -145,7 +171,7 @@ msgstr "Малина"
 msgid "collection_name.locked"
 msgstr "Закрыто"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:313
+#: ../../Classes/Scenes/SelectCollection.cpp:314
 msgid "select_collection.title"
 msgstr "Выбор Коллекции"
 
@@ -153,23 +179,23 @@ msgstr "Выбор Коллекции"
 msgid "select_levels.title"
 msgstr "Выбор Уровней"
 
-#: ../../Classes/Scenes/Settings.cpp:85
+#: ../../Classes/Scenes/Settings.cpp:86
 msgid "settings_menu.scene.title"
 msgstr "Настройки"
 
-#: ../../Classes/Scenes/Settings.cpp:144
+#: ../../Classes/Scenes/Settings.cpp:157
 msgid "settings_menu.developers.title"
 msgstr "Разработчики"
 
-#: ../../Classes/Scenes/Settings.cpp:156
+#: ../../Classes/Scenes/Settings.cpp:169
 msgid "settings_menu.reset.title"
 msgstr "Очистить Историю Игры"
 
-#: ../../Classes/Scenes/Settings.cpp:168
+#: ../../Classes/Scenes/Settings.cpp:181
 msgid "settings_menu.restore.title"
 msgstr "Возобновить Покупки"
 
-#: ../../Classes/Scenes/Settings.cpp:243
+#: ../../Classes/Scenes/Settings.cpp:261
 msgid "pop_up.reset_progress.title"
 msgstr ""
 "Вы уверены, что хотите удалить \n"

@@ -326,7 +326,8 @@ bool LevelScene::init()
     }
 
     //Open Buy me window
-    if(!SavesManager::getInstance()->isFullVersion())
+    if(SavesManager::isPurchaseAllowed() &&
+            !SavesManager::getInstance()->isPurchaseCompleted())
     {
         if(GameInfo::BUY_COLLECTIONID_FIRST == collection_id &&
                 GameInfo::BUY_LEVELID_FIRST == level_id)

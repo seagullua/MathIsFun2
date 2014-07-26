@@ -49,10 +49,16 @@ private:
 
 
         ADMenuItem* item = _parent->createCollectionItem(_item.getCollection(), _parent->_papers_spl);
-        _parent->_tiles[item] = SelectCollection::CollectionTile(item, _item.getCollection());
+        SelectCollection::CollectionTile tile(item, _item.getCollection());
+        _parent->_tiles[item] = tile;
         item->setPosition(current_image->getPosition());
         //item->setBaseScale(0.7f);
         current_image->getParent()->addChild(item, -5);
+
+        SelectCollection* parent = _parent;
+        item->setClickAction([tile, parent](){
+                    parent->onCollectionSelect(tile);
+                });
 
 
         _to_clean_up =  _item.getItem();

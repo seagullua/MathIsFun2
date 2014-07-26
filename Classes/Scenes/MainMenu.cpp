@@ -158,7 +158,8 @@ bool MainMenu::init()
     //////////////////////////////////////////
 
 
-    if(!SavesManager::getInstance()->isFullVersion())
+    if(SavesManager::isPurchaseAllowed() &&
+            !SavesManager::getInstance()->isPurchaseCompleted())
     {
         _me = this;
         //create zebra image
@@ -169,16 +170,34 @@ bool MainMenu::init()
         //                       settings_target_position.y+200/SCALE));
 
 
+        std::string button_text;
+
+        if(GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion)
+        {
+            button_text = _("main_menu.buy_full_version.button");
+        }
+        else
+        {
+            button_text = _("main_menu.no_ads.button");
+        }
 
         //add Buy Full Version button
-       CCLabelTTF* buy_now_title = CCLabelTTF::create(_("main_menu.buy_full_version.button"),
+        CCLabelTTF* buy_now_title = CCLabelTTF::create(button_text.c_str(),
                                                        ADLanguage::getFontName(),
-                                                       45);
+                                                       45,
+                                                      CCSize(zebra->getContentSize().width*1.7f, 0),
+                                                      kCCTextAlignmentCenter);
         buy_now_title->setColor(GameInfo::COLOR_DARK_GREEN);
         _buy_full_version = ADMenuItem::create(zebra);
+        _buy_full_version->setContentSize(CCSize(buy_now_title->getContentSize().width,
+                                                 zebra->getContentSize().height+
+                                                 buy_now_title->getContentSize().height));
+        zebra->setAnchorPoint(ccp(0.5,1));
+        zebra->setPosition(CCSize(_buy_full_version->getContentSize().width*0.5f,
+                                  _buy_full_version->getContentSize().height));
         _buy_full_version->addChild(buy_now_title);
         buy_now_title->setPositionX(_buy_full_version->getContentSize().width*0.5);
-        buy_now_title->setAnchorPoint(ccp(0.5f, 1));
+        buy_now_title->setAnchorPoint(ccp(0.5f, 0));
         buy_now_title->setPositionY(0);
 
         CONNECT(_buy_full_version->signalOnClick,
@@ -186,7 +205,7 @@ bool MainMenu::init()
 
 
        _buy_full_version->setPosition(ccp(ORIGIN.x + VISIBLE_SIZE.width*0.8f,
-                                      settings_target_position.y+300/SCALE));
+                                      settings_target_position.y+100/SCALE+_buy_full_version->getContentSize().height*0.5f));
 
         _main_menu->addChild(_buy_full_version);
 

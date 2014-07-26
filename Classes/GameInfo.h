@@ -8,6 +8,17 @@ enum class GameVersion{
     VerionMultiply
 };
 
+enum class PurchaseType{
+    //Ads shown, levels locked, purchase
+    AdsPurchaseFullVersion,
+    //Ads shown, levels unlocked, purchase
+    AdsPurchaseDisableAds,
+    //Ads shown, levels unlocked, no purchase
+    AdsNoPurchase,
+    //No ads, levels unlocked
+    NoAdsNoPurchase
+};
+
 
 class GameInfo
 {
@@ -62,15 +73,18 @@ public:
     static int TUTORIAL_COLLECTIONID_SECOND;
     static int TUTORIAL_LEVELID_SECOND;
 
-    static GameVersion GAME_VERSION;
+    static const GameVersion GAME_VERSION;
+    static const PurchaseType PURCHASE_TYPE;
 
 
     static const ADPackageName &getMyPackageName();
 
-    static ADPackageName APP_MIF_27_FREE;
-    static ADPackageName APP_MIF_27_PREMIUM;
-    static ADPackageName APP_MIF_MULTIPLICATION_FREE;
-    static ADPackageName APP_MIF_MULTIPLICATION_PREMIUM;
+    static const ADPackageName APP_MIF_27_FREE;
+    static const ADPackageName APP_MIF_27_FREE_DISABLE_ADS;
+    static const ADPackageName APP_MIF_27_FREE_NO_PURCHASE;
+
+    static const ADPackageName APP_MIF_MULTIPLICATION_FREE;
+    static const ADPackageName APP_MIF_MULTIPLICATION_PREMIUM;
 private:
     //static const std::string doGetPackageName(const std::string game_name);
 };

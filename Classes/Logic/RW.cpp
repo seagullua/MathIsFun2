@@ -81,17 +81,7 @@ void RW::unlockNextLevel(Level* l, bool flush)
         }
     }
 }
-bool RW::isAdsDisabled()
-{
-    //MANAGER
-    return (!SavesManager::getInstance()->isAds());
-}
 
-
-bool RW::isFullVersion()
-{
-    return (SavesManager::getInstance()->isFullVersion());
-}
 
 bool RW::registerSolution(Level* l, const Solution& s)
 {
@@ -381,7 +371,7 @@ void RW::readSettings()
 
             //_rw->_hints_count = SavesManager::getInstance()->getHintCount();
 
-            _rw->_ads_disabled = !SavesManager::getInstance()->isAds();
+            _rw->_ads_disabled = !SavesManager::getInstance()->isAdsEnabled();
 
         //RW::setExpertMode(expert_mode);
         if(music_on)
@@ -568,7 +558,7 @@ void RW::addHints(unsigned int to_add)
 void RW::unlockAllCollectionsPurchased()
 {
 
-    SavesManager::getInstance()->setFullVersion(true);
+    SavesManager::getInstance()->setPurchaseCompleted(true);
     if(_rw)
     {
         for(CollectionsArr::iterator it = _rw->_collections.begin();
@@ -608,6 +598,6 @@ void RW::useOneHint()
 
 RW::RW()
     : _expert_mode(SavesManager::getInstance()->isExpertModeOn()),
-      _ads_disabled(!SavesManager::getInstance()->isAds())
+      _ads_disabled(!SavesManager::getInstance()->isAdsEnabled())
 {
 }

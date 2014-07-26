@@ -59,7 +59,7 @@ bool Collection::isReadyToBeUnlocked() const
 //        unsigned int overall_stamp = RW::allStampsObtained();
 //        if(overall_stamp >= _stamps_to_unlock)
 //            return true;
-        if(SavesManager::getInstance()->isFullVersion())
+        if(SavesManager::getInstance()->isLevelsUnlocked())
             return true;
     }
     return false;

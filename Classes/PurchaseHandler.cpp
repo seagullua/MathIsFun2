@@ -49,7 +49,7 @@ void InAppDelegate::purchaseSuccessful(const ADInApp::ProductID& itemId)
         SelectCollection::purchaseReload();
         MainMenu::purchaseReload();
 
-        SavesManager::getInstance()->setFullVersion(true);
+        SavesManager::getInstance()->setPurchaseCompleted(true);
 
         RW::disableAds();
         ADAds::disableAds();

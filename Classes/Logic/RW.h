@@ -32,9 +32,6 @@ public:
 
 
     static bool isExpertMode();
-    static bool isAdsDisabled();
-    static bool isFullVersion();
-
 
     static void setExpertMode(bool expert);
 
