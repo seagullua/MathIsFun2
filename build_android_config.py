@@ -48,4 +48,3 @@ project.main_activity_definition = project.getMainActivityDeclaration()
 
 project.addCppDir('libraries/ADLib/src')
 project.addCppDir('Classes')
-project.addCppDir('VersionSelector/Addition27Free')

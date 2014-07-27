@@ -35,33 +35,50 @@ void initInAppPurchases()
     ADStore store = ADInfo::getStore();
 
 
-    ADInApp::Price price = "$1.99";
+    ADInApp::Price price = "$0.99";
     if (store == ADStore::iTunes)
-        price = "$2.99";
-    Product buy_full_version("buy_full_version",price);
+        price = "$1.99";
+
+    std::string purchase_name;
+    std::string samsung_id;
+    std::string google_play_key;
+    if(GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion)
+    {
+        samsung_id = "100000104146";
+        purchase_name = "buy_full_version";
+        google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1eWcrKw7sfifjhLGCq+X7jOrFeh7eJdw3uqi9nFcP4cHRPwgpSqYm3+qn3CQNbBQ9D+rQXewnaKSaR3drVvl4cOPOOkO7iXiuA/t6AWx1dpOivPhzXCN+9vzz6wXVkzi0fPXydGNM1bbTQA0mQxmR+9j4HWfKgrnP6+3XoLHNahhf2ltLfFDukYl0woYrG9DBvFllmUfpaLLoLJL/9TmT8FWknSN8izUqfL4VwkBaceb/yIIELL3SEFnGQkUV7nO26E+giPNY7JRoHv1oQBPEcGNTxxM5nFZfp+2TYOtpGlznjy7yRwfGB+B2hhqZAM22GBBSlAMLm/XnD/jelDuIwIDAQAB";
+    }
+    else
+    {
+        samsung_id = "100000104197";
+        purchase_name = "mif27kids_ads_purchase";
+        google_play_key = "";
+    }
+
+    GameInfo::setPurchaseID(purchase_name);
+    Product buy_full_version(purchase_name,price);
 
 
 
     if(store == ADStore::GooglePlay)
     {
-        ADInApp::setStoreKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1eWcrKw7sfifjhLGCq+X7jOrFeh7eJdw3uqi9nFcP4cHRPwgpSqYm3+qn3CQNbBQ9D+rQXewnaKSaR3drVvl4cOPOOkO7iXiuA/t6AWx1dpOivPhzXCN+9vzz6wXVkzi0fPXydGNM1bbTQA0mQxmR+9j4HWfKgrnP6+3XoLHNahhf2ltLfFDukYl0woYrG9DBvFllmUfpaLLoLJL/9TmT8FWknSN8izUqfL4VwkBaceb/yIIELL3SEFnGQkUV7nO26E+giPNY7JRoHv1oQBPEcGNTxxM5nFZfp+2TYOtpGlznjy7yRwfGB+B2hhqZAM22GBBSlAMLm/XnD/jelDuIwIDAQAB");
-
+        ADInApp::setStoreKey(google_play_key);
         buy_full_version.setParameter("type", "non-consumable");
     }
     else if(store == ADStore::SamsungStore)
     {
-        ADInApp::setStoreKey("100000104146");
+        ADInApp::setStoreKey(samsung_id);
 
-        buy_full_version.setParameter("samsung-id","buy_full_version");
+        buy_full_version.setParameter("samsung-id",purchase_name);
 
     }
     else if(store == ADStore::AmazonStore)
     {
-        buy_full_version.setParameter("asku","buy_full_version");
+        buy_full_version.setParameter("asku",purchase_name);
     }
     else if(store == ADStore::iTunes)
     {
-        buy_full_version.setParameter("asku","buy_full_version");
+        buy_full_version.setParameter("asku",purchase_name);
     }
 
 

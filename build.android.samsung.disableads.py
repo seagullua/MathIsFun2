@@ -16,11 +16,12 @@ ard_mode = sys.argv[1]
 
 
 from build_android_config import *
-project.addModule('android_ADInfo_Store_AmazonStore')
-project.addModule('android_ADInApp_Amazon')
-project.output_name = 'proj.android.amazon'
-project.version_name = "1.53"
-project.addCppDir('VersionSelector/Addition27Free')
+project.addModule('android_ADInfo_Store_SamsungStore')
+project.addModule('android_ADInApp_SamsungStore')
+project.output_name = 'proj.android.samsung.disads'
+project.package_name = 'com.x4enjoy.mathisfun.kids.free'
+
+project.addCppDir('VersionSelector/Addition27FreeDisableAds')
 
 if ard_mode == 'debug':
     project.debuggable = True

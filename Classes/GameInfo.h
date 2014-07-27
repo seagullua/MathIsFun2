@@ -78,6 +78,8 @@ public:
 
 
     static const ADPackageName &getMyPackageName();
+    static const std::string& getPurchaseID();
+    static void setPurchaseID(const std::string& );
 
     static const ADPackageName APP_MIF_27_FREE;
     static const ADPackageName APP_MIF_27_FREE_DISABLE_ADS;
@@ -86,6 +88,7 @@ public:
     static const ADPackageName APP_MIF_MULTIPLICATION_FREE;
     static const ADPackageName APP_MIF_MULTIPLICATION_PREMIUM;
 private:
+    static std::string _purchase_id;
     //static const std::string doGetPackageName(const std::string game_name);
 };
 

@@ -3,6 +3,7 @@
 
 #include "Layers/PopUpWindow.h"
 #include "Store.h"
+#include "GameInfo.h"
 
 class BuyFullVersion : public PopUpWindowStyle
 {
@@ -13,7 +14,7 @@ public:
 private:
     void onBuyFullVersionClick()
     {
-        Store::buyItem(Store::BUY_FULL_VERSION);
+        Store::buyItem(GameInfo::getPurchaseID());
     }
     void onBuyLaterClick()
     {

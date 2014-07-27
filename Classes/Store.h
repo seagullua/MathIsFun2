@@ -10,7 +10,6 @@ public:
 //    static std::string PREFIX_BUY_HINTS;
 //    static std::string ITEM_KILL_ADS;
 
-    static std::string BUY_FULL_VERSION;
     static bool buyItem(const std::string& item);
     static void restorePurchases();
 private:

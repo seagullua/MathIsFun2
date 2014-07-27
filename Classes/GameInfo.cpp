@@ -63,6 +63,18 @@ const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::cr
             "id00000...", //iOS id
             "id-windows-phone"); //Windows Phone
 
+std::string GameInfo::_purchase_id;
+
+
+const std::string& GameInfo::getPurchaseID()
+{
+    return _purchase_id;
+}
+
+void GameInfo::setPurchaseID(const std::string& s)
+{
+    _purchase_id = s;
+}
 
 const ADPackageName& GameInfo::getMyPackageName()
 {

@@ -7,7 +7,7 @@
 //std::string Store::PREFIX_BUY_COLLECTION="buy_";
 //std::string Store::PREFIX_BUY_HINTS="hint_";
 //std::string Store::ITEM_KILL_ADS="kill_ads";
-std::string Store::BUY_FULL_VERSION="buy_full_version";
+//std::string Store::BUY_FULL_VERSION="buy_full_version";
 
 bool Store::buyItem(const std::string& item)
 {

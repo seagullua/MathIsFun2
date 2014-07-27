@@ -19,6 +19,7 @@ from build_android_config import *
 project.addModule('android_ADInfo_Store_SamsungStore')
 project.addModule('android_ADInApp_SamsungStore')
 project.output_name = 'proj.android.samsung'
+project.addCppDir('VersionSelector/Addition27Free')
 
 if ard_mode == 'debug':
     project.debuggable = True

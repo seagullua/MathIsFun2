@@ -43,7 +43,7 @@ unsigned int itemIdToId(const std::string& item_id, const std::string& prefix)
 void InAppDelegate::purchaseSuccessful(const ADInApp::ProductID& itemId)
 {
     //bool kill_ads = false;
-    if(itemId == Store::BUY_FULL_VERSION)
+    if(itemId == GameInfo::getPurchaseID())
     {
         RW::unlockAllCollectionsPurchased();
         SelectCollection::purchaseReload();
