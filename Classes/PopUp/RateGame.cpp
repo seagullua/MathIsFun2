@@ -46,10 +46,17 @@ void RateGame::onCreate(CCNode *parent)
     CCLabelTTF* rate_now_title = CCLabelTTF::create(_("pop_up.rate.button.rate_now"),
                                                    ADLanguage::getFontName(),
                                                    45);
-    if(rate_now_title->getContentSize().width*1.1f >= button2->getContentSize().width)
+
+    float BUTTON_WIDTH_USED = 0.85f;
+
+    //fix font size
+    if(rate_now_title->getContentSize().width >= button2->getContentSize().width*BUTTON_WIDTH_USED)
     {
-        rate_now_title->setFontSize(37);
+        rate_now_title->setScale(button2->getContentSize().width*BUTTON_WIDTH_USED
+                                / rate_now_title->getContentSize().width);
     }
+
+
     rate_now_title->setColor(GameInfo::COLOR_DARK_GREEN);
     button2->setColor(GameInfo::COLOR_DARK_GREEN);
     ADMenuItem *rate_now_item = ADMenuItem::create(button2);
@@ -71,10 +78,12 @@ void RateGame::onCreate(CCNode *parent)
     CCLabelTTF* rate_later_title = CCLabelTTF::create(_("pop_up.rate.button.later"),
                                                    ADLanguage::getFontName(),
                                                    45);
-    if(rate_later_title->getContentSize().width*1.1f >= button2->getContentSize().width)
+    if(rate_later_title->getContentSize().width >= button2->getContentSize().width*BUTTON_WIDTH_USED)
     {
-        rate_later_title->setFontSize(37);
+        rate_later_title->setScale(button2->getContentSize().width*BUTTON_WIDTH_USED
+                                / rate_later_title->getContentSize().width);
     }
+
     rate_later_title->setColor(GameInfo::COLOR_RED);
     CONNECT(rate_later_item->signalOnClick,
             this, &RateGame::onRateLaterClick);

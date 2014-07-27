@@ -52,7 +52,7 @@ void initInAppPurchases()
     {
         samsung_id = "100000104197";
         purchase_name = "mif27kids_ads_purchase";
-        google_play_key = "";
+        google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi3YVhJJvS59LeRF8QXROUgWJdROSQKX8DEFfLevVt0wUR3q+1D5t99OtAsWZxjgC6jO/+HgvGPTwL9wKrUpRRnsaVdhAFPZ1zcEWqrkgTJEs2g2DwxA1NIWKberTgF5/8GSgG/rkhNKqSrRhoxh7H1BWcutHAOcpew0gvXJ0CfLO2ziKSKatog9t/mCdoK3BrnLp8D/lHstPDFWjZnS3874GZLxjVG4Xg+X7JyCfdIPwHhg8XpV+0MJR5MUGcNkVUq7dW1y3RmjDtuOWJKM9+0omotc79wRnKnDZ2nEtSlAmNIK3lhptsYRgjGuKDLbFG9DHplRk6wIzKxeIK4iltwIDAQAB";
     }
 
     GameInfo::setPurchaseID(purchase_name);
