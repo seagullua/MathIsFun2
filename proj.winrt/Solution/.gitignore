@@ -5,6 +5,7 @@ ARM
 Win32/Release
 WinRT
 x64/Release
+BundleArtifacts
 Generated Files
 AppPackages
 ipch
