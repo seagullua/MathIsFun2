@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="716D0546-1A26-408E-800F-553F1864A4BE" Publisher="CN=dalestam" Version="2.1.0.4" />
+  <Identity Name="146264Enjoy.MathIsFunKids2-7years-AdditionandSubtr" Publisher="CN=A3BBDB25-413A-450E-8D61-13C131086829" Version="1.1.0.0" />
   <Properties>
-    <DisplayName>TestCpp</DisplayName>
-    <PublisherDisplayName>dalestam</PublisherDisplayName>
+    <DisplayName>ms-resource:Appname</DisplayName>
+    <PublisherDisplayName>4Enjoy</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -14,18 +14,14 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TestCpp.App">
-      <m2:VisualElements DisplayName="TestCpp" Description="TestCpp" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png">
-        <m2:DefaultTile Wide310x150Logo="Assets\WideLogo.png">
-          <m2:ShowNameOnTiles>
-            <m2:ShowOn Tile="square150x150Logo" />
-            <m2:ShowOn Tile="wide310x150Logo" />
-          </m2:ShowNameOnTiles>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="X4Enjoy.App">
+      <m2:VisualElements DisplayName="ms-resource:Appname" Description="ms-resource:Description" BackgroundColor="#ff5a00" ForegroundText="light" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" ToastCapable="false">
+        <m2:DefaultTile Wide310x150Logo="Assets\LogoWide.png" Square310x310Logo="Assets\LogoBig.png">
         </m2:DefaultTile>
         <m2:InitialRotationPreference>
           <m2:Rotation Preference="landscape" />
         </m2:InitialRotationPreference>
-        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#ffffff" />
       </m2:VisualElements>
     </Application>
   </Applications>

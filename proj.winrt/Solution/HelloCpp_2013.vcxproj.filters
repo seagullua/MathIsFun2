@@ -64,6 +64,18 @@
     <Filter Include="Version">
       <UniqueIdentifier>{1b50d387-2a8a-4dc8-ad95-0c976aca8432}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Strings">
+      <UniqueIdentifier>{b6b10a81-3ed6-4523-b0eb-3330b5137ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strings\en">
+      <UniqueIdentifier>{3851de21-bba4-403c-a790-f029d91d3a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strings\ru">
+      <UniqueIdentifier>{0e573210-7b43-4ef1-9ab8-27b7eec996c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strings\uk">
+      <UniqueIdentifier>{bc7837e3-28fe-4c36-9508-f2b63cb6ec27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -270,8 +282,26 @@
     <ClCompile Include="NoImpl.cpp">
       <Filter>ADLibImpl</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\VersionSelector\Addition27Free\version.cpp">
+    <ClCompile Include="..\..\VersionSelector\Addition27Premium\versionAddition27Premium.cpp">
       <Filter>Version</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADInfo_winrt.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\WinRTAdlib.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADBrowser_impl.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADLanguage_impl.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADNotification_impl.cpp">
+      <Filter>ADLibImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="ADFileNameUTF8.cpp">
+      <Filter>ADLib\Storage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -518,19 +548,41 @@
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\PopUp\IADStandardWindow.h">
       <Filter>ADLib\PopUp</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\libraries\ADLib\platform\winrt\WinRTAdlib.h">
+      <Filter>ADLibImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="ADFileNameUTF8.h">
+      <Filter>ADLib\Storage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="HelloCpp_TemporaryKey.pfx" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="HelloCpp_2013_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\WideLogo.png">
-      <Filter>Assets</Filter>
-    </Image>
+    <AppxManifest Include="Package_2013.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <AppxManifest Include="Package_2013.appxmanifest" />
+    <PRIResource Include="Strings\en\Resources.resw">
+      <Filter>Strings\en</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\uk\Resources.resw">
+      <Filter>Strings\uk</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\ru\Resources.resw">
+      <Filter>Strings\ru</Filter>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\LogoBig.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LogoWide.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

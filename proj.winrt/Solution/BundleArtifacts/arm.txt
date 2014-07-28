@@ -1,0 +1,4 @@
+MainPackage=G:\cocos2d-x-new\projects\MathIsFun2\proj.winrt\Solution\WinRT\ARM\Release\HelloCpp_2013\HelloCpp_2013_1.1.0.0_Bundle\HelloCpp_2013_1.1.0.0_ARM.appx
+SymbolPackage=G:\cocos2d-x-new\projects\MathIsFun2\proj.winrt\Solution\AppPackages\HelloCpp_2013\HelloCpp_2013_1.1.0.0_Test\HelloCpp_2013_1.1.0.0_ARM.appxsym
+ResourcePack=G:\cocos2d-x-new\projects\MathIsFun2\proj.winrt\Solution\WinRT\ARM\Release\HelloCpp_2013\HelloCpp_2013_1.1.0.0_Bundle\HelloCpp_2013_1.1.0.0_language-ru.appx
+ResourcePack=G:\cocos2d-x-new\projects\MathIsFun2\proj.winrt\Solution\WinRT\ARM\Release\HelloCpp_2013\HelloCpp_2013_1.1.0.0_Bundle\HelloCpp_2013_1.1.0.0_language-uk.appx

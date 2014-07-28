@@ -120,7 +120,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setOpenGLView(pEGLView);
 
     // Set the design resolution
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+	pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionShowAll);
+#else
     pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionNoBorder);
+#endif
     CCSize vsize = pEGLView->getVisibleSize();
 
     CCSize frameSize = pEGLView->getFrameSize();

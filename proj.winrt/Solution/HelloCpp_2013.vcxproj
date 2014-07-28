@@ -29,7 +29,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{a4bd3c33-e173-4233-b52b-c5bfd57144c8}</ProjectGuid>
     <RootNamespace>HelloCpp</RootNamespace>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>en</DefaultLanguage>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
@@ -95,9 +95,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <PackageCertificateKeyFile>HelloCpp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>HelloCpp_2013_StoreKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <AppxBundlePlatforms>x86</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>F7EA7DDEE1C4AEDA1B84A52DF2D13D622F31BCFE</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)WinRT\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
@@ -146,6 +147,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <PreprocessorDefinitions>WINRT;_WINRT;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
@@ -188,6 +192,8 @@
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
       <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</WholeProgramOptimization>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
@@ -266,6 +272,7 @@
     <ClInclude Include="..\..\Classes\Scenes\SelectLevel.h" />
     <ClInclude Include="..\..\Classes\Scenes\Settings.h" />
     <ClInclude Include="..\..\Classes\Store.h" />
+    <ClInclude Include="..\..\libraries\ADLib\platform\winrt\WinRTAdlib.h" />
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\ADRandom.h" />
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\ADSignals.h" />
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\ADString.h" />
@@ -302,6 +309,7 @@
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\Storage\ADStorage.h" />
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\Storage\ADStorageListener.h" />
     <ClInclude Include="..\..\libraries\ADLib\src\ADLib\Storage\ADStream.h" />
+    <ClInclude Include="ADFileNameUTF8.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -325,14 +333,16 @@
     <AppxManifest Include="Package_2013.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="HelloCpp_2013_StoreKey.pfx" />
     <None Include="HelloCpp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Logo.png" />
+    <Image Include="Assets\LogoBig.png" />
+    <Image Include="Assets\LogoWide.png" />
     <Image Include="Assets\SmallLogo.png" />
     <Image Include="Assets\StoreLogo.png" />
     <Image Include="Assets\SplashScreen.png" />
-    <Image Include="Assets\WideLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
@@ -375,6 +385,11 @@
     <ClCompile Include="..\..\Classes\Scenes\SelectLevel.cpp" />
     <ClCompile Include="..\..\Classes\Scenes\Settings.cpp" />
     <ClCompile Include="..\..\Classes\Store.cpp" />
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADBrowser_impl.cpp" />
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADInfo_winrt.cpp" />
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADLanguage_impl.cpp" />
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\ADNotification_impl.cpp" />
+    <ClCompile Include="..\..\libraries\ADLib\platform\winrt\WinRTAdlib.cpp" />
     <ClCompile Include="..\..\libraries\ADLib\src\ADLib\ADRandom.cpp" />
     <ClCompile Include="..\..\libraries\ADLib\src\ADLib\Device\ADAds.cpp" />
     <ClCompile Include="..\..\libraries\ADLib\src\ADLib\Device\ADBrowser.cpp" />
@@ -400,7 +415,8 @@
     <ClCompile Include="..\..\libraries\ADLib\src\ADLib\Storage\ADBinaryData.cpp" />
     <ClCompile Include="..\..\libraries\ADLib\src\ADLib\Storage\ADStorage.cpp" />
     <ClCompile Include="..\..\libraries\ADLib\src\ADLib\Storage\ADStorageListener.cpp" />
-    <ClCompile Include="..\..\VersionSelector\Addition27Free\version.cpp" />
+    <ClCompile Include="..\..\VersionSelector\Addition27Premium\versionAddition27Premium.cpp" />
+    <ClCompile Include="ADFileNameUTF8.cpp" />
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>
@@ -434,6 +450,14 @@
     <ProjectReference Include="..\..\..\..\CocosDenshion\proj.winrt\CocosDenshion_2013.vcxproj">
       <Project>{886fb3f1-cdbc-4b60-94c8-0f02eb583a1e}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en\Resources.resw" />
+    <PRIResource Include="Strings\ru\Resources.resw" />
+    <PRIResource Include="Strings\uk\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <Target Name="_CollectCustomResources" BeforeTargets="AssignTargetPaths">
     <Message Text="Adding resource: %(_CustomResource.Identity) -&gt; %(_CustomResource.Link)" />

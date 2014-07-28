@@ -176,21 +176,31 @@ bool Settings::init()
 
     _menu_item.push_back(reset_progress);
 
+	ADMenuItem* restore = nullptr;
     //////////////////////////////////////////
-
-    CCLabelTTF* restore_title = CCLabelTTF::create(_("settings_menu.restore.title"),
-                                           ADLanguage::getFontName(),
-                                           40);
-    restore_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
-    ADMenuItem* restore = ADMenuItem::create(restore_title);
-    CONNECT(restore->signalOnClick,
-            this, &Settings::onRestorePurchasesSelect);
-    _menu_item.push_back(restore);
+	if (SavesManager::isPurchaseAllowed())
+	{
+		CCLabelTTF* restore_title = CCLabelTTF::create(_("settings_menu.restore.title"),
+			ADLanguage::getFontName(),
+			40);
+		restore_title->setColor(GameInfo::COLOR_LIGHT_BLUE);
+		restore = ADMenuItem::create(restore_title);
+		CONNECT(restore->signalOnClick,
+			this, &Settings::onRestorePurchasesSelect);
+		_menu_item.push_back(restore);
+	}
+	else
+	{
+		_menu_item.push_back(nullptr);
+	}
 
 
     menu->addChild(_menu_item[3]);
     menu->addChild(_menu_item[4]);
-    menu->addChild(_menu_item[5]);
+	if (SavesManager::isPurchaseAllowed())
+	{
+		menu->addChild(_menu_item[5]);
+	}
 
     //_menu_item[3]->setPosition(ccp(0, -visibleSize.height/3 + origin.y ));
     menu->alignItemsVerticallyWithPadding(20/SCALE);
@@ -200,7 +210,10 @@ bool Settings::init()
                           130/SCALE + ORIGIN.y));
     menu_new->setPosition(ccp(x_middle_of_sheet,
                               VISIBLE_SIZE.height/2 + 30/SCALE + ORIGIN.y));
-    restore->setPositionY(restore->getPositionY()+30/SCALE);
+	if (SavesManager::isPurchaseAllowed())
+	{
+		restore->setPositionY(restore->getPositionY() + 30 / SCALE);
+	}
 
     this->addChild(menu);
     this->addChild(menu_new);

@@ -1,0 +1,2 @@
+MainPackage=G:\cocos2d-x-new\projects\MathIsFun2\proj.winrt\Solution\WinRT\Win32\Release\HelloCpp_2013\HelloCpp_2013_1.1.0.0_Bundle\HelloCpp_2013_1.1.0.0_Win32.appx
+SymbolPackage=G:\cocos2d-x-new\projects\MathIsFun2\proj.winrt\Solution\AppPackages\HelloCpp_2013\HelloCpp_2013_1.1.0.0_Test\HelloCpp_2013_1.1.0.0_Win32.appxsym

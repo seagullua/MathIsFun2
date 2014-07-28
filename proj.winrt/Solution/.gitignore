@@ -2,4 +2,9 @@
 *.sdf
 *.suo
 ARM
+Win32/Release
+WinRT
+x64/Release
 Generated Files
+AppPackages
+ipch
