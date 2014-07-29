@@ -6,6 +6,7 @@
 #include <sstream>
 
 #ifndef RW_BUILD_LEVELS
+#include "GameInfo.h"
 //#include "cocos2d.h"
 using namespace cocos2d;
 #endif
@@ -281,7 +282,8 @@ void RW::readSavedData()
             //stamps_max += a->stampsMax();
 
             //open first two collections
-            if(a->getCollectionID()==100 || a->getCollectionID()==200)
+
+            if(GameInfo::isFreeCollection(a->getCollectionID()))
                 a->_state = Collection::Unlocked;
             else
                 a->_state = Collection::Locked;

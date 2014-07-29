@@ -1,5 +1,6 @@
 #include "GameInfo.h"
 #include <ADLib/Device/ADSoundManager.h>
+#include "Logic/SavesManager.h"
 
 std::string GameInfo::FACEBOOK_URL = "http://www.facebook.com/4EnjoyGames";
 std::string GameInfo::SITE_URL = "http://4enjoy.com/";
@@ -103,5 +104,22 @@ const ADPackageName& GameInfo::getMyPackageName()
 
 bool GameInfo::isExpertModeAvaliable()
 {
+    return false;
+}
+
+bool GameInfo::isFreeCollection(int collection_id)
+{
+    if(SavesManager::isLevelsUnlocked())
+    {
+        return true;
+    }
+    else if(GAME_VERSION == GameVersion::VersionPlus)
+    {
+        return collection_id == 100 || collection_id == 200;
+    }
+    else if(GAME_VERSION == GameVersion::VerionMultiply)
+    {
+        return collection_id == 10001 || collection_id == 10002;
+    }
     return false;
 }

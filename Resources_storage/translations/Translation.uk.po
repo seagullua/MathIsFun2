@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-07-26 18:00+0200\n"
+"POT-Creation-Date: 2014-07-29 16:27+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
@@ -82,7 +82,7 @@ msgstr "Подобається Гра?"
 msgid "pop_up.rate.button.rate_now"
 msgstr "Оцінити Зараз"
 
-#: ../../Classes/PopUp/RateGame.cpp:71
+#: ../../Classes/PopUp/RateGame.cpp:78
 msgid "pop_up.rate.button.later"
 msgstr "Оцінити Пізніше"
 
@@ -169,7 +169,47 @@ msgstr "Малина"
 msgid "collection_name.locked"
 msgstr "Закрито"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:314
+#: ../../Classes/Scenes/SelectCollection.cpp:108
+msgid "collection_name.10001"
+msgstr "Хитра Лисичка"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:109
+msgid "collection_name.10002"
+msgstr "Мале Кошеня"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:110
+msgid "collection_name.10003"
+msgstr "Щасливий Ослик"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:111
+msgid "collection_name.10004"
+msgstr "Прудке Мавпеня"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:112
+msgid "collection_name.10005"
+msgstr "Альпійська Корівка"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:113
+msgid "collection_name.10006"
+msgstr "Дотепна Панда"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:115
+msgid "collection_name.10007"
+msgstr "Нічна сова"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:116
+msgid "collection_name.10008"
+msgstr "Африканська Зебра"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:117
+msgid "collection_name.10009"
+msgstr "Велике оленятко"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:118
+msgid "collection_name.10010"
+msgstr "Рожеве Порося"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:326
 msgid "select_collection.title"
 msgstr "Вибір Колекції"
 
@@ -189,11 +229,11 @@ msgstr "Розробники"
 msgid "settings_menu.reset.title"
 msgstr "Очистити Історію Гри"
 
-#: ../../Classes/Scenes/Settings.cpp:181
+#: ../../Classes/Scenes/Settings.cpp:183
 msgid "settings_menu.restore.title"
 msgstr "Відновити Покупки"
 
-#: ../../Classes/Scenes/Settings.cpp:261
+#: ../../Classes/Scenes/Settings.cpp:274
 msgid "pop_up.reset_progress.title"
 msgstr ""
 "Ви впевнені що хочете видалити\n"

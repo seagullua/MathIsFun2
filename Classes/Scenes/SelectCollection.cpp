@@ -104,6 +104,18 @@ void toTranslation()
    _("collection_name.4000");
 
    _("collection_name.locked");
+
+   _("collection_name.10001");
+   _("collection_name.10002");
+   _("collection_name.10003");
+   _("collection_name.10004");
+   _("collection_name.10005");
+   _("collection_name.10006");
+
+   _("collection_name.10007");
+   _("collection_name.10008");
+   _("collection_name.10009");
+   _("collection_name.10010");
 }
 ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name,
                                                    const std::string& label_name,

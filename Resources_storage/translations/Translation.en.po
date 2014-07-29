@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-07-26 18:09+0200\n"
+"POT-Creation-Date: 2014-07-29 16:22+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
@@ -79,7 +79,7 @@ msgstr "Rate the App"
 msgid "pop_up.rate.button.rate_now"
 msgstr "Rate Now"
 
-#: ../../Classes/PopUp/RateGame.cpp:71
+#: ../../Classes/PopUp/RateGame.cpp:78
 msgid "pop_up.rate.button.later"
 msgstr "Rate Later"
 
@@ -164,7 +164,47 @@ msgstr "Raspberry"
 msgid "collection_name.locked"
 msgstr "Locked"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:314
+#: ../../Classes/Scenes/SelectCollection.cpp:108
+msgid "collection_name.10001"
+msgstr "Tricky Fox"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:109
+msgid "collection_name.10002"
+msgstr "Little Cat"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:110
+msgid "collection_name.10003"
+msgstr "Happy Borro"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:111
+msgid "collection_name.10004"
+msgstr "Quick Monkey"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:112
+msgid "collection_name.10005"
+msgstr "Milky Cow"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:113
+msgid "collection_name.10006"
+msgstr "Funny Panda"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:115
+msgid "collection_name.10007"
+msgstr "Red Owl"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:116
+msgid "collection_name.10008"
+msgstr "African Zebra"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:117
+msgid "collection_name.10009"
+msgstr "Great Deer"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:118
+msgid "collection_name.10010"
+msgstr "Pink Pig"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:326
 msgid "select_collection.title"
 msgstr "Select Collection"
 
@@ -184,11 +224,11 @@ msgstr "Developers"
 msgid "settings_menu.reset.title"
 msgstr "Reset Progress"
 
-#: ../../Classes/Scenes/Settings.cpp:181
+#: ../../Classes/Scenes/Settings.cpp:183
 msgid "settings_menu.restore.title"
 msgstr "Restore Purchases"
 
-#: ../../Classes/Scenes/Settings.cpp:261
+#: ../../Classes/Scenes/Settings.cpp:274
 msgid "pop_up.reset_progress.title"
 msgstr ""
 "Would you like to reset\n"

@@ -123,7 +123,7 @@ void BuyFullVersion::onCreate(CCNode *parent)
 
 
     buy_later_title->setColor(GameInfo::COLOR_LIGHT_GRAY);
-    button1->setColor(GameInfo::COLOR_RED);
+    button1->setColor(GameInfo::COLOR_LIGHT_GRAY);
     CONNECT(buy_later_item->signalOnClick,
             this, &BuyFullVersion::onBuyLaterClick);
 
