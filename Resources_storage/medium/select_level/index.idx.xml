@@ -49,5 +49,44 @@
 		<name>level_tiles/tile_locked.plist.xml</name>
 	</file>
 	
-	
+	<file>
+		<name>level_tiles_mul/tile_10001.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10002.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10003.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10004.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10005.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10006.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10007.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10008.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10009.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
+	<file>
+		<name>level_tiles_mul/tile_10010.plist.xml</name>
+		<project>mif_mul</project>
+	</file>
 </directory>
