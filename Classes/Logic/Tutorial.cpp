@@ -107,6 +107,7 @@ LevelKeyboard::ButtonsCodes charToButtonCode(char ch)
     case ')':
         return LevelKeyboard::right_parenthesis;
     }
+	return LevelKeyboard::b0;
 }
 
 void Tutorial::onEmptySpaceTouch(EquationDrawer* eqd)

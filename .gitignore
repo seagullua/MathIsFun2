@@ -18,7 +18,6 @@ JoinyGenerator/*.ad
 JoinyGenerator/release
 Resources
 build
-assets
 bin
 gen
 obj
