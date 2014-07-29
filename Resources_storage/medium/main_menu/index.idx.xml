@@ -8,9 +8,13 @@
 	</file>
 	
 	<file>
-		<name>images/logo.png.xml</name>
+		<name>images/logo.png</name>
+		<project>mif</project>
 	</file>
-	
+	<file>
+		<name>mul/logo.png</name>
+		<project>mif_mul</project>
+	</file>
 	
 	<file>
 		<name>images/facebook_logo.png</name>
