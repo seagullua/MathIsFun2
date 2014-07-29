@@ -42,18 +42,34 @@ void initInAppPurchases()
     std::string purchase_name;
     std::string samsung_id;
     std::string google_play_key;
-    if(GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion)
+
+    if(GameInfo::GAME_VERSION == GameVersion::VersionPlus)
     {
-        samsung_id = "100000104146";
-        purchase_name = "buy_full_version";
-        google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1eWcrKw7sfifjhLGCq+X7jOrFeh7eJdw3uqi9nFcP4cHRPwgpSqYm3+qn3CQNbBQ9D+rQXewnaKSaR3drVvl4cOPOOkO7iXiuA/t6AWx1dpOivPhzXCN+9vzz6wXVkzi0fPXydGNM1bbTQA0mQxmR+9j4HWfKgrnP6+3XoLHNahhf2ltLfFDukYl0woYrG9DBvFllmUfpaLLoLJL/9TmT8FWknSN8izUqfL4VwkBaceb/yIIELL3SEFnGQkUV7nO26E+giPNY7JRoHv1oQBPEcGNTxxM5nFZfp+2TYOtpGlznjy7yRwfGB+B2hhqZAM22GBBSlAMLm/XnD/jelDuIwIDAQAB";
+        if(GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion)
+        {
+            samsung_id = "100000104146";
+            purchase_name = "buy_full_version";
+            google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1eWcrKw7sfifjhLGCq+X7jOrFeh7eJdw3uqi9nFcP4cHRPwgpSqYm3+qn3CQNbBQ9D+rQXewnaKSaR3drVvl4cOPOOkO7iXiuA/t6AWx1dpOivPhzXCN+9vzz6wXVkzi0fPXydGNM1bbTQA0mQxmR+9j4HWfKgrnP6+3XoLHNahhf2ltLfFDukYl0woYrG9DBvFllmUfpaLLoLJL/9TmT8FWknSN8izUqfL4VwkBaceb/yIIELL3SEFnGQkUV7nO26E+giPNY7JRoHv1oQBPEcGNTxxM5nFZfp+2TYOtpGlznjy7yRwfGB+B2hhqZAM22GBBSlAMLm/XnD/jelDuIwIDAQAB";
+        }
+        else
+        {
+            samsung_id = "100000104197";
+            purchase_name = "mif27kids_ads_purchase";
+            google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi3YVhJJvS59LeRF8QXROUgWJdROSQKX8DEFfLevVt0wUR3q+1D5t99OtAsWZxjgC6jO/+HgvGPTwL9wKrUpRRnsaVdhAFPZ1zcEWqrkgTJEs2g2DwxA1NIWKberTgF5/8GSgG/rkhNKqSrRhoxh7H1BWcutHAOcpew0gvXJ0CfLO2ziKSKatog9t/mCdoK3BrnLp8D/lHstPDFWjZnS3874GZLxjVG4Xg+X7JyCfdIPwHhg8XpV+0MJR5MUGcNkVUq7dW1y3RmjDtuOWJKM9+0omotc79wRnKnDZ2nEtSlAmNIK3lhptsYRgjGuKDLbFG9DHplRk6wIzKxeIK4iltwIDAQAB";
+        }
+    }
+    else if(GameInfo::GAME_VERSION == GameVersion::VerionMultiply)
+    {
+        //Multiplication
+        samsung_id = "100000104197???";
+        purchase_name = "mif_mul_ads_purchase";
+        google_play_key = "";
     }
     else
     {
-        samsung_id = "100000104197";
-        purchase_name = "mif27kids_ads_purchase";
-        google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi3YVhJJvS59LeRF8QXROUgWJdROSQKX8DEFfLevVt0wUR3q+1D5t99OtAsWZxjgC6jO/+HgvGPTwL9wKrUpRRnsaVdhAFPZ1zcEWqrkgTJEs2g2DwxA1NIWKberTgF5/8GSgG/rkhNKqSrRhoxh7H1BWcutHAOcpew0gvXJ0CfLO2ziKSKatog9t/mCdoK3BrnLp8D/lHstPDFWjZnS3874GZLxjVG4Xg+X7JyCfdIPwHhg8XpV+0MJR5MUGcNkVUq7dW1y3RmjDtuOWJKM9+0omotc79wRnKnDZ2nEtSlAmNIK3lhptsYRgjGuKDLbFG9DHplRk6wIzKxeIK4iltwIDAQAB";
+        assert(false);
     }
+
 
     GameInfo::setPurchaseID(purchase_name);
     Product buy_full_version(purchase_name,price);
@@ -90,15 +106,25 @@ void initInAppPurchases()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
-    //TODO: new keys set
     //Statistics init
-
-    if(ADInfo::getPlatform() == ADPlatform::Android)
-        ADStatistics::setApplicationKey("3WK4P7YZWV5WBCSZWJTT");
-    else if(ADInfo::getPlatform() == ADPlatform::iOS)
-        ADStatistics::setApplicationKey("2N2D57R7FYHMY4PHNC7Y");
-	else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
-        ADStatistics::setApplicationKey("DN44PJ9MC8QFPQPCHYCR");
+    if(GameInfo::GAME_VERSION == GameVersion::VersionPlus)
+    {
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            ADStatistics::setApplicationKey("3WK4P7YZWV5WBCSZWJTT");
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            ADStatistics::setApplicationKey("2N2D57R7FYHMY4PHNC7Y");
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            ADStatistics::setApplicationKey("DN44PJ9MC8QFPQPCHYCR");
+    }
+    else if(GameInfo::GAME_VERSION == GameVersion::VerionMultiply)
+    {
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            ADStatistics::setApplicationKey("QFXY32JBS4WBCVHN6HBP");
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            ADStatistics::setApplicationKey("R23GSVSZJ2T7W2WZ2XPY");
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            ADStatistics::setApplicationKey("FMDVW8R5B5JX3MTQFTTQ");
+    }
 
     ADStatistics::startSession();
     ADInfo::getStore();
@@ -175,34 +201,60 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     pid_interstitial << "ca-app-pub-" << 16126979 << 60946304 << "/";
 
-    if(platform == ADPlatform::Android)
+    if(GameInfo::GAME_VERSION == GameVersion::VersionPlus)
     {
-        if(store == ADStore::SamsungStore)
+        if(platform == ADPlatform::Android)
         {
-            //ca-app-pub-1612697960946304/5795034672
-            pid_interstitial << 5795034672;
+            if(store == ADStore::SamsungStore)
+            {
+                //ca-app-pub-1612697960946304/5795034672
+                pid_interstitial << 5795034672;
+            }
+            else if(store == ADStore::GooglePlay)
+            {
+                //ca-app-pub-1612697960946304/7149173479
+                pid_interstitial << 7149173479;
+            }
+            else
+            {
+                //ca-app-pub-1612697960946304/5795034672
+                pid_interstitial << 5795034672;
+            }
         }
-        else if(store == ADStore::GooglePlay)
+        else if(platform == ADPlatform::iOS)
         {
-            //ca-app-pub-1612697960946304/7149173479
-            pid_interstitial << 7149173479;
+            //ca-app-pub-1612697960946304/9357276676
+            pid_interstitial << 9357276676;
         }
-        else
+        else if(platform == ADPlatform::WindowsPhone)
         {
-            //ca-app-pub-1612697960946304/5795034672
-            pid_interstitial << 5795034672;
+            //ca-app-pub-1612697960946304/4272772278
+            pid_interstitial << 4272772278;
         }
     }
-    else if(platform == ADPlatform::iOS)
+    else if(GameInfo::GAME_VERSION == GameVersion::VerionMultiply)
     {
-        //ca-app-pub-1612697960946304/9357276676
-        pid_interstitial << 9357276676;
+        if(platform == ADPlatform::Android)
+        {
+            //ca-app-pub-1612697960946304/1975977070
+            pid_interstitial << 1975977070;
+        }
+        else if(platform == ADPlatform::iOS)
+        {
+            //ca-app-pub-1612697960946304/6406176672
+            pid_interstitial << 6406176672;
+        }
+        else if(platform == ADPlatform::WindowsPhone)
+        {
+            //ca-app-pub-1612697960946304/3313109472
+            pid_interstitial << 3313109472;
+        }
     }
-	else if(platform == ADPlatform::WindowsPhone)
+    else
     {
-        //ca-app-pub-1612697960946304/4272772278
-        pid_interstitial << 4272772278;
+        assert(false);
     }
+
 
     ADAds::registerInterstitialType(pid_interstitial.str());
 

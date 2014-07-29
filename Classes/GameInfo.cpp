@@ -62,7 +62,7 @@ const ADPackageName APP_MIF_27_PREMIUM = ADPackageName::create(
 	"0000"); //Windows 8
 
 const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_FREE = ADPackageName::create(
-            "com.x4enjoy.mathisfun.multiplication", //Android
+            "x4enjoy.funmath.multiplication.table", //Android
             "id00000...", //iOS id
             "id-windows-phone"); //Windows Phone
 const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::create(
@@ -96,9 +96,13 @@ const ADPackageName& GameInfo::getMyPackageName()
 			return APP_MIF_27_PREMIUM;
 		}
     }
-    else
+    else if(GAME_VERSION == GameVersion::VerionMultiply)
     {
         return APP_MIF_MULTIPLICATION_FREE;
+    }
+    else
+    {
+        assert(false);
     }
 }
 
