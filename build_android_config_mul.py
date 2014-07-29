@@ -22,7 +22,7 @@ project.addModule('android_ADBrowser')
 project.addModule('android_ADFacebook_None')
 project.addModule('android_ADHttp_None')
 
-project.project_name = 'Fun Math 2*2'
+project.project_name = 'FunMath2x2'
 project.package_name = 'x4enjoy.funmath.multiplication.table'
 project.version_name = "1.2"
 project.version_code = "1"
