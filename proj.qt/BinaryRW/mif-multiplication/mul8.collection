@@ -103,7 +103,7 @@ END_LEVEL
 //Level 13
 LEVEL
         EQUATION(_*8=32)
-        ADD_SOLUTION(2)
+        ADD_SOLUTION(4)
 END_LEVEL
 
 //Level 14

@@ -27,8 +27,8 @@ END_LEVEL
 
 //Level 3
 LEVEL
-        EQUATION(3*2=_)
-        ADD_SOLUTION(6)
+        EQUATION(_*4=4)
+        ADD_SOLUTION(1)
 END_LEVEL
 
 
@@ -42,13 +42,14 @@ END_LEVEL
 
 //Level 5
 LEVEL
-        EQUATION(5*_=10)
-        ADD_SOLUTION(2)
+        EQUATION(_*7=7)
+        ADD_SOLUTION(1)
 END_LEVEL
 
+//Level 6
 LEVEL
-        EQUATION(6*2=__)
-        ADD_SOLUTION(12)
+        EQUATION(1*6=_)
+        ADD_SOLUTION(6)
 END_LEVEL
 
 
@@ -60,10 +61,9 @@ END_LEVEL
 
 //Level 8
 LEVEL
-        EQUATION(_*2=18)
-        ADD_SOLUTION(9)
+        EQUATION(8*_=8)
+        ADD_SOLUTION(1)
 END_LEVEL
-
 
 
 //Level 9
@@ -75,8 +75,8 @@ END_LEVEL
 
 //Level 10
 LEVEL
-        EQUATION(__*2=20)
-        ADD_SOLUTION(10)
+        EQUATION(9*_=9)
+        ADD_SOLUTION(1)
 END_LEVEL
 
 
@@ -89,15 +89,15 @@ END_LEVEL
 
 //Level 12
 LEVEL
-        EQUATION(2*7=__)
-        ADD_SOLUTION(14)
+        EQUATION(4*1=_)
+        ADD_SOLUTION(4)
 END_LEVEL
 
 
 //Level 13
 LEVEL
-        EQUATION(2*5=__)
-        ADD_SOLUTION(10)
+        EQUATION(1*7=_)
+        ADD_SOLUTION(7)
 END_LEVEL
 
 //Level 14
@@ -117,16 +117,15 @@ END_LEVEL
 
 //Level 16
 LEVEL
-        EQUATION(4*2=_)
-        ADD_SOLUTION(8)
+        EQUATION(1*_=9)
+        ADD_SOLUTION(9)
 END_LEVEL
-
 
 
 //Level 17
 LEVEL
-        EQUATION(10*2=_0)
-        ADD_SOLUTION(2)
+        EQUATION(_*8=8)
+        ADD_SOLUTION(1)
 END_LEVEL
 
 
@@ -150,6 +149,7 @@ LEVEL
         ADD_SOLUTION(22)
         ADD_SOLUTION(41)
 END_LEVEL
+
 
 
 END_COLLECTION

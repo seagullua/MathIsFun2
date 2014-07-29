@@ -14,8 +14,6 @@ LEVEL
         ADD_SOLUTION(0)
 END_LEVEL
 
-
-
 //Level 2
 LEVEL
         EQUATION(0*2=_)
@@ -31,15 +29,11 @@ LEVEL
 END_LEVEL
 
 
-
-
 //Level 4
 LEVEL
         EQUATION(3*_=0)
         ADD_SOLUTION(0)
 END_LEVEL
-
-
 
 
 //Level 5
@@ -112,8 +106,6 @@ LEVEL
 END_LEVEL
 
 
-
-
 //Level 15
 LEVEL
         EQUATION(10*1=1_)
@@ -155,7 +147,6 @@ LEVEL
         EQUATION(4*0=_)
         ADD_SOLUTION(0)
 END_LEVEL
-
 
 
 END_COLLECTION
