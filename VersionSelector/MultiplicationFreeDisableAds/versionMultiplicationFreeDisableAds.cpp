@@ -1,5 +1,5 @@
 #include "GameInfo.h"
 
-GameVersion const GameInfo::GAME_VERSION = GameVersion::VersionMultiplication;
+GameVersion const GameInfo::GAME_VERSION = GameVersion::VerionMultiply;
 PurchaseType const GameInfo::PURCHASE_TYPE = PurchaseType::AdsPurchaseDisableAds;
 
