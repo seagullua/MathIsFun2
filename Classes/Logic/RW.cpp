@@ -406,6 +406,10 @@ void RW::flushSettings()
 //    }
 //#endif
 }
+Collection::CollectionID RW::getFirstCollectionID()
+{
+    return _rw->_collections.begin()->first;
+}
 
 const CollectionsArr &RW::getCollections()
 {

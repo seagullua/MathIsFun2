@@ -9,6 +9,7 @@ class RW
 {
 public:
     static const CollectionsArr& getCollections();
+    static Collection::CollectionID getFirstCollectionID();
     static Collection* getCollection(Collection::CollectionID col_id);
 
     static unsigned int allStampsObtained(); 
