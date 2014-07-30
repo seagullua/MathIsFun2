@@ -37,7 +37,7 @@ void YesNoDialog::onCreate(CCNode *parent)
 {
     CCSize size = parent->getContentSize();
     float scaled = ADScreen::getScaleFactor();
-    float x_middle = size.width / 2;
+    float x_middle = size.width*0.525f;
 
     //create title with CCSprite
     if(_content)
@@ -53,6 +53,12 @@ void YesNoDialog::onCreate(CCNode *parent)
         _title->setColor(GameInfo::COLOR_LIGHT_BLUE);
         parent->addChild(_title);
         _title->setPosition(ccp(x_middle, size.height*0.65));
+
+        float MAX_WIDTH = parent->getContentSize().width * 0.8f;
+        if(_title->getContentSize().width > MAX_WIDTH)
+        {
+            _title->setScale(MAX_WIDTH / _title->getContentSize().width);
+        }
     }
 
 

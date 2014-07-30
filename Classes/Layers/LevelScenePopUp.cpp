@@ -296,7 +296,7 @@ void LevelScenePopUp::hideMe(const ADCallFunc::Action &callback)
 void LevelScenePopUp::showInterstitial()
 {
     //show interstitial once per 30 seconds
-    if(!SavesManager::isAdsEnabled())
+    if(SavesManager::isAdsEnabled())
     {
         time_t last_ad_shown_time = SavesManager::getInstance()->getLastADSTimeShown();
         time_t curtime = time(0);
