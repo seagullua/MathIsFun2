@@ -63,7 +63,7 @@ void initInAppPurchases()
         //Multiplication
         samsung_id = "100000104197???";
         purchase_name = "mif_mul_ads_purchase";
-        google_play_key = "";
+        google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlFZb8TTQTvvfq4pLJz+yw4LUHwRcLnXC1mn0YOjEgugtiZjRdto2VKOtNvKbqY3p/VchuxKsV8auYhzZu9u7UWCy1b8LclSlCAzb0Tm8iIFTLvZ6sjatZlBfuc40kaO5NVDBAG0XFU5XywW4G0zj4NqRCzhOmymvHSxguR8JT4SgeltoqYb6tEz6YKvAVyZ8HW7/LHV9lRja//7lq3dXJy6DbeLp232ndfDgl39FawrD74iEvonclEVOH/lepeh6DIr+2bEp0e0zPzO3lGxLX33Inhd6cS/++gmhGYAAJ97wYPCzTPCCfx82B1zadm8GkZi7TT2sSp4N+2wyHqPSRwIDAQAB";
     }
     else
     {
