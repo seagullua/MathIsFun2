@@ -22,6 +22,12 @@
 		840AE31E18A030A900189085 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840AE31D18A02F5200189085 /* libcocos2dx.a */; };
 		841B2C6018D5B6ED0064AA59 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */; };
 		841B2C6118D5B6ED0064AA59 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5F18D5B6ED0064AA59 /* iAd.framework */; };
+		8452FAD5198960840003ACFE /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAD0198960840003ACFE /* fonts */; };
+		8452FAD6198960840003ACFE /* levels_multiplication.ad in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAD1198960840003ACFE /* levels_multiplication.ad */; };
+		8452FAD7198960840003ACFE /* medium in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAD2198960840003ACFE /* medium */; };
+		8452FAD8198960840003ACFE /* music in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAD3198960840003ACFE /* music */; };
+		8452FAD9198960840003ACFE /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAD4198960840003ACFE /* translations */; };
+		8452FADC198960B00003ACFE /* versionMultiplicationFreeDisableAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8452FADB198960B00003ACFE /* versionMultiplicationFreeDisableAds.cpp */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
 		84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */; };
 		84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */; };
@@ -73,11 +79,6 @@
 		84EBD1DC19716520007241CD /* SelectLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1B119716520007241CD /* SelectLevel.cpp */; };
 		84EBD1DD19716520007241CD /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1B319716520007241CD /* Settings.cpp */; };
 		84EBD1DE19716520007241CD /* Store.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1B519716520007241CD /* Store.cpp */; };
-		84EBD1E41971654E007241CD /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84EBD1DF1971654E007241CD /* fonts */; };
-		84EBD1E51971654E007241CD /* levels.ad in Resources */ = {isa = PBXBuildFile; fileRef = 84EBD1E01971654E007241CD /* levels.ad */; };
-		84EBD1E61971654E007241CD /* medium in Resources */ = {isa = PBXBuildFile; fileRef = 84EBD1E11971654E007241CD /* medium */; };
-		84EBD1E71971654E007241CD /* music in Resources */ = {isa = PBXBuildFile; fileRef = 84EBD1E21971654E007241CD /* music */; };
-		84EBD1E81971654E007241CD /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 84EBD1E31971654E007241CD /* translations */; };
 		84EBD24B197167B4007241CD /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1E9197167B4007241CD /* ADRandom.cpp */; };
 		84EBD24C197167B4007241CD /* ADCocosThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1EE197167B4007241CD /* ADCocosThread.cpp */; };
 		84EBD24D197167B4007241CD /* ADAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1F2197167B4007241CD /* ADAds.cpp */; };
@@ -109,7 +110,6 @@
 		84EBD267197167B4007241CD /* ADBinaryData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD243197167B4007241CD /* ADBinaryData.cpp */; };
 		84EBD268197167B4007241CD /* ADStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD245197167B4007241CD /* ADStorage.cpp */; };
 		84EBD269197167B4007241CD /* ADStorageListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD247197167B4007241CD /* ADStorageListener.cpp */; };
-		84EBD26D19716834007241CD /* version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD26C19716834007241CD /* version.cpp */; };
 		84EBD27019716875007241CD /* PlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD26E19716875007241CD /* PlatformImpl.cpp */; };
 		84F198BD18D59E85006A5221 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198B318D59E85006A5221 /* Default-568h@2x.png */; };
 		84F198BE18D59E85006A5221 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198B418D59E85006A5221 /* Default.png */; };
@@ -122,8 +122,6 @@
 		84F198C518D59E85006A5221 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198BB18D59E85006A5221 /* Icon-144.png */; };
 		84F198C618D59E85006A5221 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198BC18D59E85006A5221 /* Icon-152.png */; };
 		84F198CE18D5A9C9006A5221 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198CA18D5A9C9006A5221 /* Default-Portrait.png */; };
-		84F198CF18D5A9C9006A5221 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 84F198CB18D5A9C9006A5221 /* iTunesArtwork */; };
-		84F198D018D5A9C9006A5221 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 84F198CC18D5A9C9006A5221 /* iTunesArtwork@2x */; };
 		84F198DC18D5ACB2006A5221 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F198DB18D5ACB2006A5221 /* StoreKit.framework */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
 		BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492C21128924A800A09262 /* libxml2.dylib */; };
@@ -173,6 +171,12 @@
 		840AE31818A02F4D00189085 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		841B2C5F18D5B6ED0064AA59 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		8452FAD0198960840003ACFE /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
+		8452FAD1198960840003ACFE /* levels_multiplication.ad */ = {isa = PBXFileReference; lastKnownFileType = file; name = levels_multiplication.ad; path = Resources/levels_multiplication.ad; sourceTree = SOURCE_ROOT; };
+		8452FAD2198960840003ACFE /* medium */ = {isa = PBXFileReference; lastKnownFileType = folder; name = medium; path = Resources/medium; sourceTree = SOURCE_ROOT; };
+		8452FAD3198960840003ACFE /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
+		8452FAD4198960840003ACFE /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
+		8452FADB198960B00003ACFE /* versionMultiplicationFreeDisableAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = versionMultiplicationFreeDisableAds.cpp; sourceTree = "<group>"; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADAds_AdMob.mm; sourceTree = "<group>"; };
@@ -274,11 +278,6 @@
 		84EBD1B419716520007241CD /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		84EBD1B519716520007241CD /* Store.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Store.cpp; sourceTree = "<group>"; };
 		84EBD1B619716520007241CD /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
-		84EBD1DF1971654E007241CD /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
-		84EBD1E01971654E007241CD /* levels.ad */ = {isa = PBXFileReference; lastKnownFileType = file; name = levels.ad; path = Resources/levels.ad; sourceTree = SOURCE_ROOT; };
-		84EBD1E11971654E007241CD /* medium */ = {isa = PBXFileReference; lastKnownFileType = folder; name = medium; path = Resources/medium; sourceTree = SOURCE_ROOT; };
-		84EBD1E21971654E007241CD /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
-		84EBD1E31971654E007241CD /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
 		84EBD1E9197167B4007241CD /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
 		84EBD1EA197167B4007241CD /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
 		84EBD1EB197167B4007241CD /* ADSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSignals.h; sourceTree = "<group>"; };
@@ -368,7 +367,6 @@
 		84EBD248197167B4007241CD /* ADStorageListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStorageListener.h; sourceTree = "<group>"; };
 		84EBD249197167B4007241CD /* ADStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStream.h; sourceTree = "<group>"; };
 		84EBD24A197167B4007241CD /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
-		84EBD26C19716834007241CD /* version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = version.cpp; sourceTree = "<group>"; };
 		84EBD26E19716875007241CD /* PlatformImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlatformImpl.cpp; sourceTree = "<group>"; };
 		84F198B318D59E85006A5221 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		84F198B418D59E85006A5221 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
@@ -381,8 +379,6 @@
 		84F198BB18D59E85006A5221 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = SOURCE_ROOT; };
 		84F198BC18D59E85006A5221 /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = SOURCE_ROOT; };
 		84F198CA18D5A9C9006A5221 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = SOURCE_ROOT; };
-		84F198CB18D5A9C9006A5221 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = SOURCE_ROOT; };
-		84F198CC18D5A9C9006A5221 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = SOURCE_ROOT; };
 		84F198DB18D5ACB2006A5221 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF365AA612A103F70050DCF4 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
@@ -480,14 +476,12 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84EBD1DF1971654E007241CD /* fonts */,
-				84EBD1E01971654E007241CD /* levels.ad */,
-				84EBD1E11971654E007241CD /* medium */,
-				84EBD1E21971654E007241CD /* music */,
-				84EBD1E31971654E007241CD /* translations */,
+				8452FAD0198960840003ACFE /* fonts */,
+				8452FAD1198960840003ACFE /* levels_multiplication.ad */,
+				8452FAD2198960840003ACFE /* medium */,
+				8452FAD3198960840003ACFE /* music */,
+				8452FAD4198960840003ACFE /* translations */,
 				84F198CA18D5A9C9006A5221 /* Default-Portrait.png */,
-				84F198CB18D5A9C9006A5221 /* iTunesArtwork */,
-				84F198CC18D5A9C9006A5221 /* iTunesArtwork@2x */,
 				84F198B318D59E85006A5221 /* Default-568h@2x.png */,
 				84F198B418D59E85006A5221 /* Default.png */,
 				84F198B518D59E85006A5221 /* Default@2x.png */,
@@ -572,6 +566,15 @@
 				840AE31D18A02F5200189085 /* libcocos2dx.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8452FADA198960B00003ACFE /* MultiplicationFreeDisableAds */ = {
+			isa = PBXGroup;
+			children = (
+				8452FADB198960B00003ACFE /* versionMultiplicationFreeDisableAds.cpp */,
+			);
+			name = MultiplicationFreeDisableAds;
+			path = ../VersionSelector/MultiplicationFreeDisableAds;
 			sourceTree = "<group>";
 		};
 		84B0AA8D18D5C61900E0C39A /* ADAds_AdMob */ = {
@@ -880,18 +883,9 @@
 		84EBD26A1971681B007241CD /* _Version */ = {
 			isa = PBXGroup;
 			children = (
-				84EBD26B19716834007241CD /* Addition27Free */,
+				8452FADA198960B00003ACFE /* MultiplicationFreeDisableAds */,
 			);
 			name = _Version;
-			sourceTree = "<group>";
-		};
-		84EBD26B19716834007241CD /* Addition27Free */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD26C19716834007241CD /* version.cpp */,
-			);
-			name = Addition27Free;
-			path = ../VersionSelector/Addition27Free;
 			sourceTree = "<group>";
 		};
 		84F197E418D5986E006A5221 /* Classes */ = {
@@ -1049,24 +1043,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F198C018D59E85006A5221 /* Icon-57.png in Resources */,
+				8452FAD9198960840003ACFE /* translations in Resources */,
+				8452FAD5198960840003ACFE /* fonts in Resources */,
 				84F198BF18D59E85006A5221 /* Default@2x.png in Resources */,
 				84F198C218D59E85006A5221 /* Icon-76.png in Resources */,
 				84F198C418D59E85006A5221 /* Icon-120.png in Resources */,
+				8452FAD7198960840003ACFE /* medium in Resources */,
+				8452FAD8198960840003ACFE /* music in Resources */,
+				8452FAD6198960840003ACFE /* levels_multiplication.ad in Resources */,
 				84F198CE18D5A9C9006A5221 /* Default-Portrait.png in Resources */,
 				84B0AA9F18D5C61900E0C39A /* HOW_TO_INTEGRATE.txt in Resources */,
-				84EBD1E41971654E007241CD /* fonts in Resources */,
-				84EBD1E51971654E007241CD /* levels.ad in Resources */,
 				84F198C118D59E85006A5221 /* Icon-72.png in Resources */,
-				84EBD1E81971654E007241CD /* translations in Resources */,
 				84F198BD18D59E85006A5221 /* Default-568h@2x.png in Resources */,
 				84F198C618D59E85006A5221 /* Icon-152.png in Resources */,
 				84F198C318D59E85006A5221 /* Icon-114.png in Resources */,
-				84EBD1E71971654E007241CD /* music in Resources */,
-				84F198D018D5A9C9006A5221 /* iTunesArtwork@2x in Resources */,
-				84F198CF18D5A9C9006A5221 /* iTunesArtwork in Resources */,
 				84F198C518D59E85006A5221 /* Icon-144.png in Resources */,
 				84F198BE18D59E85006A5221 /* Default.png in Resources */,
-				84EBD1E61971654E007241CD /* medium in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,7 +1098,6 @@
 				84EBD1C519716520007241CD /* YesNoDialog.cpp in Sources */,
 				84EBD253197167B4007241CD /* ADPackageName.cpp in Sources */,
 				84EBD1CE19716520007241CD /* ExpressionParser.cpp in Sources */,
-				84EBD26D19716834007241CD /* version.cpp in Sources */,
 				BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */,
 				84EBD1BF19716520007241CD /* EquationDrawer.cpp in Sources */,
 				84EBD25E197167B4007241CD /* ADCallFunc.cpp in Sources */,
@@ -1128,6 +1119,7 @@
 				84EBD1C419716520007241CD /* PopUpWindow.cpp in Sources */,
 				84EBD1C719716520007241CD /* Level.cpp in Sources */,
 				84EBD252197167B4007241CD /* ADLanguage.cpp in Sources */,
+				8452FADC198960B00003ACFE /* versionMultiplicationFreeDisableAds.cpp in Sources */,
 				84EBD1CC19716520007241CD /* Tutorial.cpp in Sources */,
 				84EBD1DB19716520007241CD /* SelectCollection.cpp in Sources */,
 				84EBD1DA19716520007241CD /* SceneStyle.cpp in Sources */,

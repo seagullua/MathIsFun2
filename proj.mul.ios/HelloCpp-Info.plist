@@ -7,7 +7,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Fun Math 2*2</string>
 	<key>CFBundleExecutable</key>
-	<string>MathIsFun2</string>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon-57.png</string>
 	<key>CFBundleIconFiles</key>
