@@ -59,7 +59,7 @@ const ADPackageName APP_MIF_27_PREMIUM = ADPackageName::create(
 	"com.x4enjoy.mathisfun.kids.premium", //Android
 	"id00...", //iOS id
 	"0000-",//Windows Phone
-	"0000"); //Windows 8
+	"a867e6d4-be47-48c0-9aee-4b523ada5c56"); //Windows 8
 
 const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_FREE = ADPackageName::create(
             "x4enjoy.funmath.multiplication.table", //Android
@@ -68,7 +68,8 @@ const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_FREE = ADPackageName::creat
 const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::create(
             "com.x4enjoy.mathisfun.multiplication.premium", //Android
             "id00000...", //iOS id
-            "id-windows-phone"); //Windows Phone
+            "id-windows-phone",
+			"604c8367-4d81-4d05-9169-d60edf3be630"); //Windows Phone
 
 std::string GameInfo::_purchase_id;
 
@@ -98,7 +99,15 @@ const ADPackageName& GameInfo::getMyPackageName()
     }
     else if(GAME_VERSION == GameVersion::VerionMultiply)
     {
-        return APP_MIF_MULTIPLICATION_FREE;
+		if (PURCHASE_TYPE == PurchaseType::NoAdsNoPurchase)
+		{
+			return APP_MIF_MULTIPLICATION_PREMIUM;
+		}
+		else
+		{
+			return APP_MIF_MULTIPLICATION_FREE;
+		}
+        
     }
     else
     {
