@@ -52,8 +52,8 @@ const ADPackageName GameInfo::APP_MIF_27_FREE = ADPackageName::create(
 
 const ADPackageName GameInfo::APP_MIF_27_FREE_DISABLE_ADS = ADPackageName::create(
             "com.x4enjoy.mathisfun.kids.free", //Android
-            "id00...", //iOS id
-            "1af4d00f-fdc7-44e5-9486-1ab72d602e70"); //Windows Phone
+            "id904664730", //iOS id
+            "ab1e35c0-dfa5-4acf-93e3-948ccc33555c"); //Windows Phone
 
 const ADPackageName APP_MIF_27_PREMIUM = ADPackageName::create(
 	"com.x4enjoy.mathisfun.kids.premium", //Android
@@ -63,8 +63,8 @@ const ADPackageName APP_MIF_27_PREMIUM = ADPackageName::create(
 
 const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_FREE = ADPackageName::create(
             "x4enjoy.funmath.multiplication.table", //Android
-            "id00000...", //iOS id
-            "id-windows-phone"); //Windows Phone
+            "id904685424", //iOS id
+            "f66ca8c2-3e09-41c1-b64c-fe973654d8a3"); //Windows Phone
 const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::create(
             "com.x4enjoy.mathisfun.multiplication.premium", //Android
             "id00000...", //iOS id

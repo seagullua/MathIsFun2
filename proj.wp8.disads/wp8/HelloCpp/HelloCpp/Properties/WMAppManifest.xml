@@ -6,7 +6,7 @@
     <Language code="uk" />
     <Language code="ru" />
   </Languages>
-  <App xmlns="" ProductID="{f66ca8c2-3e09-41c1-b64c-fe973654d8a3}" Title="Multiplication table – Fun Math" RuntimeType="Silverlight" Version="1.2.0.0" Genre="apps.normal" Author="4Enjoy: Diana Sirenko, Andrii Chaika" Description="This app will help your kid to learn the Multiplication table from 1 to 10. There are 200 FREE levels with increasing difficulty. The levels were created especially for children by best math teachers. " Publisher="4Enjoy" PublisherID="{be025a6e-6b64-4724-95d0-ed19445d9bdb}">
+  <App xmlns="" ProductID="{ab1e35c0-dfa5-4acf-93e3-948ccc33555c}" Title="Math Is Fun Kids Addition and Subtraction to 10" RuntimeType="Silverlight" Version="1.2.0.0" Genre="apps.normal" Author="4Enjoy: Diana Sirenko, Andrii Chaika" Description="This game will help your kid to learn how to add and subtract numbers from 1 to 10. The game has 200 levels with increasing difficulty. The levels were created by teachers of math to give the best results." Publisher="4Enjoy" PublisherID="{be025a6e-6b64-4724-95d0-ed19445d9bdb}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
