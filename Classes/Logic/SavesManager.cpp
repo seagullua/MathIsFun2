@@ -174,8 +174,13 @@ void SavesManager::setPurchaseCompleted(bool full_version)
 
 bool SavesManager::isPurchaseAllowed()
 {
-    return GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseDisableAds
+    bool res = GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseDisableAds
             || GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion;
+    if(ADInfo::getStore() == ADStore::StoreLess)
+    {
+        return false;
+    }
+    return res;
 }
 
 bool SavesManager::isLevelsUnlocked()

@@ -215,6 +215,11 @@ bool AppDelegate::applicationDidFinishLaunching()
                 //ca-app-pub-1612697960946304/7149173479
                 pid_interstitial << 7149173479;
             }
+            else if(store == ADStore::StoreLess)
+            {
+                //ca-app-pub-1612697960946304/4427439073
+                pid_interstitial << 4427439073;
+            }
             else
             {
                 //ca-app-pub-1612697960946304/5795034672
