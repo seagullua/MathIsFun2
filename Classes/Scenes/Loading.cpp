@@ -107,6 +107,10 @@ void Loading::initRW()
         fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels.ad");
     else if(GameInfo::GAME_VERSION == GameVersion::VerionMultiply)
         fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels_multiplication.ad");
+    else if(GameInfo::GAME_VERSION == GameVersion::Version100)
+        fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels_100.ad");
+    else if(GameInfo::GAME_VERSION == GameVersion::Version50)
+        fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("levels_50.ad");
 
     unsigned long size = 0;
     unsigned char* file_cont = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "rb", &size);

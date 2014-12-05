@@ -32,4 +32,34 @@ START_DEFINITION(define_mif_multiplication, "Resources_storage/levels_multiplica
 
 END_DEFINITION
 
+START_DEFINITION(define_mif_100, "Resources_storage/levels_100.ad", 10)
+
+#include "mif-100/col100_1.collection"
+#include "mif-100/col100_2.collection"
+#include "mif-100/col100_3.collection"
+#include "mif-100/col100_4.collection"
+#include "mif-100/col100_5.collection"
+#include "mif-100/col100_6.collection"
+#include "mif-100/col100_7.collection"
+#include "mif-100/col100_8.collection"
+#include "mif-100/col100_9.collection"
+#include "mif-100/col100_10.collection"
+
+END_DEFINITION
+
+START_DEFINITION(define_mif_50, "Resources_storage/levels_50.ad", 10)
+
+#include "mif-50/col50_1.collection"
+#include "mif-50/col50_2.collection"
+#include "mif-50/col50_3.collection"
+#include "mif-50/col50_4.collection"
+#include "mif-50/col50_5.collection"
+#include "mif-50/col50_6.collection"
+#include "mif-50/col50_7.collection"
+#include "mif-50/col50_8.collection"
+#include "mif-50/col50_9.collection"
+#include "mif-50/col50_10.collection"
+
+END_DEFINITION
+
 #endif

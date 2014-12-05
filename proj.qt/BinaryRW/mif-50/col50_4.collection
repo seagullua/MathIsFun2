@@ -1,0 +1,183 @@
+//Fourth collection
+COLLECTION
+COLLECTION_STAMPS_TO_UNLOCK(0)
+COLLECTION_ID(10004)
+COLLECTION_COLOR(255,201,48)
+COLLECTION_FREE(true)
+COLLECTION_DIFFICULTY(Easy)
+
+
+//Easy2-Medium3
+//Level 1
+LEVEL
+        EQUATION(1_+1_=21)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
+END_LEVEL
+
+
+
+//Level 2
+LEVEL
+        EQUATION(2_+_2=45)
+        ADD_SOLUTION(32)
+END_LEVEL
+
+//Level 3
+LEVEL
+        EQUATION(1_+_0=35)
+        ADD_SOLUTION(52)
+END_LEVEL
+
+
+
+//Level 4
+LEVEL
+        EQUATION(_4-11=3_)
+        ADD_SOLUTION(43)
+END_LEVEL
+
+
+
+
+//Level 5
+LEVEL
+        EQUATION(3_+5=_5)
+        ADD_SOLUTION(03)
+END_LEVEL
+
+
+//Level 6
+LEVEL
+        EQUATION(11+1_=_3)
+        ADD_SOLUTION(22)
+END_LEVEL
+
+//Level 7
+LEVEL
+        EQUATION(27+__=54)
+        ADD_SOLUTION(27)
+END_LEVEL
+
+
+//Level 8
+LEVEL
+        EQUATION(8+1_=_3)
+        ADD_SOLUTION(52)
+END_LEVEL
+
+
+
+//Level 9
+LEVEL
+        EQUATION(99-_0=4_)
+        ADD_SOLUTION(59)
+END_LEVEL
+
+
+
+//Level 10
+LEVEL
+        EQUATION(14+_0=3_)
+        ADD_SOLUTION(24)
+END_LEVEL
+
+
+
+//Level 11
+LEVEL
+        EQUATION(7_+2_=91)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
+END_LEVEL
+//Level 12
+LEVEL
+        EQUATION(1_+2_=31)
+        ADD_SOLUTION(01)
+        ADD_SOLUTION(10)
+END_LEVEL
+
+//Level 13
+LEVEL
+        EQUATION(3_-1_=27)
+        ADD_SOLUTION(70)
+        ADD_SOLUTION(81)
+        ADD_SOLUTION(92)
+END_LEVEL
+
+
+
+//Level 14
+LEVEL
+        EQUATION(5_+1_=75)
+        ADD_SOLUTION(69)
+        ADD_SOLUTION(78)
+        ADD_SOLUTION(87)
+        ADD_SOLUTION(96)
+END_LEVEL
+
+
+//Level 15
+LEVEL
+        EQUATION(8_+1_=_3)
+        ADD_SOLUTION(039)
+        ADD_SOLUTION(129)
+        ADD_SOLUTION(219)
+        ADD_SOLUTION(309)
+END_LEVEL
+
+
+//Level 16
+LEVEL
+        EQUATION(17+1_=2_)
+        ADD_SOLUTION(07)
+        ADD_SOLUTION(18)
+        ADD_SOLUTION(29)
+END_LEVEL
+
+
+//Level 17
+LEVEL
+        EQUATION(2_+5=3_)
+        ADD_SOLUTION(50)
+        ADD_SOLUTION(61)
+        ADD_SOLUTION(72)
+        ADD_SOLUTION(83)
+        ADD_SOLUTION(94)
+END_LEVEL
+
+
+//Level 18
+LEVEL
+        EQUATION(2_+1_=32)
+        ADD_SOLUTION(02)
+        ADD_SOLUTION(11)
+        ADD_SOLUTION(20)
+END_LEVEL
+
+
+//Level 19
+LEVEL
+        EQUATION(2_+15=3_)
+        ADD_SOLUTION(05)
+        ADD_SOLUTION(16)
+        ADD_SOLUTION(27)
+        ADD_SOLUTION(38)
+        ADD_SOLUTION(49)
+END_LEVEL
+
+
+//Level 20
+LEVEL
+        EQUATION(1_+2_=34)
+        ADD_SOLUTION(04)
+        ADD_SOLUTION(13)
+        ADD_SOLUTION(22)
+        ADD_SOLUTION(31)
+        ADD_SOLUTION(40)
+END_LEVEL
+
+
+
+
+END_COLLECTION

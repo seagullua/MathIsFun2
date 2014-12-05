@@ -35,5 +35,7 @@ std::string ADLanguage::platformGetDeviceLanguage()
 #include <ADLib/PlatformImpl/ADHttp_NotSupported.hpp>
 
 #include "GameInfo.h"
-GameVersion const GameInfo::GAME_VERSION = GameVersion::VerionMultiply;
+//GameVersion const GameInfo::GAME_VERSION = GameVersion::Version100;
+
+GameVersion const GameInfo::GAME_VERSION = GameVersion::Version50;
 PurchaseType const GameInfo::PURCHASE_TYPE = PurchaseType::AdsPurchaseDisableAds;

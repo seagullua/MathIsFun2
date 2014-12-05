@@ -61,6 +61,8 @@
 	<file>
 		<name>mul/zebra.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>buy_window/background1.png</name>
@@ -70,41 +72,61 @@
 	<file>
 		<name>mul/coll_10001.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10002.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10003.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10004.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10005.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10006.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10007.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10008.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10009.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10010.png</name>
 		<project>mif_mul</project>
+		<project>mif_50</project>
+		<project>mif_100</project>
 	</file>
 </directory>

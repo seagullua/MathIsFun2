@@ -5,7 +5,9 @@
 
 enum class GameVersion{
     VersionPlus,
-    VerionMultiply
+    VerionMultiply,
+    Version100,
+    Version50
 };
 
 enum class PurchaseType{

@@ -67,7 +67,7 @@ void initInAppPurchases()
     }
     else
     {
-        assert(false);
+        //assert(false);
     }
 
 
@@ -257,7 +257,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     }
     else
     {
-        assert(false);
+        //assert(false);
     }
 
 

@@ -8,6 +8,13 @@
 		<name>levels_multiplication.ad</name>
 		<project>mif_mul</project>
 	</file>
-	
+	<file>
+		<name>levels_100.ad</name>
+		<project>mif_100</project>
+	</file>
+	<file>
+		<name>levels_50.ad</name>
+		<project>mif_50</project>
+	</file>
 	
 </directory>

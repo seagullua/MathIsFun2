@@ -62,5 +62,25 @@ OTHER_FILES += \
     mif-multiplication/mul4.collection \
     mif-multiplication/mul3.collection \
     mif-multiplication/mul2.collection \
-    mif-multiplication/mul1.collection
+    mif-multiplication/mul1.collection \
+    mif-50/col50_10.collection \
+    mif-50/col50_9.collection \
+    mif-50/col50_8.collection \
+    mif-50/col50_7.collection \
+    mif-50/col50_6.collection \
+    mif-50/col50_5.collection \
+    mif-50/col50_4.collection \
+    mif-50/col50_3.collection \
+    mif-50/col50_2.collection \
+    mif-50/col50_1.collection \
+    mif-100/col100_10.collection \
+    mif-100/col100_9.collection \
+    mif-100/col100_8.collection \
+    mif-100/col100_7.collection \
+    mif-100/col100_6.collection \
+    mif-100/col100_5.collection \
+    mif-100/col100_4.collection \
+    mif-100/col100_3.collection \
+    mif-100/col100_2.collection \
+    mif-100/col100_1.collection
 

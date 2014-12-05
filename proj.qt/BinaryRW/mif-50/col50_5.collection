@@ -1,0 +1,176 @@
+//Fifth collection
+COLLECTION
+COLLECTION_STAMPS_TO_UNLOCK(0)
+COLLECTION_ID(10005)
+COLLECTION_COLOR(134,89,174)
+COLLECTION_FREE(true)
+COLLECTION_DIFFICULTY(Medium)
+//a little difficult
+
+//Level 1
+LEVEL
+        EQUATION(51#_1=40)
+        ADD_SOLUTION(-1)
+END_LEVEL
+
+
+
+
+//Level 2
+LEVEL
+        EQUATION(5_#14=40)
+        ADD_SOLUTION(4-)
+END_LEVEL
+
+
+
+
+//Level 3
+LEVEL
+        EQUATION(2_#14=43)
+        ADD_SOLUTION(9+)
+END_LEVEL
+
+
+
+//Level 4
+LEVEL
+        EQUATION(2_#9=20)
+        ADD_SOLUTION(9-)
+END_LEVEL
+
+
+//Level 5
+LEVEL
+        EQUATION(77#_2=55)
+        ADD_SOLUTION(-2)
+END_LEVEL
+
+
+
+//Level 6
+
+LEVEL
+        EQUATION(3_#7=25)
+        ADD_SOLUTION(2-)
+END_LEVEL
+
+
+//Level 7
+LEVEL
+        EQUATION(51#_=44)
+        ADD_SOLUTION(-7)
+END_LEVEL
+
+
+
+//Level 8
+LEVEL
+        EQUATION(33#1_=44)
+        ADD_SOLUTION(+1)
+END_LEVEL
+
+//Level 9
+LEVEL
+        EQUATION(1_#7=23)
+        ADD_SOLUTION(6+)
+END_LEVEL
+
+
+//Level 10
+LEVEL
+        EQUATION(3_#22=11)
+        ADD_SOLUTION(3-)
+END_LEVEL
+
+
+
+
+//Level 11
+LEVEL
+        EQUATION(_5#33=62)
+        ADD_SOLUTION(9-)
+END_LEVEL
+
+
+//Level 12
+LEVEL
+        EQUATION(4_#4=45)
+        ADD_SOLUTION(1+)
+        ADD_SOLUTION(9-)
+END_LEVEL
+
+
+
+//Level 13
+LEVEL
+        EQUATION(2_#7=31)
+        ADD_SOLUTION(4+)
+END_LEVEL
+
+
+//Level 14
+LEVEL
+        EQUATION(14#1_=27)
+        ADD_SOLUTION(+3)
+END_LEVEL
+
+
+
+
+//Level 15
+LEVEL
+        EQUATION(33#2_=9)
+        ADD_SOLUTION(-4)
+END_LEVEL
+
+
+//Level 16
+LEVEL
+        EQUATION(33#_5=18)
+        ADD_SOLUTION(-1)
+END_LEVEL
+
+
+
+//Level 17
+LEVEL
+        EQUATION(41#2_=_7)
+        ADD_SOLUTION(+66)
+        ADD_SOLUTION(-41)
+END_LEVEL
+
+//Level 18
+LEVEL
+        EQUATION(67#1_=_2)
+        ADD_SOLUTION(+58)
+        ADD_SOLUTION(-55)
+END_LEVEL
+
+
+
+
+//Level 19
+
+LEVEL
+        EQUATION(2_#37=5_)
+        ADD_SOLUTION(0+7)
+        ADD_SOLUTION(1+8)
+        ADD_SOLUTION(2+9)
+END_LEVEL
+
+
+
+//Level 20
+LEVEL
+        EQUATION(63#2_=4_)
+        ADD_SOLUTION(-03)
+        ADD_SOLUTION(-12)
+        ADD_SOLUTION(-21)
+        ADD_SOLUTION(-30)
+END_LEVEL
+
+
+
+
+END_COLLECTION

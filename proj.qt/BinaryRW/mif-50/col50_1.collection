@@ -1,0 +1,166 @@
+//First collection
+COLLECTION
+COLLECTION_STAMPS_TO_UNLOCK(0)
+COLLECTION_ID(10001)
+COLLECTION_COLOR(235,82,11)
+COLLECTION_FREE(true)
+COLLECTION_DIFFICULTY(Easy)
+
+//Easy0-Easy1
+
+//Level 1
+LEVEL
+        EQUATION(10+1=_1)
+        ADD_SOLUTION(1)
+END_LEVEL
+
+
+
+//Level 2
+LEVEL
+        EQUATION(9+1_=_3)
+        ADD_SOLUTION(42)
+END_LEVEL
+
+
+//Level 3
+LEVEL
+        EQUATION(11-_=3)
+        ADD_SOLUTION(8)
+END_LEVEL
+
+
+
+//Level 4
+LEVEL
+        EQUATION(18+_=_5)
+        ADD_SOLUTION(72)
+END_LEVEL
+
+
+//Level 5
+LEVEL
+        EQUATION(19#3=22)
+        ADD_SOLUTION(+)
+END_LEVEL
+
+
+
+//Level 6
+LEVEL
+        EQUATION(14+_=_5)
+        ADD_SOLUTION(11)
+END_LEVEL
+
+
+
+//Level 7
+LEVEL
+        EQUATION(17#3=14)
+        ADD_SOLUTION(-)
+END_LEVEL
+
+
+
+//Level 8
+LEVEL
+        EQUATION(20+17=_7)
+        ADD_SOLUTION(3)
+END_LEVEL
+
+
+
+
+//Level 9
+LEVEL
+        EQUATION(13-_=_1)
+        ADD_SOLUTION(21)
+END_LEVEL
+
+
+
+
+//Level 10
+LEVEL
+        EQUATION(7+1_=_1)
+        ADD_SOLUTION(42)
+END_LEVEL
+
+
+//Level 11
+LEVEL
+        EQUATION(_5+4=5_)
+        ADD_SOLUTION(59)
+END_LEVEL
+
+
+
+//Level 12
+
+LEVEL
+        EQUATION(24-_=_2)
+        ADD_SOLUTION(22)
+END_LEVEL
+
+
+
+//Level 13
+LEVEL
+        EQUATION(_4-_=23)
+        ADD_SOLUTION(21)
+END_LEVEL
+
+
+//Level 14
+LEVEL
+        EQUATION(56#3=59)
+        ADD_SOLUTION(+)
+END_LEVEL
+
+
+
+//Level 15 //Easy1
+LEVEL
+        EQUATION(17-_=_2)
+        ADD_SOLUTION(51)
+END_LEVEL
+
+
+//Level 16
+
+LEVEL
+        EQUATION(31+_=_9)
+        ADD_SOLUTION(83)
+END_LEVEL
+
+//Level 17
+LEVEL
+        EQUATION(10+_1=3_)
+        ADD_SOLUTION(21)
+END_LEVEL
+
+
+//Level 18
+LEVEL
+        EQUATION(_2+_=41)
+        ADD_SOLUTION(39)
+END_LEVEL
+
+
+
+//Level 19
+LEVEL
+        EQUATION(33+__=44)
+        ADD_SOLUTION(11)
+END_LEVEL
+
+
+
+//Level 20
+LEVEL
+        EQUATION(50+_=_8)
+        ADD_SOLUTION(85)
+END_LEVEL
+
+
+END_COLLECTION
