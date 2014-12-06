@@ -4,13 +4,13 @@ COLLECTION_STAMPS_TO_UNLOCK(0)
 COLLECTION_ID(10009)
 COLLECTION_COLOR(154,83,45)
 COLLECTION_FREE(true)
-COLLECTION_DIFFICULTY(Medium)
+COLLECTION_DIFFICULTY(Hard)
 
-//Medium
+//Hard
 //Level 1
 LEVEL
-        EQUATION(9*1=_)
-        ADD_SOLUTION(9)
+        EQUATION(1_+9=11#10)
+        ADD_SOLUTION(2+)
 END_LEVEL
 
 
@@ -18,132 +18,164 @@ END_LEVEL
 
 //Level 2
 LEVEL
-        EQUATION(9*2=_8)
-        ADD_SOLUTION(1)
+        EQUATION(8_+11=9_#10)
+        ADD_SOLUTION(90+)
 END_LEVEL
+
 
 
 //Level 3
 LEVEL
-        EQUATION(9*3=2_)
-        ADD_SOLUTION(7)
+        EQUATION(4_#12=27+1_)
+        ADD_SOLUTION(9-0)
 END_LEVEL
 
 //Level 4
 LEVEL
-        EQUATION(9*4=__)
-        ADD_SOLUTION(36)
+        EQUATION(1_-7=11#8)
+        ADD_SOLUTION(0-)
 END_LEVEL
 
 
 
 //Level 5
 LEVEL
-        EQUATION(9*5=__)
-        ADD_SOLUTION(45)
+        EQUATION(31+2=20#1_)
+        ADD_SOLUTION(+3)
 END_LEVEL
+
+
 
 //Level 6
 LEVEL
-        EQUATION(9*6=__)
-        ADD_SOLUTION(54)
+        EQUATION(21+1_=30#1_)
+        ADD_SOLUTION(9+0)
 END_LEVEL
+
 
 //Level 7
 LEVEL
-        EQUATION(9*7=6_)
-        ADD_SOLUTION(3)
+        EQUATION(55#1_=30+10)
+        ADD_SOLUTION(-5)
 END_LEVEL
 
 
 //Level 8
 LEVEL
-        EQUATION(9*8=__)
-        ADD_SOLUTION(72)
+        EQUATION(55#2_=69+10)
+        ADD_SOLUTION(+4)
 END_LEVEL
+
 
 
 
 //Level 9
 LEVEL
-        EQUATION(9*9=__)
-        ADD_SOLUTION(81)
+        EQUATION(7_+2_=89#2)
+        ADD_SOLUTION(01+)
+        ADD_SOLUTION(10+)
 END_LEVEL
 
 
 //Level 10
 LEVEL
-        EQUATION(9*10=__)
-        ADD_SOLUTION(90)
+        EQUATION(5_#16=32+1_)
+        ADD_SOLUTION(8-0)
+        ADD_SOLUTION(9-1)
 END_LEVEL
 
 
 //Level 11
 LEVEL
-        EQUATION(2*9=1_)
-        ADD_SOLUTION(8)
+        EQUATION(2_+8=20#_)
+        ADD_SOLUTION(0+8)
+        ADD_SOLUTION(1+9)
 END_LEVEL
+
 
 
 //Level 12
 LEVEL
-        EQUATION(3*9=_7)
-        ADD_SOLUTION(2)
+        EQUATION(4_+1_=39#12)
+        ADD_SOLUTION(01+)
+        ADD_SOLUTION(10+)
 END_LEVEL
+
 
 
 //Level 13
 LEVEL
-        EQUATION(4*9=_6)
-        ADD_SOLUTION(3)
+        EQUATION(33#1_=25+1_)
+        ADD_SOLUTION(+08)
+        ADD_SOLUTION(+19)
 END_LEVEL
 
 
 //Level 14
 LEVEL
-        EQUATION(9*_=45)
-        ADD_SOLUTION(5)
+        EQUATION(73#1_=65+1_)
+        ADD_SOLUTION(+08)
+        ADD_SOLUTION(+19)
 END_LEVEL
 
 
 
 //Level 15
 LEVEL
-        EQUATION(6*9=5_)
-        ADD_SOLUTION(4)
+        EQUATION(2_#12=3_+10)
+        ADD_SOLUTION(8+0)
+        ADD_SOLUTION(9+1)
 END_LEVEL
+
+
 
 //Level 16
 LEVEL
-        EQUATION(7*9=_3)
-        ADD_SOLUTION(6)
+        EQUATION(73#2_=9_+10)
+        ADD_SOLUTION(+70)
+        ADD_SOLUTION(+81)
+        ADD_SOLUTION(+92)
 END_LEVEL
+
 
 
 
 //Level 17
 LEVEL
-        EQUATION(8*9=_2)
-        ADD_SOLUTION(7)
+        EQUATION(44+2_=50#2_)
+        ADD_SOLUTION(6+0)
+        ADD_SOLUTION(7+1)
+        ADD_SOLUTION(8+2)
+        ADD_SOLUTION(9+3)
 END_LEVEL
 
 //Level 18
 LEVEL
-        EQUATION(10*9=9_)
-        ADD_SOLUTION(0)
+        EQUATION(1_+7=10#_)
+        ADD_SOLUTION(0+7)
+        ADD_SOLUTION(1+8)
+        ADD_SOLUTION(2+9)
+        ADD_SOLUTION(3*2)
 END_LEVEL
+
 
 //Level 19
 LEVEL
-        EQUATION(9*9=_1)
-        ADD_SOLUTION(8)
+        EQUATION(3_+12=38#1_)
+        ADD_SOLUTION(6+0)
+        ADD_SOLUTION(7+1)
+        ADD_SOLUTION(8+2)
+        ADD_SOLUTION(9+3)
 END_LEVEL
-
 
 //Level 20
 LEVEL
-        EQUATION(9*10=9_)
-        ADD_SOLUTION(0)
+        EQUATION(7_#16=50+1_)
+        ADD_SOLUTION(6-0)
+        ADD_SOLUTION(7-1)
+        ADD_SOLUTION(8-2)
+        ADD_SOLUTION(9-3)
 END_LEVEL
+
 
 END_COLLECTION
