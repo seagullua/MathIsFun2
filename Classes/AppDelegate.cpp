@@ -125,6 +125,15 @@ bool AppDelegate::applicationDidFinishLaunching()
         else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
             ADStatistics::setApplicationKey("FMDVW8R5B5JX3MTQFTTQ");
     }
+    else if(GameInfo::GAME_VERSION == GameVersion::Version50)
+    {
+        if(ADInfo::getPlatform() == ADPlatform::Android)
+            ADStatistics::setApplicationKey("TDVZ4BJBPW8NB7T7VDBR");
+        else if(ADInfo::getPlatform() == ADPlatform::iOS)
+            ADStatistics::setApplicationKey("5FKZTMQX4DDJFG38K54W");
+        else if(ADInfo::getPlatform() == ADPlatform::WindowsPhone)
+            ADStatistics::setApplicationKey("XXXXXX");
+    }
 
     ADStatistics::startSession();
     ADInfo::getStore();
@@ -255,8 +264,22 @@ bool AppDelegate::applicationDidFinishLaunching()
             pid_interstitial << 3313109472;
         }
     }
+    else if(GameInfo::GAME_VERSION == GameVersion::Version50)
+    {
+        if(platform == ADPlatform::Android)
+        {
+            //ca-app-pub-1612697960946304/8525682679
+            pid_interstitial << 8525682679;
+        }
+        else if(platform == ADPlatform::iOS)
+        {
+            //ca-app-pub-1612697960946304/2479149076
+            pid_interstitial << 2479149076;
+        }
+    }
     else
     {
+
         //assert(false);
     }
 
