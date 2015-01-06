@@ -35,7 +35,7 @@ END_DEFINITION
 START_DEFINITION(define_mif_100, "Resources_storage/levels_100.ad", 10)
 
 #include "mif-100/col100_1.collection"
-#include "mif-100/col100_2.collection"
+//#include "mif-100/col100_2.collection"
 #include "mif-100/col100_3.collection"
 #include "mif-100/col100_4.collection"
 #include "mif-100/col100_5.collection"

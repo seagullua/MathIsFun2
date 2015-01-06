@@ -72,61 +72,92 @@
 	<file>
 		<name>mul/coll_10001.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10002.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10003.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10004.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10005.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10006.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10007.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10008.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10009.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
 	</file>
 	<file>
 		<name>mul/coll_10010.png</name>
 		<project>mif_mul</project>
-		<project>mif_50</project>
 		<project>mif_100</project>
+	</file>
+	
+	<file>
+		<name>mif_50/coll_20001.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20002.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20003.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20004.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20005.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20006.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20007.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20008.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20009.png</name>
+		<project>mif_50</project>
+	</file>
+	<file>
+		<name>mif_50/coll_20010.png</name>
+		<project>mif_50</project>
 	</file>
 </directory>

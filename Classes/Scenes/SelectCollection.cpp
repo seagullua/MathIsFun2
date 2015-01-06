@@ -116,6 +116,18 @@ void toTranslation()
    _("collection_name.10008");
    _("collection_name.10009");
    _("collection_name.10010");
+
+
+   _("collection_name.20001");
+   _("collection_name.20002");
+   _("collection_name.20003");
+   _("collection_name.20004");
+   _("collection_name.20005");
+   _("collection_name.20006");
+   _("collection_name.20007");
+   _("collection_name.20008");
+   _("collection_name.20009");
+   _("collection_name.20010");
 }
 ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name,
                                                    const std::string& label_name,
@@ -144,6 +156,7 @@ ADMenuItem* SelectCollection::createCollectionItem(const std::string& image_name
     image->setAnchorPoint(ccp(0.5f,0.5f));
     float middle_width = paper_size.width/2;
     image->setPosition(ccp(middle_width, paper_size.height*0.75));
+    image->setZOrder(-1);
     paper_item->addChild(image);
 
     float scaled = ADScreen::getScaleFactor();

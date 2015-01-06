@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MathIsFun2\n"
-"POT-Creation-Date: 2014-07-29 16:27+0200\n"
+"POT-Creation-Date: 2015-01-06 15:11+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.7\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../../Classes\n"
@@ -209,7 +209,47 @@ msgstr "Велике оленятко"
 msgid "collection_name.10010"
 msgstr "Рожеве Порося"
 
-#: ../../Classes/Scenes/SelectCollection.cpp:326
+#: ../../Classes/Scenes/SelectCollection.cpp:121
+msgid "collection_name.20001"
+msgstr "Ніно"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:122
+msgid "collection_name.20002"
+msgstr "Зула та Пепе"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:123
+msgid "collection_name.20003"
+msgstr "Чак"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:124
+msgid "collection_name.20004"
+msgstr "Петро та Віккі"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:125
+msgid "collection_name.20005"
+msgstr "Флоріан"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:126
+msgid "collection_name.20006"
+msgstr "Бо та Ґо"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:127
+msgid "collection_name.20007"
+msgstr "Дженні"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:128
+msgid "collection_name.20008"
+msgstr "Рокко"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:129
+msgid "collection_name.20009"
+msgstr "Друзі"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:130
+msgid "collection_name.20010"
+msgstr "Коко"
+
+#: ../../Classes/Scenes/SelectCollection.cpp:339
 msgid "select_collection.title"
 msgstr "Вибір Колекції"
 

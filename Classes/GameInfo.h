@@ -46,7 +46,7 @@ public:
     static int HINT_ADD;
     static bool useMultiply ()
     {
-        if(GAME_VERSION == GameVersion::VersionPlus)
+        if(GAME_VERSION == GameVersion::VersionPlus || GAME_VERSION == GameVersion::Version50)
            return false;
         else
             return true;
