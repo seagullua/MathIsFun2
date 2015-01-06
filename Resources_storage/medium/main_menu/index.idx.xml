@@ -15,6 +15,9 @@
 		<name>mul/logo.png</name>
 		<project>mif_mul</project>
 		<project>mif_100</project>
+	</file>
+	<file>
+		<name>mif_50/logo.png</name>
 		<project>mif_50</project>
 	</file>
 	
