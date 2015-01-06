@@ -4,10 +4,14 @@ from libraries.ADLib.buildutil.ScreenMaker import *
 working_directory = os.path.dirname(os.path.realpath(__file__))
 screen_directory = os.path.join(working_directory, 'Resources')
 
+env.win_executable_dir = os.path.join(working_directory, 'proj.qt/bin/debug')
+
 devices = [ #'IPhone3GS',
-		#'IPhone4GS',
-		#'IPhone5',
-		#'IPad2',
+		'IPhone4GS',
+		'IPhone5',
+		'IPhone6',
+		'IPhone6Plus',
+		'IPad2',
 	'AmazonScreenShots',
     #'IPad4',
     #'Galaxy_Ace2',
@@ -17,7 +21,7 @@ devices = [ #'IPhone3GS',
     #'Galaxy_Y',
     #'Galaxy_Tab2_7',
     #'Galaxy_Tab2_10',
-		#'WindowsPhone_WXGA'#,
+	#	'WindowsPhone_WXGA'#,
 	#'Kindle_Fire',
     #'Google_Nexus_10',
     #'Sony_Xperia_Z',

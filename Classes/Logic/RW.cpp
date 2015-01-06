@@ -421,6 +421,14 @@ Collection* RW::getCollection(Collection::CollectionID col_id)
     std::map<Collection::CollectionID, Collection*>::iterator itr = _rw->_collections.find(col_id);
     return itr->second;
 }
+Collection* RW::getCollectionByIndex(int index)
+{
+    std::map<Collection::CollectionID, Collection*>::iterator itr = _rw->_collections.begin();
+    for(int i=0; i<index; ++i) {
+        ++itr;
+    }
+    return itr->second;
+}
 
 unsigned int RW::allStampsObtained()
 {

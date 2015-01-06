@@ -57,26 +57,26 @@ int CALLBACK WinMain(
         openAllCollectionScene(info,false);
     });
     emulator->addTestCase([](TestInfo info){
-        openOneCollectionScene(info,100);
+        openOneCollectionScene(info,0);
     });
+//    emulator->addTestCase([](TestInfo info){
+//        openOneCollectionScene(info,2);
+//    });
+//    emulator->addTestCase([](TestInfo info){
+//        openOneCollectionScene(info,4);
+//    });
     emulator->addTestCase([](TestInfo info){
-        openOneCollectionScene(info,300);
+        openOneLevelScene(info,0,7,0);
     });
+//    emulator->addTestCase([](TestInfo info){
+//        openOneLevelScene(info,5,0,0);
+//    });
     emulator->addTestCase([](TestInfo info){
-        openOneCollectionScene(info,500);
+        openOneLevelScene(info,4,1,1);
     });
-    emulator->addTestCase([](TestInfo info){
-        openOneLevelScene(info,100,7,0);
-    });
-    emulator->addTestCase([](TestInfo info){
-        openOneLevelScene(info,600,0,0);
-    });
-    emulator->addTestCase([](TestInfo info){
-        openOneLevelScene(info,500,1,1);
-    });
-    emulator->addTestCase([](TestInfo info){
-        openOneLevelScene(info,3000,3,0);
-    });
+//    emulator->addTestCase([](TestInfo info){
+//        openOneLevelScene(info,7,3,0);
+//    });
 
     return emulator->run();
 }
@@ -135,7 +135,7 @@ void openAllCollectionScene(TestInfo info,
 void openOneCollectionScene(TestInfo info,
                           int collection_number)
 {
-    Collection* collection = RW::getCollection(collection_number);
+    Collection* collection = RW::getCollectionByIndex(collection_number);
 
     CCDirector::sharedDirector()->replaceScene(SelectLevel::scene(collection));
     ADDeviceEmulator::runLater(2.5f, [info](){
@@ -150,7 +150,7 @@ void openOneLevelScene(TestInfo info,
                        int level_number,
                        int free_space_id)
 {
-    Collection* collection = RW::getCollection(collection_number);
+    Collection* collection = RW::getCollectionByIndex(collection_number);
 
     //get level
     std::vector<Level*> levels = collection->getLevels();
