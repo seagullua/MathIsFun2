@@ -388,6 +388,7 @@ bool SelectCollection::init()
 
         ADMenuItem* paper_item = createCollectionItem(a, _papers_spl);
         _collections_menu->menu()->addChild(paper_item, 100);
+
         //paper_item->setBaseScale(0.7f);
         paper_item->setPositionX(i * padding_left);
         i++;
@@ -504,8 +505,8 @@ void SelectCollection::newScrolling(MenuSpriteBatch* menu, float width)
 
     //Add our tiles to scroll area
     _collections_scroll_view->addChild(menu);
-    _collections_scroll_view->addHighPriorityTouchListener(menu->menu());
-
+    //_collections_scroll_view->addHighPriorityTouchListener(menu->menu());
+    _collections_scroll_view->addRedirectTouchDelegate(_collections_menu->menu());
     _collections_scroll_view->setContentOffset(_last_scroll_view_offset, false);
     //_collections_menu->menu()->setTouchPriority(10);
     //collections->setTouchPriority(-500);
