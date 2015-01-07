@@ -134,5 +134,9 @@ bool GameInfo::isFreeCollection(int collection_id)
     {
         return collection_id == 10001 || collection_id == 10002;
     }
+    else if(GAME_VERSION == GameVersion::Version50)
+    {
+        return collection_id <= 20005;
+    }
     return false;
 }
