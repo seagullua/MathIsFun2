@@ -65,6 +65,21 @@ void initInAppPurchases()
         purchase_name = "mif_mul_ads_purchase";
         google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlFZb8TTQTvvfq4pLJz+yw4LUHwRcLnXC1mn0YOjEgugtiZjRdto2VKOtNvKbqY3p/VchuxKsV8auYhzZu9u7UWCy1b8LclSlCAzb0Tm8iIFTLvZ6sjatZlBfuc40kaO5NVDBAG0XFU5XywW4G0zj4NqRCzhOmymvHSxguR8JT4SgeltoqYb6tEz6YKvAVyZ8HW7/LHV9lRja//7lq3dXJy6DbeLp232ndfDgl39FawrD74iEvonclEVOH/lepeh6DIr+2bEp0e0zPzO3lGxLX33Inhd6cS/++gmhGYAAJ97wYPCzTPCCfx82B1zadm8GkZi7TT2sSp4N+2wyHqPSRwIDAQAB";
     }
+    else if(GameInfo::GAME_VERSION == GameVersion::Version50)
+    {
+        if(GameInfo::PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion)
+        {
+            samsung_id = "100000104895";
+            purchase_name = "mif_50_buy_full";
+            google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw949XTTL+pGqlPPuPZ8XDg0FvGKBoLQLZL52fdyzqObo+DSJwyG8twUx6MaStpFKbnzRHXYDFeqs6TGl+7AVnbPsirmkTASjK8H8In/TJtIq9E2zojI/81A7m7etBXtL/6teqe5Lcm2kLMHy7H9tCwwcZ/PR0S2oxWBhctBYFAsyrvXMGhF82XuJduE7PY/p+KWiAtHwqA4BbZgdQfjWUNZnyFyzIimf55BIMkOKneH2M/NfXWsU6HyO2uDjzklrZ4OXKu+eR/FpkF0ddhqf3te3+F+iiOsGoTskP9cP1MTVMIbBiARbtnrukUwEAqgv6OLdODYC5Cz0Bfv4zOiEEwIDAQAB";
+        }
+        else
+        {
+            samsung_id = "100000104894";
+            purchase_name = "mif_50_buy_ads";
+            google_play_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgVB782nFMvfUmqzwFGgMeiZ+L6Uh6RikKOiA9akm07EJqzip5WL70e4dtu/U+emYFpRufYCm7uYEv+SWlQJLqS34z4TYSHVSjRepJQ4ND2pKH9KeYQHt6d1XzAiob8hxILxshuYMHsaWGUeddhJG3EUtQOcIA/6AdknkyYpAzJNWaDF0SdYOYRi8sv80LfffSjZ6PujdjHtf0VyZd0ed4BP+fSXXJ/k8OLcuf6IYgZlXSxGk8/Kx8p5JJH1/SgDRJcUaMRY/irWPe0+mrwIi0xcL86p1tb5fQjhFt8h42ax+036G55SMS7HG1XycA62gB2v63lrr4wCiGDpMylB3OQIDAQAB";
+        }
+    }
     else
     {
         //assert(false);

@@ -71,6 +71,18 @@ const ADPackageName GameInfo::APP_MIF_MULTIPLICATION_PREMIUM = ADPackageName::cr
             "id-windows-phone",
 			"604c8367-4d81-4d05-9169-d60edf3be630"); //Windows Phone
 
+const ADPackageName APP_MIF_50_FULL = ADPackageName::create(
+    "com.x4enjoy.mathisfun2", //Android
+    "id956138099", //iOS id
+    "0000-",//Windows Phone
+    "000000"); //Windows 8
+
+const ADPackageName APP_MIF_50_ADS = ADPackageName::create(
+    "com.x4enjoy.mathisfun2.app", //Android
+    "id956138115", //iOS id
+    "0000-",//Windows Phone
+    "000000"); //Windows 8
+
 std::string GameInfo::_purchase_id;
 
 
@@ -108,6 +120,18 @@ const ADPackageName& GameInfo::getMyPackageName()
 			return APP_MIF_MULTIPLICATION_FREE;
 		}
         
+    }
+    else if(GAME_VERSION == GameVersion::Version50)
+    {
+        if (PURCHASE_TYPE == PurchaseType::AdsPurchaseFullVersion)
+        {
+            return APP_MIF_50_FULL;
+        }
+        else
+        {
+            return APP_MIF_50_ADS;
+        }
+
     }
     else
     {
