@@ -19,19 +19,57 @@
 		8402CE7018A4174800703CF7 /* ADInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8402CE6F18A4174800703CF7 /* ADInfo.mm */; };
 		8402CE7318A41B0500703CF7 /* ADNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8402CE7218A41B0500703CF7 /* ADNotification.mm */; };
 		8402CE7818A41DD600703CF7 /* ADBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8402CE7718A41DD600703CF7 /* ADBrowser.mm */; };
+		840ACD6E1A5D898F007D736A /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD691A5D898F007D736A /* fonts */; };
+		840ACD6F1A5D898F007D736A /* levels_50.ad in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6A1A5D898F007D736A /* levels_50.ad */; };
+		840ACD701A5D898F007D736A /* medium in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6B1A5D898F007D736A /* medium */; };
+		840ACD711A5D898F007D736A /* music in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6C1A5D898F007D736A /* music */; };
+		840ACD721A5D898F007D736A /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6D1A5D898F007D736A /* translations */; };
+		840ACD751A5D89AC007D736A /* versionMiF50FreeFull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD741A5D89AC007D736A /* versionMiF50FreeFull.cpp */; };
+		840ACDF71A5D8AB6007D736A /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD771A5D8AB6007D736A /* ADRandom.cpp */; };
+		840ACDF81A5D8AB6007D736A /* ADCocosThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD7C1A5D8AB6007D736A /* ADCocosThread.cpp */; };
+		840ACDF91A5D8AB6007D736A /* ADThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD7F1A5D8AB6007D736A /* ADThreadPool.cpp */; };
+		840ACDFA1A5D8AB6007D736A /* ADAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD821A5D8AB6007D736A /* ADAds.cpp */; };
+		840ACDFB1A5D8AB6007D736A /* ADBrowser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD841A5D8AB6007D736A /* ADBrowser.cpp */; };
+		840ACDFC1A5D8AB6007D736A /* ADDeviceEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD861A5D8AB6007D736A /* ADDeviceEvents.cpp */; };
+		840ACDFD1A5D8AB6007D736A /* ADFullScreenAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD881A5D8AB6007D736A /* ADFullScreenAds.cpp */; };
+		840ACDFE1A5D8AB6007D736A /* ADInApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD8A1A5D8AB6007D736A /* ADInApp.cpp */; };
+		840ACDFF1A5D8AB6007D736A /* ADInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD8C1A5D8AB6007D736A /* ADInfo.cpp */; };
+		840ACE001A5D8AB6007D736A /* ADLanguage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD8E1A5D8AB6007D736A /* ADLanguage.cpp */; };
+		840ACE011A5D8AB6007D736A /* ADMonetization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD901A5D8AB6007D736A /* ADMonetization.cpp */; };
+		840ACE021A5D8AB6007D736A /* ADOrientation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD981A5D8AB6007D736A /* ADOrientation.cpp */; };
+		840ACE031A5D8AB6007D736A /* ADPackageName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD9A1A5D8AB6007D736A /* ADPackageName.cpp */; };
+		840ACE041A5D8AB6007D736A /* ADScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD9C1A5D8AB6007D736A /* ADScreen.cpp */; };
+		840ACE051A5D8AB6007D736A /* ADSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD9E1A5D8AB6007D736A /* ADSoundManager.cpp */; };
+		840ACE061A5D8AB6007D736A /* ADStatistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDA01A5D8AB6007D736A /* ADStatistics.cpp */; };
+		840ACE071A5D8AB6007D736A /* ADVirtualCurrency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDA21A5D8AB6007D736A /* ADVirtualCurrency.cpp */; };
+		840ACE081A5D8AB6007D736A /* PushWoosh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDAA1A5D8AB6007D736A /* PushWoosh.cpp */; };
+		840ACE091A5D8AB6007D736A /* ADHttp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDAD1A5D8AB6007D736A /* ADHttp.cpp */; };
+		840ACE0A1A5D8AB6007D736A /* ADPopUpWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDC11A5D8AB6007D736A /* ADPopUpWindow.cpp */; };
+		840ACE0B1A5D8AB6007D736A /* IADStandardWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDC31A5D8AB6007D736A /* IADStandardWindow.cpp */; };
+		840ACE0C1A5D8AB6007D736A /* ADBakeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDC71A5D8AB6007D736A /* ADBakeNode.cpp */; };
+		840ACE0D1A5D8AB6007D736A /* ADBlurSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDC91A5D8AB6007D736A /* ADBlurSprite.cpp */; };
+		840ACE0E1A5D8AB6007D736A /* ADBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDCB1A5D8AB6007D736A /* ADBMFont.cpp */; };
+		840ACE0F1A5D8AB6007D736A /* ADCallFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDCD1A5D8AB6007D736A /* ADCallFunc.cpp */; };
+		840ACE101A5D8AB6007D736A /* ADColoredSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDCF1A5D8AB6007D736A /* ADColoredSprite.cpp */; };
+		840ACE111A5D8AB6007D736A /* ADMenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDD11A5D8AB6007D736A /* ADMenuItem.cpp */; };
+		840ACE121A5D8AB6007D736A /* ADScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDD31A5D8AB6007D736A /* ADScrollView.cpp */; };
+		840ACE131A5D8AB6007D736A /* ADShaderSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDD51A5D8AB6007D736A /* ADShaderSprite.cpp */; };
+		840ACE141A5D8AB6007D736A /* ADFacebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDDA1A5D8AB6007D736A /* ADFacebook.cpp */; };
+		840ACE151A5D8AB6007D736A /* ADFacebookFriend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDDC1A5D8AB6007D736A /* ADFacebookFriend.cpp */; };
+		840ACE161A5D8AB6007D736A /* ADFacebookPhoto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDDE1A5D8AB6007D736A /* ADFacebookPhoto.cpp */; };
+		840ACE171A5D8AB6007D736A /* ADHighscoreServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDE01A5D8AB6007D736A /* ADHighscoreServer.cpp */; };
+		840ACE181A5D8AB6007D736A /* ADBinaryData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDE41A5D8AB6007D736A /* ADBinaryData.cpp */; };
+		840ACE191A5D8AB6007D736A /* ADFileNameUTF8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDE61A5D8AB6007D736A /* ADFileNameUTF8.cpp */; };
+		840ACE1A1A5D8AB6007D736A /* ADFileNameUTF8.mm in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDE81A5D8AB6007D736A /* ADFileNameUTF8.mm */; };
+		840ACE1B1A5D8AB6007D736A /* ADStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDE91A5D8AB6007D736A /* ADStorage.cpp */; };
+		840ACE1C1A5D8AB6007D736A /* ADStorageListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDEB1A5D8AB6007D736A /* ADStorageListener.cpp */; };
+		840ACE1D1A5D8AB6007D736A /* ADUTF8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACDF01A5D8AB6007D736A /* ADUTF8.cpp */; };
 		840AE31E18A030A900189085 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840AE31D18A02F5200189085 /* libcocos2dx.a */; };
 		841B2C6018D5B6ED0064AA59 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */; };
 		841B2C6118D5B6ED0064AA59 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5F18D5B6ED0064AA59 /* iAd.framework */; };
-		8452FAC119895F580003ACFE /* versionAddition27FreeDisableAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8452FAC019895F580003ACFE /* versionAddition27FreeDisableAds.cpp */; };
-		8452FAC719895F870003ACFE /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAC219895F870003ACFE /* fonts */; };
-		8452FAC819895F870003ACFE /* levels.ad in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAC319895F870003ACFE /* levels.ad */; };
-		8452FAC919895F870003ACFE /* medium in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAC419895F870003ACFE /* medium */; };
-		8452FACA19895F870003ACFE /* music in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAC519895F870003ACFE /* music */; };
-		8452FACB19895F870003ACFE /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 8452FAC619895F870003ACFE /* translations */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
 		84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */; };
 		84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */; };
-		84B0AA9D18D5C61900E0C39A /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA9918D5C61900E0C39A /* libAdapterIAd.a */; };
 		84B0AA9E18D5C61900E0C39A /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA9A18D5C61900E0C39A /* libGoogleAdMobAds.a */; };
 		84B0AA9F18D5C61900E0C39A /* HOW_TO_INTEGRATE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84B0AA9B18D5C61900E0C39A /* HOW_TO_INTEGRATE.txt */; };
 		84B0AAA218D5C73C00E0C39A /* ADInApp_iTunes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AAA118D5C73C00E0C39A /* ADInApp_iTunes.mm */; };
@@ -79,37 +117,6 @@
 		84EBD1DC19716520007241CD /* SelectLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1B119716520007241CD /* SelectLevel.cpp */; };
 		84EBD1DD19716520007241CD /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1B319716520007241CD /* Settings.cpp */; };
 		84EBD1DE19716520007241CD /* Store.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1B519716520007241CD /* Store.cpp */; };
-		84EBD24B197167B4007241CD /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1E9197167B4007241CD /* ADRandom.cpp */; };
-		84EBD24C197167B4007241CD /* ADCocosThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1EE197167B4007241CD /* ADCocosThread.cpp */; };
-		84EBD24D197167B4007241CD /* ADAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1F2197167B4007241CD /* ADAds.cpp */; };
-		84EBD24E197167B4007241CD /* ADBrowser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1F4197167B4007241CD /* ADBrowser.cpp */; };
-		84EBD24F197167B4007241CD /* ADDeviceEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1F6197167B4007241CD /* ADDeviceEvents.cpp */; };
-		84EBD250197167B4007241CD /* ADInApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1F8197167B4007241CD /* ADInApp.cpp */; };
-		84EBD251197167B4007241CD /* ADInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1FA197167B4007241CD /* ADInfo.cpp */; };
-		84EBD252197167B4007241CD /* ADLanguage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1FC197167B4007241CD /* ADLanguage.cpp */; };
-		84EBD253197167B4007241CD /* ADPackageName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD1FF197167B4007241CD /* ADPackageName.cpp */; };
-		84EBD254197167B4007241CD /* ADScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD201197167B4007241CD /* ADScreen.cpp */; };
-		84EBD255197167B4007241CD /* ADSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD203197167B4007241CD /* ADSoundManager.cpp */; };
-		84EBD256197167B4007241CD /* ADStatistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD205197167B4007241CD /* ADStatistics.cpp */; };
-		84EBD257197167B4007241CD /* ADVirtualCurrency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD207197167B4007241CD /* ADVirtualCurrency.cpp */; };
-		84EBD258197167B4007241CD /* ADHttp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD20F197167B4007241CD /* ADHttp.cpp */; };
-		84EBD259197167B4007241CD /* ADPopUpWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD220197167B4007241CD /* ADPopUpWindow.cpp */; };
-		84EBD25A197167B4007241CD /* IADStandardWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD222197167B4007241CD /* IADStandardWindow.cpp */; };
-		84EBD25B197167B4007241CD /* ADBakeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD226197167B4007241CD /* ADBakeNode.cpp */; };
-		84EBD25C197167B4007241CD /* ADBlurSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD228197167B4007241CD /* ADBlurSprite.cpp */; };
-		84EBD25D197167B4007241CD /* ADBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD22A197167B4007241CD /* ADBMFont.cpp */; };
-		84EBD25E197167B4007241CD /* ADCallFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD22C197167B4007241CD /* ADCallFunc.cpp */; };
-		84EBD25F197167B4007241CD /* ADColoredSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD22E197167B4007241CD /* ADColoredSprite.cpp */; };
-		84EBD260197167B4007241CD /* ADMenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD230197167B4007241CD /* ADMenuItem.cpp */; };
-		84EBD261197167B4007241CD /* ADScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD232197167B4007241CD /* ADScrollView.cpp */; };
-		84EBD262197167B4007241CD /* ADShaderSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD234197167B4007241CD /* ADShaderSprite.cpp */; };
-		84EBD263197167B4007241CD /* ADFacebook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD239197167B4007241CD /* ADFacebook.cpp */; };
-		84EBD264197167B4007241CD /* ADFacebookFriend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD23B197167B4007241CD /* ADFacebookFriend.cpp */; };
-		84EBD265197167B4007241CD /* ADFacebookPhoto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD23D197167B4007241CD /* ADFacebookPhoto.cpp */; };
-		84EBD266197167B4007241CD /* ADHighscoreServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD23F197167B4007241CD /* ADHighscoreServer.cpp */; };
-		84EBD267197167B4007241CD /* ADBinaryData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD243197167B4007241CD /* ADBinaryData.cpp */; };
-		84EBD268197167B4007241CD /* ADStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD245197167B4007241CD /* ADStorage.cpp */; };
-		84EBD269197167B4007241CD /* ADStorageListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD247197167B4007241CD /* ADStorageListener.cpp */; };
 		84EBD27019716875007241CD /* PlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EBD26E19716875007241CD /* PlatformImpl.cpp */; };
 		84F198BD18D59E85006A5221 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198B318D59E85006A5221 /* Default-568h@2x.png */; };
 		84F198BE18D59E85006A5221 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F198B418D59E85006A5221 /* Default.png */; };
@@ -170,15 +177,130 @@
 		8402CE6F18A4174800703CF7 /* ADInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADInfo.mm; sourceTree = "<group>"; };
 		8402CE7218A41B0500703CF7 /* ADNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADNotification.mm; sourceTree = "<group>"; };
 		8402CE7718A41DD600703CF7 /* ADBrowser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADBrowser.mm; sourceTree = "<group>"; };
+		840ACD691A5D898F007D736A /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
+		840ACD6A1A5D898F007D736A /* levels_50.ad */ = {isa = PBXFileReference; lastKnownFileType = file; name = levels_50.ad; path = Resources/levels_50.ad; sourceTree = SOURCE_ROOT; };
+		840ACD6B1A5D898F007D736A /* medium */ = {isa = PBXFileReference; lastKnownFileType = folder; name = medium; path = Resources/medium; sourceTree = SOURCE_ROOT; };
+		840ACD6C1A5D898F007D736A /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
+		840ACD6D1A5D898F007D736A /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
+		840ACD741A5D89AC007D736A /* versionMiF50FreeFull.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = versionMiF50FreeFull.cpp; sourceTree = "<group>"; };
+		840ACD771A5D8AB6007D736A /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
+		840ACD781A5D8AB6007D736A /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
+		840ACD791A5D8AB6007D736A /* ADSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSignals.h; sourceTree = "<group>"; };
+		840ACD7A1A5D8AB6007D736A /* ADString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADString.h; sourceTree = "<group>"; };
+		840ACD7C1A5D8AB6007D736A /* ADCocosThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADCocosThread.cpp; sourceTree = "<group>"; };
+		840ACD7D1A5D8AB6007D736A /* ADCocosThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCocosThread.h; sourceTree = "<group>"; };
+		840ACD7E1A5D8AB6007D736A /* ADParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADParams.h; sourceTree = "<group>"; };
+		840ACD7F1A5D8AB6007D736A /* ADThreadPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADThreadPool.cpp; sourceTree = "<group>"; };
+		840ACD801A5D8AB6007D736A /* ADThreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADThreadPool.h; sourceTree = "<group>"; };
+		840ACD821A5D8AB6007D736A /* ADAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADAds.cpp; sourceTree = "<group>"; };
+		840ACD831A5D8AB6007D736A /* ADAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAds.h; sourceTree = "<group>"; };
+		840ACD841A5D8AB6007D736A /* ADBrowser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBrowser.cpp; sourceTree = "<group>"; };
+		840ACD851A5D8AB6007D736A /* ADBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBrowser.h; sourceTree = "<group>"; };
+		840ACD861A5D8AB6007D736A /* ADDeviceEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADDeviceEvents.cpp; sourceTree = "<group>"; };
+		840ACD871A5D8AB6007D736A /* ADDeviceEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDeviceEvents.h; sourceTree = "<group>"; };
+		840ACD881A5D8AB6007D736A /* ADFullScreenAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFullScreenAds.cpp; sourceTree = "<group>"; };
+		840ACD891A5D8AB6007D736A /* ADFullScreenAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFullScreenAds.h; sourceTree = "<group>"; };
+		840ACD8A1A5D8AB6007D736A /* ADInApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADInApp.cpp; sourceTree = "<group>"; };
+		840ACD8B1A5D8AB6007D736A /* ADInApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADInApp.h; sourceTree = "<group>"; };
+		840ACD8C1A5D8AB6007D736A /* ADInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADInfo.cpp; sourceTree = "<group>"; };
+		840ACD8D1A5D8AB6007D736A /* ADInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADInfo.h; sourceTree = "<group>"; };
+		840ACD8E1A5D8AB6007D736A /* ADLanguage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADLanguage.cpp; sourceTree = "<group>"; };
+		840ACD8F1A5D8AB6007D736A /* ADLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLanguage.h; sourceTree = "<group>"; };
+		840ACD901A5D8AB6007D736A /* ADMonetization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADMonetization.cpp; sourceTree = "<group>"; };
+		840ACD911A5D8AB6007D736A /* ADMonetization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMonetization.h; sourceTree = "<group>"; };
+		840ACD931A5D8AB6007D736A /* Version_AdsNoPurchase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Version_AdsNoPurchase.hpp; sourceTree = "<group>"; };
+		840ACD941A5D8AB6007D736A /* Version_AdsPurchase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Version_AdsPurchase.hpp; sourceTree = "<group>"; };
+		840ACD951A5D8AB6007D736A /* Version_NoAdsNoPurchase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Version_NoAdsNoPurchase.hpp; sourceTree = "<group>"; };
+		840ACD961A5D8AB6007D736A /* ADMonetizationVersionsSelector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADMonetizationVersionsSelector.hpp; sourceTree = "<group>"; };
+		840ACD971A5D8AB6007D736A /* ADNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNotification.h; sourceTree = "<group>"; };
+		840ACD981A5D8AB6007D736A /* ADOrientation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADOrientation.cpp; sourceTree = "<group>"; };
+		840ACD991A5D8AB6007D736A /* ADOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADOrientation.h; sourceTree = "<group>"; };
+		840ACD9A1A5D8AB6007D736A /* ADPackageName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADPackageName.cpp; sourceTree = "<group>"; };
+		840ACD9B1A5D8AB6007D736A /* ADPackageName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPackageName.h; sourceTree = "<group>"; };
+		840ACD9C1A5D8AB6007D736A /* ADScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADScreen.cpp; sourceTree = "<group>"; };
+		840ACD9D1A5D8AB6007D736A /* ADScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADScreen.h; sourceTree = "<group>"; };
+		840ACD9E1A5D8AB6007D736A /* ADSoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADSoundManager.cpp; sourceTree = "<group>"; };
+		840ACD9F1A5D8AB6007D736A /* ADSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSoundManager.h; sourceTree = "<group>"; };
+		840ACDA01A5D8AB6007D736A /* ADStatistics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADStatistics.cpp; sourceTree = "<group>"; };
+		840ACDA11A5D8AB6007D736A /* ADStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStatistics.h; sourceTree = "<group>"; };
+		840ACDA21A5D8AB6007D736A /* ADVirtualCurrency.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADVirtualCurrency.cpp; sourceTree = "<group>"; };
+		840ACDA31A5D8AB6007D736A /* ADVirtualCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADVirtualCurrency.h; sourceTree = "<group>"; };
+		840ACDA41A5D8AB6007D736A /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		840ACDA61A5D8AB6007D736A /* ADCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCreate.h; sourceTree = "<group>"; };
+		840ACDA71A5D8AB6007D736A /* ADMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMethods.h; sourceTree = "<group>"; };
+		840ACDA81A5D8AB6007D736A /* Generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generic.h; sourceTree = "<group>"; };
+		840ACDAA1A5D8AB6007D736A /* PushWoosh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PushWoosh.cpp; sourceTree = "<group>"; };
+		840ACDAB1A5D8AB6007D736A /* PushWoosh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushWoosh.h; sourceTree = "<group>"; };
+		840ACDAD1A5D8AB6007D736A /* ADHttp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADHttp.cpp; sourceTree = "<group>"; };
+		840ACDAE1A5D8AB6007D736A /* ADHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADHttp.h; sourceTree = "<group>"; };
+		840ACDB01A5D8AB6007D736A /* ADAds_Emulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADAds_Emulator.hpp; sourceTree = "<group>"; };
+		840ACDB11A5D8AB6007D736A /* ADAds_NoAds.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADAds_NoAds.hpp; sourceTree = "<group>"; };
+		840ACDB21A5D8AB6007D736A /* ADBrowser_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADBrowser_None.hpp; sourceTree = "<group>"; };
+		840ACDB31A5D8AB6007D736A /* ADFacebook_Emulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADFacebook_Emulator.hpp; sourceTree = "<group>"; };
+		840ACDB41A5D8AB6007D736A /* ADFacebook_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADFacebook_None.hpp; sourceTree = "<group>"; };
+		840ACDB51A5D8AB6007D736A /* ADHttp_CURL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADHttp_CURL.hpp; sourceTree = "<group>"; };
+		840ACDB61A5D8AB6007D736A /* ADHttp_NotSupported.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADHttp_NotSupported.hpp; sourceTree = "<group>"; };
+		840ACDB71A5D8AB6007D736A /* ADInApp_Emulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADInApp_Emulator.hpp; sourceTree = "<group>"; };
+		840ACDB81A5D8AB6007D736A /* ADInApp_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADInApp_None.hpp; sourceTree = "<group>"; };
+		840ACDB91A5D8AB6007D736A /* ADInfo_Default.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADInfo_Default.hpp; sourceTree = "<group>"; };
+		840ACDBA1A5D8AB6007D736A /* ADLanguage_Default.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADLanguage_Default.hpp; sourceTree = "<group>"; };
+		840ACDBB1A5D8AB6007D736A /* ADNotification_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADNotification_None.hpp; sourceTree = "<group>"; };
+		840ACDBC1A5D8AB6007D736A /* ADOrientation_Keyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADOrientation_Keyboard.hpp; sourceTree = "<group>"; };
+		840ACDBD1A5D8AB6007D736A /* ADOrientation_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADOrientation_None.hpp; sourceTree = "<group>"; };
+		840ACDBE1A5D8AB6007D736A /* ADStatistics_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADStatistics_None.hpp; sourceTree = "<group>"; };
+		840ACDBF1A5D8AB6007D736A /* ADVirtualCurrency_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADVirtualCurrency_None.hpp; sourceTree = "<group>"; };
+		840ACDC11A5D8AB6007D736A /* ADPopUpWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADPopUpWindow.cpp; sourceTree = "<group>"; };
+		840ACDC21A5D8AB6007D736A /* ADPopUpWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPopUpWindow.h; sourceTree = "<group>"; };
+		840ACDC31A5D8AB6007D736A /* IADStandardWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IADStandardWindow.cpp; sourceTree = "<group>"; };
+		840ACDC41A5D8AB6007D736A /* IADStandardWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IADStandardWindow.h; sourceTree = "<group>"; };
+		840ACDC51A5D8AB6007D736A /* PopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUp.h; sourceTree = "<group>"; };
+		840ACDC71A5D8AB6007D736A /* ADBakeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBakeNode.cpp; sourceTree = "<group>"; };
+		840ACDC81A5D8AB6007D736A /* ADBakeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBakeNode.h; sourceTree = "<group>"; };
+		840ACDC91A5D8AB6007D736A /* ADBlurSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBlurSprite.cpp; sourceTree = "<group>"; };
+		840ACDCA1A5D8AB6007D736A /* ADBlurSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBlurSprite.h; sourceTree = "<group>"; };
+		840ACDCB1A5D8AB6007D736A /* ADBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBMFont.cpp; sourceTree = "<group>"; };
+		840ACDCC1A5D8AB6007D736A /* ADBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBMFont.h; sourceTree = "<group>"; };
+		840ACDCD1A5D8AB6007D736A /* ADCallFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADCallFunc.cpp; sourceTree = "<group>"; };
+		840ACDCE1A5D8AB6007D736A /* ADCallFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCallFunc.h; sourceTree = "<group>"; };
+		840ACDCF1A5D8AB6007D736A /* ADColoredSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADColoredSprite.cpp; sourceTree = "<group>"; };
+		840ACDD01A5D8AB6007D736A /* ADColoredSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADColoredSprite.h; sourceTree = "<group>"; };
+		840ACDD11A5D8AB6007D736A /* ADMenuItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADMenuItem.cpp; sourceTree = "<group>"; };
+		840ACDD21A5D8AB6007D736A /* ADMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMenuItem.h; sourceTree = "<group>"; };
+		840ACDD31A5D8AB6007D736A /* ADScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADScrollView.cpp; sourceTree = "<group>"; };
+		840ACDD41A5D8AB6007D736A /* ADScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADScrollView.h; sourceTree = "<group>"; };
+		840ACDD51A5D8AB6007D736A /* ADShaderSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADShaderSprite.cpp; sourceTree = "<group>"; };
+		840ACDD61A5D8AB6007D736A /* ADShaderSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADShaderSprite.h; sourceTree = "<group>"; };
+		840ACDD71A5D8AB6007D736A /* Rendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rendering.h; sourceTree = "<group>"; };
+		840ACDD81A5D8AB6007D736A /* sigslot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sigslot.h; sourceTree = "<group>"; };
+		840ACDDA1A5D8AB6007D736A /* ADFacebook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFacebook.cpp; sourceTree = "<group>"; };
+		840ACDDB1A5D8AB6007D736A /* ADFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFacebook.h; sourceTree = "<group>"; };
+		840ACDDC1A5D8AB6007D736A /* ADFacebookFriend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFacebookFriend.cpp; sourceTree = "<group>"; };
+		840ACDDD1A5D8AB6007D736A /* ADFacebookFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFacebookFriend.h; sourceTree = "<group>"; };
+		840ACDDE1A5D8AB6007D736A /* ADFacebookPhoto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFacebookPhoto.cpp; sourceTree = "<group>"; };
+		840ACDDF1A5D8AB6007D736A /* ADFacebookPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFacebookPhoto.h; sourceTree = "<group>"; };
+		840ACDE01A5D8AB6007D736A /* ADHighscoreServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADHighscoreServer.cpp; sourceTree = "<group>"; };
+		840ACDE11A5D8AB6007D736A /* ADHighscoreServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADHighscoreServer.h; sourceTree = "<group>"; };
+		840ACDE21A5D8AB6007D736A /* Social.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Social.h; sourceTree = "<group>"; };
+		840ACDE41A5D8AB6007D736A /* ADBinaryData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBinaryData.cpp; sourceTree = "<group>"; };
+		840ACDE51A5D8AB6007D736A /* ADBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBinaryData.h; sourceTree = "<group>"; };
+		840ACDE61A5D8AB6007D736A /* ADFileNameUTF8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFileNameUTF8.cpp; sourceTree = "<group>"; };
+		840ACDE71A5D8AB6007D736A /* ADFileNameUTF8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFileNameUTF8.h; sourceTree = "<group>"; };
+		840ACDE81A5D8AB6007D736A /* ADFileNameUTF8.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADFileNameUTF8.mm; sourceTree = "<group>"; };
+		840ACDE91A5D8AB6007D736A /* ADStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADStorage.cpp; sourceTree = "<group>"; };
+		840ACDEA1A5D8AB6007D736A /* ADStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStorage.h; sourceTree = "<group>"; };
+		840ACDEB1A5D8AB6007D736A /* ADStorageListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADStorageListener.cpp; sourceTree = "<group>"; };
+		840ACDEC1A5D8AB6007D736A /* ADStorageListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStorageListener.h; sourceTree = "<group>"; };
+		840ACDED1A5D8AB6007D736A /* ADStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStream.h; sourceTree = "<group>"; };
+		840ACDEE1A5D8AB6007D736A /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		840ACDF01A5D8AB6007D736A /* ADUTF8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADUTF8.cpp; sourceTree = "<group>"; };
+		840ACDF11A5D8AB6007D736A /* ADUTF8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADUTF8.h; sourceTree = "<group>"; };
+		840ACDF31A5D8AB6007D736A /* checked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checked.h; sourceTree = "<group>"; };
+		840ACDF41A5D8AB6007D736A /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		840ACDF51A5D8AB6007D736A /* unchecked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unchecked.h; sourceTree = "<group>"; };
+		840ACDF61A5D8AB6007D736A /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
 		840AE31818A02F4D00189085 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		841B2C5F18D5B6ED0064AA59 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		8452FAC019895F580003ACFE /* versionAddition27FreeDisableAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = versionAddition27FreeDisableAds.cpp; sourceTree = "<group>"; };
-		8452FAC219895F870003ACFE /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resources/fonts; sourceTree = SOURCE_ROOT; };
-		8452FAC319895F870003ACFE /* levels.ad */ = {isa = PBXFileReference; lastKnownFileType = file; name = levels.ad; path = Resources/levels.ad; sourceTree = SOURCE_ROOT; };
-		8452FAC419895F870003ACFE /* medium */ = {isa = PBXFileReference; lastKnownFileType = folder; name = medium; path = Resources/medium; sourceTree = SOURCE_ROOT; };
-		8452FAC519895F870003ACFE /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
-		8452FAC619895F870003ACFE /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADAds_AdMob.mm; sourceTree = "<group>"; };
@@ -280,95 +402,6 @@
 		84EBD1B419716520007241CD /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		84EBD1B519716520007241CD /* Store.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Store.cpp; sourceTree = "<group>"; };
 		84EBD1B619716520007241CD /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
-		84EBD1E9197167B4007241CD /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
-		84EBD1EA197167B4007241CD /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
-		84EBD1EB197167B4007241CD /* ADSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSignals.h; sourceTree = "<group>"; };
-		84EBD1EC197167B4007241CD /* ADString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADString.h; sourceTree = "<group>"; };
-		84EBD1EE197167B4007241CD /* ADCocosThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADCocosThread.cpp; sourceTree = "<group>"; };
-		84EBD1EF197167B4007241CD /* ADCocosThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCocosThread.h; sourceTree = "<group>"; };
-		84EBD1F0197167B4007241CD /* ADParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADParams.h; sourceTree = "<group>"; };
-		84EBD1F2197167B4007241CD /* ADAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADAds.cpp; sourceTree = "<group>"; };
-		84EBD1F3197167B4007241CD /* ADAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAds.h; sourceTree = "<group>"; };
-		84EBD1F4197167B4007241CD /* ADBrowser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBrowser.cpp; sourceTree = "<group>"; };
-		84EBD1F5197167B4007241CD /* ADBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBrowser.h; sourceTree = "<group>"; };
-		84EBD1F6197167B4007241CD /* ADDeviceEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADDeviceEvents.cpp; sourceTree = "<group>"; };
-		84EBD1F7197167B4007241CD /* ADDeviceEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDeviceEvents.h; sourceTree = "<group>"; };
-		84EBD1F8197167B4007241CD /* ADInApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADInApp.cpp; sourceTree = "<group>"; };
-		84EBD1F9197167B4007241CD /* ADInApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADInApp.h; sourceTree = "<group>"; };
-		84EBD1FA197167B4007241CD /* ADInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADInfo.cpp; sourceTree = "<group>"; };
-		84EBD1FB197167B4007241CD /* ADInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADInfo.h; sourceTree = "<group>"; };
-		84EBD1FC197167B4007241CD /* ADLanguage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADLanguage.cpp; sourceTree = "<group>"; };
-		84EBD1FD197167B4007241CD /* ADLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLanguage.h; sourceTree = "<group>"; };
-		84EBD1FE197167B4007241CD /* ADNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNotification.h; sourceTree = "<group>"; };
-		84EBD1FF197167B4007241CD /* ADPackageName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADPackageName.cpp; sourceTree = "<group>"; };
-		84EBD200197167B4007241CD /* ADPackageName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPackageName.h; sourceTree = "<group>"; };
-		84EBD201197167B4007241CD /* ADScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADScreen.cpp; sourceTree = "<group>"; };
-		84EBD202197167B4007241CD /* ADScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADScreen.h; sourceTree = "<group>"; };
-		84EBD203197167B4007241CD /* ADSoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADSoundManager.cpp; sourceTree = "<group>"; };
-		84EBD204197167B4007241CD /* ADSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSoundManager.h; sourceTree = "<group>"; };
-		84EBD205197167B4007241CD /* ADStatistics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADStatistics.cpp; sourceTree = "<group>"; };
-		84EBD206197167B4007241CD /* ADStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStatistics.h; sourceTree = "<group>"; };
-		84EBD207197167B4007241CD /* ADVirtualCurrency.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADVirtualCurrency.cpp; sourceTree = "<group>"; };
-		84EBD208197167B4007241CD /* ADVirtualCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADVirtualCurrency.h; sourceTree = "<group>"; };
-		84EBD209197167B4007241CD /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		84EBD20B197167B4007241CD /* ADCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCreate.h; sourceTree = "<group>"; };
-		84EBD20C197167B4007241CD /* ADMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMethods.h; sourceTree = "<group>"; };
-		84EBD20D197167B4007241CD /* Generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generic.h; sourceTree = "<group>"; };
-		84EBD20F197167B4007241CD /* ADHttp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADHttp.cpp; sourceTree = "<group>"; };
-		84EBD210197167B4007241CD /* ADHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADHttp.h; sourceTree = "<group>"; };
-		84EBD212197167B4007241CD /* ADAds_NoAds.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADAds_NoAds.hpp; sourceTree = "<group>"; };
-		84EBD213197167B4007241CD /* ADBrowser_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADBrowser_None.hpp; sourceTree = "<group>"; };
-		84EBD214197167B4007241CD /* ADFacebook_Emulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADFacebook_Emulator.hpp; sourceTree = "<group>"; };
-		84EBD215197167B4007241CD /* ADFacebook_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADFacebook_None.hpp; sourceTree = "<group>"; };
-		84EBD216197167B4007241CD /* ADHttp_CURL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADHttp_CURL.hpp; sourceTree = "<group>"; };
-		84EBD217197167B4007241CD /* ADHttp_NotSupported.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADHttp_NotSupported.hpp; sourceTree = "<group>"; };
-		84EBD218197167B4007241CD /* ADInApp_Emulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADInApp_Emulator.hpp; sourceTree = "<group>"; };
-		84EBD219197167B4007241CD /* ADInApp_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADInApp_None.hpp; sourceTree = "<group>"; };
-		84EBD21A197167B4007241CD /* ADInfo_Default.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADInfo_Default.hpp; sourceTree = "<group>"; };
-		84EBD21B197167B4007241CD /* ADLanguage_Default.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADLanguage_Default.hpp; sourceTree = "<group>"; };
-		84EBD21C197167B4007241CD /* ADNotification_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADNotification_None.hpp; sourceTree = "<group>"; };
-		84EBD21D197167B4007241CD /* ADStatistics_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADStatistics_None.hpp; sourceTree = "<group>"; };
-		84EBD21E197167B4007241CD /* ADVirtualCurrency_None.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADVirtualCurrency_None.hpp; sourceTree = "<group>"; };
-		84EBD220197167B4007241CD /* ADPopUpWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADPopUpWindow.cpp; sourceTree = "<group>"; };
-		84EBD221197167B4007241CD /* ADPopUpWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADPopUpWindow.h; sourceTree = "<group>"; };
-		84EBD222197167B4007241CD /* IADStandardWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IADStandardWindow.cpp; sourceTree = "<group>"; };
-		84EBD223197167B4007241CD /* IADStandardWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IADStandardWindow.h; sourceTree = "<group>"; };
-		84EBD224197167B4007241CD /* PopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUp.h; sourceTree = "<group>"; };
-		84EBD226197167B4007241CD /* ADBakeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBakeNode.cpp; sourceTree = "<group>"; };
-		84EBD227197167B4007241CD /* ADBakeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBakeNode.h; sourceTree = "<group>"; };
-		84EBD228197167B4007241CD /* ADBlurSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBlurSprite.cpp; sourceTree = "<group>"; };
-		84EBD229197167B4007241CD /* ADBlurSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBlurSprite.h; sourceTree = "<group>"; };
-		84EBD22A197167B4007241CD /* ADBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBMFont.cpp; sourceTree = "<group>"; };
-		84EBD22B197167B4007241CD /* ADBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBMFont.h; sourceTree = "<group>"; };
-		84EBD22C197167B4007241CD /* ADCallFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADCallFunc.cpp; sourceTree = "<group>"; };
-		84EBD22D197167B4007241CD /* ADCallFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCallFunc.h; sourceTree = "<group>"; };
-		84EBD22E197167B4007241CD /* ADColoredSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADColoredSprite.cpp; sourceTree = "<group>"; };
-		84EBD22F197167B4007241CD /* ADColoredSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADColoredSprite.h; sourceTree = "<group>"; };
-		84EBD230197167B4007241CD /* ADMenuItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADMenuItem.cpp; sourceTree = "<group>"; };
-		84EBD231197167B4007241CD /* ADMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMenuItem.h; sourceTree = "<group>"; };
-		84EBD232197167B4007241CD /* ADScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADScrollView.cpp; sourceTree = "<group>"; };
-		84EBD233197167B4007241CD /* ADScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADScrollView.h; sourceTree = "<group>"; };
-		84EBD234197167B4007241CD /* ADShaderSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADShaderSprite.cpp; sourceTree = "<group>"; };
-		84EBD235197167B4007241CD /* ADShaderSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADShaderSprite.h; sourceTree = "<group>"; };
-		84EBD236197167B4007241CD /* Rendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rendering.h; sourceTree = "<group>"; };
-		84EBD237197167B4007241CD /* sigslot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sigslot.h; sourceTree = "<group>"; };
-		84EBD239197167B4007241CD /* ADFacebook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFacebook.cpp; sourceTree = "<group>"; };
-		84EBD23A197167B4007241CD /* ADFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFacebook.h; sourceTree = "<group>"; };
-		84EBD23B197167B4007241CD /* ADFacebookFriend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFacebookFriend.cpp; sourceTree = "<group>"; };
-		84EBD23C197167B4007241CD /* ADFacebookFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFacebookFriend.h; sourceTree = "<group>"; };
-		84EBD23D197167B4007241CD /* ADFacebookPhoto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADFacebookPhoto.cpp; sourceTree = "<group>"; };
-		84EBD23E197167B4007241CD /* ADFacebookPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFacebookPhoto.h; sourceTree = "<group>"; };
-		84EBD23F197167B4007241CD /* ADHighscoreServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADHighscoreServer.cpp; sourceTree = "<group>"; };
-		84EBD240197167B4007241CD /* ADHighscoreServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADHighscoreServer.h; sourceTree = "<group>"; };
-		84EBD241197167B4007241CD /* Social.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Social.h; sourceTree = "<group>"; };
-		84EBD243197167B4007241CD /* ADBinaryData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBinaryData.cpp; sourceTree = "<group>"; };
-		84EBD244197167B4007241CD /* ADBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBinaryData.h; sourceTree = "<group>"; };
-		84EBD245197167B4007241CD /* ADStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADStorage.cpp; sourceTree = "<group>"; };
-		84EBD246197167B4007241CD /* ADStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStorage.h; sourceTree = "<group>"; };
-		84EBD247197167B4007241CD /* ADStorageListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADStorageListener.cpp; sourceTree = "<group>"; };
-		84EBD248197167B4007241CD /* ADStorageListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStorageListener.h; sourceTree = "<group>"; };
-		84EBD249197167B4007241CD /* ADStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADStream.h; sourceTree = "<group>"; };
-		84EBD24A197167B4007241CD /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
 		84EBD26E19716875007241CD /* PlatformImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlatformImpl.cpp; sourceTree = "<group>"; };
 		84F198B318D59E85006A5221 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		84F198B418D59E85006A5221 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
@@ -401,7 +434,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8402CE6D18A411D000703CF7 /* SystemConfiguration.framework in Frameworks */,
-				84B0AA9D18D5C61900E0C39A /* libAdapterIAd.a in Frameworks */,
 				84F198DC18D5ACB2006A5221 /* StoreKit.framework in Frameworks */,
 				84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */,
 				84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */,
@@ -439,8 +471,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				840ACD761A5D8AB6007D736A /* ADLib */,
 				84EBD26A1971681B007241CD /* _Version */,
-				84F1987618D59985006A5221 /* ADLib */,
 				84F197E418D5986E006A5221 /* Classes */,
 				8402CE5618A4071700703CF7 /* ADLibImpl */,
 				84E80D9718A2BA000003E3D5 /* CocosDenshion.xcodeproj */,
@@ -480,11 +512,11 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8452FAC219895F870003ACFE /* fonts */,
-				8452FAC319895F870003ACFE /* levels.ad */,
-				8452FAC419895F870003ACFE /* medium */,
-				8452FAC519895F870003ACFE /* music */,
-				8452FAC619895F870003ACFE /* translations */,
+				840ACD691A5D898F007D736A /* fonts */,
+				840ACD6A1A5D898F007D736A /* levels_50.ad */,
+				840ACD6B1A5D898F007D736A /* medium */,
+				840ACD6C1A5D898F007D736A /* music */,
+				840ACD6D1A5D898F007D736A /* translations */,
 				84F198CA18D5A9C9006A5221 /* Default-Portrait.png */,
 				84F198CB18D5A9C9006A5221 /* iTunesArtwork */,
 				84F198CC18D5A9C9006A5221 /* iTunesArtwork@2x */,
@@ -566,21 +598,248 @@
 			path = ../libraries/ADLib/platform/iOS/ADBrowser;
 			sourceTree = "<group>";
 		};
+		840ACD731A5D89AC007D736A /* MiF50FreeFull */ = {
+			isa = PBXGroup;
+			children = (
+				840ACD741A5D89AC007D736A /* versionMiF50FreeFull.cpp */,
+			);
+			name = MiF50FreeFull;
+			path = ../VersionSelector/MiF50FreeFull;
+			sourceTree = "<group>";
+		};
+		840ACD761A5D8AB6007D736A /* ADLib */ = {
+			isa = PBXGroup;
+			children = (
+				840ACD771A5D8AB6007D736A /* ADRandom.cpp */,
+				840ACD781A5D8AB6007D736A /* ADRandom.h */,
+				840ACD791A5D8AB6007D736A /* ADSignals.h */,
+				840ACD7A1A5D8AB6007D736A /* ADString.h */,
+				840ACD7B1A5D8AB6007D736A /* Common */,
+				840ACD811A5D8AB6007D736A /* Device */,
+				840ACDA41A5D8AB6007D736A /* Device.h */,
+				840ACDA51A5D8AB6007D736A /* Generic */,
+				840ACDA81A5D8AB6007D736A /* Generic.h */,
+				840ACDA91A5D8AB6007D736A /* Messanger */,
+				840ACDAC1A5D8AB6007D736A /* Networking */,
+				840ACDAF1A5D8AB6007D736A /* PlatformImpl */,
+				840ACDC01A5D8AB6007D736A /* PopUp */,
+				840ACDC51A5D8AB6007D736A /* PopUp.h */,
+				840ACDC61A5D8AB6007D736A /* Rendering */,
+				840ACDD71A5D8AB6007D736A /* Rendering.h */,
+				840ACDD81A5D8AB6007D736A /* sigslot.h */,
+				840ACDD91A5D8AB6007D736A /* Social */,
+				840ACDE21A5D8AB6007D736A /* Social.h */,
+				840ACDE31A5D8AB6007D736A /* Storage */,
+				840ACDEE1A5D8AB6007D736A /* Storage.h */,
+				840ACDEF1A5D8AB6007D736A /* UTF8 */,
+			);
+			name = ADLib;
+			path = ../libraries/ADLib/src/ADLib;
+			sourceTree = "<group>";
+		};
+		840ACD7B1A5D8AB6007D736A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				840ACD7C1A5D8AB6007D736A /* ADCocosThread.cpp */,
+				840ACD7D1A5D8AB6007D736A /* ADCocosThread.h */,
+				840ACD7E1A5D8AB6007D736A /* ADParams.h */,
+				840ACD7F1A5D8AB6007D736A /* ADThreadPool.cpp */,
+				840ACD801A5D8AB6007D736A /* ADThreadPool.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		840ACD811A5D8AB6007D736A /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				840ACD821A5D8AB6007D736A /* ADAds.cpp */,
+				840ACD831A5D8AB6007D736A /* ADAds.h */,
+				840ACD841A5D8AB6007D736A /* ADBrowser.cpp */,
+				840ACD851A5D8AB6007D736A /* ADBrowser.h */,
+				840ACD861A5D8AB6007D736A /* ADDeviceEvents.cpp */,
+				840ACD871A5D8AB6007D736A /* ADDeviceEvents.h */,
+				840ACD881A5D8AB6007D736A /* ADFullScreenAds.cpp */,
+				840ACD891A5D8AB6007D736A /* ADFullScreenAds.h */,
+				840ACD8A1A5D8AB6007D736A /* ADInApp.cpp */,
+				840ACD8B1A5D8AB6007D736A /* ADInApp.h */,
+				840ACD8C1A5D8AB6007D736A /* ADInfo.cpp */,
+				840ACD8D1A5D8AB6007D736A /* ADInfo.h */,
+				840ACD8E1A5D8AB6007D736A /* ADLanguage.cpp */,
+				840ACD8F1A5D8AB6007D736A /* ADLanguage.h */,
+				840ACD901A5D8AB6007D736A /* ADMonetization.cpp */,
+				840ACD911A5D8AB6007D736A /* ADMonetization.h */,
+				840ACD921A5D8AB6007D736A /* ADMonetizationVersions */,
+				840ACD961A5D8AB6007D736A /* ADMonetizationVersionsSelector.hpp */,
+				840ACD971A5D8AB6007D736A /* ADNotification.h */,
+				840ACD981A5D8AB6007D736A /* ADOrientation.cpp */,
+				840ACD991A5D8AB6007D736A /* ADOrientation.h */,
+				840ACD9A1A5D8AB6007D736A /* ADPackageName.cpp */,
+				840ACD9B1A5D8AB6007D736A /* ADPackageName.h */,
+				840ACD9C1A5D8AB6007D736A /* ADScreen.cpp */,
+				840ACD9D1A5D8AB6007D736A /* ADScreen.h */,
+				840ACD9E1A5D8AB6007D736A /* ADSoundManager.cpp */,
+				840ACD9F1A5D8AB6007D736A /* ADSoundManager.h */,
+				840ACDA01A5D8AB6007D736A /* ADStatistics.cpp */,
+				840ACDA11A5D8AB6007D736A /* ADStatistics.h */,
+				840ACDA21A5D8AB6007D736A /* ADVirtualCurrency.cpp */,
+				840ACDA31A5D8AB6007D736A /* ADVirtualCurrency.h */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		840ACD921A5D8AB6007D736A /* ADMonetizationVersions */ = {
+			isa = PBXGroup;
+			children = (
+				840ACD931A5D8AB6007D736A /* Version_AdsNoPurchase.hpp */,
+				840ACD941A5D8AB6007D736A /* Version_AdsPurchase.hpp */,
+				840ACD951A5D8AB6007D736A /* Version_NoAdsNoPurchase.hpp */,
+			);
+			path = ADMonetizationVersions;
+			sourceTree = "<group>";
+		};
+		840ACDA51A5D8AB6007D736A /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDA61A5D8AB6007D736A /* ADCreate.h */,
+				840ACDA71A5D8AB6007D736A /* ADMethods.h */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		840ACDA91A5D8AB6007D736A /* Messanger */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDAA1A5D8AB6007D736A /* PushWoosh.cpp */,
+				840ACDAB1A5D8AB6007D736A /* PushWoosh.h */,
+			);
+			path = Messanger;
+			sourceTree = "<group>";
+		};
+		840ACDAC1A5D8AB6007D736A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDAD1A5D8AB6007D736A /* ADHttp.cpp */,
+				840ACDAE1A5D8AB6007D736A /* ADHttp.h */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		840ACDAF1A5D8AB6007D736A /* PlatformImpl */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDB01A5D8AB6007D736A /* ADAds_Emulator.hpp */,
+				840ACDB11A5D8AB6007D736A /* ADAds_NoAds.hpp */,
+				840ACDB21A5D8AB6007D736A /* ADBrowser_None.hpp */,
+				840ACDB31A5D8AB6007D736A /* ADFacebook_Emulator.hpp */,
+				840ACDB41A5D8AB6007D736A /* ADFacebook_None.hpp */,
+				840ACDB51A5D8AB6007D736A /* ADHttp_CURL.hpp */,
+				840ACDB61A5D8AB6007D736A /* ADHttp_NotSupported.hpp */,
+				840ACDB71A5D8AB6007D736A /* ADInApp_Emulator.hpp */,
+				840ACDB81A5D8AB6007D736A /* ADInApp_None.hpp */,
+				840ACDB91A5D8AB6007D736A /* ADInfo_Default.hpp */,
+				840ACDBA1A5D8AB6007D736A /* ADLanguage_Default.hpp */,
+				840ACDBB1A5D8AB6007D736A /* ADNotification_None.hpp */,
+				840ACDBC1A5D8AB6007D736A /* ADOrientation_Keyboard.hpp */,
+				840ACDBD1A5D8AB6007D736A /* ADOrientation_None.hpp */,
+				840ACDBE1A5D8AB6007D736A /* ADStatistics_None.hpp */,
+				840ACDBF1A5D8AB6007D736A /* ADVirtualCurrency_None.hpp */,
+			);
+			path = PlatformImpl;
+			sourceTree = "<group>";
+		};
+		840ACDC01A5D8AB6007D736A /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDC11A5D8AB6007D736A /* ADPopUpWindow.cpp */,
+				840ACDC21A5D8AB6007D736A /* ADPopUpWindow.h */,
+				840ACDC31A5D8AB6007D736A /* IADStandardWindow.cpp */,
+				840ACDC41A5D8AB6007D736A /* IADStandardWindow.h */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		840ACDC61A5D8AB6007D736A /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDC71A5D8AB6007D736A /* ADBakeNode.cpp */,
+				840ACDC81A5D8AB6007D736A /* ADBakeNode.h */,
+				840ACDC91A5D8AB6007D736A /* ADBlurSprite.cpp */,
+				840ACDCA1A5D8AB6007D736A /* ADBlurSprite.h */,
+				840ACDCB1A5D8AB6007D736A /* ADBMFont.cpp */,
+				840ACDCC1A5D8AB6007D736A /* ADBMFont.h */,
+				840ACDCD1A5D8AB6007D736A /* ADCallFunc.cpp */,
+				840ACDCE1A5D8AB6007D736A /* ADCallFunc.h */,
+				840ACDCF1A5D8AB6007D736A /* ADColoredSprite.cpp */,
+				840ACDD01A5D8AB6007D736A /* ADColoredSprite.h */,
+				840ACDD11A5D8AB6007D736A /* ADMenuItem.cpp */,
+				840ACDD21A5D8AB6007D736A /* ADMenuItem.h */,
+				840ACDD31A5D8AB6007D736A /* ADScrollView.cpp */,
+				840ACDD41A5D8AB6007D736A /* ADScrollView.h */,
+				840ACDD51A5D8AB6007D736A /* ADShaderSprite.cpp */,
+				840ACDD61A5D8AB6007D736A /* ADShaderSprite.h */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		840ACDD91A5D8AB6007D736A /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDDA1A5D8AB6007D736A /* ADFacebook.cpp */,
+				840ACDDB1A5D8AB6007D736A /* ADFacebook.h */,
+				840ACDDC1A5D8AB6007D736A /* ADFacebookFriend.cpp */,
+				840ACDDD1A5D8AB6007D736A /* ADFacebookFriend.h */,
+				840ACDDE1A5D8AB6007D736A /* ADFacebookPhoto.cpp */,
+				840ACDDF1A5D8AB6007D736A /* ADFacebookPhoto.h */,
+				840ACDE01A5D8AB6007D736A /* ADHighscoreServer.cpp */,
+				840ACDE11A5D8AB6007D736A /* ADHighscoreServer.h */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		840ACDE31A5D8AB6007D736A /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDE41A5D8AB6007D736A /* ADBinaryData.cpp */,
+				840ACDE51A5D8AB6007D736A /* ADBinaryData.h */,
+				840ACDE61A5D8AB6007D736A /* ADFileNameUTF8.cpp */,
+				840ACDE71A5D8AB6007D736A /* ADFileNameUTF8.h */,
+				840ACDE81A5D8AB6007D736A /* ADFileNameUTF8.mm */,
+				840ACDE91A5D8AB6007D736A /* ADStorage.cpp */,
+				840ACDEA1A5D8AB6007D736A /* ADStorage.h */,
+				840ACDEB1A5D8AB6007D736A /* ADStorageListener.cpp */,
+				840ACDEC1A5D8AB6007D736A /* ADStorageListener.h */,
+				840ACDED1A5D8AB6007D736A /* ADStream.h */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		840ACDEF1A5D8AB6007D736A /* UTF8 */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDF01A5D8AB6007D736A /* ADUTF8.cpp */,
+				840ACDF11A5D8AB6007D736A /* ADUTF8.h */,
+				840ACDF21A5D8AB6007D736A /* utf8 */,
+				840ACDF61A5D8AB6007D736A /* utf8.h */,
+			);
+			path = UTF8;
+			sourceTree = "<group>";
+		};
+		840ACDF21A5D8AB6007D736A /* utf8 */ = {
+			isa = PBXGroup;
+			children = (
+				840ACDF31A5D8AB6007D736A /* checked.h */,
+				840ACDF41A5D8AB6007D736A /* core.h */,
+				840ACDF51A5D8AB6007D736A /* unchecked.h */,
+			);
+			path = utf8;
+			sourceTree = "<group>";
+		};
 		840AE31918A02F4D00189085 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				840AE31D18A02F5200189085 /* libcocos2dx.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8452FABF19895F580003ACFE /* Addition27FreeDisableAds */ = {
-			isa = PBXGroup;
-			children = (
-				8452FAC019895F580003ACFE /* versionAddition27FreeDisableAds.cpp */,
-			);
-			name = Addition27FreeDisableAds;
-			path = ../VersionSelector/Addition27FreeDisableAds;
 			sourceTree = "<group>";
 		};
 		84B0AA8D18D5C61900E0C39A /* ADAds_AdMob */ = {
@@ -745,151 +1004,10 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		84EBD1ED197167B4007241CD /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD1EE197167B4007241CD /* ADCocosThread.cpp */,
-				84EBD1EF197167B4007241CD /* ADCocosThread.h */,
-				84EBD1F0197167B4007241CD /* ADParams.h */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		84EBD1F1197167B4007241CD /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD1F2197167B4007241CD /* ADAds.cpp */,
-				84EBD1F3197167B4007241CD /* ADAds.h */,
-				84EBD1F4197167B4007241CD /* ADBrowser.cpp */,
-				84EBD1F5197167B4007241CD /* ADBrowser.h */,
-				84EBD1F6197167B4007241CD /* ADDeviceEvents.cpp */,
-				84EBD1F7197167B4007241CD /* ADDeviceEvents.h */,
-				84EBD1F8197167B4007241CD /* ADInApp.cpp */,
-				84EBD1F9197167B4007241CD /* ADInApp.h */,
-				84EBD1FA197167B4007241CD /* ADInfo.cpp */,
-				84EBD1FB197167B4007241CD /* ADInfo.h */,
-				84EBD1FC197167B4007241CD /* ADLanguage.cpp */,
-				84EBD1FD197167B4007241CD /* ADLanguage.h */,
-				84EBD1FE197167B4007241CD /* ADNotification.h */,
-				84EBD1FF197167B4007241CD /* ADPackageName.cpp */,
-				84EBD200197167B4007241CD /* ADPackageName.h */,
-				84EBD201197167B4007241CD /* ADScreen.cpp */,
-				84EBD202197167B4007241CD /* ADScreen.h */,
-				84EBD203197167B4007241CD /* ADSoundManager.cpp */,
-				84EBD204197167B4007241CD /* ADSoundManager.h */,
-				84EBD205197167B4007241CD /* ADStatistics.cpp */,
-				84EBD206197167B4007241CD /* ADStatistics.h */,
-				84EBD207197167B4007241CD /* ADVirtualCurrency.cpp */,
-				84EBD208197167B4007241CD /* ADVirtualCurrency.h */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
-		84EBD20A197167B4007241CD /* Generic */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD20B197167B4007241CD /* ADCreate.h */,
-				84EBD20C197167B4007241CD /* ADMethods.h */,
-			);
-			path = Generic;
-			sourceTree = "<group>";
-		};
-		84EBD20E197167B4007241CD /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD20F197167B4007241CD /* ADHttp.cpp */,
-				84EBD210197167B4007241CD /* ADHttp.h */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		84EBD211197167B4007241CD /* PlatformImpl */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD212197167B4007241CD /* ADAds_NoAds.hpp */,
-				84EBD213197167B4007241CD /* ADBrowser_None.hpp */,
-				84EBD214197167B4007241CD /* ADFacebook_Emulator.hpp */,
-				84EBD215197167B4007241CD /* ADFacebook_None.hpp */,
-				84EBD216197167B4007241CD /* ADHttp_CURL.hpp */,
-				84EBD217197167B4007241CD /* ADHttp_NotSupported.hpp */,
-				84EBD218197167B4007241CD /* ADInApp_Emulator.hpp */,
-				84EBD219197167B4007241CD /* ADInApp_None.hpp */,
-				84EBD21A197167B4007241CD /* ADInfo_Default.hpp */,
-				84EBD21B197167B4007241CD /* ADLanguage_Default.hpp */,
-				84EBD21C197167B4007241CD /* ADNotification_None.hpp */,
-				84EBD21D197167B4007241CD /* ADStatistics_None.hpp */,
-				84EBD21E197167B4007241CD /* ADVirtualCurrency_None.hpp */,
-			);
-			path = PlatformImpl;
-			sourceTree = "<group>";
-		};
-		84EBD21F197167B4007241CD /* PopUp */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD220197167B4007241CD /* ADPopUpWindow.cpp */,
-				84EBD221197167B4007241CD /* ADPopUpWindow.h */,
-				84EBD222197167B4007241CD /* IADStandardWindow.cpp */,
-				84EBD223197167B4007241CD /* IADStandardWindow.h */,
-			);
-			path = PopUp;
-			sourceTree = "<group>";
-		};
-		84EBD225197167B4007241CD /* Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD226197167B4007241CD /* ADBakeNode.cpp */,
-				84EBD227197167B4007241CD /* ADBakeNode.h */,
-				84EBD228197167B4007241CD /* ADBlurSprite.cpp */,
-				84EBD229197167B4007241CD /* ADBlurSprite.h */,
-				84EBD22A197167B4007241CD /* ADBMFont.cpp */,
-				84EBD22B197167B4007241CD /* ADBMFont.h */,
-				84EBD22C197167B4007241CD /* ADCallFunc.cpp */,
-				84EBD22D197167B4007241CD /* ADCallFunc.h */,
-				84EBD22E197167B4007241CD /* ADColoredSprite.cpp */,
-				84EBD22F197167B4007241CD /* ADColoredSprite.h */,
-				84EBD230197167B4007241CD /* ADMenuItem.cpp */,
-				84EBD231197167B4007241CD /* ADMenuItem.h */,
-				84EBD232197167B4007241CD /* ADScrollView.cpp */,
-				84EBD233197167B4007241CD /* ADScrollView.h */,
-				84EBD234197167B4007241CD /* ADShaderSprite.cpp */,
-				84EBD235197167B4007241CD /* ADShaderSprite.h */,
-			);
-			path = Rendering;
-			sourceTree = "<group>";
-		};
-		84EBD238197167B4007241CD /* Social */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD239197167B4007241CD /* ADFacebook.cpp */,
-				84EBD23A197167B4007241CD /* ADFacebook.h */,
-				84EBD23B197167B4007241CD /* ADFacebookFriend.cpp */,
-				84EBD23C197167B4007241CD /* ADFacebookFriend.h */,
-				84EBD23D197167B4007241CD /* ADFacebookPhoto.cpp */,
-				84EBD23E197167B4007241CD /* ADFacebookPhoto.h */,
-				84EBD23F197167B4007241CD /* ADHighscoreServer.cpp */,
-				84EBD240197167B4007241CD /* ADHighscoreServer.h */,
-			);
-			path = Social;
-			sourceTree = "<group>";
-		};
-		84EBD242197167B4007241CD /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD243197167B4007241CD /* ADBinaryData.cpp */,
-				84EBD244197167B4007241CD /* ADBinaryData.h */,
-				84EBD245197167B4007241CD /* ADStorage.cpp */,
-				84EBD246197167B4007241CD /* ADStorage.h */,
-				84EBD247197167B4007241CD /* ADStorageListener.cpp */,
-				84EBD248197167B4007241CD /* ADStorageListener.h */,
-				84EBD249197167B4007241CD /* ADStream.h */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		84EBD26A1971681B007241CD /* _Version */ = {
 			isa = PBXGroup;
 			children = (
-				8452FABF19895F580003ACFE /* Addition27FreeDisableAds */,
+				840ACD731A5D89AC007D736A /* MiF50FreeFull */,
 			);
 			name = _Version;
 			sourceTree = "<group>";
@@ -916,34 +1034,6 @@
 			);
 			name = Classes;
 			path = ../Classes;
-			sourceTree = "<group>";
-		};
-		84F1987618D59985006A5221 /* ADLib */ = {
-			isa = PBXGroup;
-			children = (
-				84EBD1E9197167B4007241CD /* ADRandom.cpp */,
-				84EBD1EA197167B4007241CD /* ADRandom.h */,
-				84EBD1EB197167B4007241CD /* ADSignals.h */,
-				84EBD1EC197167B4007241CD /* ADString.h */,
-				84EBD1ED197167B4007241CD /* Common */,
-				84EBD1F1197167B4007241CD /* Device */,
-				84EBD209197167B4007241CD /* Device.h */,
-				84EBD20A197167B4007241CD /* Generic */,
-				84EBD20D197167B4007241CD /* Generic.h */,
-				84EBD20E197167B4007241CD /* Networking */,
-				84EBD211197167B4007241CD /* PlatformImpl */,
-				84EBD21F197167B4007241CD /* PopUp */,
-				84EBD224197167B4007241CD /* PopUp.h */,
-				84EBD225197167B4007241CD /* Rendering */,
-				84EBD236197167B4007241CD /* Rendering.h */,
-				84EBD237197167B4007241CD /* sigslot.h */,
-				84EBD238197167B4007241CD /* Social */,
-				84EBD241197167B4007241CD /* Social.h */,
-				84EBD242197167B4007241CD /* Storage */,
-				84EBD24A197167B4007241CD /* Storage.h */,
-			);
-			name = ADLib;
-			path = ../libraries/ADLib/src/ADLib;
 			sourceTree = "<group>";
 		};
 		BF5681CC1313A84D0055EEAC /* ios */ = {
@@ -1054,19 +1144,19 @@
 				84F198C418D59E85006A5221 /* Icon-120.png in Resources */,
 				84F198CE18D5A9C9006A5221 /* Default-Portrait.png in Resources */,
 				84B0AA9F18D5C61900E0C39A /* HOW_TO_INTEGRATE.txt in Resources */,
-				8452FAC719895F870003ACFE /* fonts in Resources */,
-				8452FAC819895F870003ACFE /* levels.ad in Resources */,
+				840ACD6E1A5D898F007D736A /* fonts in Resources */,
 				84F198C118D59E85006A5221 /* Icon-72.png in Resources */,
-				8452FACB19895F870003ACFE /* translations in Resources */,
 				84F198BD18D59E85006A5221 /* Default-568h@2x.png in Resources */,
+				840ACD721A5D898F007D736A /* translations in Resources */,
 				84F198C618D59E85006A5221 /* Icon-152.png in Resources */,
 				84F198C318D59E85006A5221 /* Icon-114.png in Resources */,
-				8452FACA19895F870003ACFE /* music in Resources */,
 				84F198D018D5A9C9006A5221 /* iTunesArtwork@2x in Resources */,
+				840ACD711A5D898F007D736A /* music in Resources */,
 				84F198CF18D5A9C9006A5221 /* iTunesArtwork in Resources */,
 				84F198C518D59E85006A5221 /* Icon-144.png in Resources */,
+				840ACD6F1A5D898F007D736A /* levels_50.ad in Resources */,
 				84F198BE18D59E85006A5221 /* Default.png in Resources */,
-				8452FAC919895F870003ACFE /* medium in Resources */,
+				840ACD701A5D898F007D736A /* medium in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1077,90 +1167,98 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EBD25F197167B4007241CD /* ADColoredSprite.cpp in Sources */,
 				8402CE6318A40E6100703CF7 /* ADUIThread.mm in Sources */,
+				840ACE0B1A5D8AB6007D736A /* IADStandardWindow.cpp in Sources */,
+				840ACDFA1A5D8AB6007D736A /* ADAds.cpp in Sources */,
 				84EBD1D719716520007241CD /* LevelScene.cpp in Sources */,
+				840ACE171A5D8AB6007D736A /* ADHighscoreServer.cpp in Sources */,
 				84EBD1C119716520007241CD /* LevelKeyboard.cpp in Sources */,
+				840ACE1B1A5D8AB6007D736A /* ADStorage.cpp in Sources */,
+				840ACE051A5D8AB6007D736A /* ADSoundManager.cpp in Sources */,
 				84EBD1BE19716520007241CD /* DisplaySolution.cpp in Sources */,
 				84EBD1D519716520007241CD /* PurchaseHandler.cpp in Sources */,
 				84EBD1BD19716520007241CD /* DebugLayer.cpp in Sources */,
-				84EBD24C197167B4007241CD /* ADCocosThread.cpp in Sources */,
-				84EBD24E197167B4007241CD /* ADBrowser.cpp in Sources */,
+				840ACE081A5D8AB6007D736A /* PushWoosh.cpp in Sources */,
+				840ACD751A5D89AC007D736A /* versionMiF50FreeFull.cpp in Sources */,
 				BF365AA812A103F70050DCF4 /* AppController.mm in Sources */,
+				840ACE011A5D8AB6007D736A /* ADMonetization.cpp in Sources */,
 				84EBD1D819716520007241CD /* Loading.cpp in Sources */,
+				840ACE181A5D8AB6007D736A /* ADBinaryData.cpp in Sources */,
 				84EBD1DE19716520007241CD /* Store.cpp in Sources */,
 				8402CE6818A4118D00703CF7 /* ADStatistics_Flurry.mm in Sources */,
-				84EBD268197167B4007241CD /* ADStorage.cpp in Sources */,
 				84EBD1C319716520007241CD /* LevelStop.cpp in Sources */,
-				84EBD267197167B4007241CD /* ADBinaryData.cpp in Sources */,
+				840ACE141A5D8AB6007D736A /* ADFacebook.cpp in Sources */,
+				840ACE041A5D8AB6007D736A /* ADScreen.cpp in Sources */,
+				840ACE0D1A5D8AB6007D736A /* ADBlurSprite.cpp in Sources */,
 				84EBD1DD19716520007241CD /* Settings.cpp in Sources */,
 				84EBD1D419716520007241CD /* RateGame.cpp in Sources */,
+				840ACE021A5D8AB6007D736A /* ADOrientation.cpp in Sources */,
+				840ACE0A1A5D8AB6007D736A /* ADPopUpWindow.cpp in Sources */,
+				840ACDFB1A5D8AB6007D736A /* ADBrowser.cpp in Sources */,
 				84EBD1D019716520007241CD /* Solution.cpp in Sources */,
-				84EBD25A197167B4007241CD /* IADStandardWindow.cpp in Sources */,
 				84EBD1C019716520007241CD /* FoundSolutionsLayer.cpp in Sources */,
 				84EBD1B919716520007241CD /* GraphicsManager.cpp in Sources */,
-				84EBD250197167B4007241CD /* ADInApp.cpp in Sources */,
+				840ACDFC1A5D8AB6007D736A /* ADDeviceEvents.cpp in Sources */,
+				840ACE0F1A5D8AB6007D736A /* ADCallFunc.cpp in Sources */,
 				84EBD1D919716520007241CD /* MainMenu.cpp in Sources */,
-				84EBD261197167B4007241CD /* ADScrollView.cpp in Sources */,
-				84EBD24F197167B4007241CD /* ADDeviceEvents.cpp in Sources */,
+				840ACDFE1A5D8AB6007D736A /* ADInApp.cpp in Sources */,
 				84EBD1C519716520007241CD /* YesNoDialog.cpp in Sources */,
-				84EBD253197167B4007241CD /* ADPackageName.cpp in Sources */,
 				84EBD1CE19716520007241CD /* ExpressionParser.cpp in Sources */,
-				8452FAC119895F580003ACFE /* versionAddition27FreeDisableAds.cpp in Sources */,
 				BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */,
 				84EBD1BF19716520007241CD /* EquationDrawer.cpp in Sources */,
-				84EBD25E197167B4007241CD /* ADCallFunc.cpp in Sources */,
 				84EBD1D119716520007241CD /* Symbol.cpp in Sources */,
-				84EBD265197167B4007241CD /* ADFacebookPhoto.cpp in Sources */,
-				84EBD258197167B4007241CD /* ADHttp.cpp in Sources */,
 				84EBD1CD19716520007241CD /* Equation.cpp in Sources */,
 				84EBD1BC19716520007241CD /* BackgroundHolder.cpp in Sources */,
 				84EBD27019716875007241CD /* PlatformImpl.cpp in Sources */,
 				8402CE7318A41B0500703CF7 /* ADNotification.mm in Sources */,
-				84EBD25D197167B4007241CD /* ADBMFont.cpp in Sources */,
+				840ACE111A5D8AB6007D736A /* ADMenuItem.cpp in Sources */,
 				84EBD1CB19716520007241CD /* Stamp.cpp in Sources */,
-				84EBD263197167B4007241CD /* ADFacebook.cpp in Sources */,
-				84EBD25C197167B4007241CD /* ADBlurSprite.cpp in Sources */,
 				84EBD1B719716520007241CD /* AppDelegate.cpp in Sources */,
-				84EBD251197167B4007241CD /* ADInfo.cpp in Sources */,
-				84EBD254197167B4007241CD /* ADScreen.cpp in Sources */,
 				D4ABB4B313B4395300552E6E /* main.m in Sources */,
+				840ACE031A5D8AB6007D736A /* ADPackageName.cpp in Sources */,
+				840ACE091A5D8AB6007D736A /* ADHttp.cpp in Sources */,
 				84EBD1C419716520007241CD /* PopUpWindow.cpp in Sources */,
+				840ACE0E1A5D8AB6007D736A /* ADBMFont.cpp in Sources */,
+				840ACE061A5D8AB6007D736A /* ADStatistics.cpp in Sources */,
 				84EBD1C719716520007241CD /* Level.cpp in Sources */,
-				84EBD252197167B4007241CD /* ADLanguage.cpp in Sources */,
+				840ACE0C1A5D8AB6007D736A /* ADBakeNode.cpp in Sources */,
 				84EBD1CC19716520007241CD /* Tutorial.cpp in Sources */,
 				84EBD1DB19716520007241CD /* SelectCollection.cpp in Sources */,
 				84EBD1DA19716520007241CD /* SceneStyle.cpp in Sources */,
-				84EBD260197167B4007241CD /* ADMenuItem.cpp in Sources */,
-				84EBD24B197167B4007241CD /* ADRandom.cpp in Sources */,
+				840ACDF71A5D8AB6007D736A /* ADRandom.cpp in Sources */,
+				840ACE1D1A5D8AB6007D736A /* ADUTF8.cpp in Sources */,
+				840ACDF81A5D8AB6007D736A /* ADCocosThread.cpp in Sources */,
 				84EBD1C919716520007241CD /* RW_BuildLevels.cpp in Sources */,
 				84B0AAA218D5C73C00E0C39A /* ADInApp_iTunes.mm in Sources */,
-				84EBD24D197167B4007241CD /* ADAds.cpp in Sources */,
 				84EBD1D319716520007241CD /* BuyFullVersion.cpp in Sources */,
 				84EBD1C819716520007241CD /* RW.cpp in Sources */,
+				840ACE071A5D8AB6007D736A /* ADVirtualCurrency.cpp in Sources */,
 				84EBD1DC19716520007241CD /* SelectLevel.cpp in Sources */,
-				84EBD264197167B4007241CD /* ADFacebookFriend.cpp in Sources */,
-				84EBD259197167B4007241CD /* ADPopUpWindow.cpp in Sources */,
-				84EBD256197167B4007241CD /* ADStatistics.cpp in Sources */,
 				84EBD1BB19716520007241CD /* GameInfo.cpp in Sources */,
-				84EBD257197167B4007241CD /* ADVirtualCurrency.cpp in Sources */,
 				8402CE7018A4174800703CF7 /* ADInfo.mm in Sources */,
+				840ACE161A5D8AB6007D736A /* ADFacebookPhoto.cpp in Sources */,
+				840ACE001A5D8AB6007D736A /* ADLanguage.cpp in Sources */,
 				84EBD1C219716520007241CD /* LevelScenePopUp.cpp in Sources */,
+				840ACE131A5D8AB6007D736A /* ADShaderSprite.cpp in Sources */,
+				840ACDFD1A5D8AB6007D736A /* ADFullScreenAds.cpp in Sources */,
+				840ACE191A5D8AB6007D736A /* ADFileNameUTF8.cpp in Sources */,
 				84EBD1CA19716520007241CD /* SavesManager.cpp in Sources */,
 				84EBD1D219716520007241CD /* Term.cpp in Sources */,
-				84EBD255197167B4007241CD /* ADSoundManager.cpp in Sources */,
 				8402CE7818A41DD600703CF7 /* ADBrowser.mm in Sources */,
-				84EBD269197167B4007241CD /* ADStorageListener.cpp in Sources */,
-				84EBD25B197167B4007241CD /* ADBakeNode.cpp in Sources */,
+				840ACDF91A5D8AB6007D736A /* ADThreadPool.cpp in Sources */,
+				840ACE101A5D8AB6007D736A /* ADColoredSprite.cpp in Sources */,
+				840ACDFF1A5D8AB6007D736A /* ADInfo.cpp in Sources */,
 				8402CE5A18A4072500703CF7 /* ADLanguage.mm in Sources */,
+				840ACE151A5D8AB6007D736A /* ADFacebookFriend.cpp in Sources */,
 				84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */,
+				840ACE1A1A5D8AB6007D736A /* ADFileNameUTF8.mm in Sources */,
 				84EBD1C619716520007241CD /* Collection.cpp in Sources */,
 				84EBD1BA19716520007241CD /* MenuSpriteBatch.cpp in Sources */,
+				840ACE121A5D8AB6007D736A /* ADScrollView.cpp in Sources */,
 				84EBD1B819716520007241CD /* CCManualFont.cpp in Sources */,
 				84EBD1CF19716520007241CD /* Node.cpp in Sources */,
-				84EBD262197167B4007241CD /* ADShaderSprite.cpp in Sources */,
-				84EBD266197167B4007241CD /* ADHighscoreServer.cpp in Sources */,
 				84EBD1D619716520007241CD /* Developers.cpp in Sources */,
+				840ACE1C1A5D8AB6007D736A /* ADStorageListener.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,16 +1302,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"/Volumes/VMware\\ Shared\\ Folders/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MathIsFun50Full;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 i386 arm64";
 			};
 			name = Debug;
 		};
@@ -1251,17 +1350,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADStatistics_Flurry",
-					"/Volumes/VMware\\ Shared\\ Folders/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
-					"/Users/Admin/cocos2d-x/projects/Joiny/libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADStatistics_Flurry",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
+					"$(SRCROOT)/../libraries/ADLib/platform/iOS/ADAds_AdMob/AdMobSDK",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MathIsFun50Full;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 i386 arm64";
 			};
 			name = Release;
 		};
