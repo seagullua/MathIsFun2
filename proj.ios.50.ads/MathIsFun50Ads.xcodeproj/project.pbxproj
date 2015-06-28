@@ -24,7 +24,6 @@
 		840ACD701A5D898F007D736A /* medium in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6B1A5D898F007D736A /* medium */; };
 		840ACD711A5D898F007D736A /* music in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6C1A5D898F007D736A /* music */; };
 		840ACD721A5D898F007D736A /* translations in Resources */ = {isa = PBXBuildFile; fileRef = 840ACD6D1A5D898F007D736A /* translations */; };
-		840ACD751A5D89AC007D736A /* versionMiF50FreeFull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD741A5D89AC007D736A /* versionMiF50FreeFull.cpp */; };
 		840ACDF71A5D8AB6007D736A /* ADRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD771A5D8AB6007D736A /* ADRandom.cpp */; };
 		840ACDF81A5D8AB6007D736A /* ADCocosThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD7C1A5D8AB6007D736A /* ADCocosThread.cpp */; };
 		840ACDF91A5D8AB6007D736A /* ADThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840ACD7F1A5D8AB6007D736A /* ADThreadPool.cpp */; };
@@ -67,6 +66,7 @@
 		840AE31E18A030A900189085 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840AE31D18A02F5200189085 /* libcocos2dx.a */; };
 		841B2C6018D5B6ED0064AA59 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */; };
 		841B2C6118D5B6ED0064AA59 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B2C5F18D5B6ED0064AA59 /* iAd.framework */; };
+		847FF03B1A5DA3C70062154E /* versionMiF50FreeDisableAds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847FF03A1A5DA3C70062154E /* versionMiF50FreeDisableAds.cpp */; };
 		84B0AA8A18D5C17500E0C39A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */; };
 		84B0AA8C18D5C17F00E0C39A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */; };
 		84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */; };
@@ -182,7 +182,6 @@
 		840ACD6B1A5D898F007D736A /* medium */ = {isa = PBXFileReference; lastKnownFileType = folder; name = medium; path = Resources/medium; sourceTree = SOURCE_ROOT; };
 		840ACD6C1A5D898F007D736A /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resources/music; sourceTree = SOURCE_ROOT; };
 		840ACD6D1A5D898F007D736A /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = Resources/translations; sourceTree = SOURCE_ROOT; };
-		840ACD741A5D89AC007D736A /* versionMiF50FreeFull.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = versionMiF50FreeFull.cpp; sourceTree = "<group>"; };
 		840ACD771A5D8AB6007D736A /* ADRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADRandom.cpp; sourceTree = "<group>"; };
 		840ACD781A5D8AB6007D736A /* ADRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADRandom.h; sourceTree = "<group>"; };
 		840ACD791A5D8AB6007D736A /* ADSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSignals.h; sourceTree = "<group>"; };
@@ -301,6 +300,7 @@
 		840AE31818A02F4D00189085 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = ../../../cocos2dx/proj.ios/cocos2dx.xcodeproj; sourceTree = "<group>"; };
 		841B2C5E18D5B6ED0064AA59 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		841B2C5F18D5B6ED0064AA59 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		847FF03A1A5DA3C70062154E /* versionMiF50FreeDisableAds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = versionMiF50FreeDisableAds.cpp; sourceTree = "<group>"; };
 		84B0AA8918D5C17500E0C39A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		84B0AA8B18D5C17F00E0C39A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		84B0AA8E18D5C61900E0C39A /* ADAds_AdMob.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ADAds_AdMob.mm; sourceTree = "<group>"; };
@@ -598,15 +598,6 @@
 			path = ../libraries/ADLib/platform/iOS/ADBrowser;
 			sourceTree = "<group>";
 		};
-		840ACD731A5D89AC007D736A /* MiF50FreeFull */ = {
-			isa = PBXGroup;
-			children = (
-				840ACD741A5D89AC007D736A /* versionMiF50FreeFull.cpp */,
-			);
-			name = MiF50FreeFull;
-			path = ../VersionSelector/MiF50FreeFull;
-			sourceTree = "<group>";
-		};
 		840ACD761A5D8AB6007D736A /* ADLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +833,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		847FF0391A5DA3C70062154E /* MiF50FreeDisableAds */ = {
+			isa = PBXGroup;
+			children = (
+				847FF03A1A5DA3C70062154E /* versionMiF50FreeDisableAds.cpp */,
+			);
+			name = MiF50FreeDisableAds;
+			path = ../VersionSelector/MiF50FreeDisableAds;
+			sourceTree = "<group>";
+		};
 		84B0AA8D18D5C61900E0C39A /* ADAds_AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,7 +1007,7 @@
 		84EBD26A1971681B007241CD /* _Version */ = {
 			isa = PBXGroup;
 			children = (
-				840ACD731A5D89AC007D736A /* MiF50FreeFull */,
+				847FF0391A5DA3C70062154E /* MiF50FreeDisableAds */,
 			);
 			name = _Version;
 			sourceTree = "<group>";
@@ -1179,7 +1179,6 @@
 				84EBD1D519716520007241CD /* PurchaseHandler.cpp in Sources */,
 				84EBD1BD19716520007241CD /* DebugLayer.cpp in Sources */,
 				840ACE081A5D8AB6007D736A /* PushWoosh.cpp in Sources */,
-				840ACD751A5D89AC007D736A /* versionMiF50FreeFull.cpp in Sources */,
 				BF365AA812A103F70050DCF4 /* AppController.mm in Sources */,
 				840ACE011A5D8AB6007D736A /* ADMonetization.cpp in Sources */,
 				84EBD1D819716520007241CD /* Loading.cpp in Sources */,
@@ -1248,6 +1247,7 @@
 				840ACDF91A5D8AB6007D736A /* ADThreadPool.cpp in Sources */,
 				840ACE101A5D8AB6007D736A /* ADColoredSprite.cpp in Sources */,
 				840ACDFF1A5D8AB6007D736A /* ADInfo.cpp in Sources */,
+				847FF03B1A5DA3C70062154E /* versionMiF50FreeDisableAds.cpp in Sources */,
 				8402CE5A18A4072500703CF7 /* ADLanguage.mm in Sources */,
 				840ACE151A5D8AB6007D736A /* ADFacebookFriend.cpp in Sources */,
 				84B0AA9C18D5C61900E0C39A /* ADAds_AdMob.mm in Sources */,
